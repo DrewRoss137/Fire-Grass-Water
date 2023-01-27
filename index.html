@@ -6,8 +6,78 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Fire Grass Water</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
     </head>
     <body>
+
+        <main id="main-content">
+
+            <div id="header">
+                <h1 id="title">Fire Grass Water</h1>
+                <p id="player-choice-flavour-text">What will ${PLAYER_NAME} do?</p>
+            </div>
+
+            <div id="body">
+                <div id="fire-grass-water-buttons">
+                    <div id="fire-button">
+                        <div id="fire-button-border">
+    
+                        </div>
+                        <div id="fire-button-text">
+                            Fire
+                        </div>
+                    </div>
+                    <div id="grass-button">
+                        <div id="grass-button-border">
+                            
+                        </div>
+                        <div id="grass-button-text">
+                            Grass
+                        </div>
+                    </div>
+                    <div id="water-button">
+                        <div id="water-button-border">
+                            
+                        </div>
+                        <div id="water-button-text">
+                            Water
+                        </div>
+                    </div>
+                </div>
+
+                <div id="scorecard">
+                    <div id="player-scorecard">
+                        <div id=player-name-scorecard>
+                            ${PLAYER_NAME}
+                        </div>
+                        <div id="player-score-scorecard">
+                            ${PLAYER_SCORE}
+                        </div>
+                    </div>
+                    <div id="rival-scorecard">
+                        <div id=rival-name-scorecard>
+                            ${RIVAL_NAME}
+                        </div>
+                        <div id="player-score-scorecard">
+                            ${RIVAL_SCORE}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="footer">
+                <div id="quote">
+                    <div id="quote-text">QUOTE</div>
+                    <div id="quote-attribution">QUOTE ATTRIBUTION</div>
+                </div>
+                <div id="copyright">
+                    <div id="copyright-text">COPYRIGHT_TEXT</div>
+                    <div id="github-logo">GITHUB_LOGO</div>
+                </div>
+            </div>
+
+        </main>
         <script src="scripts.js"></script>
+
     </body>
 </html>
