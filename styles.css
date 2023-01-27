@@ -20,13 +20,21 @@ body {
     padding: 0px;
 }
 
+#title-text-fire,
+#title-text-grass,
+#title-text-water {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #player-choice-flavour-text {
     align-items: center;
     display: flex;
     font-size: 32px;
     justify-content: center;
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: 86px;
+    padding-bottom: 86px;
 }
 
 #player-choices-buttons {
@@ -58,4 +66,26 @@ body {
     align-items: center;
     font-size: 48px;
     gap: 64px;
+}
+
+#round-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 64px;
+    gap: 42px;
+}
+
+#players {
+    margin-bottom: 64px;
+}
+
+#players,
+#scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 128px;
 }
