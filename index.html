@@ -13,9 +13,12 @@
         <main id="main-content">
 
             <div id="header">
-                <h1 id="title">Fire Grass Water</h1>
-                <p id="player-choice-flavour-text">What will ${PLAYER_NAME} do?</p>
+                <h1 id="title-text-fire">Fire</h1>
+                <h1 id="title-text-grass">Grass</h1>
+                <h1 id="title-text-water">Water</h1>
             </div>
+
+            <div id="player-choice-flavour-text">What will ${PLAYER_NAME} do?</div>
 
             <div id="body">
                 <div id="fire-grass-water-buttons">
@@ -42,6 +45,24 @@
                         <div id="water-button-text">
                             Water
                         </div>
+                    </div>
+                </div>
+
+                <div id="round-results">
+                    <div id="player-choice">
+                        ${PLAYER_CHOICE}
+                    </div>
+                    <div id="rival-choice">
+                        ${RIVAL_CHOICE}
+                    </div>
+                    <div id="player-choice-effectiveness">
+                        ${PLAYER_CHOICE_EFFECTIVENESS}
+                    </div>
+                    <div id="rival-choice-effectiveness">
+                        ${RIVAL_CHOICE_EFFECTIVENESS}
+                    </div>
+                    <div id="round-result">
+                        ${ROUND_RESULT}
                     </div>
                 </div>
 
@@ -75,6 +96,7 @@
                     <div id="github-logo">GITHUB_LOGO</div>
                 </div>
             </div>
+
 
         </main>
         <script src="scripts.js"></script>
