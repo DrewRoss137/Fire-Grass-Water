@@ -73,12 +73,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 64px;
+    margin: 86px;
     gap: 42px;
 }
 
 #players {
-    margin-bottom: 64px;
+    margin: 64px 0;
 }
 
 #players,
@@ -88,4 +88,22 @@ body {
     align-items: center;
     flex-direction: row;
     gap: 128px;
+}
+
+#quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 128px;
+    gap: 48px;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+
 }
