@@ -1,7 +1,12 @@
+@font-face {
+    font-family: "PokemonFireRed";
+    src: url(pokemon-ds-font.ttf) format("truetype");
+}
+
 body {
     background: radial-gradient(circle, rgba(82,82,82,1) 0%, rgba(43,43,43,1) 100%);
     color: aliceblue;
-    font-family: roboto, arial, sans-serif;
+    font-family: "PokemonFireRed", Arial, Helvetica, sans-serif;
 }
 
 #header {
