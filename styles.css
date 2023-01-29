@@ -13,6 +13,26 @@ body {
     font-family: "PokemonDSFont", Arial, Helvetica, sans-serif;
 }
 
+#title-fire,
+#title-grass,
+#title-water,
+#flavour-text,
+#player-choices-text-fire,
+#player-choices-text-grass,
+#player-choices-text-water,
+#players,
+#scores {
+    font-weight: bold;
+}
+
+#header {
+    align-items: center;
+    display: flex;
+    font-size: 50px;
+    gap: 24px;
+    justify-content: center;
+}
+
 #title-fire {
     text-shadow: 0px 12px rgb(50, 0, 0);
     color: rgb(255, 0, 0);
@@ -28,19 +48,12 @@ body {
     color: rgb(0, 0, 255);
 }
 
-#header {
+#flavour-text {
     align-items: center;
     display: flex;
-    font-size: 50px;
-    gap: 24px;
+    font-size: 36px;
     justify-content: center;
-}
-
-#player-choice-flavour-text {
-    align-items: center;
-    display: flex;
-    font-size: 32px;
-    justify-content: center;
+    margin: 96px 0px;
 }
 
 #player-choices-buttons {
