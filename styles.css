@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background: radial-gradient(circle, rgba(82,82,82,1) 0%, rgba(43,43,43,1) 100%);
+    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgb(25, 25, 25) 100%);
     color: aliceblue;
     font-family: "PokemonDSFont", Arial, Helvetica, sans-serif;
 }
@@ -31,8 +31,7 @@ body {
 #header {
     align-items: center;
     display: flex;
-    font-size: 72px;
-    gap: 48px;
+    font-size: 50px;
     justify-content: center;
 }
 
@@ -49,8 +48,6 @@ body {
     display: flex;
     font-size: 32px;
     justify-content: center;
-    padding-top: 86px;
-    padding-bottom: 86px;
 }
 
 #player-choices-buttons {
@@ -59,7 +56,6 @@ body {
     align-items: center;
     flex-direction: row;
     gap: 64px;
-    margin-bottom: 48px;
 }
 
 #fire-button-border,
@@ -71,9 +67,8 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 500px;   
     height: 500px;
-    padding: 0;
 }
 
 #player-choices-text {
@@ -89,12 +84,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 86px;
     gap: 42px;
 }
 
 #players {
-    margin: 64px 0;
 }
 
 #players,
@@ -111,7 +104,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 128px;
     gap: 48px;
 }
 
@@ -120,7 +112,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
 }
 
 #player-choices-text-fire,
@@ -129,4 +120,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 96px;
+}
+
+#player-choices-text-fire {
+    text-shadow: 0px 6px rgb(50, 0, 0);
+    color: rgb(255, 0, 0);
+}
+
+#player-choices-text-grass {
+    text-shadow: 0px 6px rgb(0, 50, 0);
+    color: rgb(0, 255, 0);
+}
+
+#player-choices-text-water {
+    text-shadow: 0px 6px rgb(0, 0, 50);
+    color: rgb(0, 0, 255);
 }
