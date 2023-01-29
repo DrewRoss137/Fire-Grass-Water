@@ -34,17 +34,17 @@ body {
 }
 
 #title-fire {
-    text-shadow: 0px 12px rgb(50, 0, 0);
+    text-shadow: 0px 11px rgb(50, 0, 0), 0px 15px rgb(25, 0, 0), 0px 18px rgb(0, 0, 0);
     color: rgb(255, 0, 0);
 }
 
 #title-grass {
-    text-shadow: 0px 12px rgb(0, 50, 0);
+    text-shadow: 0px 11px rgb(0, 50, 0), 0px 15px rgb(0, 25, 0), 0px 18px rgb(0, 0, 0);
     color: rgb(0, 255, 0);
 }
 
 #title-water {
-    text-shadow: 0px 12px rgb(0, 0, 50);
+    text-shadow: 0px 11px rgb(0, 0, 50), 0px 15px rgb(0, 0, 25), 0px 18px rgb(0, 0, 0);
     color: rgb(0, 0, 255);
 }
 
@@ -54,14 +54,15 @@ body {
     font-size: 36px;
     justify-content: center;
     margin: 96px 0px;
+    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(0, 0, 0);
 }
 
-#player-choices-buttons {
+#player-choice-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 64px;
+    gap: 128px;
 }
 
 #fire-button-border,
@@ -73,16 +74,17 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 500px;   
-    height: 500px;
+    width: 400px;   
+    height: 400px;
 }
 
-#player-choices-text {
+#fire-button-text,
+#grass-button-text,
+#water-button-text {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 48px;
-    gap: 64px;
 }
 
 #round-results {
