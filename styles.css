@@ -17,9 +17,9 @@ body {
 #title-grass,
 #title-water,
 #flavour-text,
-#player-choices-text-fire,
-#player-choices-text-grass,
-#player-choices-text-water,
+#fire-button-text,
+#grass-button-text,
+#water-button-text,
 #players,
 #scores {
     font-weight: bold;
@@ -34,17 +34,17 @@ body {
 }
 
 #title-fire {
-    text-shadow: 0px 11px rgb(50, 0, 0), 0px 15px rgb(25, 0, 0), 0px 18px rgb(0, 0, 0);
+    text-shadow: 0px 10px rgb(50, 0, 0), 0px 15px rgb(25, 0, 0), 0px 20px rgb(0, 0, 0);
     color: rgb(255, 0, 0);
 }
 
 #title-grass {
-    text-shadow: 0px 11px rgb(0, 50, 0), 0px 15px rgb(0, 25, 0), 0px 18px rgb(0, 0, 0);
+    text-shadow: 0px 10px rgb(0, 50, 0), 0px 15px rgb(0, 25, 0), 0px 20px rgb(0, 0, 0);
     color: rgb(0, 255, 0);
 }
 
 #title-water {
-    text-shadow: 0px 11px rgb(0, 0, 50), 0px 15px rgb(0, 0, 25), 0px 18px rgb(0, 0, 0);
+    text-shadow: 0px 10px rgb(0, 0, 50), 0px 15px rgb(0, 0, 25), 0px 20px rgb(0, 0, 0);
     color: rgb(0, 0, 255);
 }
 
@@ -54,10 +54,10 @@ body {
     font-size: 36px;
     justify-content: center;
     margin: 96px 0px;
-    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(0, 0, 0);
+    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(50, 50, 50), 0px 9px rgb(25, 25, 25);
 }
 
-#player-choice-buttons {
+#buttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,9 +65,9 @@ body {
     gap: 128px;
 }
 
-#fire-button-border,
-#grass-button-border,
-#water-button-border {
+#button-border-fire,
+#button-border-grass,
+#button-border-water {
     border-style: solid;
     border-width: 5px;
     display: flex;
@@ -78,13 +78,29 @@ body {
     height: 400px;
 }
 
-#fire-button-text,
-#grass-button-text,
-#water-button-text {
-    display: flex;
-    justify-content: center;
+#button-text-fire,
+#button-text-grass,
+#button-text-water {
     align-items: center;
+    display: flex;
     font-size: 48px;
+    justify-content: center;
+    margin: 36px;
+}
+
+#button-text-fire {
+    text-shadow: 0px 10px rgb(50, 0, 0), 0px 15px rgb(25, 0, 0), 0px 20px rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
+}
+
+#button-text-grass {
+    text-shadow: 0px 10px rgb(0, 50, 0), 0px 15px rgb(0, 25, 0), 0px 20px rgb(0, 0, 0);
+    color: rgb(0, 255, 0);
+}
+
+#button-text-water {
+    text-shadow: 0px 10px rgb(0, 0, 50), 0px 15px rgb(0, 0, 25), 0px 20px rgb(0, 0, 0);
+    color: rgb(0, 0, 255);
 }
 
 #round-results {
@@ -120,28 +136,4 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-#player-choices-text-fire,
-#player-choices-text-grass,
-#player-choices-text-water {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 96px;
-}
-
-#player-choices-text-fire {
-    text-shadow: 0px 6px rgb(50, 0, 0);
-    color: rgb(255, 0, 0);
-}
-
-#player-choices-text-grass {
-    text-shadow: 0px 6px rgb(0, 50, 0);
-    color: rgb(0, 255, 0);
-}
-
-#player-choices-text-water {
-    text-shadow: 0px 6px rgb(0, 0, 50);
-    color: rgb(0, 0, 255);
 }
