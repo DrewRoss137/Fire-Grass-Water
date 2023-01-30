@@ -17,13 +17,35 @@ body {
 #title-grass,
 #title-water,
 #flavour-text,
-#fire-button-text,
-#grass-button-text,
-#water-button-text,
+#button-text-fire,
+#button-text-grass,
+#button-text-water,
 #players,
 #scores {
     font-weight: bold;
 }
+
+#title-fire,
+#button-text-fire {
+    color: rgb(255, 0, 0);
+}
+
+#title-grass,
+#button-text-grass {
+    color: rgb(0, 255, 0);
+}
+
+#title-water,
+#button-text-water {
+    color: rgb(0, 0, 255);
+}
+
+#button-text-fire,
+#button-text-grass,
+#button-text-water {
+    letter-spacing: 1px;
+}
+
 
 #header {
     align-items: center;
@@ -35,17 +57,14 @@ body {
 
 #title-fire {
     text-shadow: 0px 10px rgb(50, 0, 0), 0px 15px rgb(25, 0, 0), 0px 20px rgb(0, 0, 0);
-    color: rgb(255, 0, 0);
 }
 
 #title-grass {
     text-shadow: 0px 10px rgb(0, 50, 0), 0px 15px rgb(0, 25, 0), 0px 20px rgb(0, 0, 0);
-    color: rgb(0, 255, 0);
 }
 
 #title-water {
     text-shadow: 0px 10px rgb(0, 0, 50), 0px 15px rgb(0, 0, 25), 0px 20px rgb(0, 0, 0);
-    color: rgb(0, 0, 255);
 }
 
 #flavour-text {
@@ -89,18 +108,15 @@ body {
 }
 
 #button-text-fire {
-    text-shadow: 0px 10px rgb(50, 0, 0), 0px 15px rgb(25, 0, 0), 0px 20px rgb(0, 0, 0);
-    color: rgb(255, 0, 0);
+    text-shadow: 0px 4px rgb(50, 0, 0), 0px 7px rgb(25, 0, 0), 0px 8px rgb(0, 0, 0);
 }
 
 #button-text-grass {
-    text-shadow: 0px 10px rgb(0, 50, 0), 0px 15px rgb(0, 25, 0), 0px 20px rgb(0, 0, 0);
-    color: rgb(0, 255, 0);
+    text-shadow: 0px 4px rgb(0, 50, 0), 0px 7px rgb(0, 25, 0), 0px 8px rgb(0, 0, 0);
 }
 
 #button-text-water {
-    text-shadow: 0px 10px rgb(0, 0, 50), 0px 15px rgb(0, 0, 25), 0px 20px rgb(0, 0, 0);
-    color: rgb(0, 0, 255);
+    text-shadow: 0px 4px rgb(0, 0, 50), 0px 7px rgb(0, 0, 25), 0px 8px rgb(0, 0, 0);
 }
 
 #round-results {
