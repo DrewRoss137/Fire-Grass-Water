@@ -6,8 +6,6 @@ console.log(playerChoice);
 const rivalChoice = retrieveRivalChoice();
 console.log(rivalChoice);
 
-playRound = playRound(playerChoice, rivalChoice);
-
 function retrievePlayerChoice() {
     let playerChoice = prompt("Choice: ");
     return(playerChoice);
@@ -30,4 +28,8 @@ function playRound(playerChoice, rivalChoice) {
     else {
         return("Lose")
     }
+}
+
+function playGame() {
+    
 }
