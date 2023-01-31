@@ -1,9 +1,9 @@
 const choices = ["fire", "grass", "water"];
 
-playerChoice = retrievePlayerChoice();
+const playerChoice = retrievePlayerChoice();
 console.log(playerChoice);
 
-rivalChoice = retrieveRivalChoice();
+const rivalChoice = retrieveRivalChoice();
 console.log(rivalChoice);
 
 playRound = playRound(playerChoice, rivalChoice);
@@ -20,7 +20,14 @@ function retrieveRivalChoice() {
 
 function playRound(playerChoice, rivalChoice) {
     playerChoice = playerChoice.toLowerCase();
-    console.log(playerChoice);
     rivalChoice = rivalChoice.toLowerCase();
-    console.log(rivalChoice);
+    if (playerChoice === rivalChoice) {
+        return("Draw");
+    }
+    else if (playerChoice === "fire" && rivalChoice == "grass" || playerChoice === "grass" && rivalChoice === "water" || playerChoice === "water" && rivalChoice === "fire") {
+        return("Win");
+    }
+    else {
+        return("Lose")
+    }
 }
