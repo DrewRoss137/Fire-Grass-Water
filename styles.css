@@ -11,6 +11,8 @@ body {
     background: radial-gradient(circle, rgb(75, 75, 75) 0%, rgb(0, 0, 0) 100%);
     color: rgb(255, 255, 255);
     font-family: "PokemonDSFont", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -119,6 +121,8 @@ img {
 #button-border-fire:hover,
 #button-border-grass:hover,
 #button-border-water:hover {
+    cursor: pointer;
+    filter: brightness(1.025);
     transform: scale(1.1);
 }
 
@@ -210,8 +214,7 @@ img {
     align-items: center;
     color: rgb(30, 30, 30);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 16px;
     text-shadow: 0px 2px rgba(0, 0, 0, 0.6);
 }
