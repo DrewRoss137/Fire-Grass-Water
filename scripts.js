@@ -1,6 +1,9 @@
 const buttons = document.querySelectorAll(".button");
 const choices = ["Fire", "Grass", "Water"];
 
+let playerScore = 0;
+let rivalScore = 0;
+
 let rivalChoice = getRivalChoice();
 console.log("Rival Choice: " + rivalChoice);
 
