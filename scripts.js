@@ -28,10 +28,10 @@ function getPokémonAttack() {
 
 }
 
-function playRound() {
+function playRound(playerChoice, rivalChoice) {
 
 }
 
 function getPokémonName() {
-    
+
 }
