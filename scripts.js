@@ -14,8 +14,8 @@ function getRivalChoice() {
 
 buttons.forEach(button => {
     button.addEventListener("click", function getPlayerChoice() {
-        const img = button.querySelector("img");
-        playerChoice = img.alt;
+        const buttonImg = button.querySelector("img");
+        playerChoice = buttonImg.alt;
         console.log(playerChoice)
     })
 })
