@@ -1,7 +1,10 @@
 const buttons = document.querySelectorAll(".button");
 const choices = ["Fire", "Grass", "Water"];
 
+let playerName;
 let playerScore = 0;
+
+let rivalName;
 let rivalScore = 0;
 
 let rivalChoice = getRivalChoice();
@@ -19,3 +22,7 @@ buttons.forEach(button => {
         console.log(playerChoice)
     })
 })
+
+function getPokémonAttack() {
+
+}
