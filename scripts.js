@@ -79,14 +79,12 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass"
             || playerChoice === "Grass" && rivalChoice === "Water"
             || playerChoice === "Water" && rivalChoice === "Fire") {
-    playerAttackEffectiveness = attackEffectiveness[roundResults[2]];
-    rivalAttackEffectiveness = attackEffectiveness[roundResults[1]];
+    playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
+    rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
   } else {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
   }
-  console.log(playerPokémonAttackEffectiveness);
-  console.log(rivalPokémonAttackEffectiveness);
   console.log(choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(rivalName, rivalPokémon));
   console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
