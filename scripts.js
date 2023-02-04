@@ -1,10 +1,10 @@
 const choices = ["Fire", "Grass", "Water"];
-
 const fireAttacks = ["Scratch", "Ember", "Flamethrower", "Slash"];
-
 const grassAttacks = ["Tackle", "Vine Whip", "Razor Leaf"];
-
 const waterAttacks = ["Tackle", "Tail Whip", "Bubble", "Water Gun", "Bite", "Rapid Spin", "Hydro Pump"]
+
+let rivalAttack;
+let playerAttack;
 
 let rivalChoice = getRivalChoice();
 console.log(`Rival Choice: ${rivalChoice}`);
@@ -25,7 +25,6 @@ images.addEventListener("click", function getImgAlt(element) {
 });
 
 function generatePlayerAttack(playerChoice) {
-  let playerAttack;
   if (playerChoice === "Fire") {
     playerAttack = fireAttacks[Math.floor(Math.random() * fireAttacks.length)];
   } else if (playerChoice === "Grass") {
@@ -38,7 +37,6 @@ function generatePlayerAttack(playerChoice) {
 };
 
 function generateRivalAttack(rivalChoice) {
-  let rivalAttack;
   if (rivalChoice === "Fire") {
     rivalAttack = fireAttacks[Math.floor(Math.random() * fireAttacks.length)];
   } else if (rivalChoice === "Grass") {
@@ -49,3 +47,7 @@ function generateRivalAttack(rivalChoice) {
   console.log(`Generated Rival Attack: ${rivalAttack}`);
   return rivalAttack;
 };
+
+function playRound(playerChoice, playerAttack, rivalChoice, rivalAttack) {
+  
+}
