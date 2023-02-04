@@ -29,8 +29,8 @@ let rivalPokémonAttack;
 let playerPokémon;
 let rivalPokémon;
 
-let playerAttackEffectiveness;
-let rivalAttackEffectiveness;
+let playerPokémonAttackEffectiveness;
+let rivalPokémonAttackEffectiveness;
 
 
 
@@ -57,9 +57,6 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
     console.log(`Rival Pokemon: ${rivalPokémon}`);
     rivalPokémonAttack = generateAttack(rivalChoice);
     console.log(`Generated Rival Attack: ${rivalPokémonAttack}`)
-    generateAttackEffectiveness(playerChoice, rivalChoice);
-
-
     playRound(playerChoice, rivalChoice)
   }
 });
@@ -77,25 +74,25 @@ function generateAttack(choice) {
 
 function playRound(playerChoice, rivalChoice) {
   if (playerChoice === rivalChoice) {
-    playerAttackEffectiveness = attackEffectiveness[roundResults[0]];
-    rivalAttackEffectiveness = attackEffectiveness[roundResults[0]];
+    playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
+    rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
   } else if (playerChoice === "Fire" && rivalChoice === "Grass"
             || playerChoice === "Grass" && rivalChoice === "Water"
             || playerChoice === "Water" && rivalChoice === "Fire") {
     playerAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalAttackEffectiveness = attackEffectiveness[roundResults[1]];
   } else {
-    playerAttackEffectiveness = attackEffectiveness[roundResults[1]];
-    rivalAttackEffectiveness = attackEffectiveness[roundResults[2]];
+    playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
+    rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
   }
-  console.log(playerAttackEffectiveness);
-  console.log(rivalAttackEffectiveness);
+  console.log(playerPokémonAttackEffectiveness);
+  console.log(rivalPokémonAttackEffectiveness);
   console.log(choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(rivalName, rivalPokémon));
   console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
-  console.log(playerAttackEffectiveness);
+  console.log(playerPokémonAttackEffectiveness);
   console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
-  console.log(rivalAttackEffectiveness);
+  console.log(rivalPokémonAttackEffectiveness);
 };
 
 function choiceFlavourText(name, pokémon) {
@@ -109,8 +106,3 @@ function attackFlavourText(name, pokémon, attack) {
     return(`Foe ${pokémon} used ${attack}!`);
   } 
 };
-
-function generateAttackEffectiveness(playerChoice, rivalChoice) {
-
-}
-
