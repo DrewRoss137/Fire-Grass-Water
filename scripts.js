@@ -22,6 +22,8 @@ const roundResults = ["Draw", "Lose", "Win"];
 
 let playerName = "Drew";
 let rivalName = "Gary";
+playerName = playerName.toUpperCase()
+rivalName = rivalName.toUpperCase()
 
 let playerPokémonAttack;
 let rivalPokémonAttack;
@@ -99,8 +101,8 @@ function choiceFlavourText(name, pokémon) {
 
 function attackFlavourText(name, pokémon, attack) {
   if (name === playerName) {
-    return(`${pokémon} used ${attack}!`);
+    return(`${playerName}'s ${pokémon} used ${attack}!`);
   } else {
-    return(`Foe ${pokémon} used ${attack}!`);
+    return(`Rival ${rivalName}'s ${pokémon} used ${attack}!`);
   } 
 };
