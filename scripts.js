@@ -76,25 +76,6 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
-  console.log(choiceFlavourText(playerName, playerPokémon));
-  console.log(choiceFlavourText(rivalName, rivalPokémon));
-  choiceFlavourText(playerName, playerPokémon, playerPokémonAttack);
-  choiceFlavourText(rivalName, rivalPokémon, rivalPokémonAttack);
-};
-
-function choiceFlavourText(name, pokémon) {
-  return(`${name}: GO! ${pokémon}!`);
-}
-
-function attackFlavourText(name, pokémon, attack) {
-  if (name === playerName) {
-    console.log(`${pokémon} used ${attack}!`);
-  } else {
-    console.log(`Foe ${pokémon} used ${attack}!`);
-  } 
-};
-
-function generateAttackEffectiveness(playerChoice, rivalChoice) {
   if (playerChoice === rivalChoice) {
     playerAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -107,7 +88,29 @@ function generateAttackEffectiveness(playerChoice, rivalChoice) {
     playerAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalAttackEffectiveness = attackEffectiveness[roundResults[2]];
   }
-  return playerAttackEffectiveness;
-  return rivalAttackEffectiveness;
+  console.log(playerAttackEffectiveness);
+  console.log(rivalAttackEffectiveness);
+  console.log(choiceFlavourText(playerName, playerPokémon));
+  console.log(choiceFlavourText(rivalName, rivalPokémon));
+  console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
+  console.log(playerAttackEffectiveness);
+  console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
+  console.log(rivalAttackEffectiveness);
+};
+
+function choiceFlavourText(name, pokémon) {
+  return(`${name}: GO! ${pokémon}!`);
+}
+
+function attackFlavourText(name, pokémon, attack) {
+  if (name === playerName) {
+    return(`${pokémon} used ${attack}!`);
+  } else {
+    return(`Foe ${pokémon} used ${attack}!`);
+  } 
+};
+
+function generateAttackEffectiveness(playerChoice, rivalChoice) {
+
 }
 
