@@ -1,16 +1,16 @@
 const choices = ["Fire", "Grass", "Water"];
 
 const pokémon = {
-  "Fire": "Charmander",
-  "Grass": "Bulbasaur",
-  "Water": "Squirtle"
+  "Fire": "CHARMANDER",
+  "Grass": "BULBASAUR",
+  "Water": "SQUIRTLE"
 };
 
-const fireAttacks = ["Ember", "Flamethrower"];
+const fireAttacks = ["EMBER", "FLAME THROWER"];
 
-const grassAttacks = ["Vine Whip", "Razor Leaf"];
+const grassAttacks = ["VINE WHIP", "RAZOR LEAF"];
 
-const waterAttacks = ["Bubble", "Water Gun", "Hydro Pump"];
+const waterAttacks = ["BUBBLE", "WATER GUN", "HYDRO PUMP"];
 
 
 let playerName = "Drew";
@@ -32,21 +32,22 @@ function getRivalChoice() {
     return choices[returnedRivalChoice];
 };
 
-const images = document.querySelector("#buttons");
-images.addEventListener("click", function getImgAlt(element) {
+const buttonImgs = document.querySelector("#buttons");
+buttonImgs.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     let playerChoice = element.target.alt;
-
     console.log(`Player Choice: ${playerChoice}`);
-    playerAttack = generateAttack(playerChoice);
-    console.log(`Generated Player Attack: ${playerAttack}`);
     playerPokémon = pokémon[playerChoice];
     console.log(`Player Pokemon: ${playerPokémon}`);
+    playerAttack = generateAttack(playerChoice);
+    console.log(`Generated Player Attack: ${playerAttack}`);
 
-    rivalAttack = generateAttack(rivalChoice);
-    console.log(`Generated Rival Attack: ${rivalAttack}`)
+
     rivalPokémon = pokémon[rivalChoice];
     console.log(`Rival Pokemon: ${rivalPokémon}`);
+    rivalAttack = generateAttack(rivalChoice);
+    console.log(`Generated Rival Attack: ${rivalAttack}`)
+
 
     playRound(playerChoice, rivalChoice)
   }
@@ -62,3 +63,13 @@ function generateAttack(choice) {
   }
   return attack;
 };
+
+function playRound(playerChoice, rivalChoice) {
+  flavourText(playerName, playerPokémon, playerAttack);
+  flavourText(rivalName, rivalPokémon, rivalAttack);
+}
+
+function createFlavourText(name, pokémon, attack) {
+  console.log(`${name}: GO! ${pokémon}!`);
+  console.log(`${pokémon} used ${attack}!`);
+}
