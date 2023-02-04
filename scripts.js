@@ -14,8 +14,8 @@ function getRivalChoice() {
     return choices[randomRivalChoice];
 };
 
-const images = document.querySelector("img");
-images.addEventListener("click", function(element) {
+const images = document.querySelector("#buttons");
+images.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     let playerChoice = element.target.alt;
     console.log(`Player Choice: ${playerChoice}`);
@@ -24,5 +24,5 @@ images.addEventListener("click", function(element) {
 });
 
 function playRound(playerChoice, rivalChoice) {
-  
+
 };
