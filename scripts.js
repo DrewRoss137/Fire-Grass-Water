@@ -40,14 +40,14 @@ images.addEventListener("click", function getImgAlt(element) {
     console.log(`Player Choice: ${playerChoice}`);
     playerAttack = generateAttack(playerChoice);
     console.log(`Generated Player Attack: ${playerAttack}`);
-    playerPokémon = getPokémon(playerChoice);
+    playerPokémon = pokémon[playerChoice];
     console.log(`Player Pokemon: ${playerPokémon}`);
 
     rivalAttack = generateAttack(rivalChoice);
     console.log(`Generated Rival Attack: ${rivalAttack}`)
-    rivalPokémon = getPokémon(rivalChoice);
+    rivalPokémon = pokémon[rivalChoice];
     console.log(`Rival Pokemon: ${rivalPokémon}`);
-    
+
     playRound(playerChoice, rivalChoice)
   }
 });
@@ -62,7 +62,3 @@ function generateAttack(choice) {
   }
   return attack;
 };
-
-function getPokémon(choice) {
-  return pokémon[choice];
-}
