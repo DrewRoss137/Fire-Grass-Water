@@ -22,6 +22,9 @@ let rivalAttack;
 let playerPokémon;
 let rivalPokémon;
 
+let playerAttackEffectiveness;
+let rivalAttackEffectiveness;
+
 
 
 let rivalChoice = getRivalChoice();
@@ -47,6 +50,7 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
     console.log(`Rival Pokemon: ${rivalPokémon}`);
     rivalAttack = generateAttack(rivalChoice);
     console.log(`Generated Rival Attack: ${rivalAttack}`)
+    generateAttackEffectiveness(playerChoice, rivalChoice);
 
 
     playRound(playerChoice, rivalChoice)
@@ -65,16 +69,35 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
-  createFlavourText(playerName, playerPokémon, playerAttack);
-  createFlavourText(rivalName, rivalPokémon, rivalAttack);
-  
+  generateFlavourText(playerName, playerPokémon, playerAttack);
+  console.log(playerAttackEffectiveness);
+  generateFlavourText(rivalName, rivalPokémon, rivalAttack);
+  console.log(rivalAttackEffectiveness);
+
 };
 
-function createFlavourText(name, pokémon, attack) {
+function generateFlavourText(name, pokémon, attack) {
   console.log(`${name}: GO! ${pokémon}!`);
   if (name === playerName) {
     console.log(`${pokémon} used ${attack}!`);
   } else {
     console.log(`Foe ${pokémon} used ${attack}!`);
-  }
+  } 
 };
+
+function generateAttackEffectiveness(playerChoice, rivalChoice) {
+  if (playerChoice === rivalChoice) {
+    playerAttackEffectiveness = "It's not very effective..."
+    rivalAttackEffectiveness = "It's not very effective...";
+  } else if (playerChoice === "Fire" && rivalChoice === "Grass"
+            || playerChoice === "Grass" && rivalChoice === "Water"
+            || playerChoice === "Water" && rivalChoice === "Fire") {
+              playerAttackEffectiveness = "It's super effective!";
+              rivalAttackEffectiveness = "But it failed!";
+            } else {
+              playerAttackEffectiveness = "But it failed!";
+              rivalAttackEffectiveness = "It's super effective!";
+            }
+            return playerAttackEffectiveness;
+            return rivalAttackEffectiveness;
+}
