@@ -12,6 +12,13 @@ const grassAttacks = ["VINE WHIP", "RAZOR LEAF"];
 
 const waterAttacks = ["BUBBLE", "WATER GUN", "HYDRO PUMP"];
 
+const attackEffectiveness = {
+  "Draw": "But it failed!",
+  "Lose": "It's not very effective...",
+  "Win": "It's super effective!"
+}
+
+const roundResults = ["Draw", "Lose", "Win"];
 
 let playerName = "Drew";
 let rivalName = "Gary";
@@ -87,17 +94,18 @@ function generateFlavourText(name, pokémon, attack) {
 
 function generateAttackEffectiveness(playerChoice, rivalChoice) {
   if (playerChoice === rivalChoice) {
-    playerAttackEffectiveness = "It's not very effective..."
-    rivalAttackEffectiveness = "It's not very effective...";
+    playerAttackEffectiveness = attackEffectiveness[roundResults[0]];
+    rivalAttackEffectiveness = attackEffectiveness[roundResults[0]];
   } else if (playerChoice === "Fire" && rivalChoice === "Grass"
             || playerChoice === "Grass" && rivalChoice === "Water"
             || playerChoice === "Water" && rivalChoice === "Fire") {
-              playerAttackEffectiveness = "It's super effective!";
-              rivalAttackEffectiveness = "But it failed!";
+              playerAttackEffectiveness = attackEffectiveness[roundResults[2]];
+              rivalAttackEffectiveness = attackEffectiveness[roundResults[1]];
             } else {
-              playerAttackEffectiveness = "But it failed!";
-              rivalAttackEffectiveness = "It's super effective!";
+              playerAttackEffectiveness = attackEffectiveness[roundResults[1]];
+              rivalAttackEffectiveness = attackEffectiveness[roundResults[2]];
             }
             return playerAttackEffectiveness;
             return rivalAttackEffectiveness;
 }
+
