@@ -1,10 +1,10 @@
 const choices = ["Fire", "Grass", "Water"];
 
-const attacks = {
-  "Fire": "Flamethrower",
-  "Grass": "Razor Leaf",
-  "Water": "Hydro Pump"
-};
+const fireAttacks = ["Scratch", "Ember", "Flamethrower", "Slash"];
+
+const grassAttacks = ["Tackle", "Vine Whip", "Razor Leaf"];
+
+const waterAttacks = ["Tackle", "Tail Whip", "Bubble", "Water Gun", "Bite", "Rapid Spin", "Hydro Pump"]
 
 let rivalChoice = getRivalChoice();
 console.log(`Rival Choice: ${rivalChoice}`);
