@@ -23,8 +23,8 @@ const roundResults = ["Draw", "Lose", "Win"];
 let playerName = "Drew";
 let rivalName = "Gary";
 
-let playerAttack;
-let rivalAttack;
+let playerPokémonAttack;
+let rivalPokémonAttack;
 
 let playerPokémon;
 let rivalPokémon;
@@ -49,14 +49,14 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
     console.log(`Player Choice: ${playerChoice}`);
     playerPokémon = pokémon[playerChoice];
     console.log(`Player Pokemon: ${playerPokémon}`);
-    playerAttack = generateAttack(playerChoice);
-    console.log(`Generated Player Attack: ${playerAttack}`);
+    playerPokémonAttack = generateAttack(playerChoice);
+    console.log(`Generated Player Attack: ${playerPokémonAttack}`);
 
 
     rivalPokémon = pokémon[rivalChoice];
     console.log(`Rival Pokemon: ${rivalPokémon}`);
-    rivalAttack = generateAttack(rivalChoice);
-    console.log(`Generated Rival Attack: ${rivalAttack}`)
+    rivalPokémonAttack = generateAttack(rivalChoice);
+    console.log(`Generated Rival Attack: ${rivalPokémonAttack}`)
     generateAttackEffectiveness(playerChoice, rivalChoice);
 
 
@@ -76,15 +76,17 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
-  generateFlavourText(playerName, playerPokémon, playerAttack);
-  console.log(playerAttackEffectiveness);
-  generateFlavourText(rivalName, rivalPokémon, rivalAttack);
-  console.log(rivalAttackEffectiveness);
-
+  console.log(choiceFlavourText(playerName, playerPokémon));
+  console.log(choiceFlavourText(rivalName, rivalPokémon));
+  choiceFlavourText(playerName, playerPokémon, playerPokémonAttack);
+  choiceFlavourText(rivalName, rivalPokémon, rivalPokémonAttack);
 };
 
-function generateFlavourText(name, pokémon, attack) {
-  console.log(`${name}: GO! ${pokémon}!`);
+function choiceFlavourText(name, pokémon) {
+  return(`${name}: GO! ${pokémon}!`);
+}
+
+function attackFlavourText(name, pokémon, attack) {
   if (name === playerName) {
     console.log(`${pokémon} used ${attack}!`);
   } else {
@@ -99,13 +101,13 @@ function generateAttackEffectiveness(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass"
             || playerChoice === "Grass" && rivalChoice === "Water"
             || playerChoice === "Water" && rivalChoice === "Fire") {
-              playerAttackEffectiveness = attackEffectiveness[roundResults[2]];
-              rivalAttackEffectiveness = attackEffectiveness[roundResults[1]];
-            } else {
-              playerAttackEffectiveness = attackEffectiveness[roundResults[1]];
-              rivalAttackEffectiveness = attackEffectiveness[roundResults[2]];
-            }
-            return playerAttackEffectiveness;
-            return rivalAttackEffectiveness;
+    playerAttackEffectiveness = attackEffectiveness[roundResults[2]];
+    rivalAttackEffectiveness = attackEffectiveness[roundResults[1]];
+  } else {
+    playerAttackEffectiveness = attackEffectiveness[roundResults[1]];
+    rivalAttackEffectiveness = attackEffectiveness[roundResults[2]];
+  }
+  return playerAttackEffectiveness;
+  return rivalAttackEffectiveness;
 }
 
