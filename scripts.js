@@ -65,11 +65,16 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
-  flavourText(playerName, playerPokémon, playerAttack);
-  flavourText(rivalName, rivalPokémon, rivalAttack);
-}
+  createFlavourText(playerName, playerPokémon, playerAttack);
+  createFlavourText(rivalName, rivalPokémon, rivalAttack);
+  
+};
 
 function createFlavourText(name, pokémon, attack) {
   console.log(`${name}: GO! ${pokémon}!`);
-  console.log(`${pokémon} used ${attack}!`);
-}
+  if (name === playerName) {
+    console.log(`${pokémon} used ${attack}!`);
+  } else {
+    console.log(`Foe ${pokémon} used ${attack}!`);
+  }
+};
