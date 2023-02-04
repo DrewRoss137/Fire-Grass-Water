@@ -1,7 +1,20 @@
 const choices = ["Fire", "Grass", "Water"];
-const fireAttacks = ["Scratch", "Ember", "Flamethrower", "Slash"];
-const grassAttacks = ["Tackle", "Vine Whip", "Razor Leaf"];
-const waterAttacks = ["Tackle", "Tail Whip", "Bubble", "Water Gun", "Bite", "Rapid Spin", "Hydro Pump"]
+
+const pokemon = {
+  "Fire": "Charmander",
+  "Grass": "Bulbasaur",
+  "Water": "Squirtle"
+};
+
+const fireAttacks = ["Ember", "Flamethrower"];
+
+const grassAttacks = ["Vine Whip", "Razor Leaf"];
+
+const waterAttacks = ["Bubble", "Water Gun", "Hydro Pump"];
+
+
+let playerName = prompt("Let's begin with your name. What is it?");
+let rivalName = prompt("...Erm, what was their name now?");
 
 let rivalAttack;
 let playerAttack;
@@ -21,6 +34,7 @@ images.addEventListener("click", function getImgAlt(element) {
     console.log(`Player Choice: ${playerChoice}`);
     generatePlayerAttack(playerChoice);
     generateRivalAttack(rivalChoice);
+    playRound(playerChoice, rivalChoice)
   }
 });
 
@@ -48,6 +62,6 @@ function generateRivalAttack(rivalChoice) {
   return rivalAttack;
 };
 
-function playRound(playerChoice, playerAttack, rivalChoice, rivalAttack) {
-  
+function playRound(playerChoice, rivalChoice) {
+  console.log(`${playerName}`)
 }
