@@ -19,10 +19,33 @@ images.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     let playerChoice = element.target.alt;
     console.log(`Player Choice: ${playerChoice}`);
-    playRound(playerChoice, rivalChoice);
+    generatePlayerAttack(playerChoice);
+    generateRivalAttack(rivalChoice);
   }
 });
 
-function playRound(playerChoice, rivalChoice) {
+function generatePlayerAttack(playerChoice) {
+  let playerAttack;
+  if (playerChoice === "Fire") {
+    playerAttack = fireAttacks[Math.floor(Math.random() * fireAttacks.length)];
+  } else if (playerChoice === "Grass") {
+    playerAttack = grassAttacks[Math.floor(Math.random() * grassAttacks.length)];
+  } else {
+    playerAttack = waterAttacks[Math.floor(Math.random() * waterAttacks.length)];
+  }
+  console.log(`Generated Player Attack: ${playerAttack}`);
+  return playerAttack;
+};
 
+function generateRivalAttack(rivalChoice) {
+  let rivalAttack;
+  if (rivalChoice === "Fire") {
+    rivalAttack = fireAttacks[Math.floor(Math.random() * fireAttacks.length)];
+  } else if (rivalChoice === "Grass") {
+    rivalAttack = grassAttacks[Math.floor(Math.random() * grassAttacks.length)];
+  } else {
+    rivalAttack = waterAttacks[Math.floor(Math.random() * waterAttacks.length)];
+  }
+  console.log(`Generated Rival Attack: ${rivalAttack}`);
+  return rivalAttack;
 };
