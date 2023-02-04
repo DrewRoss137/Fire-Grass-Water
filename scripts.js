@@ -1,6 +1,6 @@
 const choices = ["Fire", "Grass", "Water"];
 
-const pokemon = {
+const pokémon = {
   "Fire": "Charmander",
   "Grass": "Bulbasaur",
   "Water": "Squirtle"
@@ -13,31 +13,41 @@ const grassAttacks = ["Vine Whip", "Razor Leaf"];
 const waterAttacks = ["Bubble", "Water Gun", "Hydro Pump"];
 
 
-/* let playerName = prompt("Let's begin with your name. What is it?");
-let rivalName = prompt("...Erm, what was their name now?"); */
+let playerName = "Drew";
+let rivalName = "Gary";
 
-let rivalAttack;
 let playerAttack;
+let rivalAttack;
+
+let playerPokémon;
+let rivalPokémon;
+
+
 
 let rivalChoice = getRivalChoice();
 console.log(`Rival Choice: ${rivalChoice}`);
 
 function getRivalChoice() {
-    let randomRivalChoice = Math.floor(Math.random() * choices.length);
-    return choices[randomRivalChoice];
+    let returnedRivalChoice = Math.floor(Math.random() * choices.length);
+    return choices[returnedRivalChoice];
 };
 
 const images = document.querySelector("#buttons");
 images.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     let playerChoice = element.target.alt;
+
     console.log(`Player Choice: ${playerChoice}`);
-    generateAttack(playerChoice);
     playerAttack = generateAttack(playerChoice);
     console.log(`Generated Player Attack: ${playerAttack}`);
-    generateAttack(rivalChoice);
+    playerPokémon = getPokémon(playerChoice);
+    console.log(`Player Pokemon: ${playerPokémon}`);
+
     rivalAttack = generateAttack(rivalChoice);
     console.log(`Generated Rival Attack: ${rivalAttack}`)
+    rivalPokémon = getPokémon(rivalChoice);
+    console.log(`Rival Pokemon: ${rivalPokémon}`);
+    
     playRound(playerChoice, rivalChoice)
   }
 });
@@ -53,8 +63,6 @@ function generateAttack(choice) {
   return attack;
 };
 
-
-
-function playRound(playerChoice, rivalChoice) {
-  
+function getPokémon(choice) {
+  return pokémon[choice];
 }
