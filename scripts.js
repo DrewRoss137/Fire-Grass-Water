@@ -48,7 +48,6 @@ let roundResult;
 
 let criticalHitChance;
 
-let rivalChoice;
 
 let winPercentage;
 let lossPercentage;
@@ -57,6 +56,7 @@ let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
+let rivalChoice;
 
 
 function getRivalChoice() {
@@ -97,7 +97,6 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
-  console.log(`Rival Choice: ${rivalChoice}`);
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -120,6 +119,12 @@ function playRound(playerChoice, rivalChoice) {
     roundResult = roundResults[2];
   } else {
     roundsPlayed ++;
+    criticalHitChance = Math.random();
+    if (criticalHitChance <= 0.0625) {
+      console.log("")
+      console.log("A critical hit!")
+      console.log("")
+    }
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     roundsLost ++;
@@ -140,6 +145,16 @@ function playRound(playerChoice, rivalChoice) {
   totalWinPercentage = ((roundsWon / totalRoundsPlayed) * 100).toFixed(2);
   totalLossPercentage = ((roundsLost / totalRoundsPlayed) * 100).toFixed(2);
   totalDrawPercentage = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
+
+  if (roundsPlayed === 1) {
+    if (roundsWon === 1) {
+      console.log("Well done! A good start!")
+    } else if (roundsLost === 1){
+      console.log("You win some, you lose some. It's only the first round, go again!")
+    } else {
+      console.log("What a tense start!")
+    }
+  }
 
   if (roundsPlayed === 5) {
     console.log("GAME OVER...")
