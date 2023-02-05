@@ -48,8 +48,8 @@ let roundResult;
 
 let criticalHitChance;
 
-let rivalChoice = getRivalChoice();
-console.log(`Rival Choice: ${rivalChoice}`);
+let rivalChoice;
+
 
 function getRivalChoice() {
     let returnedRivalChoice = Math.floor(Math.random() * choices.length);
@@ -67,6 +67,8 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
     console.log(`Generated Player Attack: ${playerPokémonAttack}`);
 
 
+    let rivalChoice = getRivalChoice();
+    console.log(`Rival Choice: ${rivalChoice}`);
     rivalPokémon = pokémon[rivalChoice];
     console.log(`Rival Pokemon: ${rivalPokémon}`);
     rivalPokémonAttack = generateAttack(rivalChoice);
@@ -87,6 +89,8 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
+  console.log(`Rival Choice: ${rivalChoice}`);
+  totalroundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -95,6 +99,7 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
+    roundsPlayed ++;
     criticalHitChance = Math.random();
     if (criticalHitChance <= 0.0625) {
       console.log("")
@@ -106,6 +111,7 @@ function playRound(playerChoice, rivalChoice) {
     roundsWon ++;
     roundResult = roundResults[2];
   } else {
+    roundsPlayed ++;
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     roundsLost ++;
@@ -118,9 +124,11 @@ function playRound(playerChoice, rivalChoice) {
   console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
   console.log(rivalPokémonAttackEffectiveness);
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
-  console.log(roundsDrawn);
-  console.log(roundsLost);
-  console.log(roundsWon);
+  console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
+  console.log(`ROUNDS LOST: ${roundsLost}`);
+  console.log(`ROUNDS WON: ${roundsWon}`);
+  console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
+  console.log(`TOTAL ROUNDS PLAYED: ${totalroundsPlayed}`);
 };
 
 function choiceFlavourText(name, pokémon) {
