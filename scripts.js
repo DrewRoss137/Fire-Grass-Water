@@ -34,10 +34,14 @@ let rivalPokémon;
 let playerPokémonAttackEffectiveness;
 let rivalPokémonAttackEffectiveness;
 
-let playerScore;
-let rivalScore;
+let playerScore = 0;
+let rivalScore = 0;
 
-let roundsPlayed;
+let roundsDrawn = 0;
+let roundsWon = 0;
+let roundsLost = 0;
+
+let roundResult;
 
 
 let rivalChoice = getRivalChoice();
@@ -82,14 +86,20 @@ function playRound(playerChoice, rivalChoice) {
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
-  } else if (playerChoice === "Fire" && rivalChoice === "Grass"
-            || playerChoice === "Grass" && rivalChoice === "Water"
-            || playerChoice === "Water" && rivalChoice === "Fire") {
+    roundsDrawn ++; 
+    roundResult = roundResults[0];
+  } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
+            playerChoice === "Grass" && rivalChoice === "Water" ||
+            playerChoice === "Water" && rivalChoice === "Fire") {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
+    roundsWon ++;
+    roundResult = roundResults[2];
   } else {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
+    roundsLost ++;
+    roundResult = roundResults[1];
   }
   console.log(choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(rivalName, rivalPokémon));
@@ -97,6 +107,7 @@ function playRound(playerChoice, rivalChoice) {
   console.log(playerPokémonAttackEffectiveness);
   console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
   console.log(rivalPokémonAttackEffectiveness);
+  console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
 };
 
 function choiceFlavourText(name, pokémon) {
@@ -110,3 +121,13 @@ function attackFlavourText(name, pokémon, attack) {
     return(`Rival ${rivalName}'s ${pokémon} used ${attack}!`);
   } 
 };
+
+function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, result) {
+  if (result === "Draw") {
+    return(`ROUND RESULT: ${playerName}'s ${playerPokémon} drew against ${rivalName}'s ${rivalPokémon}!`)
+  } else if (result === "Win") {
+    return(`ROUND RESULT: ${playerName}'s ${playerPokémon} won against ${rivalName}'s ${rivalPokémon}!`)
+  } else {
+    return(`ROUND RESULT: ${playerName}'s ${playerPokémon} lost against ${rivalName}'s ${rivalPokémon}!`)
+  }
+}
