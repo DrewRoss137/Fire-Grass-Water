@@ -34,6 +34,10 @@ let rivalPokémon;
 let playerPokémonAttackEffectiveness;
 let rivalPokémonAttackEffectiveness;
 
+let playerScore;
+let rivalScore;
+
+let roundsPlayed;
 
 
 let rivalChoice = getRivalChoice();
