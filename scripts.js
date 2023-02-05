@@ -132,22 +132,36 @@ function playRound(playerChoice, rivalChoice) {
   console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
   console.log(rivalPokémonAttackEffectiveness);
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
-  console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
-  console.log(`ROUNDS LOST: ${roundsLost}`);
-  console.log(`ROUNDS WON: ${roundsWon}`);
-  console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
-  console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
+
 
   winPercentage = ((roundsWon / roundsPlayed) * 100).toFixed(2);
   lossPercentage = ((roundsLost/ roundsPlayed) * 100).toFixed(2);
-  console.log(`Loss Percentage: ${lossPercentage}%`);
-  console.log(`Win Percentage: ${winPercentage}%`);  
+
   totalWinPercentage = ((roundsWon / totalRoundsPlayed) * 100).toFixed(2);
   totalLossPercentage = ((roundsLost / totalRoundsPlayed) * 100).toFixed(2);
   totalDrawPercentage = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
-  console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
-  console.log(`TOTAL Win Percentage: ${totalWinPercentage}%`);
-  console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
+
+  if (roundsPlayed === 5) {
+    console.log("GAME OVER...")
+    if (roundsWon > roundsLost) {
+      console.log("YOU WIN!")
+    } else {
+      console.log("YOU LOSE!")
+    }
+    console.log("");
+    console.log("STATS:");
+    console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
+    console.log(`ROUNDS LOST: ${roundsLost}`);
+    console.log(`ROUNDS WON: ${roundsWon}`);
+    console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
+    console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
+    console.log(`Loss Percentage: ${lossPercentage}%`);
+    console.log(`Win Percentage: ${winPercentage}%`);  
+    console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
+    console.log(`TOTAL Win Percentage: ${totalWinPercentage}%`);
+    console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
+    console.log("");
+  }
 };
 
 function choiceFlavourText(name, pokémon) {
