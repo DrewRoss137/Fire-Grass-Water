@@ -56,8 +56,8 @@ let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
-let rivalChoice;
-
+let rivalChoice = getRivalChoice();
+console.log(`Rival Choice: ${rivalChoice}`);
 
 function getRivalChoice() {
     let returnedRivalChoice = Math.floor(Math.random() * choices.length);
@@ -75,8 +75,8 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
     console.log(`Generated Player Attack: ${playerPokémonAttack}`);
 
 
-    let rivalChoice = getRivalChoice();
-    console.log(`Rival Choice: ${rivalChoice}`);
+    /* let rivalChoice = getRivalChoice();
+    console.log(`Rival Choice: ${rivalChoice}`); */
     rivalPokémon = pokémon[rivalChoice];
     console.log(`Rival Pokemon: ${rivalPokémon}`);
     rivalPokémonAttack = generateAttack(rivalChoice);
@@ -148,13 +148,44 @@ function playRound(playerChoice, rivalChoice) {
 
   if (roundsPlayed === 1) {
     if (roundsWon === 1) {
-      console.log("Well done! A good start!")
-    } else if (roundsLost === 1){
-      console.log("You win some, you lose some. It's only the first round, go again!")
-    } else {
-      console.log("What a tense start!")
-    }
+      console.log("1 ROUND WON")
+    } else if (roundsLost === 1) {
+      console.log("1 ROUND LOST")
   }
+} else if (roundsPlayed === 2) {
+    if (roundsWon === 2) {
+      console.log("2 ROUNDS WON")
+    } else if (roundsLost === 2) {
+      console.log("2 ROUNDS LOST")
+    } else {
+      console.log("1 WON. 1 LOST.")
+    }
+
+} else if (roundsPlayed === 3) {
+  if (roundsWon === 3) {
+    console.log("3 ROUNDS WON")
+  } else if (roundsLost === 3) {
+    console.log("3 ROUNDS LOST")
+  } else if (roundsLost === 2) {
+    console.log("2 LOST. 1 WON.")
+  } else {
+    console.log("2 WON. 1 LOST.")
+  }
+} else {
+  if (roundsWon === 4) {
+    console.log("4 ROUNDS WON")
+  } else if (roundsLost === 4) {
+    console.log("4 ROUNDS LOST")
+  } else if (roundsLost === 2) {
+    console.log("2 LOST. 2 WON.")
+  } else if (roundsWon === 2){
+    console.log("2 WON. 2 LOST.")
+  } else if (roundsLost === 3) {
+    console.log("3 LOST. 1 WON.")
+  } else {
+    console.log("3 WON. 1 LOST.")
+  }
+}
 
   if (roundsPlayed === 5) {
     console.log("GAME OVER...")
