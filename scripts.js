@@ -8,9 +8,9 @@ const pokémon = {
 
 const fireAttacks = ["EMBER", "FLAME THROWER"];
 
-const grassAttacks = ["VINE WHIP", "RAZOR LEAF"];
+const grassAttacks = ["RAZOR LEAF", "VINE WHIP"];
 
-const waterAttacks = ["BUBBLE", "WATER GUN", "HYDRO PUMP"];
+const waterAttacks = ["BUBBLE", "HYDRO PUMP", "WATER GUN"];
 
 const attackEffectiveness = {
   "Draw": "But it failed!",
@@ -49,6 +49,11 @@ let roundResult;
 let criticalHitChance;
 
 let rivalChoice;
+
+let winPercentage;
+let lossPercentage;
+
+
 
 
 function getRivalChoice() {
@@ -129,6 +134,11 @@ function playRound(playerChoice, rivalChoice) {
   console.log(`ROUNDS WON: ${roundsWon}`);
   console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
   console.log(`TOTAL ROUNDS PLAYED: ${totalroundsPlayed}`);
+
+  winPercentage = ((roundsWon / roundsPlayed) * 100).toFixed(2);
+  lossPercentage = ((roundsLost/ roundsPlayed) * 100).toFixed(2);
+  console.log(`Loss Percentage : ${lossPercentage}%`);
+  console.log(`Win Percentage : ${winPercentage}%`);  
 };
 
 function choiceFlavourText(name, pokémon) {
