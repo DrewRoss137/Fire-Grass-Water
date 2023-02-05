@@ -185,7 +185,7 @@ function playRound(playerChoice, rivalChoice) {
   }
   }
 
-  if (roundsPlayed === 5) {
+  if (roundsWon === 5 || roundsLost === 5) {
     console.log("GAME OVER...")
     if (roundsWon > roundsLost) {
       console.log("YOU WIN!")
