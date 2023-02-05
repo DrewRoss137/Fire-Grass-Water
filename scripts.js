@@ -41,8 +41,12 @@ let roundsDrawn = 0;
 let roundsWon = 0;
 let roundsLost = 0;
 
+let roundsPlayed = roundsWon + roundsLost;
+let totalroundsPlayed = roundsPlayed + roundsDrawn;
+
 let roundResult;
 
+let criticalHitChance;
 
 let rivalChoice = getRivalChoice();
 console.log(`Rival Choice: ${rivalChoice}`);
@@ -91,6 +95,12 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
+    criticalHitChance = Math.random();
+    if (criticalHitChance <= 0.0625) {
+      console.log("")
+      console.log("A critical hit!")
+      console.log("")
+    }
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     roundsWon ++;
@@ -108,6 +118,9 @@ function playRound(playerChoice, rivalChoice) {
   console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
   console.log(rivalPokémonAttackEffectiveness);
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
+  console.log(roundsDrawn);
+  console.log(roundsLost);
+  console.log(roundsWon);
 };
 
 function choiceFlavourText(name, pokémon) {
@@ -123,9 +136,9 @@ function attackFlavourText(name, pokémon, attack) {
 };
 
 function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, result) {
-  if (result === "Draw") {
+  if (result === roundResults[0]) {
     return(`ROUND RESULT: ${playerName}'s ${playerPokémon} drew against ${rivalName}'s ${rivalPokémon}!`)
-  } else if (result === "Win") {
+  } else if (result === roundResults[2]) {
     return(`ROUND RESULT: ${playerName}'s ${playerPokémon} won against ${rivalName}'s ${rivalPokémon}!`)
   } else {
     return(`ROUND RESULT: ${playerName}'s ${playerPokémon} lost against ${rivalName}'s ${rivalPokémon}!`)
