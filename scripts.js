@@ -42,7 +42,7 @@ let roundsWon = 0;
 let roundsLost = 0;
 
 let roundsPlayed = roundsWon + roundsLost;
-let totalroundsPlayed = roundsPlayed + roundsDrawn;
+let totalRoundsPlayed = 0;
 
 let roundResult;
 
@@ -53,6 +53,9 @@ let rivalChoice;
 let winPercentage;
 let lossPercentage;
 
+let totalWinPercentage;
+let totalLossPercentage;
+let totalDrawPercentage;
 
 
 
@@ -95,7 +98,7 @@ function generateAttack(choice) {
 
 function playRound(playerChoice, rivalChoice) {
   console.log(`Rival Choice: ${rivalChoice}`);
-  totalroundsPlayed ++;
+  totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -133,12 +136,18 @@ function playRound(playerChoice, rivalChoice) {
   console.log(`ROUNDS LOST: ${roundsLost}`);
   console.log(`ROUNDS WON: ${roundsWon}`);
   console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
-  console.log(`TOTAL ROUNDS PLAYED: ${totalroundsPlayed}`);
+  console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
 
   winPercentage = ((roundsWon / roundsPlayed) * 100).toFixed(2);
   lossPercentage = ((roundsLost/ roundsPlayed) * 100).toFixed(2);
-  console.log(`Loss Percentage : ${lossPercentage}%`);
-  console.log(`Win Percentage : ${winPercentage}%`);  
+  console.log(`Loss Percentage: ${lossPercentage}%`);
+  console.log(`Win Percentage: ${winPercentage}%`);  
+  totalWinPercentage = ((roundsWon / totalRoundsPlayed) * 100).toFixed(2);
+  totalLossPercentage = ((roundsLost / totalRoundsPlayed) * 100).toFixed(2);
+  totalDrawPercentage = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
+  console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
+  console.log(`TOTAL Win Percentage: ${totalWinPercentage}%`);
+  console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
 };
 
 function choiceFlavourText(name, pokémon) {
