@@ -94,7 +94,6 @@ function generateAttack(choice) {
 
 function playRound(playerChoice, rivalChoice) {
   totalRoundsPlayed ++;
-  console.log(totalRoundsPlayed)
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -178,6 +177,10 @@ function playRound(playerChoice, rivalChoice) {
     console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
     console.log("-------------------------------")
     console.log("");
+    playerScore = 0;
+    rivalScore = 0;
+    totalRoundsPlayed = 0;
+    roundsDrawn = 0;
   }
 };
 
