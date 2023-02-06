@@ -145,9 +145,9 @@ function playRound(playerChoice, rivalChoice) {
     console.log("4 L")
   }
 
-
-  winPercentage = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
-  lossPercentage = ((rivalScore/ totalRoundsPlayed) * 100).toFixed(2);
+  let roundsPlayed = playerScore + rivalScore;
+  winPercentage = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
+  lossPercentage = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
 
   totalWinPercentage = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
   totalLossPercentage = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
@@ -162,16 +162,21 @@ function playRound(playerChoice, rivalChoice) {
       console.log("YOU LOSE!")
     }
     console.log("");
+    console.log("*******************************")
     console.log("STATS:");
-    console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
-    console.log(`ROUNDS LOST: ${rivalScore}`);
+    console.log("*******************************")
     console.log(`ROUNDS WON: ${playerScore}`);
-    console.log(`ROUNDS PLAYED: ${totalRoundsPlayed}`);
-    console.log(`Loss Percentage: ${lossPercentage}%`);
+    console.log(`ROUNDS LOST: ${rivalScore}`);
+    console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
+    console.log("-------------------------------")
     console.log(`Win Percentage: ${winPercentage}%`);  
-    console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
+    console.log(`Loss Percentage: ${lossPercentage}%`);
+    console.log("-------------------------------")
+    console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
     console.log(`TOTAL Win Percentage: ${totalWinPercentage}%`);
+    console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
     console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
+    console.log("-------------------------------")
     console.log("");
   }
 };
