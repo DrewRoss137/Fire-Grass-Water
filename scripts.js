@@ -103,23 +103,13 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
-    criticalHitChance = Math.random();
-    if (criticalHitChance <= 0.0625) {
-      console.log("")
-      console.log("A critical hit!")
-      console.log("")
-    }
+    generateCriticalHitChance();
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++
     roundResult = roundResults[2];
   } else {
-    criticalHitChance = Math.random();
-    if (criticalHitChance <= 0.0625) {
-      console.log("")
-      console.log("A critical hit!")
-      console.log("")
-    }
+    generateCriticalHitChance();
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
@@ -207,3 +197,12 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
     return(`ROUND RESULT: ${playerName}'s ${playerPokémon} lost against ${rivalName}'s ${rivalPokémon}!`)
   }
 }
+
+function generateCriticalHitChance() {
+  criticalHitChance = Math.random();
+  if (criticalHitChance <= 0.0625) {
+    console.log("*******************************************")
+    console.log("A CRITICAL HIT")
+    console.log("*******************************************")
+  }
+};
