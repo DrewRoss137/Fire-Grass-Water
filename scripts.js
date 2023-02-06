@@ -42,7 +42,6 @@ let roundsWon = 0;
 let roundsLost = 0;
 
 let roundsPlayed = 0;
-let totalRoundsPlayed = roundsPlayed + roundsDrawn;
 
 let roundResult;
 
@@ -113,7 +112,7 @@ function playRound(playerChoice, rivalChoice) {
     }
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
-    roundsWon ++;
+    playerScore ++
     roundResult = roundResults[2];
     roundsPlayed ++;
   } else {
@@ -125,10 +124,11 @@ function playRound(playerChoice, rivalChoice) {
     }
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
-    roundsLost ++;
+    rivalScore ++;
     roundResult = roundResults[1];
     roundsPlayed ++;
   }
+  let totalRoundsPlayed = roundsPlayed + roundsDrawn;
   console.log(choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(rivalName, rivalPokémon));
   console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
@@ -138,36 +138,38 @@ function playRound(playerChoice, rivalChoice) {
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
 
 
-  winPercentage = ((roundsWon / roundsPlayed) * 100).toFixed(2);
-  lossPercentage = ((roundsLost/ roundsPlayed) * 100).toFixed(2);
+  winPercentage = ((playerScore / roundsPlayed) * 100).toFixed(2);
+  lossPercentage = ((rivalScore/ roundsPlayed) * 100).toFixed(2);
 
-  totalWinPercentage = ((roundsWon / totalRoundsPlayed) * 100).toFixed(2);
-  totalLossPercentage = ((roundsLost / totalRoundsPlayed) * 100).toFixed(2);
+  totalWinPercentage = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
+  totalLossPercentage = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
   totalDrawPercentage = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
 
-  if (roundsWon === 1) {
+  if (playerScore === 1) {
     console.log("1 W")
-  } else if (roundsLost === 1) {
-    console.log("1 L")
-  } else if (roundsWon === 2) {
+  } else if (playerScore === 2) {
     console.log("2 W")
-  } else if (roundsLost === 2) {
-    console.log("2 L  ")
-  }  
-  else if (roundsWon === 3) {
+  } else if (playerScore === 3) {
     console.log("3 W")
-  } else if (roundsLost === 3) {
-    console.log("3 L")
-  } else if (roundsWon === 4) {
+  } else if (playerScore === 4) {
     console.log("4 W")
-  } else if (roundsLost === 4) {
+  }
+
+  if (rivalScore === 1) {
+    console.log("1 L")
+  } else if (rivalScore === 2) {
+    console.log("2 L")
+  } else if (rivalScore === 3) {
+    console.log("3 L")
+  } else if (rivalScore === 4) {
     console.log("4 L")
   }
 
 
+
   if (roundsPlayed === 5) {
     console.log("GAME OVER...")
-    if (roundsWon > roundsLost) {
+    if (playerScore > rivalScore) {
       console.log("YOU WIN!")
     } else {
       console.log("YOU LOSE!")
@@ -175,8 +177,8 @@ function playRound(playerChoice, rivalChoice) {
     console.log("");
     console.log("STATS:");
     console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
-    console.log(`ROUNDS LOST: ${roundsLost}`);
-    console.log(`ROUNDS WON: ${roundsWon}`);
+    console.log(`ROUNDS LOST: ${rivalScore}`);
+    console.log(`ROUNDS WON: ${playerScore}`);
     console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
     console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
     console.log(`Loss Percentage: ${lossPercentage}%`);
