@@ -38,15 +38,12 @@ let playerScore = 0;
 let rivalScore = 0;
 
 let roundsDrawn = 0;
-let roundsWon = 0;
-let roundsLost = 0;
-
-let roundsPlayed = 0;
 
 let roundResult;
 
 let criticalHitChance;
 
+let totalRoundsPlayed = 0;
 
 let winPercentage;
 let lossPercentage;
@@ -96,6 +93,8 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
+  totalRoundsPlayed ++;
+  console.log(totalRoundsPlayed)
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -114,7 +113,6 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++
     roundResult = roundResults[2];
-    roundsPlayed ++;
   } else {
     criticalHitChance = Math.random();
     if (criticalHitChance <= 0.0625) {
@@ -126,9 +124,7 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
     roundResult = roundResults[1];
-    roundsPlayed ++;
   }
-  let totalRoundsPlayed = roundsPlayed + roundsDrawn;
   console.log(choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(rivalName, rivalPokémon));
   console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
@@ -138,12 +134,6 @@ function playRound(playerChoice, rivalChoice) {
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
 
 
-  winPercentage = ((playerScore / roundsPlayed) * 100).toFixed(2);
-  lossPercentage = ((rivalScore/ roundsPlayed) * 100).toFixed(2);
-
-  totalWinPercentage = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
-  totalLossPercentage = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
-  totalDrawPercentage = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
 
   if (playerScore === 1) {
     console.log("1 W")
@@ -166,8 +156,15 @@ function playRound(playerChoice, rivalChoice) {
   }
 
 
+  winPercentage = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
+  lossPercentage = ((rivalScore/ totalRoundsPlayed) * 100).toFixed(2);
 
-  if (roundsPlayed === 5) {
+  totalWinPercentage = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
+  totalLossPercentage = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
+  totalDrawPercentage = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
+
+
+  if (playerScore === 5 || rivalScore === 5) {
     console.log("GAME OVER...")
     if (playerScore > rivalScore) {
       console.log("YOU WIN!")
@@ -179,8 +176,7 @@ function playRound(playerChoice, rivalChoice) {
     console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
     console.log(`ROUNDS LOST: ${rivalScore}`);
     console.log(`ROUNDS WON: ${playerScore}`);
-    console.log(`ROUNDS PLAYED: ${roundsPlayed}`);
-    console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
+    console.log(`ROUNDS PLAYED: ${totalRoundsPlayed}`);
     console.log(`Loss Percentage: ${lossPercentage}%`);
     console.log(`Win Percentage: ${winPercentage}%`);  
     console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
