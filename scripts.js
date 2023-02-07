@@ -53,22 +53,40 @@ let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
-/* 
+/* **************************************************************************************************************************************************************************************
 JS-DOM
 */
 
-const displayedPlayerName = document.querySelector("#player-name");
+
+/* CHOICES */
+let displayedPlayerChoice = document.querySelector("#choice-player");
+let displayedRivalChoice = document.querySelector("#choice-rival");
+
+
+
+/* ATTACKS */
+
+
+/* EFFECTIVENESS */
+
+
+/* NAMES */
+let displayedPlayerName = document.querySelector("#player-name");
 displayedPlayerName.textContent = playerName;
-const displayedRivalName = document.querySelector("#rival_name");
+
+let displayedRivalName = document.querySelector("#rival_name");
 displayedRivalName.textContent = rivalName;
 
-const displayedPlayerScore = document.querySelector("#player-score");
+
+/* SCORES */
+let displayedPlayerScore = document.querySelector("#player-score");
 displayedPlayerScore.textContent = playerScore;
 
-const displayedRivalScore = document.querySelector("#rival-score");
+let displayedRivalScore = document.querySelector("#rival-score");
 displayedRivalScore.textContent = rivalScore;
 
-/* 
+
+/* **************************************************************************************************************************************************************************************
 JS-DOM
 */
 
@@ -134,7 +152,9 @@ function playRound(playerChoice, rivalChoice) {
     rivalScore ++;
     roundResult = roundResults[1];
   }
+  displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(playerName, playerPokémon));
+  displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
   console.log(choiceFlavourText(rivalName, rivalPokémon));
   console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
   console.log(playerPokémonAttackEffectiveness);
