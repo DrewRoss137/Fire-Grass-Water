@@ -52,6 +52,18 @@ let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
+/* 
+JS-DOM
+*/
+
+const playerRivalChoices = document.querySelector("#player-rival-choices");
+const scoreBoard = document.querySelector("#scoreboard");
+
+
+/* 
+JS-DOM
+*/
+
 let rivalChoice = getRivalChoice();
 console.log(`Rival Choice: ${rivalChoice}`);
 
