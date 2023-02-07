@@ -182,9 +182,11 @@ img {
 
 #score-player,
 #score-rival {
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 48px;
+    justify-content: center;
 }
 
 #quote {
