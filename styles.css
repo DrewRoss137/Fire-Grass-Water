@@ -30,7 +30,7 @@ img {
 #button-text-grass,
 #button-text-water,
 #players,
-#score {
+#scoreboard {
     font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ img {
     text-shadow: 0px 4px rgb(0, 0, 50), 0px 8px rgb(0, 0, 25), 0px 11px rgb(0, 0, 0);
 }
 
-#choices {
+#player-rival-choices {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -171,7 +171,7 @@ img {
     margin-bottom: 72px;
 }
 
-#score {
+#scoreboard {
     align-items: center;
     display: flex;
     font-size: 36px;
