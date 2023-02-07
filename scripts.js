@@ -22,6 +22,7 @@ const roundResults = ["Draw", "Lose", "Win"];
 
 let playerName = "Drew";
 let rivalName = "Gary";
+
 playerName = playerName.toUpperCase()
 rivalName = rivalName.toUpperCase()
 
@@ -55,6 +56,11 @@ let totalDrawPercentage;
 /* 
 JS-DOM
 */
+
+const displayedPlayerName = document.querySelector("#player-name");
+displayedPlayerName.textContent = playerName;
+const displayedRivalName = document.querySelector("#rival_name");
+displayedRivalName.textContent = rivalName;
 
 const displayedPlayerScore = document.querySelector("#player-score");
 displayedPlayerScore.textContent = playerScore;
