@@ -56,9 +56,11 @@ let totalDrawPercentage;
 JS-DOM
 */
 
-const playerRivalChoices = document.querySelector("#player-rival-choices");
-const scoreBoard = document.querySelector("#scoreboard");
+const displayedPlayerScore = document.querySelector("#player-score");
+displayedPlayerScore.textContent = playerScore;
 
+const displayedRivalScore = document.querySelector("#rival-score");
+displayedRivalScore.textContent = rivalScore;
 
 /* 
 JS-DOM
