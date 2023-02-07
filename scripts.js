@@ -69,7 +69,8 @@ let displayedRivalPokémonAttack = document.querySelector("#attack-rival");
 
 
 /* EFFECTIVENESS */
-
+let displayedPlayerPokémonAttackEffectiveness = document.querySelector("#effectiveness-player");
+let displayedRivalPokémonAttackEffectiveness = document.querySelector("#effectiveness-rival");
 
 /* NAMES */
 let displayedPlayerName = document.querySelector("#player-name");
@@ -159,9 +160,11 @@ function playRound(playerChoice, rivalChoice) {
   console.log(choiceFlavourText(rivalName, rivalPokémon));
   displayedPlayerPokémonAttack.textContent = attackFlavourText(playerName, playerPokémon, playerPokémonAttack)
   console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
+  displayedPlayerPokémonAttackEffectiveness.textContent = playerPokémonAttackEffectiveness;
   console.log(playerPokémonAttackEffectiveness);
   displayedRivalPokémonAttack.textContent = attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack);
   console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
+  displayedRivalPokémonAttackEffectiveness.textContent = rivalPokémonAttackEffectiveness;
   console.log(rivalPokémonAttackEffectiveness);
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
 
