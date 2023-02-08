@@ -206,7 +206,8 @@ img {
     display: flex;
     flex-direction: column;
     font-size: 32px;
-    gap: 32px;
+    gap: 16px;
+    margin-top: 136px;
     justify-content: center;
 }
 

@@ -57,6 +57,16 @@ let totalDrawPercentage;
 JS-DOM
 */
 
+/* STATS */
+let displayedRoundsWon = document.querySelector("#rounds-won");
+let displayedRoundsLost = document.querySelector("#rounds-lost");
+let displayedWinPercentage = document.querySelector("#win-percentage");
+let displayedLossPercentage = document.querySelector("#lose-percentage");
+let displayedTotalRoundsPlayed = document.querySelector("#total-rounds-played");
+let displayedTotalWinPercentage= document.querySelector("#total-win-percentage");
+let displayedTotalLossPercentage= document.querySelector("#total-loss-percentage");
+let displayedTotalDrawPercentage = document.querySelector("#total-draw-percentage");
+
 
 /* CHOICES */
 let displayedPlayerChoice = document.querySelector("#choice-player");
@@ -208,7 +218,15 @@ function playRound(playerChoice, rivalChoice) {
 
 
   if (playerScore === 5 || rivalScore === 5) {
-    displayGameResult(playerName, playerScore, rivalName, rivalScore)
+    displayGameResult(playerName, playerScore, rivalName, rivalScore);
+    displayedRoundsWon.textContent = `ROUNDS WON: ${playerScore}`;
+    displayedRoundsLost.textContent = `ROUNDS LOST: ${rivalScore}`;
+    displayedWinPercentage.textContent = `WIN%: ${winPercentage}`;
+    displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}`;
+    displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
+    displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}`;
+    displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}`
+    displayedTotalDrawPercentage.textContent = `TOTAL DRAW %: ${totalDrawPercentage}`;
     console.log("");
     console.log("*******************************")
     console.log("STATS:");
@@ -231,7 +249,7 @@ function playRound(playerChoice, rivalChoice) {
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
   } else {
-    displayedGameResult.textContent = "";
+    displayedGameResult.textContent = null;
   }
 };
 
@@ -272,4 +290,8 @@ function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
   } else {
     displayedGameResult.textContent = (`${playerName} lost against ${rivalName}!`)
   }
+}
+
+function displayGameStats() {
+
 }
