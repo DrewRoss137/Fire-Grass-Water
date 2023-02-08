@@ -57,6 +57,10 @@ let totalDrawPercentage;
 JS-DOM
 */
 
+/* CRITS */
+let displayPlayerCrit = document.querySelector("#crit-player");
+let displayRivalCrit = document.querySelector("#crit-rival");
+
 /* STATS */
 let displayedRoundsWon = document.querySelector("#rounds-won");
 let displayedRoundsLost = document.querySelector("#rounds-lost");
@@ -148,6 +152,8 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
+  displayPlayerCrit.textContent = null;
+  displayRivalCrit.textContent = null;
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -157,13 +163,13 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
-    generateCriticalHitChance();
+    displayPlayerCrit.textContent = generateCriticalHitChance();
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++
     roundResult = roundResults[2];
   } else {
-    generateCriticalHitChance();
+    displayRivalCrit.textContent = generateCriticalHitChance();
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
@@ -285,10 +291,11 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
 
 function generateCriticalHitChance() {
   criticalHitChance = Math.random();
-  if (criticalHitChance <= 0.0625) {
+  if (criticalHitChance <= 100) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
+    return("A critical hit!")
   }
 };
 
