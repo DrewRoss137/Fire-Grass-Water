@@ -52,6 +52,10 @@ let lossPercentage;
 let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
+ 
+/* CRIT GEN */
+let critDiv = document.createElement("div");
+critDiv.textContent = "";
 
 /* **************************************************************************************************************************************************************************************
 JS-DOM
@@ -152,6 +156,7 @@ function generateAttack(choice) {
 };
 
 function playRound(playerChoice, rivalChoice) {
+  critDiv.remove()
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -295,7 +300,7 @@ function generateCriticalHitChance(roundResult, divName) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
-    let critDiv = document.createElement("div");
+    critDiv = document.createElement("div");
     if (roundResult = roundResults[2]) {
       let insertDivLocation = document.getElementById(divName);
       let parentOfDiv = insertDivLocation.parentNode;
