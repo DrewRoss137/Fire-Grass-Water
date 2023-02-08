@@ -133,8 +133,10 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
     console.log(`Generated Player Attack: ${playerPokémonAttack}`);
 
 
-    /* let rivalChoice = getRivalChoice();
-    console.log(`Rival Choice: ${rivalChoice}`); */
+    /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
+    let rivalChoice = getRivalChoice();
+    console.log(`Rival Choice: ${rivalChoice}`); 
+    */
     rivalPokémon = pokémon[rivalChoice];
     console.log(`Rival Pokemon: ${rivalPokémon}`);
     rivalPokémonAttack = generateAttack(rivalChoice);
@@ -165,14 +167,12 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
-    /* displayPlayerCrit.textContent = generateCriticalHitChance(); */
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
     generateCriticalHitChance(roundResult, "attack-player");
   } else {
-    /*displayRivalCrit.textContent = generateCriticalHitChance(); */
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
