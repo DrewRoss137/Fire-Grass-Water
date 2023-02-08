@@ -87,6 +87,7 @@ displayedRivalName.textContent = rivalName;
 let displayedPlayerScore = document.querySelector("#player-score");
 displayedPlayerScore.textContent = playerScore;
 
+
 let displayedRivalScore = document.querySelector("#rival-score");
 displayedRivalScore.textContent = rivalScore;
 
@@ -171,6 +172,8 @@ function playRound(playerChoice, rivalChoice) {
   console.log(rivalPokémonAttackEffectiveness);
   displayedRoundResult.textContent = (generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult))
   console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
+  displayedPlayerScore.textContent = playerScore;
+  displayedRivalScore.textContent = rivalScore;
 
 
 
@@ -227,7 +230,6 @@ function playRound(playerChoice, rivalChoice) {
     console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
     console.log("-------------------------------")
     console.log("");
-    playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
