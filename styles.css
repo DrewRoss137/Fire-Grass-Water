@@ -31,7 +31,8 @@ img {
 #button-text-water,
 #players,
 #scoreboard,
-#stats {
+#stats,
+#game-result {
     font-weight: bold;
 }
 
@@ -189,6 +190,15 @@ img {
     flex-direction: column;
     gap: 48px;
     justify-content: center;
+}
+
+#game-result {
+    align-items: center;
+    display: flex;
+    font-size: 36px;
+    justify-content: center;
+    margin-top: 136px;
+    text-shadow: 0px 4px rgb(100, 100, 100), 0px 8px rgb(50, 50, 50), 0px 10px rgb(0, 0, 0);
 }
 
 #stats {
