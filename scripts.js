@@ -74,6 +74,7 @@ let displayedRivalPokémonAttackEffectiveness = document.querySelector("#effecti
 
 /* RESULT */
 let displayedRoundResult = document.querySelector("#result");
+let displayedGameResult = document.querySelector("#game-result");
 
 /* NAMES */
 let displayedPlayerName = document.querySelector("#player-name");
@@ -207,12 +208,7 @@ function playRound(playerChoice, rivalChoice) {
 
 
   if (playerScore === 5 || rivalScore === 5) {
-    console.log("GAME OVER...")
-    if (playerScore > rivalScore) {
-      console.log("YOU WIN!")
-    } else {
-      console.log("YOU LOSE!")
-    }
+    displayGameResult(playerName, playerScore, rivalName, rivalScore)
     console.log("");
     console.log("*******************************")
     console.log("STATS:");
@@ -230,9 +226,12 @@ function playRound(playerChoice, rivalChoice) {
     console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
     console.log("-------------------------------")
     console.log("");
+    playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
+  } else {
+    displayedGameResult.textContent = "";
   }
 };
 
@@ -266,3 +265,11 @@ function generateCriticalHitChance() {
     console.log("*******************************************")
   }
 };
+
+function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
+  if (playerScore > rivalScore) {
+    displayedGameResult.textContent = (`${playerName} won against ${rivalName}!`)
+  } else {
+    displayedGameResult.textContent = (`${playerName} lost against ${rivalName}!`)
+  }
+}
