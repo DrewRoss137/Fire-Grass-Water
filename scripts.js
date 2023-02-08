@@ -55,7 +55,6 @@ let totalDrawPercentage;
  
 /* CRIT GEN */
 let critDiv = document.createElement("div");
-critDiv.textContent = "";
 
 /* **************************************************************************************************************************************************************************************
 JS-DOM
@@ -296,7 +295,7 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
 
 function generateCriticalHitChance(roundResult, divName) {
   criticalHitChance = Math.random();
-  if (criticalHitChance <= 100) {
+  if (criticalHitChance <= 0.0625) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
@@ -312,10 +311,6 @@ function generateCriticalHitChance(roundResult, divName) {
       parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
       critDiv.textContent = "LOSE";
     }
-
-
-
-
   }
 };
 
@@ -326,5 +321,3 @@ function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
     displayedGameResult.textContent = (`${playerName} lost against ${rivalName}!`)
   }
 }
-
-
