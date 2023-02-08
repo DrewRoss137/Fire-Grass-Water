@@ -250,6 +250,14 @@ function playRound(playerChoice, rivalChoice) {
     roundsDrawn = 0;
   } else {
     displayedGameResult.textContent = null;
+    displayedRoundsWon.textContent = null;
+    displayedRoundsLost.textContent = null;
+    displayedWinPercentage.textContent = null;
+    displayedLossPercentage.textContent = null;
+    displayedTotalRoundsPlayed.textContent = null;
+    displayedTotalWinPercentage.textContent = null;
+    displayedTotalLossPercentage.textContent = null;
+    displayedTotalDrawPercentage.textContent = null;
   }
 };
 
@@ -292,6 +300,4 @@ function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
   }
 }
 
-function displayGameStats() {
 
-}
