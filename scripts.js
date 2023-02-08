@@ -164,14 +164,16 @@ function playRound(playerChoice, rivalChoice) {
     /* displayPlayerCrit.textContent = generateCriticalHitChance(); */
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
-    playerScore ++
+    playerScore ++;
     roundResult = roundResults[2];
+    generateCriticalHitChance(roundResult, "attack-player");
   } else {
     /*displayRivalCrit.textContent = generateCriticalHitChance(); */
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
     roundResult = roundResults[1];
+    generateCriticalHitChance(roundResult, "attack-rival");
   }
   displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(playerName, playerPokémon));
@@ -287,13 +289,28 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
   }
 }
 
-function generateCriticalHitChance() {
+function generateCriticalHitChance(roundResult, divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
-    return("A critical hit!")
+    let critDiv = document.createElement("div");
+    if (roundResult = roundResults[2]) {
+      let insertDivLocation = document.getElementById(divName);
+      let parentOfDiv = insertDivLocation.parentNode;
+      parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
+      critDiv.textContent = "WIN";
+    } else if (roundResult = roundResults[1]){
+      let insertDivLocation = document.getElementById(divName);
+      let parentOfDiv = insertDivLocation.parentNode;
+      parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
+      critDiv.textContent = "LOSE";
+    }
+
+
+
+
   }
 };
 
