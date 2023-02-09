@@ -59,7 +59,9 @@ let totalDrawPercentage;
 
 /* CHOICES */
 const playerChoiceDiv = document.createElement("div");
-const rivalChoiceDiv = document.createElement("div");
+playerChoiceDiv.id = "player-choice1"
+const playerRivalChoicesDiv = document.getElementById("player-rival-choices");
+parentDiv.appendChild(playerChoiceDiv);
 
 /* SCORES */
 
@@ -67,6 +69,7 @@ const rivalChoiceDiv = document.createElement("div");
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
+critDiv.id = "critical"
 
 /* STATS */
 
