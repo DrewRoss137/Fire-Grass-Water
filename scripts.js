@@ -75,9 +75,7 @@ let critDiv = document.createElement("div");
 JS-DOM
 */
 
-/* CRITS
-let displayPlayerCrit = document.querySelector("#crit-player");
-let displayRivalCrit = document.querySelector("#crit-rival"); */
+
 
 /* STATS */
 let displayedRoundsWon = document.querySelector("#rounds-won");
@@ -314,20 +312,12 @@ function generateCriticalHitChance(roundResult, divName) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
-    critDiv = document.createElement("div");
-    if (roundResult = roundResults[2]) {
-      let insertDivLocation = document.getElementById(divName);
-      let parentOfDiv = insertDivLocation.parentNode;
-      parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
-      critDiv.textContent = "WIN";
-    } else if (roundResult = roundResults[1]){
-      let insertDivLocation = document.getElementById(divName);
-      let parentOfDiv = insertDivLocation.parentNode;
-      parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
-      critDiv.textContent = "LOSE";
+    let insertDivLocation = document.getElementById(divName);
+    let parentOfDiv = insertDivLocation.parentNode;
+    parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
+    critDiv.textContent = "PLAYER CRIT!";
     }
   }
-};
 
 function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
   if (playerScore > rivalScore) {
