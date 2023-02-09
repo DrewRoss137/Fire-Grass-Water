@@ -57,8 +57,16 @@ let totalDrawPercentage;
 
 /* JS-MADE HTML ELEMENTS */
 
+/* CHOICES */
+const playerChoiceDiv = document.createElement("div");
+const rivalChoiceDiv = document.createElement("div");
+
+/* SCORES */
+
+/* ROUND RESULT */
+
 /* CRIT GEN */
-let critDiv = document.createElement("div");
+const critDiv = document.createElement("div");
 
 /* STATS */
 
@@ -184,14 +192,23 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
-    generateCriticalHitChance(roundResult, "attack-player");
+    let critGenDiv = createDiv(critDiv, "attack-player");
+    generateCriticalHitChance(critGenDiv);
   } else {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
     roundResult = roundResults[1];
-    generateCriticalHitChance(roundResult, "attack-rival");
+    let critGenDiv = createDiv(critDiv, "attack-rival");
+    generateCriticalHitChance(critGenDiv);
   }
+
+  /* let insertDivLocation = document.getElementById(divName);
+  let parentOfDiv = insertDivLocation.parentNode;
+  parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
+  critDiv.textContent = "PLAYER CRIT!"; */
+
+
   displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(playerName, playerPokémon));
   displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
@@ -306,16 +323,13 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
   }
 }
 
-function generateCriticalHitChance(roundResult, divName) {
+function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
-  if (criticalHitChance <= 0.0625) {
+  if (criticalHitChance <= 100) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
-    let insertDivLocation = document.getElementById(divName);
-    let parentOfDiv = insertDivLocation.parentNode;
-    parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
-    critDiv.textContent = "PLAYER CRIT!";
+    divName.textContent = "PLAYER CRIT!";
     }
   }
 
@@ -325,4 +339,10 @@ function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
   } else {
     displayedGameResult.textContent = (`${playerName} lost against ${rivalName}!`)
   }
+}
+
+function createDiv(newDiv, divID) {
+  let overheadDiv = document.getElementById(divID);
+  let overheadDivParent = overheadDiv.parentNode;
+  return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling)
 }
