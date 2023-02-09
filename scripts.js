@@ -300,6 +300,7 @@ function playRound(playerChoice, rivalChoice) {
     displayedGameResult.textContent = null;
     displayedRoundsWon.textContent = null;
     displayedRoundsLost.textContent = null;
+    displayedRoundsDrawn.textContent = null;
     displayedWinPercentage.textContent = null;
     displayedLossPercentage.textContent = null;
     displayedTotalRoundsPlayed.textContent = null;
