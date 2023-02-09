@@ -58,10 +58,13 @@ let totalDrawPercentage;
 /* JS-MADE HTML ELEMENTS */
 
 /* CHOICES */
-const playerChoiceDiv = document.createElement("div");
-playerChoiceDiv.id = "player-choice1"
-const playerRivalChoicesDiv = document.getElementById("player-rival-choices");
+
+/* BASE CODE FOR CREATING HTML ELEMENTS ON THE FLY. UNSURE IF TO BE USED. */
+/* const playerChoiceDiv = document.createElement("div");
+const parentDiv = document.getElementById("player-rival-choices");
 parentDiv.appendChild(playerChoiceDiv);
+const rivalChoiceDiv = document.createElement("div"); */
+/* */
 
 /* SCORES */
 
@@ -91,6 +94,7 @@ JS-DOM
 /* STATS */
 let displayedRoundsWon = document.querySelector("#rounds-won");
 let displayedRoundsLost = document.querySelector("#rounds-lost");
+let displayedRoundsDrawn = document.querySelector("#rounds-drawn");
 let displayedWinPercentage = document.querySelector("#win-percentage");
 let displayedLossPercentage = document.querySelector("#lose-percentage");
 let displayedTotalRoundsPlayed = document.querySelector("#total-rounds-played");
@@ -263,6 +267,7 @@ function playRound(playerChoice, rivalChoice) {
   if (playerScore === 5 || rivalScore === 5) {
     displayGameResult(playerName, playerScore, rivalName, rivalScore);
     displayedRoundsWon.textContent = `ROUNDS WON: ${playerScore}`;
+    displayedRoundsDrawn.textContent = `ROUNDS DRAWN: ${roundsDrawn}`
     displayedRoundsLost.textContent = `ROUNDS LOST: ${rivalScore}`;
     displayedWinPercentage.textContent = `WIN%: ${winPercentage}`;
     displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}`;
