@@ -66,6 +66,13 @@ img {
     letter-spacing: 0.7px;
 }
 
+#button-text-water .S {
+    letter-spacing: 1px;
+}
+
+#button-text-water .UI {
+    letter-spacing: -2px;
+}
 
 #header {
     align-items: center;
