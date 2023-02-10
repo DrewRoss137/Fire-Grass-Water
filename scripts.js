@@ -20,8 +20,8 @@ const attackEffectiveness = {
 
 const roundResults = ["Draw", "Lose", "Win"];
 
-let playerName = "Drew";
-let rivalName = "Gary";
+let playerName = "playerName";
+let rivalName = "rivalName";
 
 playerName = playerName.toUpperCase()
 rivalName = rivalName.toUpperCase()
