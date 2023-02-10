@@ -218,12 +218,12 @@ img {
 
 #player-score {
     color: rgb(32, 32, 22);
-    text-shadow: 0px 5px rgb(64, 64, 44), 0px 10px rgb(128, 128, 88), 0px 15px rgb(255, 255, 175);
+    text-shadow: 0px 5px rgb(64, 64, 32), 0px 10px rgb(128, 128, 88), 0px 15px rgb(255, 255, 175);
 }
 
 #rival-score {
     color: rgb(32, 22, 32);
-    text-shadow: 0px 5px rgb(64, 33, 64), 0px 10px rgb(128, 88, 125), 0px 15px rgb(255, 175, 255);
+    text-shadow: 0px 5px rgb(64, 32, 64), 0px 10px rgb(128, 88, 128), 0px 15px rgb(255, 175, 255);
 }
 
 #score-player,
@@ -233,7 +233,19 @@ img {
     flex-direction: column;
     gap: 48px;
     justify-content: center;
+}
+
+#scoreboard {
+    align-items: center;
+    display: flex;
+    gap: 48px;
+    justify-content: center;
     margin-bottom: 58px;
+}
+
+#rival-score,
+#player-score {
+    font-size: 100px;
 }
 
 #game-result {
