@@ -153,15 +153,15 @@ img {
 }
 
 #button-border-fire:hover {
-    box-shadow: 0px 0px 35px 0px rgb(255, 0, 0), 0px 0px 60px 30px rgb(0, 0, 0);
+    box-shadow: 0px 0px 50px 0px rgb(255, 0, 0), 0px 0px 60px 30px rgb(0, 0, 0);
 }
 
 #button-border-grass:hover {
-    box-shadow: 0px 0px 35px 0px rgb(0, 255, 0), 0px 0px 60px 30px rgb(0, 0, 0);
+    box-shadow: 0px 0px 50px 0px rgb(0, 255, 0), 0px 0px 60px 30px rgb(0, 0, 0);
 }
 
 #button-border-water:hover {
-    box-shadow: 0px 0px 35px 0px rgb(0, 0, 255), 0px 0px 60px 30px rgb(0, 0, 0);
+    box-shadow: 0px 0px 50px 0px rgb(0, 0, 255), 0px 0px 60px 30px rgb(0, 0, 0);
 }
 
 #button-text-fire,
@@ -169,22 +169,22 @@ img {
 #button-text-water {
     align-items: center;
     display: flex;
-    font-size: 48px;
+    font-size: 64px;
     justify-content: center;
     margin-top: 58px;
     margin-bottom: 75px;
 }
 
 #button-text-fire {
-    text-shadow: 0px 4px rgb(64, 25, 25), 0px 8px rgb(32, 13, 13), 0px 12px rgb(16, 7, 7);
+    text-shadow: 0px 6px rgb(64, 25, 25), 0px 12px rgb(32, 13, 13), 0px 18px rgb(16, 7, 7);
 }
 
 #button-text-grass {
-    text-shadow: 0px 4px rgb(25, 64, 25), 0px 8px rgb(13, 32, 13), 0px 12px rgb(7, 16, 7);
+    text-shadow: 0px 6px rgb(25, 64, 25), 0px 12px rgb(13, 32, 13), 0px 18px rgb(7, 16, 7);
 }
 
 #button-text-water {
-    text-shadow: 0px 4px rgb(25, 25, 64), 0px 8px rgb(13, 13, 32), 0px 12px rgb(7, 7, 16);
+    text-shadow: 0px 6px rgb(25, 25, 64), 0px 12px rgb(13, 13, 32), 0px 18px rgb(7, 7, 16);
 }
 
 #player-rival-choices {
@@ -199,7 +199,7 @@ img {
 #scoreboard {
     align-items: center;
     display: flex;
-    font-size: 36px;
+    font-size: 75px;
     gap: 75px;
     justify-content: center;
     margin-bottom: 0px;
@@ -207,18 +207,23 @@ img {
 }
 
 #player-name {
-    color: rgb(115, 120, 255);
-    text-shadow: 0px 2px rgb(58, 60, 128), 0px 4px rgb(29, 30, 64), 0px 6px rgb(15, 15, 32);
+    color: rgb(255, 255, 175);
+    text-shadow: 0px 7px rgb(128, 128, 88), 0px 14px rgb(64, 64, 44), 0px 21px rgb(32, 32, 22);
 }
 
 #rival_name {
-    color: rgb(255,120,115);
-    text-shadow: 0px 2px rgb(128, 60, 58), 0px 4px rgb(64, 30, 29), 0px 6px rgb(32, 15, 15);
+    color: rgb(255, 175, 255);
+    text-shadow: 0px 7px rgb(128, 88, 128), 0px 14px rgb(64, 32, 64), 0px 21px rgb(32, 22, 32);
 }
 
-#player-score,
+#player-score {
+    color: rgb(32, 32, 22);
+    text-shadow: 0px 5px rgb(64, 64, 44), 0px 10px rgb(128, 128, 88), 0px 15px rgb(255, 255, 175);
+}
+
 #rival-score {
-    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(50, 50, 50), 0px 8px rgb(0, 0, 0);
+    color: rgb(32, 22, 32);
+    text-shadow: 0px 5px rgb(64, 33, 64), 0px 10px rgb(128, 88, 125), 0px 15px rgb(255, 175, 255);
 }
 
 #score-player,
