@@ -44,17 +44,17 @@ img {
 
 #title-fire,
 #button-text-fire {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 100, 100);
 }
 
 #title-grass,
 #button-text-grass {
-    color: rgb(0, 255, 0);
+    color: rgb(160, 255, 160);
 }
 
 #title-water,
 #button-text-water {
-    color: rgb(0, 0, 255);
+    color: rgb(100, 100, 255);
 }
 
 #button-text-fire,
@@ -85,7 +85,7 @@ img {
 }
 
 #title-fire {
-    text-shadow: 0px 8px rgb(50, 0, 0), 0px 16px rgb(25, 0, 0), 0px 22px rgb(0, 0, 0);
+    text-shadow: 0px 8px rgb(64, 25, 25), 0px 16px rgb(32, 13, 13), 0px 24px rgb(16, 7, 7);
 }
 
 #title-fire .FI {
@@ -93,11 +93,11 @@ img {
 }
 
 #title-grass {
-    text-shadow: 0px 8px rgb(0, 50, 0), 0px 16px rgb(0, 25, 0), 0px 22px rgb(0, 0, 0);
+    text-shadow: 0px 8px rgb(25, 64, 25), 0px 16px rgb(13, 32, 13), 0px 22px rgb(7, 16, 7);
 }
 
 #title-water {
-    text-shadow: 0px 8px rgb(0, 0, 50), 0px 16px rgb(0, 0, 25), 0px 22px rgb(0, 0, 0);
+    text-shadow: 0px 8px rgb(25, 25, 64), 0px 16px rgb(13, 13, 32), 0px 22px rgb(7, 7, 16);
 }
 
 /* Obsolete CSS Styles - Future Use?
@@ -153,15 +153,15 @@ img {
 }
 
 #button-border-fire:hover {
-    box-shadow: 0px 0px 30px 0px rgb(255, 0, 0), 0px 0px 20px 20px rgb(0, 0, 0);
+    box-shadow: 0px 0px 35px 0px rgb(255, 0, 0), 0px 0px 60px 30px rgb(0, 0, 0);
 }
 
 #button-border-grass:hover {
-    box-shadow: 0px 0px 30px 0px rgb(0, 255, 0), 0px 0px 20px 20px rgb(0, 0, 0);
+    box-shadow: 0px 0px 35px 0px rgb(0, 255, 0), 0px 0px 60px 30px rgb(0, 0, 0);
 }
 
 #button-border-water:hover {
-    box-shadow: 0px 0px 30px 0px rgb(0, 0, 255), 0px 0px 20px 20px rgb(0, 0, 0);
+    box-shadow: 0px 0px 35px 0px rgb(0, 0, 255), 0px 0px 60px 30px rgb(0, 0, 0);
 }
 
 #button-text-fire,
@@ -176,15 +176,15 @@ img {
 }
 
 #button-text-fire {
-    text-shadow: 0px 4px rgb(50, 0, 0), 0px 8px rgb(25, 0, 0), 0px 11px rgb(0, 0, 0);
+    text-shadow: 0px 4px rgb(64, 25, 25), 0px 8px rgb(32, 13, 13), 0px 12px rgb(16, 7, 7);
 }
 
 #button-text-grass {
-    text-shadow: 0px 4px rgb(0, 50, 0), 0px 8px rgb(0, 25, 0), 0px 11px rgb(0, 0, 0);
+    text-shadow: 0px 4px rgb(25, 64, 25), 0px 8px rgb(13, 32, 13), 0px 12px rgb(7, 16, 7);
 }
 
 #button-text-water {
-    text-shadow: 0px 4px rgb(0, 0, 50), 0px 8px rgb(0, 0, 25), 0px 11px rgb(0, 0, 0);
+    text-shadow: 0px 4px rgb(25, 25, 64), 0px 8px rgb(13, 13, 32), 0px 12px rgb(7, 7, 16);
 }
 
 #player-rival-choices {
@@ -203,18 +203,22 @@ img {
     gap: 75px;
     justify-content: center;
     margin-bottom: 0px;
-    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(50, 50, 50), 0px 8px rgb(0, 0, 0);
     letter-spacing: 0.7px;
 }
 
 #player-name {
-    color: rgb(255, 255, 0);
-    text-shadow: 0px 3px rgb(100, 100, 0), 0px 6px rgb(50, 50, 0), 0px 8px rgb(25, 25, 0);
+    color: rgb(115, 120, 255);
+    text-shadow: 0px 2px rgb(58, 60, 128), 0px 4px rgb(29, 30, 64), 0px 6px rgb(15, 15, 32);
 }
 
 #rival_name {
-    color: rgb(255, 0, 255);
-    text-shadow: 0px 3px rgb(100, 0, 100), 0px 6px rgb(50, 0, 50), 0px 8px rgb(25, 0, 25);
+    color: rgb(255,120,115);
+    text-shadow: 0px 2px rgb(128, 60, 58), 0px 4px rgb(64, 30, 29), 0px 6px rgb(32, 15, 15);
+}
+
+#player-score,
+#rival-score {
+    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(50, 50, 50), 0px 8px rgb(0, 0, 0);
 }
 
 #score-player,
