@@ -269,12 +269,12 @@ function playRound(playerChoice, rivalChoice) {
     displayedRoundsWon.textContent = `ROUNDS WON: ${playerScore}`;
     displayedRoundsDrawn.textContent = `ROUNDS DRAWN: ${roundsDrawn}`
     displayedRoundsLost.textContent = `ROUNDS LOST: ${rivalScore}`;
-    displayedWinPercentage.textContent = `WIN%: ${winPercentage}`;
-    displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}`;
+    displayedWinPercentage.textContent = `WIN%: ${winPercentage}%`;
+    displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}%`;
     displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
-    displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}`;
-    displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}`
-    displayedTotalDrawPercentage.textContent = `TOTAL DRAW %: ${totalDrawPercentage}`;
+    displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}%`;
+    displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}%`
+    displayedTotalDrawPercentage.textContent = `TOTAL DRAW%: ${totalDrawPercentage}%`;
     console.log("");
     console.log("*******************************")
     console.log("STATS:");
