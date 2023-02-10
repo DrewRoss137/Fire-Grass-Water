@@ -57,16 +57,18 @@ let totalDrawPercentage;
 
 /* JS-MADE HTML ELEMENTS */
 
-/* CHOICES */
+/* HTML Parents */
+/* const scoresDiv = document.getElementById("scoreboard"); */
 
-/* BASE CODE FOR CREATING HTML ELEMENTS ON THE FLY. UNSURE IF TO BE USED. */
-/* const playerChoiceDiv = document.createElement("div");
-const parentDiv = document.getElementById("player-rival-choices");
-parentDiv.appendChild(playerChoiceDiv);
-const rivalChoiceDiv = document.createElement("div"); */
-/* */
 
 /* SCORES */
+/* const playerNameDiv = document.createElement("div");
+const playerScoreDiv = document.createElement("div");
+scoresDiv.appendChild(playerNameDiv);
+scoresDiv.appendChild(playerScoreDiv); */
+
+
+/* CHOICES */
 
 /* ROUND RESULT */
 
@@ -338,7 +340,7 @@ function generateCriticalHitChance(divName) {
     console.log("*******************************************")
     console.log("A CRITICAL HIT")
     console.log("*******************************************")
-    divName.textContent = "PLAYER CRIT!";
+    divName.textContent = "A critical hit!";
     }
   }
 
