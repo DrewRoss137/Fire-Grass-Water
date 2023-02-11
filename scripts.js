@@ -337,9 +337,7 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
 function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
-    console.log("*******************************************")
-    console.log("A CRITICAL HIT")
-    console.log("*******************************************")
+    divName.style = "color: red; font-weight: bold; letter-spacing: 3px; text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(255, 255, 0), 3px 3px rgb(255, 255, 0), 4px 4px rgb(255, 255, 0); "
     divName.textContent = "A critical hit!";
     }
   }
