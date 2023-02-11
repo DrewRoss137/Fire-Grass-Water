@@ -47,6 +47,7 @@ let criticalHitChance;
 let totalRoundsPlayed = 0;
 
 let winPercentage;
+
 let lossPercentage;
 
 let totalWinPercentage;
@@ -74,10 +75,18 @@ scoresDiv.appendChild(playerScoreDiv); */
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
-critDiv.id = "critical"
+critDiv.id = "critical-hit"
 
 /* STATS */
 
+/* TEST */
+const testDiv = document.createElement("div");
+testDiv.id = "testDiv";
+let insertTestDiv = createDiv(testDiv, "scoreboard");
+
+const testDivSpan = document.createElement("span");
+testDivSpan.id = "testDivSpan"
+let insertTestDivSpan = createDiv(testDivSpan, "testDiv")
 
 
 /* ************************************************************************************************************************************************************************************** /*
@@ -106,6 +115,8 @@ let displayedTotalDrawPercentage = document.querySelector("#total-draw-percentag
 
 
 /* CHOICES */
+
+
 let displayedPlayerChoice = document.querySelector("#choice-player");
 let displayedRivalChoice = document.querySelector("#choice-rival");
 
@@ -116,8 +127,12 @@ let displayedRivalPokémonAttack = document.querySelector("#attack-rival");
 
 
 /* EFFECTIVENESS */
+
+
 let displayedPlayerPokémonAttackEffectiveness = document.querySelector("#effectiveness-player");
 let displayedRivalPokémonAttackEffectiveness = document.querySelector("#effectiveness-rival");
+
+
 
 /* RESULT */
 let displayedRoundResult = document.querySelector("#result");
@@ -140,6 +155,7 @@ let displayedRivalScore = document.querySelector("#rival-score");
 displayedRivalScore.textContent = rivalScore;
 
 
+
 /* **************************************************************************************************************************************************************************************
 JS-DOM
 */
@@ -156,21 +172,17 @@ const buttonImgs = document.querySelector("#buttons");
 buttonImgs.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     let playerChoice = element.target.alt;
-    console.log(`Player Choice: ${playerChoice}`);
     playerPokémon = pokémon[playerChoice];
-    console.log(`Player Pokemon: ${playerPokémon}`);
     playerPokémonAttack = generateAttack(playerChoice);
-    console.log(`Generated Player Attack: ${playerPokémonAttack}`);
 
 
     /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
     let rivalChoice = getRivalChoice();
     console.log(`Rival Choice: ${rivalChoice}`); 
     */
+
     rivalPokémon = pokémon[rivalChoice];
-    console.log(`Rival Pokemon: ${rivalPokémon}`);
     rivalPokémonAttack = generateAttack(rivalChoice);
-    console.log(`Generated Rival Attack: ${rivalPokémonAttack}`)
     playRound(playerChoice, rivalChoice)
   }
 });
@@ -217,7 +229,6 @@ function playRound(playerChoice, rivalChoice) {
   parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
   critDiv.textContent = "PLAYER CRIT!"; */
 
-
   displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
   console.log(choiceFlavourText(playerName, playerPokémon));
   displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
@@ -237,25 +248,6 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-  if (playerScore === 1) {
-    console.log("1 W")
-  } else if (playerScore === 2) {
-    console.log("2 W")
-  } else if (playerScore === 3) {
-    console.log("3 W")
-  } else if (playerScore === 4) {
-    console.log("4 W")
-  }
-
-  if (rivalScore === 1) {
-    console.log("1 L")
-  } else if (rivalScore === 2) {
-    console.log("2 L")
-  } else if (rivalScore === 3) {
-    console.log("3 L")
-  } else if (rivalScore === 4) {
-    console.log("4 L")
-  }
 
   let roundsPlayed = playerScore + rivalScore;
   winPercentage = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
@@ -277,23 +269,6 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}%`;
     displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}%`
     displayedTotalDrawPercentage.textContent = `TOTAL DRAW%: ${totalDrawPercentage}%`;
-    console.log("");
-    console.log("*******************************")
-    console.log("STATS:");
-    console.log("*******************************")
-    console.log(`ROUNDS WON: ${playerScore}`);
-    console.log(`ROUNDS LOST: ${rivalScore}`);
-    console.log(`ROUNDS DRAWN: ${roundsDrawn}`);
-    console.log("-------------------------------")
-    console.log(`Win Percentage: ${winPercentage}%`);  
-    console.log(`Loss Percentage: ${lossPercentage}%`);
-    console.log("-------------------------------")
-    console.log(`TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`);
-    console.log(`TOTAL Win Percentage: ${totalWinPercentage}%`);
-    console.log(`TOTAL Loss Percentage: ${totalLossPercentage}%`);
-    console.log(`TOTAL Draw Percentage: ${totalDrawPercentage}%`);
-    console.log("-------------------------------")
-    console.log("");
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
@@ -337,7 +312,6 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
 function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
-    divName.style = "color: red; font-weight: bold; letter-spacing: 3px; text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(255, 255, 0), 3px 3px rgb(255, 255, 0), 4px 4px rgb(255, 255, 0); "
     divName.textContent = "A critical hit!";
     }
   }
@@ -355,3 +329,4 @@ function createDiv(newDiv, divID) {
   let overheadDivParent = overheadDiv.parentNode;
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling)
 }
+
