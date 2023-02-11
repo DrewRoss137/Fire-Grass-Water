@@ -79,14 +79,7 @@ critDiv.id = "critical-hit"
 
 /* STATS */
 
-/* TEST */
-const testDiv = document.createElement("div");
-testDiv.id = "testDiv";
-let insertTestDiv = createDiv(testDiv, "scoreboard");
 
-const testDivSpan = document.createElement("span");
-testDivSpan.id = "testDivSpan"
-let insertTestDivSpan = createDiv(testDivSpan, "testDiv")
 
 
 /* ************************************************************************************************************************************************************************************** /*
@@ -161,7 +154,6 @@ JS-DOM
 */
 
 let rivalChoice = getRivalChoice();
-console.log(`Rival Choice: ${rivalChoice}`);
 
 function getRivalChoice() {
     let returnedRivalChoice = Math.floor(Math.random() * choices.length);
@@ -178,7 +170,6 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
 
     /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
     let rivalChoice = getRivalChoice();
-    console.log(`Rival Choice: ${rivalChoice}`); 
     */
 
     rivalPokémon = pokémon[rivalChoice];
@@ -230,19 +221,13 @@ function playRound(playerChoice, rivalChoice) {
   critDiv.textContent = "PLAYER CRIT!"; */
 
   displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
-  console.log(choiceFlavourText(playerName, playerPokémon));
   displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
-  console.log(choiceFlavourText(rivalName, rivalPokémon));
   displayedPlayerPokémonAttack.textContent = attackFlavourText(playerName, playerPokémon, playerPokémonAttack)
-  console.log(attackFlavourText(playerName, playerPokémon, playerPokémonAttack));
   displayedPlayerPokémonAttackEffectiveness.textContent = playerPokémonAttackEffectiveness;
-  console.log(playerPokémonAttackEffectiveness);
   displayedRivalPokémonAttack.textContent = attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack);
-  console.log(attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack));
   displayedRivalPokémonAttackEffectiveness.textContent = rivalPokémonAttackEffectiveness;
-  console.log(rivalPokémonAttackEffectiveness);
   displayedRoundResult.textContent = (generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult))
-  console.log(generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult));
+
   displayedPlayerScore.textContent = playerScore;
   displayedRivalScore.textContent = rivalScore;
 
@@ -329,4 +314,3 @@ function createDiv(newDiv, divID) {
   let overheadDivParent = overheadDiv.parentNode;
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling)
 }
-
