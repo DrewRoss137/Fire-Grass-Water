@@ -85,7 +85,7 @@ img {
 }
 
 #title-fire {
-    text-shadow: 0px 8px rgb(64, 25, 25), 0px 16px rgb(32, 13, 13), 0px 24px rgb(16, 7, 7);
+    text-shadow: 0px 2px rgb(0, 0, 0), 0px 8px rgb(64, 25, 25), 0px 16px rgb(32, 13, 13), 0px 24px rgb(16, 7, 7);
 }
 
 #title-fire .FI {
@@ -93,11 +93,11 @@ img {
 }
 
 #title-grass {
-    text-shadow: 0px 8px rgb(25, 64, 25), 0px 16px rgb(13, 32, 13), 0px 22px rgb(7, 16, 7);
+    text-shadow: 0px 2px rgb(0, 0, 0), 0px 8px rgb(25, 64, 25), 0px 16px rgb(13, 32, 13), 0px 22px rgb(7, 16, 7);
 }
 
 #title-water {
-    text-shadow: 0px 8px rgb(25, 25, 64), 0px 16px rgb(13, 13, 32), 0px 22px rgb(7, 7, 16);
+    text-shadow: 0px 2px rgb(0, 0, 0), 0px 8px rgb(25, 25, 64), 0px 16px rgb(13, 13, 32), 0px 22px rgb(7, 7, 16);
 }
 
 /* Obsolete CSS Styles - Future Use?
@@ -176,22 +176,23 @@ img {
 }
 
 #button-text-fire {
-    text-shadow: 0px 6px rgb(64, 25, 25), 0px 12px rgb(32, 13, 13), 0px 18px rgb(16, 7, 7);
+    text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(64, 25, 25), 0px 12px rgb(32, 13, 13), 0px 18px rgb(16, 7, 7);
 }
 
 #button-text-grass {
-    text-shadow: 0px 6px rgb(25, 64, 25), 0px 12px rgb(13, 32, 13), 0px 18px rgb(7, 16, 7);
+    text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(25, 64, 25), 0px 12px rgb(13, 32, 13), 0px 18px rgb(7, 16, 7);
 }
 
 #button-text-water {
-    text-shadow: 0px 6px rgb(25, 25, 64), 0px 12px rgb(13, 13, 32), 0px 18px rgb(7, 7, 16);
+    text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(25, 25, 64), 0px 12px rgb(13, 13, 32), 0px 18px rgb(7, 7, 16);
 }
 
-#player-rival-choices {
+#player-rival-choices,
+#stats {
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-size: 45px;
+    font-size: 50px;
     gap: 24px;
     justify-content: center;
     text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92)
@@ -219,12 +220,12 @@ img {
 
 #player-score {
     color: rgb(32, 32, 22);
-    text-shadow: 0px 5px rgb(64, 64, 32), 0px 10px rgb(128, 128, 88), 0px 15px rgb(255, 255, 175);
+    text-shadow: 0px 3px rgb(0, 0, 0), 0px 5px rgb(64, 64, 32), 0px 10px rgb(128, 128, 88), 0px 15px rgb(255, 255, 175);
 }
 
 #rival-score {
     color: rgb(32, 22, 32);
-    text-shadow: 0px 5px rgb(64, 32, 64), 0px 10px rgb(128, 88, 128), 0px 15px rgb(255, 175, 255);
+    text-shadow: 0px 3px rgb(0, 0, 0), 0px 5px rgb(64, 32, 64), 0px 10px rgb(128, 88, 128), 0px 15px rgb(255, 175, 255);
 }
 
 #score-player,
@@ -259,13 +260,7 @@ img {
 }
 
 #stats {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-size: 32px;
-    gap: 32px;
     margin-top: 88px;
-    justify-content: center;
 }
 
 #quote {
