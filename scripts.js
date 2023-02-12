@@ -59,9 +59,7 @@ let totalDrawPercentage;
 /* JS-MADE HTML ELEMENTS */
 
 /* temp */
-roundsDrawn = 4;
-playerScore = 4;
-rivalScore = 4;
+
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
@@ -345,18 +343,21 @@ function playRound(playerChoice, rivalChoice) {
 
 
     displayedRoundsWon.textContent = `ROUNDS `;
+    playerScoreSpanNumber.textContent = playerScore;
     displayedRoundsWon.appendChild(playerScoreSpanWon);
     displayedRoundsWon.appendChild(playerScoreSpanWonColon)
     displayedRoundsWon.appendChild(playerScoreSpanNumber);
 
 
     displayedRoundsLost.textContent = `ROUNDS `;
+    rivalScoreSpanNumber.textContent = rivalScore;
     displayedRoundsLost.appendChild(rivalScoreSpanWon);
     displayedRoundsLost.appendChild(rivalScoreSpanWonColon)
     displayedRoundsLost.appendChild(rivalScoreSpanNumber);
 
     
     displayedRoundsDrawn.textContent = `ROUNDS `;
+    drawSpanNumber.textContent = roundsDrawn;
     displayedRoundsDrawn.appendChild(drawScoreSpanWon);
     displayedRoundsDrawn.appendChild(drawScoreSpanWonScoreSpanWonColon)
     displayedRoundsDrawn.appendChild(drawSpanNumber);
@@ -368,9 +369,6 @@ function playRound(playerChoice, rivalChoice) {
     displayedWinPercentage.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
     displayedWinPercentage.appendChild(winPercentSpanNumber);
     displayedWinPercentage.appendChild(winPercentScoreSpanWon);
-
-
-
 
 
     displayedLossPercentage.textContent = `LOSS`;
