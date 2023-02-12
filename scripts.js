@@ -106,6 +106,7 @@ rivalScoreSpanWonColon.textContent = ": ";
 rivalScoreSpanWonColon.id = "rival-score-won-colon";
 rivalScoreSpanWonColon.style = "color: blue;"
 
+
 /*ROUNDS DRAWN */
 const drawSpanNumber = document.createElement("span");
 drawSpanNumber.textContent = roundsDrawn;
@@ -122,8 +123,22 @@ drawScoreSpanWonScoreSpanWonColon.textContent = ": ";
 drawScoreSpanWonScoreSpanWonColon.id = "drawScoreSpanWon-score-won-colon";
 drawScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
-/* WIN% */
 
+/* WIN% */
+const winPercentSpanNumber = document.createElement("span");
+winPercentSpanNumber.textContent = winPercentage;
+winPercentSpanNumber.id = "winPercentSpanNumber-score-span";
+winPercentSpanNumber.style = "color: red;"
+
+const winPercentScoreSpanWon = document.createElement("span");
+winPercentScoreSpanWon.textContent = "%";
+winPercentScoreSpanWon.id = "winPercent-score-won";
+winPercentScoreSpanWon.style = "color: purple;"
+
+const winPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
+winPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
+winPercentScoreSpanWonScoreSpanWonColon.id = "winPercentSpanWon-score-won-colon";
+winPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 /* LOSE% */
 
@@ -323,15 +338,14 @@ function playRound(playerChoice, rivalChoice) {
     displayedRoundsDrawn.appendChild(drawScoreSpanWonScoreSpanWonColon)
     displayedRoundsDrawn.appendChild(drawSpanNumber);
 
+    displayedWinPercentage.textContent = `WIN`;
+    winPercentSpanNumber.textContent = winPercentage;
+    displayedWinPercentage.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
+    displayedWinPercentage.appendChild(winPercentSpanNumber);
+    displayedWinPercentage.appendChild(winPercentScoreSpanWon);
 
 
 
-
-
-
-
-
-    displayedWinPercentage.textContent = `WIN%: ${winPercentage}%`;
     displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}%`;
     displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
     displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}%`;
