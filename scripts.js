@@ -141,7 +141,20 @@ winPercentScoreSpanWonScoreSpanWonColon.id = "winPercentSpanWon-score-won-colon"
 winPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 /* LOSE% */
+const losePercentSpanNumber = document.createElement("span");
+losePercentSpanNumber.textContent = lossPercentage;
+losePercentSpanNumber.id = "losePercentSpanNumber-score-span";
+losePercentSpanNumber.style = "color: red;"
 
+const losePercentScoreSpanWon = document.createElement("span");
+losePercentScoreSpanWon.textContent = "%";
+losePercentScoreSpanWon.id = "losePercent-score-won";
+losePercentScoreSpanWon.style = "color: purple;"
+
+const losePercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
+losePercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
+losePercentScoreSpanWonScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
+losePercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 /* TOTAL ROUNDS PLAYED */
 
@@ -338,6 +351,7 @@ function playRound(playerChoice, rivalChoice) {
     displayedRoundsDrawn.appendChild(drawScoreSpanWonScoreSpanWonColon)
     displayedRoundsDrawn.appendChild(drawSpanNumber);
 
+
     displayedWinPercentage.textContent = `WIN`;
     winPercentSpanNumber.textContent = winPercentage;
     displayedWinPercentage.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
@@ -345,12 +359,27 @@ function playRound(playerChoice, rivalChoice) {
     displayedWinPercentage.appendChild(winPercentScoreSpanWon);
 
 
+    displayedLossPercentage.textContent = `LOSS`;
+    losePercentSpanNumber.textContent = lossPercentage;
+    displayedLossPercentage.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
+    displayedLossPercentage.appendChild(losePercentSpanNumber)
+    displayedLossPercentage.appendChild(losePercentScoreSpanWon)
 
-    displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}%`;
+
+
     displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
+
+
     displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}%`;
+
+
     displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}%`
+
+
     displayedTotalDrawPercentage.textContent = `TOTAL DRAW%: ${totalDrawPercentage}%`;
+
+
+
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
