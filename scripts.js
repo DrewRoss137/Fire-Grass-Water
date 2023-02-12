@@ -211,7 +211,30 @@ totalWinPercentPreSign.id = "awdawawddore-wawdon-colon";
 totalWinPercentPreSign.style = "color: yellow;"
 
 /* TOTAL LOSS% */
+const totalLossPercentSpanNumber = document.createElement("span");
+totalLossPercentSpanNumber.textContent = totalLossPercentage;
+totalLossPercentSpanNumber.id = "tawdentSpanNumber-score-span";
+totalLossPercentSpanNumber.style = "color: red;"
 
+const totalLossPercentScoreSpanWon = document.createElement("span");
+totalLossPercentScoreSpanWon.textContent = "%";
+totalLossPercentScoreSpanWon.id = "laawdt-score-won";
+totalLossPercentScoreSpanWon.style = "color: purple;"
+
+const totalLossPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
+totalLossPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
+totalLossPercentScoreSpanWonScoreSpanWonColon.id = "awawdpanWon-score-won-colon";
+totalLossPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+
+const totalLossPercentSign = document.createElement("span");
+totalLossPercentSign.textContent = "%";
+totalLossPercentSign.id = "awdawaawde-wawdon-colon";
+totalLossPercentSign.style = "color: cyan;"
+
+const totalLossPercentPreSign = document.createElement("span");
+totalLossPercentPreSign.textContent = "LOSS";
+totalLossPercentPreSign.id = "awdawaawwe-wawdon-colon";
+totalLossPercentPreSign.style = "color: yellow;"
 
 /* TOTAL DRAW% */
 
@@ -436,10 +459,13 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalWinPercentage.appendChild(totalWinPercentSign);
   
 
-
-
-
-    displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}%`
+    displayedTotalLossPercentage.textContent = `TOTAL `
+    totalLossPercentSpanNumber.textContent = totalLossPercentage;
+    displayedTotalLossPercentage.appendChild(totalLossPercentPreSign);
+    displayedTotalLossPercentage.appendChild(totalLossPercentScoreSpanWon)
+    displayedTotalLossPercentage.appendChild(totalLossPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalLossPercentage.appendChild(totalLossPercentSpanNumber)
+    displayedTotalLossPercentage.appendChild(totalLossPercentSign);
 
 
     displayedTotalDrawPercentage.textContent = `TOTAL DRAW%: ${totalDrawPercentage}%`;
