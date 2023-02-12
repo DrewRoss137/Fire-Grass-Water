@@ -145,6 +145,7 @@ winPercentSign.textContent = "%";
 winPercentSign.id = "awdawdore-won-colon";
 winPercentSign.style = "color: cyan;"
 
+
 /* LOSE% */
 const losePercentSpanNumber = document.createElement("span");
 losePercentSpanNumber.textContent = lossPercentage;
@@ -182,8 +183,32 @@ totalRoundsPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
 totalRoundsPercentScoreSpanWonScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
 totalRoundsPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
-/* TOTAL WIN% */
 
+/* TOTAL WIN% */
+const totalWinPercentSpanNumber = document.createElement("span");
+totalWinPercentSpanNumber.textContent = totalWinPercentage;
+totalWinPercentSpanNumber.id = "totalwinpercentSpanNumber-score-span";
+totalWinPercentSpanNumber.style = "color: red;"
+
+const totalWinPercentScoreSpanWon = document.createElement("span");
+totalWinPercentScoreSpanWon.textContent = "%";
+totalWinPercentScoreSpanWon.id = "lawdawdnt-score-won";
+totalWinPercentScoreSpanWon.style = "color: purple;"
+
+const totalWinPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
+totalWinPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
+totalWinPercentScoreSpanWonScoreSpanWonColon.id = "awdntSpanWon-score-won-colon";
+totalWinPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+
+const totalWinPercentSign = document.createElement("span");
+totalWinPercentSign.textContent = "%";
+totalWinPercentSign.id = "awdawawddore-wawdon-colon";
+totalWinPercentSign.style = "color: cyan;"
+
+const totalWinPercentPreSign = document.createElement("span");
+totalWinPercentPreSign.textContent = "WIN";
+totalWinPercentPreSign.id = "awdawawddore-wawdon-colon";
+totalWinPercentPreSign.style = "color: yellow;"
 
 /* TOTAL LOSS% */
 
@@ -402,10 +427,16 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalRoundsPlayed.appendChild(totalRoundsPercentSpanNumber)
 
 
+    displayedTotalWinPercentage.textContent = `TOTAL `;
+    totalWinPercentSpanNumber.textContent = totalWinPercentage;
+    displayedTotalWinPercentage.appendChild(totalWinPercentPreSign);
+    displayedTotalWinPercentage.appendChild(totalWinPercentScoreSpanWon)
+    displayedTotalWinPercentage.appendChild(totalWinPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalWinPercentage.appendChild(totalWinPercentSpanNumber)
+    displayedTotalWinPercentage.appendChild(totalWinPercentSign);
+  
 
 
-
-    displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}%`;
 
 
     displayedTotalLossPercentage.textContent = `TOTAL LOSS%: ${totalLossPercentage}%`
