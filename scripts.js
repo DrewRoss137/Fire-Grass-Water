@@ -58,26 +58,76 @@ let totalDrawPercentage;
 
 /* JS-MADE HTML ELEMENTS */
 
-/* HTML Parents */
-/* const scoresDiv = document.getElementById("scoreboard"); */
-
-
-/* SCORES */
-/* const playerNameDiv = document.createElement("div");
-const playerScoreDiv = document.createElement("div");
-scoresDiv.appendChild(playerNameDiv);
-scoresDiv.appendChild(playerScoreDiv); */
-
-
-/* CHOICES */
-
-/* ROUND RESULT */
+/* temp */
+roundsDrawn = 5;
+playerScore = 5;
+rivalScore = 4;
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
 critDiv.id = "critical-hit"
 
+
+
+
 /* STATS */
+
+
+/*ROUNDS WON */
+const playerScoreSpanNumber = document.createElement("span");
+playerScoreSpanNumber.textContent = playerScore;
+playerScoreSpanNumber.id = "player-score-span";
+playerScoreSpanNumber.style = "color: red;"
+
+const playerScoreSpanWon = document.createElement("span");
+playerScoreSpanWon.textContent = "WON";
+playerScoreSpanWon.id = "player-score-won";
+playerScoreSpanWon.style = "color: purple;"
+
+const playerScoreSpanWonColon = document.createElement("span");
+playerScoreSpanWonColon.textContent = ": ";
+playerScoreSpanWonColon.id = "player-score-won-colon";
+playerScoreSpanWonColon.style = "color: blue;"
+
+
+/*ROUNDS LOST */
+const rivalScoreSpanNumber = document.createElement("span");
+rivalScoreSpanNumber.textContent = rivalScore;
+rivalScoreSpanNumber.id = "rival-score-span";
+rivalScoreSpanNumber.style = "color: red;"
+
+const rivalScoreSpanWon = document.createElement("span");
+rivalScoreSpanWon.textContent = "LOST";
+rivalScoreSpanWon.id = "rival-score-won";
+rivalScoreSpanWon.style = "color: purple;"
+
+const rivalScoreSpanWonColon = document.createElement("span");
+rivalScoreSpanWonColon.textContent = ": ";
+rivalScoreSpanWonColon.id = "rival-score-won-colon";
+rivalScoreSpanWonColon.style = "color: blue;"
+
+/*ROUNDS DRAWN */
+
+
+/* WIN% */
+
+
+/* LOSE% */
+
+
+/* TOTAL ROUNDS PLAYED */
+
+
+/* TOTAL WIN% */
+
+
+/* TOTAL LOSS% */
+
+
+/* TOTAL DRAW% */
+
+
+
 
 
 
@@ -215,10 +265,6 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(critGenDiv);
   }
 
-  /* let insertDivLocation = document.getElementById(divName);
-  let parentOfDiv = insertDivLocation.parentNode;
-  parentOfDiv.insertBefore(critDiv, insertDivLocation.nextSibling);
-  critDiv.textContent = "PLAYER CRIT!"; */
 
   displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
   displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
@@ -245,17 +291,23 @@ function playRound(playerChoice, rivalChoice) {
 
   if (playerScore === 5 || rivalScore === 5) {
     displayGameResult(playerName, playerScore, rivalName, rivalScore);
-  
+
+
+    displayedRoundsWon.textContent = `ROUNDS `;
+    displayedRoundsWon.appendChild(playerScoreSpanWon);
+    displayedRoundsWon.appendChild(playerScoreSpanWonColon)
+    displayedRoundsWon.appendChild(playerScoreSpanNumber);
+
+
+    displayedRoundsLost.textContent = `ROUNDS `;
+    displayedRoundsLost.appendChild(rivalScoreSpanWon);
+    displayedRoundsLost.appendChild(rivalScoreSpanWonColon)
+    displayedRoundsLost.appendChild(rivalScoreSpanNumber);
+
     
 
-    displayedRoundsWon.textContent = `ROUNDS WON: `;
-    const playerScoreSpan = document.createElement("span");
-    playerScoreSpan.textContent = playerScore;
-    playerScoreSpan.id = "SPANTHING"
-    playerScoreSpan.style = "color: red;"
-    displayedRoundsWon.appendChild(playerScoreSpan);
+
     displayedRoundsDrawn.textContent = `ROUNDS DRAWN: ${roundsDrawn}`
-    displayedRoundsLost.textContent = `ROUNDS LOST: ${rivalScore}`;
     displayedWinPercentage.textContent = `WIN%: ${winPercentage}%`;
     displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}%`;
     displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
