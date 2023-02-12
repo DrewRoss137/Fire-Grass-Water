@@ -245,7 +245,15 @@ function playRound(playerChoice, rivalChoice) {
 
   if (playerScore === 5 || rivalScore === 5) {
     displayGameResult(playerName, playerScore, rivalName, rivalScore);
-    displayedRoundsWon.textContent = `ROUNDS WON: ${playerScore}`;
+  
+    
+
+    displayedRoundsWon.textContent = `ROUNDS WON: `;
+    const playerScoreSpan = document.createElement("span");
+    playerScoreSpan.textContent = playerScore;
+    playerScoreSpan.id = "SPANTHING"
+    playerScoreSpan.style = "color: red;"
+    displayedRoundsWon.appendChild(playerScoreSpan);
     displayedRoundsDrawn.textContent = `ROUNDS DRAWN: ${roundsDrawn}`
     displayedRoundsLost.textContent = `ROUNDS LOST: ${rivalScore}`;
     displayedWinPercentage.textContent = `WIN%: ${winPercentage}%`;
@@ -286,11 +294,11 @@ function attackFlavourText(name, pokémon, attack) {
 
 function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, result) {
   if (result === roundResults[0]) {
-    return(`ROUND RESULT: ${playerName}'s ${playerPokémon} drew against ${rivalName}'s ${rivalPokémon}!`)
+    return(`${playerName}'s ${playerPokémon} drew against ${rivalName}'s ${rivalPokémon}!`)
   } else if (result === roundResults[2]) {
-    return(`ROUND RESULT: ${playerName}'s ${playerPokémon} won against ${rivalName}'s ${rivalPokémon}!`)
+    return(`${playerName}'s ${playerPokémon} won against ${rivalName}'s ${rivalPokémon}!`)
   } else {
-    return(`ROUND RESULT: ${playerName}'s ${playerPokémon} lost against ${rivalName}'s ${rivalPokémon}!`)
+    return(`${playerName}'s ${playerPokémon} lost against ${rivalName}'s ${rivalPokémon}!`)
   }
 }
 
