@@ -107,7 +107,20 @@ rivalScoreSpanWonColon.id = "rival-score-won-colon";
 rivalScoreSpanWonColon.style = "color: blue;"
 
 /*ROUNDS DRAWN */
+const drawSpanNumber = document.createElement("span");
+drawSpanNumber.textContent = roundsDrawn;
+drawSpanNumber.id = "drawSpanNumber-score-span";
+drawSpanNumber.style = "color: red;"
 
+const drawScoreSpanWon = document.createElement("span");
+drawScoreSpanWon.textContent = "DRAW";
+drawScoreSpanWon.id = "drawScoreSpanWon-score-won";
+drawScoreSpanWon.style = "color: purple;"
+
+const drawScoreSpanWonScoreSpanWonColon = document.createElement("span");
+drawScoreSpanWonScoreSpanWonColon.textContent = ": ";
+drawScoreSpanWonScoreSpanWonColon.id = "drawScoreSpanWon-score-won-colon";
+drawScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 /* WIN% */
 
@@ -305,9 +318,19 @@ function playRound(playerChoice, rivalChoice) {
     displayedRoundsLost.appendChild(rivalScoreSpanNumber);
 
     
+    displayedRoundsDrawn.textContent = `ROUNDS `;
+    displayedRoundsDrawn.appendChild(drawScoreSpanWon);
+    displayedRoundsDrawn.appendChild(drawScoreSpanWonScoreSpanWonColon)
+    displayedRoundsDrawn.appendChild(drawSpanNumber);
 
 
-    displayedRoundsDrawn.textContent = `ROUNDS DRAWN: ${roundsDrawn}`
+
+
+
+
+
+
+
     displayedWinPercentage.textContent = `WIN%: ${winPercentage}%`;
     displayedLossPercentage.textContent = `LOSS%: ${lossPercentage}%`;
     displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
