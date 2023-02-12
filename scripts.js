@@ -59,7 +59,9 @@ let totalDrawPercentage;
 /* JS-MADE HTML ELEMENTS */
 
 /* temp */
-
+playerScore = 4;
+rivalScore = 4;
+roundsDrawn = 4;
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
@@ -165,7 +167,20 @@ losePercentSign.id = "awdawdore-wawdon-colon";
 losePercentSign.style = "color: cyan;"
 
 /* TOTAL ROUNDS PLAYED */
+const totalRoundsPercentSpanNumber = document.createElement("span");
+totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
+totalRoundsPercentSpanNumber.id = "loawdawdSpanNumber-score-span";
+totalRoundsPercentSpanNumber.style = "color: red;"
 
+const totalRoundsPercentScoreSpanWon = document.createElement("span");
+totalRoundsPercentScoreSpanWon.textContent = "PLAYED";
+totalRoundsPercentScoreSpanWon.id = "losePercent-score-won";
+totalRoundsPercentScoreSpanWon.style = "color: purple;"
+
+const totalRoundsPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
+totalRoundsPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
+totalRoundsPercentScoreSpanWonScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
+totalRoundsPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 /* TOTAL WIN% */
 
@@ -380,7 +395,14 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-    displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS PLAYED: ${totalRoundsPlayed}`;
+    displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS `;
+    totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
+    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentScoreSpanWon)
+    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentSpanNumber)
+
+
+
 
 
     displayedTotalWinPercentage.textContent = `TOTAL WIN%: ${totalWinPercentage}%`;
