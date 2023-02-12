@@ -59,8 +59,8 @@ let totalDrawPercentage;
 /* JS-MADE HTML ELEMENTS */
 
 /* temp */
-roundsDrawn = 5;
-playerScore = 5;
+roundsDrawn = 4;
+playerScore = 4;
 rivalScore = 4;
 
 /* CRIT GEN */
@@ -114,7 +114,7 @@ drawSpanNumber.id = "drawSpanNumber-score-span";
 drawSpanNumber.style = "color: red;"
 
 const drawScoreSpanWon = document.createElement("span");
-drawScoreSpanWon.textContent = "DRAW";
+drawScoreSpanWon.textContent = "DRAWN";
 drawScoreSpanWon.id = "drawScoreSpanWon-score-won";
 drawScoreSpanWon.style = "color: purple;"
 
@@ -140,6 +140,11 @@ winPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
 winPercentScoreSpanWonScoreSpanWonColon.id = "winPercentSpanWon-score-won-colon";
 winPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
+const winPercentSign = document.createElement("span");
+winPercentSign.textContent = "%";
+winPercentSign.id = "awdawdore-won-colon";
+winPercentSign.style = "color: cyan;"
+
 /* LOSE% */
 const losePercentSpanNumber = document.createElement("span");
 losePercentSpanNumber.textContent = lossPercentage;
@@ -155,6 +160,11 @@ const losePercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
 losePercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
 losePercentScoreSpanWonScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
 losePercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+
+const losePercentSign = document.createElement("span");
+losePercentSign.textContent = "%";
+losePercentSign.id = "awdawdore-wawdon-colon";
+losePercentSign.style = "color: cyan;"
 
 /* TOTAL ROUNDS PLAYED */
 
@@ -354,13 +364,18 @@ function playRound(playerChoice, rivalChoice) {
 
     displayedWinPercentage.textContent = `WIN`;
     winPercentSpanNumber.textContent = winPercentage;
+    displayedWinPercentage.appendChild(winPercentSign);
     displayedWinPercentage.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
     displayedWinPercentage.appendChild(winPercentSpanNumber);
     displayedWinPercentage.appendChild(winPercentScoreSpanWon);
 
 
+
+
+
     displayedLossPercentage.textContent = `LOSS`;
     losePercentSpanNumber.textContent = lossPercentage;
+    displayedLossPercentage.appendChild(losePercentSign);
     displayedLossPercentage.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
     displayedLossPercentage.appendChild(losePercentSpanNumber)
     displayedLossPercentage.appendChild(losePercentScoreSpanWon)
