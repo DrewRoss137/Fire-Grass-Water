@@ -59,9 +59,7 @@ let totalDrawPercentage;
 /* JS-MADE HTML ELEMENTS */
 
 /* temp */
-playerScore = 4;
-rivalScore = 4;
-roundsDrawn = 4;
+
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
@@ -237,7 +235,30 @@ totalLossPercentPreSign.id = "awdawaawwe-wawdon-colon";
 totalLossPercentPreSign.style = "color: yellow;"
 
 /* TOTAL DRAW% */
+const totalDrawPercentSpanNumber = document.createElement("span");
+totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
+totalDrawPercentSpanNumber.id = "tawdeaaantSpanNumber-score-span";
+totalDrawPercentSpanNumber.style = "color: red;"
 
+const totalDrawPercentScoreSpanWon = document.createElement("span");
+totalDrawPercentScoreSpanWon.textContent = "%";
+totalDrawPercentScoreSpanWon.id = "laaaaawdt-score-won";
+totalDrawPercentScoreSpanWon.style = "color: purple;"
+
+const totalDrawPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
+totalDrawPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
+totalDrawPercentScoreSpanWonScoreSpanWonColon.id = "awawdaapanWon-score-won-colon";
+totalDrawPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+
+const totalDrawPercentSign = document.createElement("span");
+totalDrawPercentSign.textContent = "%";
+totalDrawPercentSign.id = "awdawaaaawde-wawdon-colon";
+totalDrawPercentSign.style = "color: cyan;"
+
+const totalDrawPercentPreSign = document.createElement("span");
+totalDrawPercentPreSign.textContent = "DRAW";
+totalDrawPercentPreSign.id = "awdawaaaawwe-wawdon-colon";
+totalDrawPercentPreSign.style = "color: yellow;"
 
 
 
@@ -468,7 +489,13 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalLossPercentage.appendChild(totalLossPercentSign);
 
 
-    displayedTotalDrawPercentage.textContent = `TOTAL DRAW%: ${totalDrawPercentage}%`;
+    displayedTotalDrawPercentage.textContent = `TOTAL `;
+    totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentPreSign);
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWon)
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentSpanNumber)
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentSign);
 
 
 
