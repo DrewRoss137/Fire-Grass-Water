@@ -141,7 +141,7 @@ winPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 const winPercentSign = document.createElement("span");
 winPercentSign.textContent = "%";
-winPercentSign.id = "awdawdore-won-colon";
+winPercentSign.id = "win-percent-percent-sign";
 winPercentSign.style = "color: cyan;"
 
 
@@ -428,7 +428,6 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-
   let roundsPlayed = playerScore + rivalScore;
   winPercentage = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
   lossPercentage = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
@@ -441,6 +440,10 @@ function playRound(playerChoice, rivalChoice) {
   if (playerScore === 5 || rivalScore === 5) {
     /* displayGameResult(playerName, playerScore, rivalName, rivalScore); */
 
+    const element = document.getElementById("choice-player");
+    const computedStyles = window.getComputedStyle(element);
+    const wordSpacing = computedStyles.getPropertyValue("word-spacing");
+    console.log(wordSpacing);
   
     if (playerScore > rivalScore) {
       typeRoundResult.style = "color:green;"
@@ -449,7 +452,6 @@ function playRound(playerChoice, rivalChoice) {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
     }
-    displayedGameResult.textContent = "GAME RESULT:";
     displayedGameResult.appendChild(playerNameRoundResult)
     displayedGameResult.appendChild(typeRoundResult)
     displayedGameResult.appendChild(againstRoundResult)
