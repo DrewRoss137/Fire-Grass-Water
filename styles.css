@@ -195,7 +195,7 @@ img {
     font-size: 50px;
     gap: 24px;
     justify-content: center;
-    text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92)
+    text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92), 4.25px 4.25px rgb(86, 73, 92)
 }
 
 #scoreboard {
