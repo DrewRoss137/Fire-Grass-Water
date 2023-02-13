@@ -59,6 +59,9 @@ let totalDrawPercentage;
 /* JS-MADE HTML ELEMENTS */
 
 /* temp */
+playerScore = 4;
+rivalScore = 4;
+roundsDrawn = 4;
 
 
 /* CRIT GEN */
@@ -69,8 +72,6 @@ critDiv.id = "critical-hit"
 
 
 /* STATS */
-
-
 /*ROUNDS WON */
 const playerScoreSpanNumber = document.createElement("span");
 playerScoreSpanNumber.textContent = playerScore;
@@ -261,9 +262,24 @@ totalDrawPercentPreSign.id = "awdawaaaawwe-wawdon-colon";
 totalDrawPercentPreSign.style = "color: yellow;"
 
 
+/* ROUND RESULT */
+const playerNameRoundResult = document.createElement("span");
+playerNameRoundResult.textContent = playerName;
+playerNameRoundResult.id = "player-name-round-result";
+playerNameRoundResult.style = "color: blue;"
 
+const rivalNameRoundResult = document.createElement("span");
+rivalNameRoundResult.textContent = rivalName;
+rivalNameRoundResult.id = "rival-name-round-result";
+rivalNameRoundResult.style = "color: purple;"
 
+let typeRoundResult = document.createElement("span");
+typeRoundResult.id = "type-round-result";
 
+const againstRoundResult = document.createElement("span");
+againstRoundResult.textContent = "against";
+againstRoundResult.id = "against-round-result";
+againstRoundResult.style = "color: cyan;"
 
 /* ************************************************************************************************************************************************************************************** /*
 
@@ -423,8 +439,21 @@ function playRound(playerChoice, rivalChoice) {
 
 
   if (playerScore === 5 || rivalScore === 5) {
-    displayGameResult(playerName, playerScore, rivalName, rivalScore);
+    /* displayGameResult(playerName, playerScore, rivalName, rivalScore); */
 
+  
+    if (playerScore > rivalScore) {
+      typeRoundResult.style = "color:green;"
+      typeRoundResult.textContent = "WON"
+    } else {
+      typeRoundResult.style = "color:red;"
+      typeRoundResult.textContent = "LOST"
+    }
+    displayedGameResult.textContent = "GAME RESULT:";
+    displayedGameResult.appendChild(playerNameRoundResult)
+    displayedGameResult.appendChild(typeRoundResult)
+    displayedGameResult.appendChild(againstRoundResult)
+    displayedGameResult.appendChild(rivalNameRoundResult)
 
     displayedRoundsWon.textContent = `ROUNDS `;
     playerScoreSpanNumber.textContent = playerScore;
@@ -539,20 +568,20 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
   }
 }
 
-function generateCriticalHitChance(divName) {
+ function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
     divName.textContent = "A critical hit!";
     }
-  }
+  } 
 
-function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
+/* function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
   if (playerScore > rivalScore) {
     displayedGameResult.textContent = (`${playerName} won against ${rivalName}!`)
   } else {
     displayedGameResult.textContent = (`${playerName} lost against ${rivalName}!`)
   }
-}
+} */
 
 function createDiv(newDiv, divID) {
   let overheadDiv = document.getElementById(divID);
