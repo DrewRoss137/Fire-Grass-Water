@@ -260,12 +260,11 @@ img {
 }
 
 #stats {
-    margin-top: 88px;
+    margin-top: 58px;
 }
 
 #quote {
     align-items: center;
-
     display: flex;
     flex-direction: column;
     gap: 24px;
