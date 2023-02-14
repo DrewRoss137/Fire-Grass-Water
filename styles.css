@@ -188,7 +188,9 @@ img {
 }
 
 #player-rival-choices,
-#stats {
+#stats,
+#faint-flavour-text,
+#xp-flavour-text {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -305,4 +307,13 @@ img {
 
 #game-result {
     gap: 19px;
+}
+
+#post-game-flavour-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
 }

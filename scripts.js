@@ -281,6 +281,17 @@ againstRoundResult.textContent = "against";
 againstRoundResult.id = "against-round-result";
 againstRoundResult.style = "color: cyan;"
 
+/* POST-GAME FLAVOUR TEXT */
+const postGameFlavourText = document.createElement("div");
+postGameFlavourText.id = "post-game-flavour-text";
+
+
+const faintFlavourText = document.createElement("div");
+faintFlavourText.id = "faint-flavour-text";
+
+const xpFlavourText = document.createElement("div");
+xpFlavourText.id = "xp-flavour-text";
+
 /* ************************************************************************************************************************************************************************************** /*
 
 
@@ -439,19 +450,29 @@ function playRound(playerChoice, rivalChoice) {
 
   if (playerScore === 5 || rivalScore === 5) {
     /* displayGameResult(playerName, playerScore, rivalName, rivalScore); */
+    let exp = Math.floor(Math.random() * 51) + 50;
 
-    const element = document.getElementById("choice-player");
-    const computedStyles = window.getComputedStyle(element);
-    const wordSpacing = computedStyles.getPropertyValue("word-spacing");
-    console.log(wordSpacing);
-  
+    createDiv(postGameFlavourText, "player-rival-choices");
+    postGameFlavourText.appendChild(faintFlavourText)
+    postGameFlavourText.appendChild(xpFlavourText)
+    
     if (playerScore > rivalScore) {
       typeRoundResult.style = "color:green;"
       typeRoundResult.textContent = "WON"
+      faintFlavourText.textContent = `Rival ${rivalName}'s ${rivalPokémon} fainted!`
+      xpFlavourText.textContent = `${playerName}'s ${playerPokémon} gained ${exp}`
     } else {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
+      faintFlavourText.textContent = `${playerName}'s ${playerPokémon} fainted!`
+      xpFlavourText.textContent = `${playerName}'s ${playerPokémon} gained ${exp} EXP. Points!`
     }
+
+
+
+
+
+
     displayedGameResult.appendChild(playerNameRoundResult)
     displayedGameResult.appendChild(typeRoundResult)
     displayedGameResult.appendChild(againstRoundResult)
@@ -545,6 +566,8 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalWinPercentage.textContent = null;
     displayedTotalLossPercentage.textContent = null;
     displayedTotalDrawPercentage.textContent = null;
+    faintFlavourText.textContent = null;
+    xpFlavourText.textContent = null;
   }
 };
 
