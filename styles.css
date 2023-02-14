@@ -190,7 +190,7 @@ img {
 #player-rival-choices,
 #stats,
 #faint-flavour-text,
-#xp-flavour-text {
+#exp-flavour-text {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -318,7 +318,8 @@ img {
     margin-top: 24px;
 }
 
-#faint-flavour-text {
+#faint-flavour-text,
+#exp-flavour-text {
     display: flex;
     flex-direction: row;
     gap: 0px;

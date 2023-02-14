@@ -303,10 +303,26 @@ faintedFaintFlavourText.id = "fainted-faint-flavour-text"
 faintedFaintFlavourText.style = "color: yellow";
 
 /* XP FLAVOUR TEXT */
+const expFlavourText = document.createElement("div");
+expFlavourText.id = "exp-flavour-text";
+expFlavourText.style = "color: pink";
 
+const expPlayerName = document.createElement("span");
+expPlayerName.id = "exp-player-name";
+expPlayerName.style = "color: blue";
 
-const xpFlavourText = document.createElement("div");
-xpFlavourText.id = "xp-flavour-text";
+const expPokemonName = document.createElement("span");
+expPokemonName.id = "exp-pokemon-name";
+expPokemonName.style = "color: yellow";
+
+const gainedPokemonName = document.createElement("span");
+gainedPokemonName.id = "gained-pokemon-name";
+gainedPokemonName.style = "color: red";
+gainedPokemonName.textContent = "gained "
+
+let expGained = document.createElement("span");
+expGained.id = "exp-gained";
+expGained.style = "color: green";
 
 /* ************************************************************************************************************************************************************************************** /*
 
@@ -474,9 +490,15 @@ function playRound(playerChoice, rivalChoice) {
     faintFlavourText.appendChild(playerPokemonNameFaintFlavourText)
     faintFlavourText.appendChild(faintedFaintFlavourText)
 
+    postGameFlavourText.appendChild(expFlavourText)
+    expFlavourText.appendChild(expPlayerName)
+    expFlavourText.appendChild(expPokemonName)
+    expFlavourText.appendChild(gainedPokemonName)
+    expFlavourText.appendChild(expGained)
 
 
-    postGameFlavourText.appendChild(xpFlavourText)
+
+    postGameFlavourText.appendChild(expFlavourText)
 
 
     
@@ -485,14 +507,17 @@ function playRound(playerChoice, rivalChoice) {
       typeRoundResult.textContent = "WON"
       playerNameFaintFlavourText.textContent = `Rival ${rivalName}'s`
       playerPokemonNameFaintFlavourText.textContent = rivalPokémon;
+      expPlayerName.textContent = playerName;
+      expPokemonName.textContent = playerPokémon;
     } else {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
       playerNameFaintFlavourText.textContent = `${playerName}'s`
       playerPokemonNameFaintFlavourText.textContent = playerPokémon;
-      xpFlavourText.textContent = `${playerName}'s ${playerPokémon} gained ${exp} EXP. Points!`
+      expPlayerName.textContent = rivalName;
+      expPokemonName.textContent = rivalPokémon;
     }
-
+    expGained.textContent = `${exp} Exp. Points!`;
 
 
 
@@ -592,7 +617,7 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalLossPercentage.textContent = null;
     displayedTotalDrawPercentage.textContent = null;
     faintFlavourText.textContent = null;
-    xpFlavourText.textContent = null;
+    expFlavourText.textContent = null;
   }
 };
 
