@@ -63,12 +63,118 @@ playerScore = 4;
 rivalScore = 4;
 roundsDrawn = 4;
 
+/* PLAYER AND RIVAL CHOICES */
+
+/* PLAYER CHOICE */
+const playerNamePlayerChoice = document.createElement("span");
+playerNamePlayerChoice.textContent = `${playerName}:`;
+playerNamePlayerChoice.id = "player-name-player-choice";
+playerNamePlayerChoice.style = "color: blue";
+
+const playerGoPlayerChoice = document.createElement("span");
+playerGoPlayerChoice.textContent = "GO!";
+playerGoPlayerChoice.id = "player-Go-player-choice";
+playerGoPlayerChoice.style = "color: purple";
+
+const playerPokemonPlayerChoice = document.createElement("span");
+playerPokemonPlayerChoice.textContent = `${playerPokémon}!`;
+playerPokemonPlayerChoice.id = "player-Pokemon-player-choice";
+playerPokemonPlayerChoice.style = "color: red";
+
+/* RIVAL CHOICE */
+const rivalNamePlayerChoice = document.createElement("span");
+rivalNamePlayerChoice.textContent = `${rivalName}:`;
+rivalNamePlayerChoice.id = "rival-name-player-choice";
+rivalNamePlayerChoice.style = "color: blue";
+
+const rivalGoPlayerChoice = document.createElement("span");
+rivalGoPlayerChoice.textContent = "GO!";
+rivalGoPlayerChoice.id = "rival-Go-player-choice";
+rivalGoPlayerChoice.style = "color: purple";
+
+const rivalPokemonPlayerChoice = document.createElement("span");
+rivalPokemonPlayerChoice.textContent = `${rivalPokémon}!`;
+rivalPokemonPlayerChoice.id = "rival-Pokemon-player-choice";
+rivalPokemonPlayerChoice.style = "color: red";
+
+/* PLAYER ATTACK */
+const playerNamePlayerAttack = document.createElement("span");
+playerNamePlayerAttack.textContent = `${playerName}'s`;
+playerNamePlayerAttack.id = "player-name-player-attack";
+playerNamePlayerAttack.style = "color: blue";
+
+const playerPokemonPlayerAttack = document.createElement("span");
+playerPokemonPlayerAttack.textContent = playerPokémon;
+playerPokemonPlayerAttack.id = "player-pokemon-player-attack";
+playerPokemonPlayerAttack.style = "color: purple";
+
+const playerUsedPlayerAttack = document.createElement("span");
+playerUsedPlayerAttack.textContent = "USED"
+playerUsedPlayerAttack.id = "player-used-player-attack";
+playerUsedPlayerAttack.style = "color: yellow";
+
+const playerPokemonAttackPlayerAttack = document.createElement("span");
+playerPokemonAttackPlayerAttack.textContent = `${playerPokémonAttack}!`;
+playerPokemonAttackPlayerAttack.id = "player-pokemon-attack-player-attack";
+playerPokemonAttackPlayerAttack.style = "color: red";
+
+/* RIVAL ATTACK */
+const rivalNamePlayerAttack = document.createElement("span");
+rivalNamePlayerAttack.textContent = `${rivalName}'s`;
+rivalNamePlayerAttack.id = "rival-name-player-attack";
+rivalNamePlayerAttack.style = "color: blue";
+
+const rivalPokemonPlayerAttack = document.createElement("span");
+rivalPokemonPlayerAttack.textContent = rivalPokémon;
+rivalPokemonPlayerAttack.id = "rival-pokemon-player-attack";
+rivalPokemonPlayerAttack.style = "color: purple";
+
+const rivalUsedPlayerAttack = document.createElement("span");
+rivalUsedPlayerAttack.textContent = "USED"
+rivalUsedPlayerAttack.id = "rival-used-player-attack";
+rivalUsedPlayerAttack.style = "color: yellow";
+
+const rivalPokemonAttackPlayerAttack = document.createElement("span");
+rivalPokemonAttackPlayerAttack.textContent = `${rivalPokémonAttack}!`;
+rivalPokemonAttackPlayerAttack.id = "rival-pokemon-attack-player-attack";
+rivalPokemonAttackPlayerAttack.style = "color: red";
+
+/* ROUND RESULT */
+const playerNameChoicesRoundResult = document.createElement("span");
+playerNameChoicesRoundResult.textContent = `${playerName}'s`;
+playerNameChoicesRoundResult.id = "playerNameChoicesRoundResult";
+playerNameChoicesRoundResult.style = "color: blue";
+
+const playerPokemonChoicesRoundResult = document.createElement("span");
+playerPokemonChoicesRoundResult.textContent = playerPokémon;
+playerPokemonChoicesRoundResult.id = "playerPokemonChoicesRoundResult";
+playerPokemonChoicesRoundResult.style = "color: purple";
+
+const roundResultRoundResult = document.createElement("span");
+roundResultRoundResult.textContent = roundResult;
+roundResultRoundResult.id = "roundResultRoundResult";
+roundResultRoundResult.style = "color: orange";
+
+const rivalNameChoicesRoundResult = document.createElement("span");
+rivalNameChoicesRoundResult.textContent = `${rivalName}'s`;
+rivalNameChoicesRoundResult.id = "rivalNameChoicesRoundResult";
+rivalNameChoicesRoundResult.style = "color: yellow";
+
+const rivalPokemonChoicesRoundResult = document.createElement("span");
+rivalPokemonChoicesRoundResult.textContent = rivalPokémon;
+rivalPokemonChoicesRoundResult.id = "rivalPokemonChoicesRoundResult";
+rivalPokemonChoicesRoundResult.style = "color: red";
+
+
+
+
+
+
+
 
 /* CRIT GEN */
 const critDiv = document.createElement("div");
 critDiv.id = "critical-hit"
-
-
 
 
 /* STATS */
@@ -396,6 +502,7 @@ JS-DOM
 */
 
 let rivalChoice = getRivalChoice();
+console.log(rivalChoice)
 
 function getRivalChoice() {
     let returnedRivalChoice = Math.floor(Math.random() * choices.length);
@@ -462,8 +569,10 @@ function playRound(playerChoice, rivalChoice) {
   displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
   displayedPlayerPokémonAttack.textContent = attackFlavourText(playerName, playerPokémon, playerPokémonAttack)
   displayedPlayerPokémonAttackEffectiveness.textContent = playerPokémonAttackEffectiveness;
+  displayedPlayerPokémonAttackEffectiveness.style = "font-weight: bold;"
   displayedRivalPokémonAttack.textContent = attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack);
   displayedRivalPokémonAttackEffectiveness.textContent = rivalPokémonAttackEffectiveness;
+  displayedRivalPokémonAttackEffectiveness.style = "font-weight: bold;"
   displayedRoundResult.textContent = (generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult))
 
   displayedPlayerScore.textContent = playerScore;
@@ -507,14 +616,14 @@ function playRound(playerChoice, rivalChoice) {
       typeRoundResult.textContent = "WON"
       playerNameFaintFlavourText.textContent = `Rival ${rivalName}'s`
       playerPokemonNameFaintFlavourText.textContent = rivalPokémon;
-      expPlayerName.textContent = playerName;
+      expPlayerName.textContent = `${playerName}'s`;
       expPokemonName.textContent = playerPokémon;
     } else {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
       playerNameFaintFlavourText.textContent = `${playerName}'s`
       playerPokemonNameFaintFlavourText.textContent = playerPokémon;
-      expPlayerName.textContent = rivalName;
+      expPlayerName.textContent = `${rivalName}'s`;
       expPokemonName.textContent = rivalPokémon;
     }
     expGained.textContent = `${exp} Exp. Points!`;
@@ -527,6 +636,7 @@ function playRound(playerChoice, rivalChoice) {
     displayedGameResult.appendChild(typeRoundResult)
     displayedGameResult.appendChild(againstRoundResult)
     displayedGameResult.appendChild(rivalNameRoundResult)
+    rivalNameRoundResult.textContent = `${rivalName}!`
 
     displayedRoundsWon.textContent = `ROUNDS `;
     playerScoreSpanNumber.textContent = playerScore;
