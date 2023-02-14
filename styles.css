@@ -317,3 +317,11 @@ img {
     gap: 24px;
     margin-top: 24px;
 }
+
+#faint-flavour-text {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+}

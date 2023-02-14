@@ -285,9 +285,25 @@ againstRoundResult.style = "color: cyan;"
 const postGameFlavourText = document.createElement("div");
 postGameFlavourText.id = "post-game-flavour-text";
 
-
+/* FAINT FLAVOUR TEXT */
 const faintFlavourText = document.createElement("div");
 faintFlavourText.id = "faint-flavour-text";
+
+const playerNameFaintFlavourText = document.createElement("span");
+playerNameFaintFlavourText.id = "player-name-faint-flavour-text"
+playerNameFaintFlavourText.style = "color: pink";
+
+const playerPokemonNameFaintFlavourText = document.createElement("span");
+playerPokemonNameFaintFlavourText.id = "player-pokemon-name-faint-flavour-text"
+playerPokemonNameFaintFlavourText.style = "color: blue";
+
+const faintedFaintFlavourText = document.createElement("span");
+faintedFaintFlavourText.textContent = "fainted!"
+faintedFaintFlavourText.id = "fainted-faint-flavour-text"
+faintedFaintFlavourText.style = "color: yellow";
+
+/* XP FLAVOUR TEXT */
+
 
 const xpFlavourText = document.createElement("div");
 xpFlavourText.id = "xp-flavour-text";
@@ -454,17 +470,26 @@ function playRound(playerChoice, rivalChoice) {
 
     createDiv(postGameFlavourText, "player-rival-choices");
     postGameFlavourText.appendChild(faintFlavourText)
+    faintFlavourText.appendChild(playerNameFaintFlavourText)
+    faintFlavourText.appendChild(playerPokemonNameFaintFlavourText)
+    faintFlavourText.appendChild(faintedFaintFlavourText)
+
+
+
     postGameFlavourText.appendChild(xpFlavourText)
+
+
     
     if (playerScore > rivalScore) {
       typeRoundResult.style = "color:green;"
       typeRoundResult.textContent = "WON"
-      faintFlavourText.textContent = `Rival ${rivalName}'s ${rivalPokémon} fainted!`
-      xpFlavourText.textContent = `${playerName}'s ${playerPokémon} gained ${exp}`
+      playerNameFaintFlavourText.textContent = `Rival ${rivalName}'s`
+      playerPokemonNameFaintFlavourText.textContent = rivalPokémon;
     } else {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
-      faintFlavourText.textContent = `${playerName}'s ${playerPokémon} fainted!`
+      playerNameFaintFlavourText.textContent = `${playerName}'s`
+      playerPokemonNameFaintFlavourText.textContent = playerPokémon;
       xpFlavourText.textContent = `${playerName}'s ${playerPokémon} gained ${exp} EXP. Points!`
     }
 
