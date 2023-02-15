@@ -66,6 +66,10 @@ roundsDrawn = 4;
 /* PLAYER AND RIVAL CHOICES */
 
 
+const playerChoiceDiv = document.createElement("div");
+const rivalChoiceDiv = document.createElement("div");
+const playerAttackDiv = document.createElement("div");
+const rivalAttackDiv = document.createElement("div");
 
 
 
@@ -590,11 +594,10 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-
   /* CREATED DIVS */
 
   /* PLAYER CHOICE DIV */
-  const playerChoiceDiv = document.createElement("div");
+ 
   playerChoiceDiv.id = "player-choice-div"
   playerChoiceDiv.appendChild(playerNamePlayerChoice)
   playerNamePlayerChoice.textContent = `${playerName}: `
@@ -605,7 +608,7 @@ function playRound(playerChoice, rivalChoice) {
   
 
   /* RIVAL CHOICE DIV */
-  const rivalChoiceDiv = document.createElement("div");
+
   rivalChoiceDiv.id = "rival-choice-div"
   rivalChoiceDiv.appendChild(rivalNamePlayerChoice)
   rivalNamePlayerChoice.textContent = `${rivalName}: `
@@ -615,7 +618,7 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokemonPlayerChoice.textContent = `${rivalPokémon}!`
 
   /* PLAYER ATTACK DIV */
-  const playerAttackDiv = document.createElement("div");
+
   playerAttackDiv.id = "player-attack-div"
   playerAttackDiv.appendChild(playerNamePlayerAttack)
   playerNamePlayerAttack.textContent = `${playerName}'s `
@@ -630,13 +633,13 @@ function playRound(playerChoice, rivalChoice) {
   playerAttackEffectivenessDiv.textContent = playerPokémonAttackEffectiveness
 
   /* RIVAL ATTACK DIV */
-  const rivalAttackDiv = document.createElement("div");
+
   rivalAttackDiv.id = "rival-attack-div"
   rivalAttackDiv.appendChild(rivalNamePlayerAttack)
   rivalNamePlayerAttack.textContent = `${rivalName}'s `
   rivalAttackDiv.appendChild(rivalPokemonPlayerAttack)
   rivalPokemonPlayerAttack.textContent = `${rivalPokémon} `
-  rivalAttackDiv.appendChild(rivalUsedPlayerAttack)
+  rivalAttackDiv.appendChild(playerUsedPlayerAttack)
   rivalUsedPlayerAttack.textContent = "used "
   rivalAttackDiv.appendChild(rivalPokemonAttackPlayerAttack)
   rivalPokemonAttackPlayerAttack.textContent = `${rivalPokémonAttack}!`
@@ -644,8 +647,16 @@ function playRound(playerChoice, rivalChoice) {
   /* RIVAL ATTACK EFFECTIVENESS DIV */
   rivalAttackEffectivenessDiv.textContent = rivalPokémonAttackEffectiveness
 
-  /* ROUND RESULT ATTACK DIV */
-  const roundResultDiv = document.createElement("div");
+  createDiv(roundText, "scoreboard");
+  roundText.appendChild(playerChoiceDiv)
+  roundText.appendChild(rivalChoiceDiv)
+  roundText.appendChild(playerAttackDiv)
+  roundText.appendChild(playerAttackEffectivenessDiv)
+  roundText.appendChild(rivalAttackDiv)
+  roundText.appendChild(rivalAttackEffectivenessDiv)
+  roundText.appendChild(roundResultDiv)
+
+
   roundResultDiv.appendChild(playerNameChoicesRoundResult)
   roundResultDiv.appendChild(playerPokemonChoicesRoundResult)
   roundResultDiv.appendChild(roundResultRoundResult)
@@ -658,14 +669,6 @@ function playRound(playerChoice, rivalChoice) {
   
 
 
-  createDiv(roundText, "scoreboard");
-  roundText.appendChild(playerChoiceDiv)
-  roundText.appendChild(rivalChoiceDiv)
-  roundText.appendChild(playerAttackDiv)
-  roundText.appendChild(playerAttackEffectivenessDiv)
-  roundText.appendChild(rivalAttackDiv)
-  roundText.appendChild(rivalAttackEffectivenessDiv)
-  roundText.appendChild(roundResultDiv)
 
   
   
@@ -835,6 +838,12 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalDrawPercentage.textContent = null;
     faintFlavourText.textContent = null;
     expFlavourText.textContent = null;
+    playerChoiceDiv.remove
+    rivalChoiceDiv.remove
+    playerAttackDiv.remove
+    playerAttackEffectivenessDiv.remove
+    rivalAttackDiv.remove
+    rivalAttackEffectivenessDiv.remove
   }
 };
 
