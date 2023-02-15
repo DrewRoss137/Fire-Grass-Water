@@ -568,7 +568,7 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
-    let critGenDiv = createDiv(critDiv, "rival-attack-div");
+    let critGenDiv = createDiv(critDiv, "player-attack-div");
     generateCriticalHitChance(critGenDiv);
   } else {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
@@ -579,7 +579,6 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(critGenDiv);
   }
 
-  /* PLAYER AND RIVAL CHOICES */
   /* PLAYER AND RIVAL CHOICES */
 
   /* ROUND RESULT */
