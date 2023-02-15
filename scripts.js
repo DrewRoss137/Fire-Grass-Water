@@ -618,9 +618,13 @@ function playRound(playerChoice, rivalChoice) {
   const playerAttackDiv = document.createElement("div");
   playerAttackDiv.id = "player-attack-div"
   playerAttackDiv.appendChild(playerNamePlayerAttack)
+  playerNamePlayerAttack.textContent = `${playerName}'s `
   playerAttackDiv.appendChild(playerPokemonPlayerAttack)
+  playerPokemonPlayerAttack.textContent = `${playerPokémon} `
   playerAttackDiv.appendChild(playerUsedPlayerAttack)
+  playerUsedPlayerAttack.textContent = "used "
   playerAttackDiv.appendChild(playerPokemonAttackPlayerAttack)
+  playerPokemonAttackPlayerAttack.textContent = `${playerPokémonAttack}!`
 
   /* PLAYER ATTACK EFFECTIVENESS DIV */
   playerAttackEffectivenessDiv.textContent = playerPokémonAttackEffectiveness
