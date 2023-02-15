@@ -65,6 +65,16 @@ roundsDrawn = 4;
 
 /* PLAYER AND RIVAL CHOICES */
 
+/* round-text */
+const roundText = document.createElement("div");
+roundText.id = "round-text";
+
+/* PLAYER CHOICE DIV */
+const playerChoiceDiv = document.createElement("div");
+playerChoiceDiv.appendChild(playerNamePlayerChoice)
+playerChoiceDiv.appendChild(playerGoPlayerChoice)
+playerChoiceDiv.appendChild(playerPokemonPlayerChoice)
+
 /* PLAYER CHOICE */
 const playerNamePlayerChoice = document.createElement("span");
 playerNamePlayerChoice.textContent = `${playerName}:`;
@@ -81,6 +91,12 @@ playerPokemonPlayerChoice.textContent = `${playerPokémon}!`;
 playerPokemonPlayerChoice.id = "player-Pokemon-player-choice";
 playerPokemonPlayerChoice.style = "color: red";
 
+/* RIVAL CHOICE DIV */
+const rivalChoiceDiv = document.createElement("div");
+rivalChoiceDiv.appendChild(rivalNamePlayerChoice)
+rivalChoiceDiv.appendChild(rivalGoPlayerChoice)
+rivalChoiceDiv.appendChild(rivalPokemonPlayerChoice)
+
 /* RIVAL CHOICE */
 const rivalNamePlayerChoice = document.createElement("span");
 rivalNamePlayerChoice.textContent = `${rivalName}:`;
@@ -96,6 +112,13 @@ const rivalPokemonPlayerChoice = document.createElement("span");
 rivalPokemonPlayerChoice.textContent = `${rivalPokémon}!`;
 rivalPokemonPlayerChoice.id = "rival-Pokemon-player-choice";
 rivalPokemonPlayerChoice.style = "color: red";
+
+/* PLAYER ATTACK DIV */
+const playerAttackDiv = document.createElement("div");
+playerAttackDiv.appendChild(playerNamePlayerAttack)
+playerAttackDiv.appendChild(playerPokemonPlayerAttack)
+playerAttackDiv.appendChild(playerUsedPlayerAttack)
+playerAttackDiv.appendChild(playerPokemonAttackPlayerAttack)
 
 /* PLAYER ATTACK */
 const playerNamePlayerAttack = document.createElement("span");
@@ -118,6 +141,13 @@ playerPokemonAttackPlayerAttack.textContent = `${playerPokémonAttack}!`;
 playerPokemonAttackPlayerAttack.id = "player-pokemon-attack-player-attack";
 playerPokemonAttackPlayerAttack.style = "color: red";
 
+/* RIVAL ATTACK DIV */
+const rivalAttackDiv = document.createElement("div");
+rivalAttackDiv.appendChild(rivalNamePlayerAttack)
+rivalAttackDiv.appendChild(rivalPokemonPlayerAttack)
+rivalAttackDiv.appendChild(rivalUsedPlayerAttack)
+rivalAttackDiv.appendChild(rivalPokemonAttackPlayerAttack)
+
 /* RIVAL ATTACK */
 const rivalNamePlayerAttack = document.createElement("span");
 rivalNamePlayerAttack.textContent = `${rivalName}'s`;
@@ -138,6 +168,15 @@ const rivalPokemonAttackPlayerAttack = document.createElement("span");
 rivalPokemonAttackPlayerAttack.textContent = `${rivalPokémonAttack}!`;
 rivalPokemonAttackPlayerAttack.id = "rival-pokemon-attack-player-attack";
 rivalPokemonAttackPlayerAttack.style = "color: red";
+
+/* ROUND RESULT ATTACK DIV */
+const roundResultDiv = document.createElement("div");
+roundResultDiv.appendChild(playerNameChoicesRoundResult)
+roundResultDiv.appendChild(playerPokemonChoicesRoundResult)
+roundResultDiv.appendChild(roundResultRoundResult)
+roundResultDiv.appendChild(rivalNameChoicesRoundResult)
+roundResultDiv.appendChild(rivalPokemonChoicesRoundResult)
+
 
 /* ROUND RESULT */
 const playerNameChoicesRoundResult = document.createElement("span");
@@ -164,8 +203,6 @@ const rivalPokemonChoicesRoundResult = document.createElement("span");
 rivalPokemonChoicesRoundResult.textContent = rivalPokémon;
 rivalPokemonChoicesRoundResult.id = "rivalPokemonChoicesRoundResult";
 rivalPokemonChoicesRoundResult.style = "color: red";
-
-
 
 
 
@@ -563,6 +600,22 @@ function playRound(playerChoice, rivalChoice) {
     let critGenDiv = createDiv(critDiv, "attack-rival");
     generateCriticalHitChance(critGenDiv);
   }
+
+  /* PLAYER AND RIVAL CHOICES */
+
+
+
+  createDiv(roundText, "scoreboard");
+  roundText.appendChild(playerChoiceDiv)
+  roundText.appendChild(rivalChoiceDiv)
+  roundText.appendChild(null)
+  roundText.appendChild(null)
+  roundText.appendChild(null)
+  roundText.appendChild(null)
+  roundText.appendChild(null)
+  
+  
+
 
 
   displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
