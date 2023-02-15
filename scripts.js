@@ -586,8 +586,13 @@ function playRound(playerChoice, rivalChoice) {
   playerNameChoicesRoundResult.textContent = `${playerName}'s`;
 
 
-
-  roundResultRoundResult.textContent = roundResult;
+  if (roundResult === roundResults[0]) {
+    roundResultRoundResult.textContent = " drew versus ";
+  } else if (roundResult === roundResults[2]) {
+    roundResultRoundResult.textContent = " won versus ";
+  } else {
+    roundResultRoundResult.textContent = " lost versus ";
+  }
 
 
   rivalNameChoicesRoundResult.textContent = `${rivalName}'s`;
@@ -639,8 +644,8 @@ function playRound(playerChoice, rivalChoice) {
   rivalNamePlayerAttack.textContent = `${rivalName}'s `
   rivalAttackDiv.appendChild(rivalPokemonPlayerAttack)
   rivalPokemonPlayerAttack.textContent = `${rivalPokémon} `
-  rivalAttackDiv.appendChild(playerUsedPlayerAttack)
-  rivalUsedPlayerAttack.textContent = "used "
+  rivalAttackDiv.appendChild(rivalUsedPlayerAttack)
+  rivalUsedPlayerAttack.textContent = `${roundResult}`
   rivalAttackDiv.appendChild(rivalPokemonAttackPlayerAttack)
   rivalPokemonAttackPlayerAttack.textContent = `${rivalPokémonAttack}!`
 
@@ -658,10 +663,14 @@ function playRound(playerChoice, rivalChoice) {
 
 
   roundResultDiv.appendChild(playerNameChoicesRoundResult)
+  playerNameChoicesRoundResult.textContent = `${playerName}'s `
   roundResultDiv.appendChild(playerPokemonChoicesRoundResult)
+  playerPokemonChoicesRoundResult.textContent = `${playerPokémon}`
   roundResultDiv.appendChild(roundResultRoundResult)
   roundResultDiv.appendChild(rivalNameChoicesRoundResult)
+  rivalNameChoicesRoundResult.textContent = `${rivalName}'s`
   roundResultDiv.appendChild(rivalPokemonChoicesRoundResult)
+  rivalPokemonChoicesRoundResult.textContent = `${rivalPokémon}!`
 
   playerPokemonChoicesRoundResult.textContent = playerPokémon;
   rivalPokemonChoicesRoundResult.textContent = rivalPokémon;
