@@ -568,14 +568,14 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
-    let critGenDiv = createDiv(critDiv, "attack-player");
+    let critGenDiv = createDiv(critDiv, "rival-attack-div");
     generateCriticalHitChance(critGenDiv);
   } else {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
     roundResult = roundResults[1];
-    let critGenDiv = createDiv(critDiv, "attack-rival");
+    let critGenDiv = createDiv(critDiv, "rival-attack-div");
     generateCriticalHitChance(critGenDiv);
   }
 
@@ -645,7 +645,7 @@ function playRound(playerChoice, rivalChoice) {
   rivalAttackDiv.appendChild(rivalPokemonPlayerAttack)
   rivalPokemonPlayerAttack.textContent = `${rivalPokémon} `
   rivalAttackDiv.appendChild(rivalUsedPlayerAttack)
-  rivalUsedPlayerAttack.textContent = `${roundResult}`
+  rivalUsedPlayerAttack.textContent = "used "
   rivalAttackDiv.appendChild(rivalPokemonAttackPlayerAttack)
   rivalPokemonAttackPlayerAttack.textContent = `${rivalPokémonAttack}!`
 
@@ -668,15 +668,15 @@ function playRound(playerChoice, rivalChoice) {
   playerPokemonChoicesRoundResult.textContent = `${playerPokémon}`
   roundResultDiv.appendChild(roundResultRoundResult)
   roundResultDiv.appendChild(rivalNameChoicesRoundResult)
-  rivalNameChoicesRoundResult.textContent = `${rivalName}'s`
+  rivalNameChoicesRoundResult.textContent = `${rivalName}'s `
   roundResultDiv.appendChild(rivalPokemonChoicesRoundResult)
   rivalPokemonChoicesRoundResult.textContent = `${rivalPokémon}!`
+
 
   playerPokemonChoicesRoundResult.textContent = playerPokémon;
   rivalPokemonChoicesRoundResult.textContent = rivalPokémon;
 
   
-
 
 
   
