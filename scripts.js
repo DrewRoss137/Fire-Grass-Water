@@ -82,7 +82,6 @@ playerNamePlayerChoice.id = "player-name-player-choice";
 playerNamePlayerChoice.style = "color: blue";
 
 const playerGoPlayerChoice = document.createElement("span");
-playerGoPlayerChoice.textContent = "GO!";
 playerGoPlayerChoice.id = "player-Go-player-choice";
 playerGoPlayerChoice.style = "color: purple";
 
@@ -596,12 +595,13 @@ function playRound(playerChoice, rivalChoice) {
 
   /* PLAYER CHOICE DIV */
   const playerChoiceDiv = document.createElement("div");
-
+  playerChoiceDiv.id = "player-choice-div"
   playerChoiceDiv.appendChild(playerNamePlayerChoice)
-  playerNamePlayerChoice.textContent = `${playerName}`
+  playerNamePlayerChoice.textContent = `${playerName}: `
   playerChoiceDiv.appendChild(playerGoPlayerChoice)
   playerChoiceDiv.appendChild(playerPokemonPlayerChoice)
-  playerPokemonPlayerChoice.textContent = playerPokémon
+  playerGoPlayerChoice.textContent = "GO! "
+  playerPokemonPlayerChoice.textContent = `${playerPokémon}!`
   
 
   /* RIVAL CHOICE DIV */
