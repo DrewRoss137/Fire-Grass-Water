@@ -190,7 +190,8 @@ img {
 #player-rival-choices,
 #stats,
 #faint-flavour-text,
-#exp-flavour-text {
+#exp-flavour-text,
+#round-text {
     align-items: center;
     display: flex;
     flex-direction: column;
