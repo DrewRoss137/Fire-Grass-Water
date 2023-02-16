@@ -758,24 +758,91 @@ function playRound(playerChoice, rivalChoice) {
     expFlavourText.appendChild(gainedPokemonName)
     expFlavourText.appendChild(expGained)
 
-    /* STATS */
-
-    createDiv(statsDiv, "post-game-flavour-text");
-    statsDiv.appendChild(roundsWonDiv)
-    statsDiv.appendChild(roundsLostDiv)
-    statsDiv.appendChild(roundsDrawnDiv)
-    statsDiv.appendChild(winPercentDiv)
-    statsDiv.appendChild(losePercentDiv)
-    statsDiv.appendChild(totalRoundsPlayedDiv)
-    statsDiv.appendChild(totalWinPercentDiv)
-    statsDiv.appendChild(totalLossPercentDiv)
-    statsDiv.appendChild(totalDrawPercentDiv)
 
 
-    createDiv(postGameDiv, "player-rival-choices")
-    postGameDiv.appendChild(postGameFlavourText)
-    postGameDiv.appendChild(statsDiv)
-    postGameDiv.appendChild(gameResultDiv)
+    /* displayedGameResult.appendChild(playerNameRoundResult)
+    displayedGameResult.appendChild(typeRoundResult)
+    displayedGameResult.appendChild(againstRoundResult)
+    displayedGameResult.appendChild(rivalNameRoundResult)
+    rivalNameRoundResult.textContent = `${rivalName}!`
+
+    displayedRoundsWon.textContent = `ROUNDS `;
+    playerScoreSpanNumber.textContent = playerScore;
+    displayedRoundsWon.appendChild(playerScoreSpanWon);
+    displayedRoundsWon.appendChild(playerScoreSpanWonColon)
+    displayedRoundsWon.appendChild(playerScoreSpanNumber);
+
+
+    displayedRoundsLost.textContent = `ROUNDS `;
+    rivalScoreSpanNumber.textContent = rivalScore;
+    displayedRoundsLost.appendChild(rivalScoreSpanWon);
+    displayedRoundsLost.appendChild(rivalScoreSpanWonColon)
+    displayedRoundsLost.appendChild(rivalScoreSpanNumber);
+
+    
+    displayedRoundsDrawn.textContent = `ROUNDS `;
+    drawSpanNumber.textContent = roundsDrawn;
+    displayedRoundsDrawn.appendChild(drawScoreSpanWon);
+    displayedRoundsDrawn.appendChild(drawScoreSpanWonScoreSpanWonColon)
+    displayedRoundsDrawn.appendChild(drawSpanNumber);
+
+
+    displayedWinPercentage.textContent = `WIN`;
+    winPercentSpanNumber.textContent = winPercentage;
+    displayedWinPercentage.appendChild(winPercentSign);
+    displayedWinPercentage.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
+    displayedWinPercentage.appendChild(winPercentSpanNumber);
+    displayedWinPercentage.appendChild(winPercentScoreSpanWon);
+
+
+    displayedLossPercentage.textContent = `LOSS`;
+    losePercentSpanNumber.textContent = lossPercentage;
+    displayedLossPercentage.appendChild(losePercentSign);
+    displayedLossPercentage.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
+    displayedLossPercentage.appendChild(losePercentSpanNumber)
+    displayedLossPercentage.appendChild(losePercentScoreSpanWon)
+
+
+
+    displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS `;
+    totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
+    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentScoreSpanWon)
+    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentSpanNumber)
+
+
+    displayedTotalWinPercentage.textContent = `TOTAL `;
+    totalWinPercentSpanNumber.textContent = totalWinPercentage;
+    displayedTotalWinPercentage.appendChild(totalWinPercentPreSign);
+    displayedTotalWinPercentage.appendChild(totalWinPercentScoreSpanWon)
+    displayedTotalWinPercentage.appendChild(totalWinPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalWinPercentage.appendChild(totalWinPercentSpanNumber)
+    displayedTotalWinPercentage.appendChild(totalWinPercentSign);
+  
+
+    displayedTotalLossPercentage.textContent = `TOTAL `
+    totalLossPercentSpanNumber.textContent = totalLossPercentage;
+    displayedTotalLossPercentage.appendChild(totalLossPercentPreSign);
+    displayedTotalLossPercentage.appendChild(totalLossPercentScoreSpanWon)
+    displayedTotalLossPercentage.appendChild(totalLossPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalLossPercentage.appendChild(totalLossPercentSpanNumber)
+    displayedTotalLossPercentage.appendChild(totalLossPercentSign);
+
+
+    displayedTotalDrawPercentage.textContent = `TOTAL `;
+    totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentPreSign);
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWon)
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentSpanNumber)
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentSign); */
+
+
+
+
+
+
+
     
 
 
@@ -798,11 +865,52 @@ function playRound(playerChoice, rivalChoice) {
     }
     expGained.textContent = ` ${exp} Exp. Points!`;
 
+        /* STATS */
+    createDiv(postGameDiv, "player-rival-choices")
+    postGameDiv.appendChild(postGameFlavourText)
+    postGameDiv.appendChild(statsDiv)
+    postGameDiv.appendChild(gameResultDiv)
+
+
+    createDiv(statsDiv, "post-game-flavour-text");
+    statsDiv.appendChild(roundsWonDiv)
+
+    statsDiv.appendChild(roundsLostDiv)
+
+
+    statsDiv.appendChild(roundsDrawnDiv)
+
+
+    statsDiv.appendChild(winPercentDiv)
+
+
+    statsDiv.appendChild(losePercentDiv)
+
+
+    statsDiv.appendChild(totalRoundsPlayedDiv)
+
+
+    statsDiv.appendChild(totalWinPercentDiv)
+
+
+    statsDiv.appendChild(totalLossPercentDiv)
+
+
+    statsDiv.appendChild(totalDrawPercentDiv)
+    totalDrawPercentDiv.appendChild(totalDrawPercentPreSign)
+    totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWon)
+    totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
+    totalDrawPercentDiv.appendChild(totalDrawPercentSpanNumber)
+    totalDrawPercentDiv.appendChild(totalDrawPercentSign)
+
+    /* GAME RESULT */
+    createDiv(gameResultDiv, "stats-div")
+
+    /* POST GAME */
 
 
 
-
-
+    /*
     displayedGameResult.appendChild(playerNameRoundResult)
     displayedGameResult.appendChild(typeRoundResult)
     displayedGameResult.appendChild(againstRoundResult)
@@ -878,7 +986,7 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWon)
     displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
     displayedTotalDrawPercentage.appendChild(totalDrawPercentSpanNumber)
-    displayedTotalDrawPercentage.appendChild(totalDrawPercentSign);
+    displayedTotalDrawPercentage.appendChild(totalDrawPercentSign); */
 
 
 
