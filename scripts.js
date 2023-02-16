@@ -878,7 +878,12 @@ function playRound(playerChoice, rivalChoice) {
 
 
     statsDiv.appendChild(totalWinPercentDiv)
-
+    totalWinPercentSpanNumber.textContent = totalWinPercentage;
+    totalWinPercentDiv.appendChild(totalWinPercentPreSign)
+    totalWinPercentDiv.appendChild(totalWinPercentScoreSpanWon)
+    totalWinPercentDiv.appendChild(totalWinPercentScoreSpanWonScoreSpanWonColon)
+    totalWinPercentDiv.appendChild(totalWinPercentSpanNumber)
+    totalWinPercentDiv.appendChild(totalWinPercentSign)
 
     statsDiv.appendChild(totalLossPercentDiv)
     totalLossPercentSpanNumber.textContent = totalLossPercentage;
