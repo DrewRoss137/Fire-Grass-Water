@@ -804,20 +804,7 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-    displayedTotalRoundsPlayed.textContent = `TOTAL ROUNDS `;
-    totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
-    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentScoreSpanWon)
-    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
-    displayedTotalRoundsPlayed.appendChild(totalRoundsPercentSpanNumber)
 
-
-    displayedTotalWinPercentage.textContent = `TOTAL `;
-    totalWinPercentSpanNumber.textContent = totalWinPercentage;
-    displayedTotalWinPercentage.appendChild(totalWinPercentPreSign);
-    displayedTotalWinPercentage.appendChild(totalWinPercentScoreSpanWon)
-    displayedTotalWinPercentage.appendChild(totalWinPercentScoreSpanWonScoreSpanWonColon)
-    displayedTotalWinPercentage.appendChild(totalWinPercentSpanNumber)
-    displayedTotalWinPercentage.appendChild(totalWinPercentSign);
   
 */
  
@@ -875,7 +862,10 @@ function playRound(playerChoice, rivalChoice) {
 
 
     statsDiv.appendChild(totalRoundsPlayedDiv)
-
+    totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
+    totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWon)
+    totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
+    totalRoundsPlayedDiv.appendChild(totalRoundsPercentSpanNumber)
 
     statsDiv.appendChild(totalWinPercentDiv)
     totalWinPercentSpanNumber.textContent = totalWinPercentage;
