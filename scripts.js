@@ -187,9 +187,7 @@ rivalPokemonChoicesRoundResult.style = "color: red";
 
 
 
-/* CRIT GEN */
-const critDiv = document.createElement("div");
-critDiv.id = "critical-hit"
+
 
 
 /* STATS */
@@ -553,8 +551,14 @@ function generateAttack(choice) {
   return attack;
 };
 
+/* CRIT GEN */
+let critDiv = document.createElement("div");
+critDiv.id = "critical-hit"
+/* CRIT GEN */
+
+
 function playRound(playerChoice, rivalChoice) {
-  critDiv.remove()
+  critDiv.remove
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
@@ -568,29 +572,32 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
-    let critGenDiv = createDiv(critDiv, "player-attack-div");
-    generateCriticalHitChance(critGenDiv);
+    generateCriticalHitChance(critDiv);
   } else {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
     roundResult = roundResults[1];
-    let critGenDiv = createDiv(critDiv, "rival-attack-div");
-    generateCriticalHitChance(critGenDiv);
+    generateCriticalHitChance(critDiv);
   }
 
-  /* PLAYER AND RIVAL CHOICES */
-
-  /* ROUND RESULT */
-  playerNameChoicesRoundResult.textContent = `${playerName}'s`;
-
-
+  createDiv(roundText, "scoreboard");
+  roundText.appendChild(playerChoiceDiv)
+  roundText.appendChild(rivalChoiceDiv)
+  roundText.appendChild(playerAttackDiv)
+  roundText.appendChild(playerAttackEffectivenessDiv)
+  roundText.appendChild(rivalAttackDiv)
+  roundText.appendChild(rivalAttackEffectivenessDiv)
+  roundText.appendChild(roundResultDiv)
+  
   if (roundResult === roundResults[0]) {
     roundResultRoundResult.textContent = " drew versus ";
   } else if (roundResult === roundResults[2]) {
     roundResultRoundResult.textContent = " won versus ";
+    roundText.insertBefore(critDiv, playerAttackEffectivenessDiv.nextSibling)
   } else {
     roundResultRoundResult.textContent = " lost versus ";
+    roundText.insertBefore(critDiv, rivalAttackEffectivenessDiv.nextSibling)
   }
 
 
@@ -651,14 +658,7 @@ function playRound(playerChoice, rivalChoice) {
   /* RIVAL ATTACK EFFECTIVENESS DIV */
   rivalAttackEffectivenessDiv.textContent = rivalPokémonAttackEffectiveness
 
-  createDiv(roundText, "scoreboard");
-  roundText.appendChild(playerChoiceDiv)
-  roundText.appendChild(rivalChoiceDiv)
-  roundText.appendChild(playerAttackDiv)
-  roundText.appendChild(playerAttackEffectivenessDiv)
-  roundText.appendChild(rivalAttackDiv)
-  roundText.appendChild(rivalAttackEffectivenessDiv)
-  roundText.appendChild(roundResultDiv)
+
 
 
   roundResultDiv.appendChild(playerNameChoicesRoundResult)
@@ -852,6 +852,7 @@ function playRound(playerChoice, rivalChoice) {
     playerAttackEffectivenessDiv.remove
     rivalAttackDiv.remove
     rivalAttackEffectivenessDiv.remove
+    critDiv.remove
   }
 };
 
@@ -880,7 +881,7 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
  function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
-    divName.textContent = "A critical hit!";
+    return divName.textContent = "A critical hit!";
     }
   } 
 
