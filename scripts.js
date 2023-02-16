@@ -861,29 +861,16 @@ function playRound(playerChoice, rivalChoice) {
     rivalNameRoundResult.textContent = `${rivalName}!`
 
 
+
+
+
+
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
   } else {
-    displayedGameResult.textContent = null;
-    displayedRoundsWon.textContent = null;
-    displayedRoundsLost.textContent = null;
-    displayedRoundsDrawn.textContent = null;
-    displayedWinPercentage.textContent = null;
-    displayedLossPercentage.textContent = null;
-    displayedTotalRoundsPlayed.textContent = null;
-    displayedTotalWinPercentage.textContent = null;
-    displayedTotalLossPercentage.textContent = null;
-    displayedTotalDrawPercentage.textContent = null;
-    faintFlavourText.textContent = null;
-    expFlavourText.textContent = null;
-    playerChoiceDiv.remove
-    rivalChoiceDiv.remove
-    playerAttackDiv.remove
-    playerAttackEffectivenessDiv.remove
-    rivalAttackDiv.remove
-    rivalAttackEffectivenessDiv.remove
+    postGameDiv.remove()
   }
 };
 
