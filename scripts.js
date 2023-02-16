@@ -183,15 +183,12 @@ rivalPokemonChoicesRoundResult.id = "rivalPokemonChoicesRoundResult";
 rivalPokemonChoicesRoundResult.style = "color: red";
 
 
-
-
-
-
-
-
-
 /* STATS */
+
 /*ROUNDS WON */
+const roundsWonDiv = document.createElement("div");
+roundsWonDiv.id = "rounds-won-div"
+
 const playerScoreSpanNumber = document.createElement("span");
 playerScoreSpanNumber.textContent = playerScore;
 playerScoreSpanNumber.id = "player-score-span";
@@ -209,6 +206,9 @@ playerScoreSpanWonColon.style = "color: blue;"
 
 
 /*ROUNDS LOST */
+const roundsLostDiv = document.createElement("div");
+roundsLostDiv.id = "rounds-lost-div"
+
 const rivalScoreSpanNumber = document.createElement("span");
 rivalScoreSpanNumber.textContent = rivalScore;
 rivalScoreSpanNumber.id = "rival-score-span";
@@ -226,6 +226,10 @@ rivalScoreSpanWonColon.style = "color: blue;"
 
 
 /*ROUNDS DRAWN */
+const roundsDrawnDiv = document.createElement("div");
+roundsDrawnDiv.id = "rounds-drawn-div"
+
+
 const drawSpanNumber = document.createElement("span");
 drawSpanNumber.textContent = roundsDrawn;
 drawSpanNumber.id = "drawSpanNumber-score-span";
@@ -243,6 +247,9 @@ drawScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 
 /* WIN% */
+const winPercentDiv = document.createElement("div");
+winPercentDiv.id = "win-percent-div"
+
 const winPercentSpanNumber = document.createElement("span");
 winPercentSpanNumber.textContent = winPercentage;
 winPercentSpanNumber.id = "winPercentSpanNumber-score-span";
@@ -265,6 +272,9 @@ winPercentSign.style = "color: cyan;"
 
 
 /* LOSE% */
+const losePercentDiv = document.createElement("div");
+losePercentDiv.id = "lose-percent-div"
+
 const losePercentSpanNumber = document.createElement("span");
 losePercentSpanNumber.textContent = lossPercentage;
 losePercentSpanNumber.id = "losePercentSpanNumber-score-span";
@@ -286,6 +296,9 @@ losePercentSign.id = "awdawdore-wawdon-colon";
 losePercentSign.style = "color: cyan;"
 
 /* TOTAL ROUNDS PLAYED */
+const totalRoundsPlayedDiv = document.createElement("div")
+totalRoundsPlayedDiv.id = "total-rounds-played-div"
+
 const totalRoundsPercentSpanNumber = document.createElement("span");
 totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
 totalRoundsPercentSpanNumber.id = "loawdawdSpanNumber-score-span";
@@ -303,6 +316,9 @@ totalRoundsPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 
 /* TOTAL WIN% */
+const totalWinPercentDiv = document.createElement("div")
+totalWinPercentDiv.id = "total-win-percent-div"
+
 const totalWinPercentSpanNumber = document.createElement("span");
 totalWinPercentSpanNumber.textContent = totalWinPercentage;
 totalWinPercentSpanNumber.id = "totalwinpercentSpanNumber-score-span";
@@ -329,6 +345,9 @@ totalWinPercentPreSign.id = "awdawawddore-wawdon-colon";
 totalWinPercentPreSign.style = "color: yellow;"
 
 /* TOTAL LOSS% */
+const totalLossPercentDiv = document.createElement("div")
+totalLossPercentDiv.id = "total-loss-percent-div"
+
 const totalLossPercentSpanNumber = document.createElement("span");
 totalLossPercentSpanNumber.textContent = totalLossPercentage;
 totalLossPercentSpanNumber.id = "tawdentSpanNumber-score-span";
@@ -355,6 +374,9 @@ totalLossPercentPreSign.id = "awdawaawwe-wawdon-colon";
 totalLossPercentPreSign.style = "color: yellow;"
 
 /* TOTAL DRAW% */
+const totalDrawPercentDiv = document.createElement("div")
+totalDrawPercentDiv.id = "total-draw-percent-div"
+
 const totalDrawPercentSpanNumber = document.createElement("span");
 totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
 totalDrawPercentSpanNumber.id = "tawdeaaantSpanNumber-score-span";
@@ -382,6 +404,9 @@ totalDrawPercentPreSign.style = "color: yellow;"
 
 
 /* ROUND RESULT */
+const gameResultDiv = document.createElement("div")
+gameResultDiv.id = "game-result-div"
+
 const playerNameRoundResult = document.createElement("span");
 playerNameRoundResult.textContent = playerName;
 playerNameRoundResult.id = "player-name-round-result";
@@ -665,7 +690,7 @@ function playRound(playerChoice, rivalChoice) {
   roundResultDiv.appendChild(playerNameChoicesRoundResult)
   playerNameChoicesRoundResult.textContent = `${playerName}'s `
   roundResultDiv.appendChild(playerPokemonChoicesRoundResult)
-  playerPokemonChoicesRoundResult.textContent = `${playerPokémon}`
+  playerPokemonChoicesRoundResult.textContent = `${playerPokémon} `
   roundResultDiv.appendChild(roundResultRoundResult)
   roundResultDiv.appendChild(rivalNameChoicesRoundResult)
   rivalNameChoicesRoundResult.textContent = `${rivalName}'s `
@@ -724,26 +749,27 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-    postGameFlavourText.appendChild(expFlavourText)
+    
 
 
     
     if (playerScore > rivalScore) {
+      playerNameFaintFlavourText.textContent = `Rival ${rivalName}'s `
+      playerPokemonNameFaintFlavourText.textContent = ` ${rivalPokémon} `;
+      expPlayerName.textContent = `${playerName}'s `;
+      expPokemonName.textContent = playerPokémon;
       typeRoundResult.style = "color:green;"
       typeRoundResult.textContent = "WON"
-      playerNameFaintFlavourText.textContent = `Rival ${rivalName}'s`
-      playerPokemonNameFaintFlavourText.textContent = rivalPokémon;
-      expPlayerName.textContent = `${playerName}'s`;
-      expPokemonName.textContent = playerPokémon;
+
     } else {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
-      playerNameFaintFlavourText.textContent = `${playerName}'s`
-      playerPokemonNameFaintFlavourText.textContent = playerPokémon;
-      expPlayerName.textContent = `${rivalName}'s`;
-      expPokemonName.textContent = rivalPokémon;
+      playerNameFaintFlavourText.textContent = `${playerName}'s `
+      playerPokemonNameFaintFlavourText.textContent = `${playerPokémon} `;
+      expPlayerName.textContent = `${rivalName}'s `;
+      expPokemonName.textContent = ` ${rivalPokémon}`;
     }
-    expGained.textContent = `${exp} Exp. Points!`;
+    expGained.textContent = ` ${exp} Exp. Points!`;
 
 
 
