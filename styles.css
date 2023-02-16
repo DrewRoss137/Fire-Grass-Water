@@ -330,3 +330,6 @@ img {
     justify-content: center;
 }
 
+#stats-div {
+    margin: 32px 0px;
+}
