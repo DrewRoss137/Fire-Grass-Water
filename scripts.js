@@ -489,41 +489,10 @@ JS-DOM
 
 
 
-/* STATS */
-let displayedRoundsWon = document.querySelector("#rounds-won");
-let displayedRoundsLost = document.querySelector("#rounds-lost");
-let displayedRoundsDrawn = document.querySelector("#rounds-drawn");
-let displayedWinPercentage = document.querySelector("#win-percentage");
-let displayedLossPercentage = document.querySelector("#lose-percentage");
-let displayedTotalRoundsPlayed = document.querySelector("#total-rounds-played");
-let displayedTotalWinPercentage= document.querySelector("#total-win-percentage");
-let displayedTotalLossPercentage= document.querySelector("#total-loss-percentage");
-let displayedTotalDrawPercentage = document.querySelector("#total-draw-percentage");
-
-
-/* CHOICES */
-
-
-let displayedPlayerChoice = document.querySelector("#choice-player");
-let displayedRivalChoice = document.querySelector("#choice-rival");
-
-
-/* ATTACKS */
-let displayedPlayerPokémonAttack = document.querySelector("#attack-player");
-let displayedRivalPokémonAttack = document.querySelector("#attack-rival");
-
-
-/* EFFECTIVENESS */
-
-
-let displayedPlayerPokémonAttackEffectiveness = document.querySelector("#effectiveness-player");
-let displayedRivalPokémonAttackEffectiveness = document.querySelector("#effectiveness-rival");
 
 
 
-/* RESULT */
-let displayedRoundResult = document.querySelector("#result");
-let displayedGameResult = document.querySelector("#game-result");
+
 
 /* NAMES */
 let displayedPlayerName = document.querySelector("#player-name");
@@ -715,15 +684,6 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-  displayedPlayerChoice.textContent = (choiceFlavourText(playerName, playerPokémon));
-  displayedRivalChoice.textContent = (choiceFlavourText(rivalName, rivalPokémon))
-  displayedPlayerPokémonAttack.textContent = attackFlavourText(playerName, playerPokémon, playerPokémonAttack)
-  displayedPlayerPokémonAttackEffectiveness.textContent = playerPokémonAttackEffectiveness;
-  displayedPlayerPokémonAttackEffectiveness.style = "font-weight: bold;"
-  displayedRivalPokémonAttack.textContent = attackFlavourText(rivalName, rivalPokémon, rivalPokémonAttack);
-  displayedRivalPokémonAttackEffectiveness.textContent = rivalPokémonAttackEffectiveness;
-  displayedRivalPokémonAttackEffectiveness.style = "font-weight: bold;"
-  displayedRoundResult.textContent = (generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, roundResult))
 
   displayedPlayerScore.textContent = playerScore;
   displayedRivalScore.textContent = rivalScore;
