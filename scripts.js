@@ -558,13 +558,14 @@ critDiv.id = "critical-hit"
 
 
 function playRound(playerChoice, rivalChoice) {
-  critDiv.remove
+  critDiv.remove()
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     roundsDrawn ++; 
     roundResult = roundResults[0];
+    critDiv.remove()
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
@@ -592,10 +593,11 @@ function playRound(playerChoice, rivalChoice) {
   
   if (roundResult === roundResults[0]) {
     roundResultRoundResult.textContent = " drew versus ";
+    critDiv.remove
   } else if (roundResult === roundResults[2]) {
     roundResultRoundResult.textContent = " won versus ";
     roundText.insertBefore(critDiv, playerAttackEffectivenessDiv.nextSibling)
-  } else {
+  } else if (roundResult === roundResults[1]){
     roundResultRoundResult.textContent = " lost versus ";
     roundText.insertBefore(critDiv, rivalAttackEffectivenessDiv.nextSibling)
   }
@@ -852,7 +854,6 @@ function playRound(playerChoice, rivalChoice) {
     playerAttackEffectivenessDiv.remove
     rivalAttackDiv.remove
     rivalAttackEffectivenessDiv.remove
-    critDiv.remove
   }
 };
 
