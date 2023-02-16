@@ -819,23 +819,10 @@ function playRound(playerChoice, rivalChoice) {
     displayedTotalWinPercentage.appendChild(totalWinPercentSpanNumber)
     displayedTotalWinPercentage.appendChild(totalWinPercentSign);
   
-
-    displayedTotalLossPercentage.textContent = `TOTAL `
-    totalLossPercentSpanNumber.textContent = totalLossPercentage;
-    displayedTotalLossPercentage.appendChild(totalLossPercentPreSign);
-    displayedTotalLossPercentage.appendChild(totalLossPercentScoreSpanWon)
-    displayedTotalLossPercentage.appendChild(totalLossPercentScoreSpanWonScoreSpanWonColon)
-    displayedTotalLossPercentage.appendChild(totalLossPercentSpanNumber)
-    displayedTotalLossPercentage.appendChild(totalLossPercentSign);
+*/
+ 
 
 
-    displayedTotalDrawPercentage.textContent = `TOTAL `;
-    totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
-    displayedTotalDrawPercentage.appendChild(totalDrawPercentPreSign);
-    displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWon)
-    displayedTotalDrawPercentage.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
-    displayedTotalDrawPercentage.appendChild(totalDrawPercentSpanNumber)
-    displayedTotalDrawPercentage.appendChild(totalDrawPercentSign); */
 
 
 
@@ -863,7 +850,7 @@ function playRound(playerChoice, rivalChoice) {
       expPlayerName.textContent = `${rivalName}'s `;
       expPokemonName.textContent = ` ${rivalPokémon}`;
     }
-    expGained.textContent = ` ${exp} Exp. Points!`;
+    expGained.textContent = ` ${exp} Exp. Points!`; 
 
         /* STATS */
     createDiv(postGameDiv, "player-rival-choices")
@@ -894,9 +881,16 @@ function playRound(playerChoice, rivalChoice) {
 
 
     statsDiv.appendChild(totalLossPercentDiv)
+    totalLossPercentSpanNumber.textContent = totalLossPercentage;
+    totalLossPercentDiv.appendChild(totalLossPercentPreSign)
+    totalLossPercentDiv.appendChild(totalLossPercentScoreSpanWon)
+    totalLossPercentDiv.appendChild(totalLossPercentScoreSpanWonScoreSpanWonColon)
+    totalLossPercentDiv.appendChild(totalLossPercentSpanNumber)
+    totalLossPercentDiv.appendChild(totalLossPercentSign)
 
 
     statsDiv.appendChild(totalDrawPercentDiv)
+    totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
     totalDrawPercentDiv.appendChild(totalDrawPercentPreSign)
     totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWon)
     totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
