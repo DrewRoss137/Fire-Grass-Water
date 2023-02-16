@@ -593,13 +593,12 @@ function playRound(playerChoice, rivalChoice) {
   
   if (roundResult === roundResults[0]) {
     roundResultRoundResult.textContent = " drew versus ";
-    critDiv.remove
   } else if (roundResult === roundResults[2]) {
     roundResultRoundResult.textContent = " won versus ";
-    roundText.insertBefore(critDiv, playerAttackEffectivenessDiv.nextSibling)
+    roundText.insertBefore(critDiv, playerAttackDiv.nextSibling)
   } else if (roundResult === roundResults[1]){
     roundResultRoundResult.textContent = " lost versus ";
-    roundText.insertBefore(critDiv, rivalAttackEffectivenessDiv.nextSibling)
+    roundText.insertBefore(critDiv, rivalAttackDiv.nextSibling)
   }
 
 
@@ -674,8 +673,6 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokemonChoicesRoundResult.textContent = `${rivalPokémon}!`
 
 
-  playerPokemonChoicesRoundResult.textContent = playerPokémon;
-  rivalPokemonChoicesRoundResult.textContent = rivalPokémon;
 
   
 
