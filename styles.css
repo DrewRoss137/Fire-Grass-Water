@@ -333,4 +333,5 @@ img {
 #stats-div {
     margin: 32px 0px;
     flex-direction: column;
+    gap: 32px;
 }
