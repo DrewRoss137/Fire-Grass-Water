@@ -744,16 +744,33 @@ function playRound(playerChoice, rivalChoice) {
     let exp = Math.floor(Math.random() * 51) + 50;
 
     createDiv(postGameFlavourText, "player-rival-choices");
+
+    /* FAINT TEXT */
     postGameFlavourText.appendChild(faintFlavourText)
     faintFlavourText.appendChild(playerNameFaintFlavourText)
     faintFlavourText.appendChild(playerPokemonNameFaintFlavourText)
     faintFlavourText.appendChild(faintedFaintFlavourText)
 
+    /* EXP TEXT */
     postGameFlavourText.appendChild(expFlavourText)
     expFlavourText.appendChild(expPlayerName)
     expFlavourText.appendChild(expPokemonName)
     expFlavourText.appendChild(gainedPokemonName)
     expFlavourText.appendChild(expGained)
+
+    /* STATS */
+
+    createDiv(statsDiv, "post-game-flavour-text");
+    statsDiv.appendChild(roundsWonDiv)
+    statsDiv.appendChild(roundsLostDiv)
+    statsDiv.appendChild(roundsDrawnDiv)
+    statsDiv.appendChild(winPercentDiv)
+    statsDiv.appendChild(losePercentDiv)
+    statsDiv.appendChild(totalRoundsPlayedDiv)
+    statsDiv.appendChild(totalWinPercentDiv)
+    statsDiv.appendChild(totalLossPercentDiv)
+    statsDiv.appendChild(totalDrawPercentDiv)
+
 
     createDiv(postGameDiv, "player-rival-choices")
     postGameDiv.appendChild(postGameFlavourText)
