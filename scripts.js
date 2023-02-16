@@ -780,27 +780,10 @@ function playRound(playerChoice, rivalChoice) {
     displayedRoundsLost.appendChild(rivalScoreSpanNumber);
 
     
-    displayedRoundsDrawn.textContent = `ROUNDS `;
-    drawSpanNumber.textContent = roundsDrawn;
-    displayedRoundsDrawn.appendChild(drawScoreSpanWon);
-    displayedRoundsDrawn.appendChild(drawScoreSpanWonScoreSpanWonColon)
-    displayedRoundsDrawn.appendChild(drawSpanNumber);
 
 
-    displayedWinPercentage.textContent = `WIN`;
-    winPercentSpanNumber.textContent = winPercentage;
-    displayedWinPercentage.appendChild(winPercentSign);
-    displayedWinPercentage.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
-    displayedWinPercentage.appendChild(winPercentSpanNumber);
-    displayedWinPercentage.appendChild(winPercentScoreSpanWon);
 
 
-    displayedLossPercentage.textContent = `LOSS`;
-    losePercentSpanNumber.textContent = lossPercentage;
-    displayedLossPercentage.appendChild(losePercentSign);
-    displayedLossPercentage.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
-    displayedLossPercentage.appendChild(losePercentSpanNumber)
-    displayedLossPercentage.appendChild(losePercentScoreSpanWon)
 
 
 
@@ -848,18 +831,38 @@ function playRound(playerChoice, rivalChoice) {
 
     createDiv(statsDiv, "post-game-flavour-text");
     statsDiv.appendChild(roundsWonDiv)
+    playerScoreSpanNumber.textContent = playerScore;
+    roundsWonDiv.appendChild(playerScoreSpanWon);
+    roundsWonDiv.appendChild(playerScoreSpanWonColon)
+    roundsWonDiv.appendChild(playerScoreSpanNumber);
 
     statsDiv.appendChild(roundsLostDiv)
-
+    rivalScoreSpanNumber.textContent = rivalScore;
+    roundsLostDiv.appendChild(rivalScoreSpanWon);
+    roundsLostDiv.appendChild(rivalScoreSpanWonColon)
+    roundsLostDiv.appendChild(rivalScoreSpanNumber);
 
     statsDiv.appendChild(roundsDrawnDiv)
+    drawSpanNumber.textContent = roundsDrawn;
+    roundsDrawnDiv.appendChild(drawScoreSpanWon);
+    roundsDrawnDiv.appendChild(drawScoreSpanWonScoreSpanWonColon)
+    roundsDrawnDiv.appendChild(drawSpanNumber);
 
 
     statsDiv.appendChild(winPercentDiv)
+    winPercentSpanNumber.textContent = winPercentage;
+    winPercentDiv.appendChild(winPercentSign);
+    winPercentDiv.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
+    winPercentDiv.appendChild(winPercentSpanNumber);
+    winPercentDiv.appendChild(winPercentScoreSpanWon);
 
 
     statsDiv.appendChild(losePercentDiv)
-
+    losePercentSpanNumber.textContent = lossPercentage;
+    losePercentDiv.appendChild(losePercentSign);
+    losePercentDiv.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
+    losePercentDiv.appendChild(losePercentSpanNumber)
+    losePercentDiv.appendChild(losePercentScoreSpanWon)
 
     statsDiv.appendChild(totalRoundsPlayedDiv)
     totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
