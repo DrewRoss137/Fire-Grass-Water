@@ -183,7 +183,15 @@ rivalPokemonChoicesRoundResult.id = "rivalPokemonChoicesRoundResult";
 rivalPokemonChoicesRoundResult.style = "color: red";
 
 
+/* POST GAME */
+const postGameDiv = document.createElement("div");
+postGameDiv.id = "post-game"
+
+
 /* STATS */
+const statsDiv = document.createElement("div");
+statsDiv.id = "stats-div"
+
 
 /*ROUNDS WON */
 const roundsWonDiv = document.createElement("div");
@@ -403,7 +411,7 @@ totalDrawPercentPreSign.id = "awdawaaaawwe-wawdon-colon";
 totalDrawPercentPreSign.style = "color: yellow;"
 
 
-/* ROUND RESULT */
+/* GAME RESULT */
 const gameResultDiv = document.createElement("div")
 gameResultDiv.id = "game-result-div"
 
@@ -747,8 +755,10 @@ function playRound(playerChoice, rivalChoice) {
     expFlavourText.appendChild(gainedPokemonName)
     expFlavourText.appendChild(expGained)
 
-
-
+    createDiv(postGameDiv, "player-rival-choices")
+    postGameDiv.appendChild(postGameFlavourText)
+    postGameDiv.appendChild(statsDiv)
+    postGameDiv.appendChild(gameResultDiv)
     
 
 
@@ -770,6 +780,7 @@ function playRound(playerChoice, rivalChoice) {
       expPokemonName.textContent = ` ${rivalPokémon}`;
     }
     expGained.textContent = ` ${exp} Exp. Points!`;
+
 
 
 
