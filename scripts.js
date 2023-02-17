@@ -197,6 +197,8 @@ statsDiv.id = "stats-div"
 const roundsWonDiv = document.createElement("div");
 roundsWonDiv.id = "rounds-won-div"
 
+roundsWonDiv.textContent = "ROUNDS "
+
 const playerScoreSpanNumber = document.createElement("span");
 playerScoreSpanNumber.textContent = playerScore;
 playerScoreSpanNumber.id = "player-score-span";
@@ -216,6 +218,8 @@ playerScoreSpanWonColon.style = "color: blue;"
 /*ROUNDS LOST */
 const roundsLostDiv = document.createElement("div");
 roundsLostDiv.id = "rounds-lost-div"
+
+roundsLostDiv.textContent = "ROUNDS "
 
 const rivalScoreSpanNumber = document.createElement("span");
 rivalScoreSpanNumber.textContent = rivalScore;
@@ -237,6 +241,8 @@ rivalScoreSpanWonColon.style = "color: blue;"
 const roundsDrawnDiv = document.createElement("div");
 roundsDrawnDiv.id = "rounds-drawn-div"
 
+roundsDrawnDiv.textContent = "ROUNDS "
+
 
 const drawSpanNumber = document.createElement("span");
 drawSpanNumber.textContent = roundsDrawn;
@@ -257,6 +263,8 @@ drawScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 /* WIN% */
 const winPercentDiv = document.createElement("div");
 winPercentDiv.id = "win-percent-div"
+
+winPercentDiv.textContent = "WIN"
 
 const winPercentSpanNumber = document.createElement("span");
 winPercentSpanNumber.textContent = winPercentage;
@@ -283,6 +291,8 @@ winPercentSign.style = "color: cyan;"
 const losePercentDiv = document.createElement("div");
 losePercentDiv.id = "lose-percent-div"
 
+losePercentDiv.textContent = "LOSS"
+
 const losePercentSpanNumber = document.createElement("span");
 losePercentSpanNumber.textContent = lossPercentage;
 losePercentSpanNumber.id = "losePercentSpanNumber-score-span";
@@ -307,6 +317,8 @@ losePercentSign.style = "color: cyan;"
 const totalRoundsPlayedDiv = document.createElement("div")
 totalRoundsPlayedDiv.id = "total-rounds-played-div"
 
+totalRoundsPlayedDiv.textContent = "TOTAL ROUNDS "
+
 const totalRoundsPercentSpanNumber = document.createElement("span");
 totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
 totalRoundsPercentSpanNumber.id = "loawdawdSpanNumber-score-span";
@@ -326,6 +338,7 @@ totalRoundsPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 /* TOTAL WIN% */
 const totalWinPercentDiv = document.createElement("div")
 totalWinPercentDiv.id = "total-win-percent-div"
+totalWinPercentDiv.textContent = "TOTAL "
 
 const totalWinPercentSpanNumber = document.createElement("span");
 totalWinPercentSpanNumber.textContent = totalWinPercentage;
@@ -356,6 +369,8 @@ totalWinPercentPreSign.style = "color: yellow;"
 const totalLossPercentDiv = document.createElement("div")
 totalLossPercentDiv.id = "total-loss-percent-div"
 
+totalLossPercentDiv.textContent = "TOTAL "
+
 const totalLossPercentSpanNumber = document.createElement("span");
 totalLossPercentSpanNumber.textContent = totalLossPercentage;
 totalLossPercentSpanNumber.id = "tawdentSpanNumber-score-span";
@@ -384,6 +399,8 @@ totalLossPercentPreSign.style = "color: yellow;"
 /* TOTAL DRAW% */
 const totalDrawPercentDiv = document.createElement("div")
 totalDrawPercentDiv.id = "total-draw-percent-div"
+
+totalDrawPercentDiv.textContent = "TOTAL "
 
 const totalDrawPercentSpanNumber = document.createElement("span");
 totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
