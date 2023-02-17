@@ -622,7 +622,7 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-  createDiv(roundText, "scoreboard");
+  createDiv(roundText, "player-rival-scores-div");
   roundText.appendChild(playerChoiceDiv)
   roundText.appendChild(rivalChoiceDiv)
   roundText.appendChild(playerAttackDiv)
