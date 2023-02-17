@@ -860,28 +860,6 @@ function playRound(playerChoice, rivalChoice) {
   }
 };
 
-function choiceFlavourText(name, pokémon) {
-  return(`${name}: GO! ${pokémon}!`);
-}
-
-function attackFlavourText(name, pokémon, attack) {
-  if (name === playerName) {
-    return(`${playerName}'s ${pokémon} used ${attack}!`);
-  } else {
-    return(`Rival ${rivalName}'s ${pokémon} used ${attack}!`);
-  } 
-};
-
-function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPokémon, result) {
-  if (result === roundResults[0]) {
-    return(`${playerName}'s ${playerPokémon} drew against ${rivalName}'s ${rivalPokémon}!`)
-  } else if (result === roundResults[2]) {
-    return(`${playerName}'s ${playerPokémon} won against ${rivalName}'s ${rivalPokémon}!`)
-  } else {
-    return(`${playerName}'s ${playerPokémon} lost against ${rivalName}'s ${rivalPokémon}!`)
-  }
-}
-
  function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
