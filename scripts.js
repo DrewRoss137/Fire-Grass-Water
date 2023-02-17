@@ -174,6 +174,10 @@ const roundResultRoundResult = document.createElement("span");
 roundResultRoundResult.id = "roundResultRoundResult";
 roundResultRoundResult.style = "color: orange";
 
+const roundResultVersus = document.createElement("span");
+roundResultVersus.id = "round-result-versus";
+roundResultVersus.style = "color: cyan";
+
 const rivalNameChoicesRoundResult = document.createElement("span");
 rivalNameChoicesRoundResult.id = "rivalNameChoicesRoundResult";
 rivalNameChoicesRoundResult.style = "color: yellow";
@@ -516,31 +520,7 @@ rivalNameScoresDiv.textContent = rivalName
 const rivalScoreScoresDiv = document.createElement("div");
 rivalScoreScoresDiv.id = "rival-score-scores-div"
 
-/* ************************************************************************************************************************************************************************************** /*
 
-
-
-
-
-
-/* **************************************************************************************************************************************************************************************
-JS-DOM
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-/* **************************************************************************************************************************************************************************************
-JS-DOM
-*/
 
 let rivalChoice = getRivalChoice();
 console.log(rivalChoice)
@@ -632,12 +612,12 @@ function playRound(playerChoice, rivalChoice) {
   roundText.appendChild(roundResultDiv)
   
   if (roundResult === roundResults[0]) {
-    roundResultRoundResult.textContent = " drew versus ";
+    roundResultRoundResult.textContent = " drew ";
   } else if (roundResult === roundResults[2]) {
-    roundResultRoundResult.textContent = " won versus ";
+    roundResultRoundResult.textContent = " won ";
     roundText.insertBefore(critDiv, playerAttackDiv.nextSibling)
   } else if (roundResult === roundResults[1]){
-    roundResultRoundResult.textContent = " lost versus ";
+    roundResultRoundResult.textContent = " lost ";
     roundText.insertBefore(critDiv, rivalAttackDiv.nextSibling)
   }
 
@@ -707,6 +687,8 @@ function playRound(playerChoice, rivalChoice) {
   roundResultDiv.appendChild(playerPokemonChoicesRoundResult)
   playerPokemonChoicesRoundResult.textContent = `${playerPokémon} `
   roundResultDiv.appendChild(roundResultRoundResult)
+  roundResultDiv.appendChild(roundResultVersus)
+  roundResultVersus.textContent = " versus "
   roundResultDiv.appendChild(rivalNameChoicesRoundResult)
   rivalNameChoicesRoundResult.textContent = `${rivalName}'s `
   roundResultDiv.appendChild(rivalPokemonChoicesRoundResult)
@@ -766,7 +748,7 @@ function playRound(playerChoice, rivalChoice) {
 
 
     if (playerScore > rivalScore) {
-      playerNameFaintFlavourText.textContent = `Rival ${rivalName}'s `
+      playerNameFaintFlavourText.textContent = `${rivalName}'s `
       playerPokemonNameFaintFlavourText.textContent = ` ${rivalPokémon} `;
       expPlayerName.textContent = `${playerName}'s `;
       expPokemonName.textContent = playerPokémon;
