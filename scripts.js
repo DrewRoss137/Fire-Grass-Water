@@ -20,11 +20,9 @@ const attackEffectiveness = {
 
 const roundResults = ["Draw", "Lose", "Win"];
 
-let playerName = "playerName";
-let rivalName = "rivalName";
+let playerName = "playername".toUpperCase();
+let rivalName = "rivalname".toUpperCase();
 
-playerName = playerName.toUpperCase()
-rivalName = rivalName.toUpperCase()
 
 let playerPokémonAttack;
 let rivalPokémonAttack;
@@ -54,10 +52,6 @@ let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
-/* ************************************************************************************************************************************************************************************** /*
-
-/* JS-MADE HTML ELEMENTS */
-
 /* temp */
 playerScore = 4;
 rivalScore = 4;
@@ -70,6 +64,8 @@ const playerChoiceDiv = document.createElement("div");
 const rivalChoiceDiv = document.createElement("div");
 const playerAttackDiv = document.createElement("div");
 const rivalAttackDiv = document.createElement("div");
+
+
 
 
 
@@ -726,9 +722,7 @@ function playRound(playerChoice, rivalChoice) {
 
 
   if (playerScore === 5 || rivalScore === 5) {
-    /* displayGameResult(playerName, playerScore, rivalName, rivalScore); */
     let exp = Math.floor(Math.random() * 51) + 50;
-
     createDiv(postGameFlavourText, "round-text");
 
     /* FAINT TEXT */
@@ -743,6 +737,7 @@ function playRound(playerChoice, rivalChoice) {
     expFlavourText.appendChild(expPokemonName)
     expFlavourText.appendChild(gainedPokemonName)
     expFlavourText.appendChild(expGained)
+  
 
 
 
