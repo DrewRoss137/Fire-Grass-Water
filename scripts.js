@@ -703,7 +703,7 @@ function playRound(playerChoice, rivalChoice) {
     /* displayGameResult(playerName, playerScore, rivalName, rivalScore); */
     let exp = Math.floor(Math.random() * 51) + 50;
 
-    createDiv(postGameFlavourText, "player-rival-choices");
+    createDiv(postGameFlavourText, "round-text");
 
     /* FAINT TEXT */
     postGameFlavourText.appendChild(faintFlavourText)
@@ -740,7 +740,7 @@ function playRound(playerChoice, rivalChoice) {
     expGained.textContent = ` ${exp} Exp. Points!`; 
 
         /* STATS */
-    createDiv(postGameDiv, "player-rival-choices")
+    createDiv(postGameDiv, "round-text")
     postGameDiv.appendChild(postGameFlavourText)
     postGameDiv.appendChild(statsDiv)
     postGameDiv.appendChild(gameResultDiv)
