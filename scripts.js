@@ -503,6 +503,7 @@ playerNameAndScoreDiv.id = "player-name-and-score"
 
 const playerNameScoresDiv = document.createElement("div");
 playerNameScoresDiv.id = "player-name-scores-div"
+playerNameScoresDiv.textContent = playerName
 const playerScoreScoresDiv = document.createElement("div");
 playerScoreScoresDiv.id = "player-score-scores-div"
 
@@ -511,6 +512,7 @@ rivalNameAndScoreDiv.id = "rival-name-and-score"
 
 const rivalNameScoresDiv = document.createElement("div");
 rivalNameScoresDiv.id = "rival-name-scores-div"
+rivalNameScoresDiv.textContent = rivalName
 const rivalScoreScoresDiv = document.createElement("div");
 rivalScoreScoresDiv.id = "rival-score-scores-div"
 
@@ -532,21 +534,7 @@ JS-DOM
 
 
 
-/* NAMES */
-let displayedPlayerName = document.querySelector("#player-name");
-displayedPlayerName.textContent = playerName;
 
-let displayedRivalName = document.querySelector("#rival_name");
-displayedRivalName.textContent = rivalName;
-
-
-/* SCORES */
-let displayedPlayerScore = document.querySelector("#player-score");
-displayedPlayerScore.textContent = playerScore;
-
-
-let displayedRivalScore = document.querySelector("#rival-score");
-displayedRivalScore.textContent = rivalScore;
 
 
 
@@ -741,9 +729,8 @@ function playRound(playerChoice, rivalChoice) {
 
 
   playerScoreScoresDiv.textContent = playerScore;
-  displayedPlayerScore.textContent = playerScore;
   rivalScoreScoresDiv.textContent = rivalScore;
-  displayedRivalScore.textContent = rivalScore;
+
 
 
 
