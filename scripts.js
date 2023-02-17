@@ -432,13 +432,14 @@ totalDrawPercentPreSign.style = "color: yellow;"
 const gameResultDiv = document.createElement("div")
 gameResultDiv.id = "game-result-div"
 
+
 const playerNameRoundResult = document.createElement("span");
-playerNameRoundResult.textContent = playerName;
+playerNameRoundResult.textContent = `${playerName} `;
 playerNameRoundResult.id = "player-name-round-result";
 playerNameRoundResult.style = "color: blue;"
 
 const rivalNameRoundResult = document.createElement("span");
-rivalNameRoundResult.textContent = rivalName;
+rivalNameRoundResult.textContent = `${rivalName}`;
 rivalNameRoundResult.id = "rival-name-round-result";
 rivalNameRoundResult.style = "color: purple;"
 
@@ -492,6 +493,26 @@ gainedPokemonName.textContent = "gained "
 let expGained = document.createElement("span");
 expGained.id = "exp-gained";
 expGained.style = "color: green";
+
+
+const playerRivalScoresDiv = document.createElement("div");
+playerRivalScoresDiv.id = "player-rival-scores-div"
+
+const playerNameAndScoreDiv = document.createElement("div");
+playerNameAndScoreDiv.id = "player-name-and-score"
+
+const playerNameScoresDiv = document.createElement("div");
+playerNameScoresDiv.id = "player-name-scores-div"
+const playerScoreScoresDiv = document.createElement("div");
+playerScoreScoresDiv.id = "player-score-scores-div"
+
+const rivalNameAndScoreDiv = document.createElement("div");
+rivalNameAndScoreDiv.id = "rival-name-and-score"
+
+const rivalNameScoresDiv = document.createElement("div");
+rivalNameScoresDiv.id = "rival-name-scores-div"
+const rivalScoreScoresDiv = document.createElement("div");
+rivalScoreScoresDiv.id = "rival-score-scores-div"
 
 /* ************************************************************************************************************************************************************************************** /*
 
@@ -601,6 +622,18 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(critDiv);
   }
 
+  createDiv(playerRivalScoresDiv, "buttons")
+  playerRivalScoresDiv.appendChild(playerNameAndScoreDiv)
+  playerRivalScoresDiv.appendChild(rivalNameAndScoreDiv)
+
+  playerNameAndScoreDiv.appendChild(playerNameScoresDiv)
+  playerNameAndScoreDiv.appendChild(playerScoreScoresDiv)
+  rivalNameAndScoreDiv.appendChild(rivalNameScoresDiv)
+  rivalNameAndScoreDiv.appendChild(rivalScoreScoresDiv)
+
+
+
+
   createDiv(roundText, "scoreboard");
   roundText.appendChild(playerChoiceDiv)
   roundText.appendChild(rivalChoiceDiv)
@@ -697,12 +730,19 @@ function playRound(playerChoice, rivalChoice) {
 
 
   
-  
+  playerRivalScoresDiv.appendChild(playerNameAndScoreDiv)
+  playerRivalScoresDiv.appendChild(rivalNameAndScoreDiv)
+
+  playerNameAndScoreDiv.appendChild(playerNameScoresDiv)
+  playerNameAndScoreDiv.appendChild(playerScoreScoresDiv)
+  rivalNameAndScoreDiv.appendChild(rivalNameScoresDiv)
+  rivalNameAndScoreDiv.appendChild(rivalScoreScoresDiv)
 
 
 
-
+  playerScoreScoresDiv.textContent = playerScore;
   displayedPlayerScore.textContent = playerScore;
+  rivalScoreScoresDiv.textContent = rivalScore;
   displayedRivalScore.textContent = rivalScore;
 
 
@@ -879,14 +919,6 @@ function generateRoundFlavourText(playerName, playerPokémon, rivalName, rivalPo
     return divName.textContent = "A critical hit!";
     }
   } 
-
-/* function displayGameResult(playerName, playerScore, rivalName, rivalScore) {
-  if (playerScore > rivalScore) {
-    displayedGameResult.textContent = (`${playerName} won against ${rivalName}!`)
-  } else {
-    displayedGameResult.textContent = (`${playerName} lost against ${rivalName}!`)
-  }
-} */
 
 function createDiv(newDiv, divID) {
   let overheadDiv = document.getElementById(divID);
