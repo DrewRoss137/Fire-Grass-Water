@@ -99,6 +99,18 @@ playerChoicePokémon.style = "color: red";
 const rivalChoiceDiv = document.createElement("div");
 playerChoiceDiv.id = "rival-choice"
 
+const rivalChoiceRivalName = document.createElement("span");
+rivalChoiceRivalName.id = "rival-choice-rival-name";
+rivalChoiceRivalName.style = "color: blue";
+
+const rivalChoiceGo = document.createElement("span");
+rivalChoiceGo.id = "rival-choice-go";
+rivalChoiceGo.style = "color: purple";
+rivalChoiceGo.textContent = "GO!";
+
+const rivalChoicePokémon = document.createElement("span");
+rivalChoicePokémon.id = "rival-choice-pokémon";
+rivalChoicePokémon.style = "color: red";
 
 /* player-attack-div */
 const playerAttackDiv = document.createElement("div");
@@ -135,18 +147,7 @@ const rivalAttackDiv = document.createElement("div");
 
 
 /* RIVAL CHOICE */
-const rivalNamePlayerChoice = document.createElement("span");
-rivalNamePlayerChoice.id = "rival-name-player-choice";
-rivalNamePlayerChoice.style = "color: blue";
 
-const rivalGoPlayerChoice = document.createElement("span");
-rivalGoPlayerChoice.textContent = "GO!";
-rivalGoPlayerChoice.id = "rival-Go-player-choice";
-rivalGoPlayerChoice.style = "color: purple";
-
-const rivalPokemonPlayerChoice = document.createElement("span");
-rivalPokemonPlayerChoice.id = "rival-Pokemon-player-choice";
-rivalPokemonPlayerChoice.style = "color: red";
 
 
 
@@ -706,12 +707,12 @@ function playRound(playerChoice, rivalChoice) {
   /* RIVAL CHOICE DIV */
 
   rivalChoiceDiv.id = "rival-choice-div"
-  rivalChoiceDiv.appendChild(rivalNamePlayerChoice)
-  rivalNamePlayerChoice.textContent = `${rivalName}: `
-  rivalChoiceDiv.appendChild(rivalGoPlayerChoice)
-  rivalGoPlayerChoice.textContent = "GO! "
-  rivalChoiceDiv.appendChild(rivalPokemonPlayerChoice)
-  rivalPokemonPlayerChoice.textContent = `${rivalPokémon}!`
+  rivalChoiceDiv.appendChild(rivalChoiceRivalName)
+  rivalChoiceRivalName.textContent = `${rivalName}: `
+  rivalChoiceDiv.appendChild(rivalChoiceGo)
+  rivalChoiceGo.textContent = "GO! "
+  rivalChoiceDiv.appendChild(rivalChoicePokémon)
+  rivalChoicePokémon.textContent = `${rivalPokémon}!`
 
   /* PLAYER ATTACK DIV */
 
