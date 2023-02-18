@@ -22,27 +22,36 @@ const attackEffectiveness = {
 const roundResults = ["Draw", "Lose", "Win"];
 
 /* Initialised Variables */
+
+/* Names */
 let playerName = "playername".toUpperCase();
 let rivalName = "rivalname".toUpperCase();
 
+/* Scores */
 let playerScore = 0;
 let rivalScore = 0;
 let roundsDrawn = 0;
 let totalRoundsPlayed = 0;
 
+/* Pokémon */
 let playerPokémon;
 let rivalPokémon;
 
+/* Pokémon Attacks */
 let playerPokémonAttack;
 let rivalPokémonAttack;
 
+/* Critical Hit Chance */
 let criticalHitChance;
 
+/* Pokémon Attack Effectiveness */
 let playerPokémonAttackEffectiveness;
 let rivalPokémonAttackEffectiveness;
 
+/* Round Result */
 let roundResult;
 
+/* Stats */
 let winPercentage;
 let lossPercentage;
 let totalWinPercentage;
@@ -67,14 +76,28 @@ roundsDrawn = 4;
 
 
 /* round-text */
-
+const roundText = document.createElement("div");
+roundText.id = "round-text";
 
 /* player-choice-div */
 const playerChoiceDiv = document.createElement("div");
+playerChoiceDiv.id = "player-choice"
 
+const playerChoicePlayerName = document.createElement("span");
+playerChoicePlayerName.id = "player-choice-player-name";
+playerChoicePlayerName.style = "color: orange";
+
+const playerChoiceGo = document.createElement("span");
+playerChoiceGo.id = "player-choice-go";
+playerChoiceGo.style = "color: pink";
+
+const playerChoicePokémon = document.createElement("span");
+playerChoicePokémon.id = "player-choice-pokémon";
+playerChoicePokémon.style = "color: red";
 
 /* rival-choice-div */
 const rivalChoiceDiv = document.createElement("div");
+playerChoiceDiv.id = "rival-choice"
 
 
 /* player-attack-div */
@@ -101,24 +124,13 @@ const rivalAttackDiv = document.createElement("div");
 
 
 
-/* round-text */
-const roundText = document.createElement("div");
-roundText.id = "round-text";
+
+
 
 
 
 /* PLAYER CHOICE */
-const playerNamePlayerChoice = document.createElement("span");
-playerNamePlayerChoice.id = "player-name-player-choice";
-playerNamePlayerChoice.style = "color: blue";
 
-const playerGoPlayerChoice = document.createElement("span");
-playerGoPlayerChoice.id = "player-Go-player-choice";
-playerGoPlayerChoice.style = "color: purple";
-
-const playerPokemonPlayerChoice = document.createElement("span");
-playerPokemonPlayerChoice.id = "player-Pokemon-player-choice";
-playerPokemonPlayerChoice.style = "color: red";
 
 
 
@@ -683,12 +695,12 @@ function playRound(playerChoice, rivalChoice) {
   /* PLAYER CHOICE DIV */
  
   playerChoiceDiv.id = "player-choice-div"
-  playerChoiceDiv.appendChild(playerNamePlayerChoice)
-  playerNamePlayerChoice.textContent = `${playerName}: `
-  playerChoiceDiv.appendChild(playerGoPlayerChoice)
-  playerChoiceDiv.appendChild(playerPokemonPlayerChoice)
-  playerGoPlayerChoice.textContent = "GO! "
-  playerPokemonPlayerChoice.textContent = `${playerPokémon}!`
+  playerChoiceDiv.appendChild(playerChoicePlayerName)
+  playerChoicePlayerName.textContent = `${playerName}: `
+  playerChoiceDiv.appendChild(playerChoiceGo)
+  playerChoiceDiv.appendChild(playerChoicePokémon)
+  playerChoiceGo.textContent = "GO! "
+  playerChoicePokémon.textContent = `${playerPokémon}!`
   
 
   /* RIVAL CHOICE DIV */
