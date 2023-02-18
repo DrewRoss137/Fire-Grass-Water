@@ -13,9 +13,9 @@ const grassAttacks = ["RAZOR LEAF", "VINE WHIP"];
 const waterAttacks = ["BUBBLE", "HYDRO PUMP", "WATER GUN"];
 
 const attackEffectiveness = {
-  "Draw": "But it failed!",
-  "Lose": "It's not very effective...",
-  "Win": "It's super effective!"
+  "Draw": "failed!",
+  "Lose": "not very effective...",
+  "Win": "super effective!"
 }
 
 const roundResults = ["Draw", "Lose", "Win"];
@@ -129,6 +129,12 @@ playerPokemonAttackPlayerAttack.style = "color: red";
 const playerAttackEffectivenessDiv = document.createElement("div");
 playerAttackEffectivenessDiv.id = "player-attack-effectiveness";
 
+const playerAttackEffectivenessIt = document.createElement("span")
+playerAttackEffectivenessIt.id = "player-attack-effectiveness-it"
+
+const playerAttackEffectivenessSpan = document.createElement("span");
+playerAttackEffectivenessSpan.id = "player-attack-effectiveness-span"
+
 /* RIVAL ATTACK */
 const rivalNamePlayerAttack = document.createElement("span");
 rivalNamePlayerAttack.id = "rival-name-player-attack";
@@ -151,6 +157,11 @@ rivalPokemonAttackPlayerAttack.style = "color: red";
 const rivalAttackEffectivenessDiv = document.createElement("div");
 rivalAttackEffectivenessDiv.id = "rival-attack-effectiveness";
 
+const rivalAttackEffectivenessIt = document.createElement("span")
+rivalAttackEffectivenessIt.id = "rival-attack-effectiveness-it"
+
+const rivalAttackEffectivenessSpan = document.createElement("span");
+rivalAttackEffectivenessSpan.id = "rival-attack-effectiveness-span"
 
 /* ROUND RESULT DIV */
 const roundResultDiv = document.createElement("div");
@@ -565,6 +576,8 @@ function playRound(playerChoice, rivalChoice) {
   critDiv.remove()
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
+    playerAttackEffectivenessIt.textContent = "But it "
+    rivalAttackEffectivenessIt.textContent = "But it "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     roundsDrawn ++; 
@@ -573,12 +586,16 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
+    playerAttackEffectivenessIt.textContent = "It's "
+    rivalAttackEffectivenessIt.textContent = "It's "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
     generateCriticalHitChance(critDiv);
   } else {
+    playerAttackEffectivenessIt.textContent = "It's "
+    rivalAttackEffectivenessIt.textContent = "It's "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
@@ -603,8 +620,12 @@ function playRound(playerChoice, rivalChoice) {
   roundText.appendChild(rivalChoiceDiv)
   roundText.appendChild(playerAttackDiv)
   roundText.appendChild(playerAttackEffectivenessDiv)
+  playerAttackEffectivenessDiv.appendChild(playerAttackEffectivenessIt)
+  playerAttackEffectivenessDiv.appendChild(playerAttackEffectivenessSpan)
   roundText.appendChild(rivalAttackDiv)
   roundText.appendChild(rivalAttackEffectivenessDiv)
+  rivalAttackEffectivenessDiv.appendChild(rivalAttackEffectivenessIt)
+  rivalAttackEffectivenessDiv.appendChild(rivalAttackEffectivenessSpan)
   roundText.appendChild(roundResultDiv)
   
   if (roundResult === roundResults[0]) {
@@ -658,7 +679,7 @@ function playRound(playerChoice, rivalChoice) {
   playerPokemonAttackPlayerAttack.textContent = `${playerPokémonAttack}!`
 
   /* PLAYER ATTACK EFFECTIVENESS DIV */
-  playerAttackEffectivenessDiv.textContent = playerPokémonAttackEffectiveness
+  playerAttackEffectivenessSpan.textContent = playerPokémonAttackEffectiveness
 
   /* RIVAL ATTACK DIV */
 
@@ -673,7 +694,7 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokemonAttackPlayerAttack.textContent = `${rivalPokémonAttack}!`
 
   /* RIVAL ATTACK EFFECTIVENESS DIV */
-  rivalAttackEffectivenessDiv.textContent = rivalPokémonAttackEffectiveness
+  rivalAttackEffectivenessSpan.textContent = rivalPokémonAttackEffectiveness
 
 
 
