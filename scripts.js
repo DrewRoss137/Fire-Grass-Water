@@ -1,3 +1,9 @@
+/* Temporary - Set Scores To Efficiently Test Post-Game Content */
+playerScore = 4;
+rivalScore = 4;
+roundsDrawn = 4;
+
+/* Arrays & Dictionaries */
 const choices = ["Fire", "Grass", "Water"];
 
 const pokémon = {
@@ -20,42 +26,36 @@ const attackEffectiveness = {
 
 const roundResults = ["Draw", "Lose", "Win"];
 
+/* Initialised Variables */
 let playerName = "playername".toUpperCase();
 let rivalName = "rivalname".toUpperCase();
 
-
-let playerPokémonAttack;
-let rivalPokémonAttack;
+let playerScore = 0;
+let rivalScore = 0;
+let roundsDrawn = 0;
+let totalRoundsPlayed = 0;
 
 let playerPokémon;
 let rivalPokémon;
 
-let playerPokémonAttackEffectiveness;
-let rivalPokémonAttackEffectiveness;
-
-let playerScore = 0;
-let rivalScore = 0;
-
-let roundsDrawn = 0;
-
-let roundResult;
+let playerPokémonAttack;
+let rivalPokémonAttack;
 
 let criticalHitChance;
 
-let totalRoundsPlayed = 0;
+let playerPokémonAttackEffectiveness;
+let rivalPokémonAttackEffectiveness;
+
+let roundResult;
 
 let winPercentage;
-
 let lossPercentage;
-
 let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
-/* temp */
-playerScore = 4;
-rivalScore = 4;
-roundsDrawn = 4;
+
+
 
 /* PLAYER AND RIVAL CHOICES */
 
