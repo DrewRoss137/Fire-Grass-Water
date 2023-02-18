@@ -621,6 +621,10 @@ function playRound(playerChoice, rivalChoice) {
   roundText.appendChild(playerAttackDiv)
   roundText.appendChild(playerAttackEffectivenessDiv)
   playerAttackEffectivenessDiv.appendChild(playerAttackEffectivenessIt)
+  playerAttackEffectivenessIt.style = "color: thistle;";
+  rivalAttackEffectivenessIt.style = "color: thistle;"
+  playerAttackEffectivenessSpan.style = "color: MediumAquamarine;";
+  rivalAttackEffectivenessSpan.style = "color: MediumAquamarine;"
   playerAttackEffectivenessDiv.appendChild(playerAttackEffectivenessSpan)
   roundText.appendChild(rivalAttackDiv)
   roundText.appendChild(rivalAttackEffectivenessDiv)
