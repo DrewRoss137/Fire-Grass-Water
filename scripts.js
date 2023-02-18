@@ -1,8 +1,3 @@
-/* Temporary - Set Scores To Efficiently Test Post-Game Content */
-playerScore = 4;
-rivalScore = 4;
-roundsDrawn = 4;
-
 /* Arrays & Dictionaries */
 const choices = ["Fire", "Grass", "Water"];
 
@@ -54,16 +49,52 @@ let totalWinPercentage;
 let totalLossPercentage;
 let totalDrawPercentage;
 
+/* Set Scores To Efficiently Test Post-Game Content - Temporary */
+playerScore = 4;
+rivalScore = 4;
+roundsDrawn = 4;
+
+/* DOM Variables */
 
 
+/* player-rival-scores-div */
 
-/* PLAYER AND RIVAL CHOICES */
+
+/* player-name-and-score */
 
 
+/* rival-name-and-score */
+
+
+/* round-text */
+
+
+/* player-choice-div */
 const playerChoiceDiv = document.createElement("div");
+
+
+/* rival-choice-div */
 const rivalChoiceDiv = document.createElement("div");
+
+
+/* player-attack-div */
 const playerAttackDiv = document.createElement("div");
+
+
+/* player-attack-effectiveness */
+
+
+/* rival-attack-div */
 const rivalAttackDiv = document.createElement("div");
+
+
+/* rival-attack-effectiveness */
+
+
+/* round-result */
+
+
+
 
 
 
