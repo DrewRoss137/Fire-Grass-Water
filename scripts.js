@@ -171,16 +171,18 @@ rivalPokémonAttackPokémonAttack.style = "color: red";
 
 
 /* rival-attack-effectiveness */
+const rivalPokémonAttackEffectivenessDiv = document.createElement("div")
+rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness"
 
+const rivalPokémonAttackEffectivenessIt =  document.createElement("span")
+rivalPokémonAttackEffectivenessIt.id = "rival-pokémon-attack-effectiveness-it"
+
+const rivalPokémonAttackEffectivenessText =  document.createElement("span")
+rivalPokémonAttackEffectivenessText.id = "rival-pokémon-attack-effectiveness-text"
 
 /* round-result */
 
 
-/* Commit
-
-Clean up player-attack DOM elements
-
-*/
 
 
 
@@ -190,35 +192,6 @@ Clean up player-attack DOM elements
 
 
 
-
-
-/* PLAYER CHOICE */
-
-
-
-
-/* RIVAL CHOICE */
-
-
-
-
-/* PLAYER ATTACK */
-
-
-/* PLAYER ATTACK EFFECTIVENESS */
-
-
-
-
-/* RIVAL ATTACK EFFECTIVENESS */
-const rivalAttackEffectivenessDiv = document.createElement("div");
-rivalAttackEffectivenessDiv.id = "rival-attack-effectiveness";
-
-const rivalAttackEffectivenessIt = document.createElement("span")
-rivalAttackEffectivenessIt.id = "rival-attack-effectiveness-it"
-
-const rivalAttackEffectivenessSpan = document.createElement("span");
-rivalAttackEffectivenessSpan.id = "rival-attack-effectiveness-span"
 
 /* ROUND RESULT DIV */
 const roundResultDiv = document.createElement("div");
@@ -634,7 +607,7 @@ function playRound(playerChoice, rivalChoice) {
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectivenessIt.textContent = "But it "
-    rivalAttackEffectivenessIt.textContent = "But it "
+    rivalPokémonAttackEffectivenessIt.textContent = "But it "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     roundsDrawn ++; 
@@ -644,7 +617,7 @@ function playRound(playerChoice, rivalChoice) {
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
     playerPokémonAttackEffectivenessIt.textContent = "It's "
-    rivalAttackEffectivenessIt.textContent = "It's "
+    rivalPokémonAttackEffectivenessIt.textContent = "It's "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
@@ -652,7 +625,7 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(critDiv);
   } else {
     playerPokémonAttackEffectivenessIt.textContent = "It's "
-    rivalAttackEffectivenessIt.textContent = "It's "
+    rivalPokémonAttackEffectivenessIt.textContent = "It's "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
@@ -679,14 +652,14 @@ function playRound(playerChoice, rivalChoice) {
   roundText.appendChild(playerPokémonAttackEffectivenessDiv)
   playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessIt)
   playerPokémonAttackEffectivenessIt.style = "color: thistle;";
-  rivalAttackEffectivenessIt.style = "color: thistle;"
+  rivalPokémonAttackEffectivenessIt.style = "color: thistle;"
   playerPokémonAttackEffectivenessText.style = "color: MediumAquamarine;";
-  rivalAttackEffectivenessSpan.style = "color: MediumAquamarine;"
+  rivalPokémonAttackEffectivenessText.style = "color: MediumAquamarine;"
   playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessText)
   roundText.appendChild(rivalPokémonAttackDiv)
-  roundText.appendChild(rivalAttackEffectivenessDiv)
-  rivalAttackEffectivenessDiv.appendChild(rivalAttackEffectivenessIt)
-  rivalAttackEffectivenessDiv.appendChild(rivalAttackEffectivenessSpan)
+  roundText.appendChild(rivalPokémonAttackEffectivenessDiv)
+  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessIt)
+  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessText)
   roundText.appendChild(roundResultDiv)
   
   if (roundResult === roundResults[0]) {
@@ -754,7 +727,7 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokémonAttackPokémonAttack.textContent = `${rivalPokémonAttack}!`
 
   /* RIVAL ATTACK EFFECTIVENESS DIV */
-  rivalAttackEffectivenessSpan.textContent = rivalPokémonAttackEffectiveness
+  rivalPokémonAttackEffectivenessText.textContent = rivalPokémonAttackEffectiveness
 
 
 
