@@ -234,6 +234,8 @@ faintFaintedText.style = "color: yellow;"
 faintFaintedText.textContent = "fainted!"
 
 /* exp */
+const exp = document.createElement("div")
+exp.id = "exp"
 
 
 
@@ -726,8 +728,9 @@ function playRound(playerChoice, rivalChoice) {
 
   roundResultDiv.appendChild(roundResultPlayerName)
   roundResultPlayerName.textContent = `${playerName}'s `
+  roundResultDiv.appendChild(roundResultPlayerPokémon)
+  roundResultPlayerPokémon.textContent = `${playerPokémon} `
   roundResultDiv.appendChild(roundResultRoundResult)
-  roundResultRoundResult.textContent = `${playerPokémon} `
   roundResultDiv.appendChild(roundResultRoundResult)
   roundResultDiv.appendChild(roundResultVersusText)
   roundResultVersusText.textContent = " versus "
