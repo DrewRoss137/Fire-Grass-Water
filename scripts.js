@@ -254,7 +254,6 @@ const expAmount = document.createElement("span")
 expAmount.id = "exp-amount";
 expAmount.style = "color: Thistle;"
 
-
 /* stats */
 
 /* game-result */
@@ -804,14 +803,19 @@ function playRound(playerChoice, rivalChoice) {
     }
     expGainedText.textContent = ` ${exp1} Exp. Points!`; 
 
-        /* STATS */
+    /* STATS */
     createDiv(postGame, "round-text")
     postGame.appendChild(faint)
+    postGame.appendChild(exp)
     postGame.appendChild(statsDiv)
     postGame.appendChild(gameResultDiv)
 
 
-    createDiv(statsDiv, "post-game");
+    /* UNSURE OF THE PURPOSE OF THIS CODE. CAUSES STATS TO PERSIST AFTER GAME END. 
+    
+    createDiv(statsDiv, "post-game"); 
+    */
+
     statsDiv.appendChild(roundsWonDiv)
     playerScoreSpanNumber.textContent = playerScore;
     roundsWonDiv.appendChild(playerScoreSpanWon);
