@@ -237,29 +237,24 @@ faintFaintedText.textContent = "fainted!"
 const exp = document.createElement("div")
 exp.id = "exp"
 
+const expName = document.createElement("span");
+expName.id = "exp-name";
+expName.style = "color: blue;"
+
+const expPokémon = document.createElement("span");
+expPokémon.id = "exp-pokémon"
+expPokémon.style = "color: yellow;"
+
+const expGainedText = document.createElement("span");
+expGainedText.id = "exp-gained-text";
+expGainedText.style = "color: green;"
+expGainedText.textContent = "gained "
+
+const expAmount = document.createElement("span")
+expAmount.id = "exp-amount";
+expAmount.style = "color: Thistle;"
 
 
-/* XP FLAVOUR TEXT */
-const expFlavourText = document.createElement("div");
-expFlavourText.id = "exp-flavour-text";
-expFlavourText.style = "color: pink";
-
-const expPlayerName = document.createElement("span");
-expPlayerName.id = "exp-player-name";
-expPlayerName.style = "color: blue";
-
-const expPokemonName = document.createElement("span");
-expPokemonName.id = "exp-pokemon-name";
-expPokemonName.style = "color: yellow";
-
-const gainedPokemonName = document.createElement("span");
-gainedPokemonName.id = "gained-pokemon-name";
-gainedPokemonName.style = "color: red";
-gainedPokemonName.textContent = "gained "
-
-let expGained = document.createElement("span");
-expGained.id = "exp-gained";
-expGained.style = "color: green";
 /* stats */
 
 /* game-result */
@@ -771,7 +766,7 @@ function playRound(playerChoice, rivalChoice) {
 
 
   if (playerScore === 5 || rivalScore === 5) {
-    let exp = Math.floor(Math.random() * 51) + 50;
+    let exp1 = Math.floor(Math.random() * 51) + 50;
     createDiv(postGame, "round-text");
 
     /* FAINT TEXT */
@@ -781,11 +776,11 @@ function playRound(playerChoice, rivalChoice) {
     faint.appendChild(faintFaintedText)
 
     /* EXP TEXT */
-    postGame.appendChild(expFlavourText)
-    expFlavourText.appendChild(expPlayerName)
-    expFlavourText.appendChild(expPokemonName)
-    expFlavourText.appendChild(gainedPokemonName)
-    expFlavourText.appendChild(expGained)
+    postGame.appendChild(exp)
+    exp.appendChild(expName)
+    exp.appendChild(expPokémon)
+    exp.appendChild(expGainedText)
+    exp.appendChild(expAmount)
   
 
 
@@ -794,8 +789,8 @@ function playRound(playerChoice, rivalChoice) {
     if (playerScore > rivalScore) {
       faintName.textContent = `${rivalName}'s `
       faintPlayerPokémon.textContent = ` ${rivalPokémon} `;
-      expPlayerName.textContent = `${playerName}'s `;
-      expPokemonName.textContent = playerPokémon;
+      expName.textContent = `${playerName}'s `;
+      expPokémon.textContent = playerPokémon;
       typeRoundResult.style = "color:green;"
       typeRoundResult.textContent = "WON"
 
@@ -804,10 +799,10 @@ function playRound(playerChoice, rivalChoice) {
       typeRoundResult.textContent = "LOST"
       faintName.textContent = `${playerName}'s `
       faintPlayerPokémon.textContent = `${playerPokémon} `;
-      expPlayerName.textContent = `${rivalName}'s `;
-      expPokemonName.textContent = ` ${rivalPokémon}`;
+      expName.textContent = `${rivalName}'s `;
+      expPokémon.textContent = ` ${rivalPokémon}`;
     }
-    expGained.textContent = ` ${exp} Exp. Points!`; 
+    expGainedText.textContent = ` ${exp1} Exp. Points!`; 
 
         /* STATS */
     createDiv(postGame, "round-text")
