@@ -256,33 +256,28 @@ expAmount.style = "color: Thistle;"
 
 /* stats */
 
-/* game-result */
+/* rounds-won */
+const stats = document.createElement("div");
+stats.id = "stats"
 
-/* STATS */
-const statsDiv = document.createElement("div");
-statsDiv.id = "stats-div"
+const roundsWon = document.createElement("span")
+roundsWon.id = "rounds-won"
+roundsWon.textContent = "ROUNDS "
 
+const roundsWonWonText = document.createElement("span")
+roundsWonWonText.id = "rounds-won-won-text"
+roundsWonWonText.style = "color: Purple;"
+roundsWonWonText.textContent = "WON"
 
-/*ROUNDS WON */
-const roundsWonDiv = document.createElement("div");
-roundsWonDiv.id = "rounds-won-div"
+const roundsWonColon = document.createElement("span")
+roundsWonColon.id = "rounds-won-colon"
+roundsWonColon.style = "color: cyan"
+roundsWonColon.textContent = ": "
 
-roundsWonDiv.textContent = "ROUNDS "
-
-const playerScoreSpanNumber = document.createElement("span");
-playerScoreSpanNumber.textContent = playerScore;
-playerScoreSpanNumber.id = "player-score-span";
-playerScoreSpanNumber.style = "color: red;"
-
-const playerScoreSpanWon = document.createElement("span");
-playerScoreSpanWon.textContent = "WON";
-playerScoreSpanWon.id = "player-score-won";
-playerScoreSpanWon.style = "color: purple;"
-
-const playerScoreSpanWonColon = document.createElement("span");
-playerScoreSpanWonColon.textContent = ": ";
-playerScoreSpanWonColon.id = "player-score-won-colon";
-playerScoreSpanWonColon.style = "color: blue;"
+const roundsWonPlayerScore = document.createElement("span")
+roundsWonPlayerScore.id = "rounds-won-player-score"
+roundsWonPlayerScore.style ="color: red;"
+roundsWonPlayerScore.textContent = playerScore;
 
 
 /*ROUNDS LOST */
@@ -807,35 +802,35 @@ function playRound(playerChoice, rivalChoice) {
     createDiv(postGame, "round-text")
     postGame.appendChild(faint)
     postGame.appendChild(exp)
-    postGame.appendChild(statsDiv)
+    postGame.appendChild(stats)
     postGame.appendChild(gameResultDiv)
 
 
     /* UNSURE OF THE PURPOSE OF THIS CODE. CAUSES STATS TO PERSIST AFTER GAME END. 
     
-    createDiv(statsDiv, "post-game"); 
+    createDiv(stats, "post-game"); 
     */
 
-    statsDiv.appendChild(roundsWonDiv)
-    playerScoreSpanNumber.textContent = playerScore;
-    roundsWonDiv.appendChild(playerScoreSpanWon);
-    roundsWonDiv.appendChild(playerScoreSpanWonColon)
-    roundsWonDiv.appendChild(playerScoreSpanNumber);
+    stats.appendChild(roundsWon)
+    roundsWonPlayerScore.textContent = playerScore;
+    roundsWon.appendChild(roundsWonWonText);
+    roundsWon.appendChild(roundsWonColon)
+    roundsWon.appendChild(roundsWonPlayerScore);
 
-    statsDiv.appendChild(roundsLostDiv)
+    stats.appendChild(roundsLostDiv)
     rivalScoreSpanNumber.textContent = rivalScore;
     roundsLostDiv.appendChild(rivalScoreSpanWon);
     roundsLostDiv.appendChild(rivalScoreSpanWonColon)
     roundsLostDiv.appendChild(rivalScoreSpanNumber);
 
-    statsDiv.appendChild(roundsDrawnDiv)
+    stats.appendChild(roundsDrawnDiv)
     drawSpanNumber.textContent = roundsDrawn;
     roundsDrawnDiv.appendChild(drawScoreSpanWon);
     roundsDrawnDiv.appendChild(drawScoreSpanWonScoreSpanWonColon)
     roundsDrawnDiv.appendChild(drawSpanNumber);
 
 
-    statsDiv.appendChild(winPercentDiv)
+    stats.appendChild(winPercentDiv)
     winPercentSpanNumber.textContent = winPercentage;
     winPercentDiv.appendChild(winPercentSign);
     winPercentDiv.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
@@ -843,20 +838,20 @@ function playRound(playerChoice, rivalChoice) {
     winPercentDiv.appendChild(winPercentScoreSpanWon);
 
 
-    statsDiv.appendChild(losePercentDiv)
+    stats.appendChild(losePercentDiv)
     losePercentSpanNumber.textContent = lossPercentage;
     losePercentDiv.appendChild(losePercentSign);
     losePercentDiv.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
     losePercentDiv.appendChild(losePercentSpanNumber)
     losePercentDiv.appendChild(losePercentScoreSpanWon)
 
-    statsDiv.appendChild(totalRoundsPlayedDiv)
+    stats.appendChild(totalRoundsPlayedDiv)
     totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWon)
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentSpanNumber)
 
-    statsDiv.appendChild(totalWinPercentDiv)
+    stats.appendChild(totalWinPercentDiv)
     totalWinPercentSpanNumber.textContent = totalWinPercentage;
     totalWinPercentDiv.appendChild(totalWinPercentPreSign)
     totalWinPercentDiv.appendChild(totalWinPercentScoreSpanWon)
@@ -864,7 +859,7 @@ function playRound(playerChoice, rivalChoice) {
     totalWinPercentDiv.appendChild(totalWinPercentSpanNumber)
     totalWinPercentDiv.appendChild(totalWinPercentSign)
 
-    statsDiv.appendChild(totalLossPercentDiv)
+    stats.appendChild(totalLossPercentDiv)
     totalLossPercentSpanNumber.textContent = totalLossPercentage;
     totalLossPercentDiv.appendChild(totalLossPercentPreSign)
     totalLossPercentDiv.appendChild(totalLossPercentScoreSpanWon)
@@ -873,7 +868,7 @@ function playRound(playerChoice, rivalChoice) {
     totalLossPercentDiv.appendChild(totalLossPercentSign)
 
 
-    statsDiv.appendChild(totalDrawPercentDiv)
+    stats.appendChild(totalDrawPercentDiv)
     totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
     totalDrawPercentDiv.appendChild(totalDrawPercentPreSign)
     totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWon)
@@ -882,7 +877,7 @@ function playRound(playerChoice, rivalChoice) {
     totalDrawPercentDiv.appendChild(totalDrawPercentSign)
 
     /* GAME RESULT */
-    createDiv(gameResultDiv, "stats-div")
+    createDiv(gameResultDiv, "stats")
     gameResultDiv.appendChild(playerNameRoundResult)
     gameResultDiv.appendChild(typeRoundResult)
     gameResultDiv.appendChild(againstRoundResult)
