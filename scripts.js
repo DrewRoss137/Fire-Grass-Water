@@ -63,16 +63,34 @@ playerScore = 4;
 rivalScore = 4;
 roundsDrawn = 4;
 
+
 /* DOM Variables */
 
+/* scores */
+const scoresDiv = document.createElement("div");
+scoresDiv.id = "scores"
 
-/* player-rival-scores-div */
+/* player-score */
+const playerScoreDiv = document.createElement("div");
+playerScoreDiv.id = "player-score"
 
+const playerScoreNameSpan = document.createElement("span");
+playerScoreNameSpan.id = "player-score-name"
+playerScoreNameSpan.textContent = playerName
 
-/* player-name-and-score */
+const playerScoreScoreSpan = document.createElement("span");
+playerScoreScoreSpan.id = "player-score-score"
 
+/* rival-score */
+const rivalScoreDiv = document.createElement("div");
+rivalScoreDiv.id = "rival-score"
 
-/* rival-name-and-score */
+const rivalScoreNameSpan = document.createElement("span");
+rivalScoreNameSpan.id = "rival-score-name"
+rivalScoreNameSpan.textContent = rivalName
+
+const rivalScoreScoreSpan = document.createElement("span");
+rivalScoreScoreSpan.id = "rival-score-score"
 
 
 /* round-text */
@@ -496,47 +514,23 @@ totalDrawPercentPostPercentSignSpan.textContent = "%";
 const gameResultDiv = document.createElement("div")
 gameResultDiv.id = "game-result-div"
 
-const playerNameRoundResult = document.createElement("span");
-playerNameRoundResult.textContent = `${playerName} `;
-playerNameRoundResult.id = "player-name-round-result";
-playerNameRoundResult.style = "color: blue;"
+const gameResultPlayerNameSpan = document.createElement("span");
+gameResultPlayerNameSpan.id = "game-result-player-name";
+gameResultPlayerNameSpan.style = "color: blue;"
+gameResultPlayerNameSpan.textContent = `${playerName} `;
 
-const rivalNameRoundResult = document.createElement("span");
-rivalNameRoundResult.textContent = `${rivalName}`;
-rivalNameRoundResult.id = "rival-name-round-result";
-rivalNameRoundResult.style = "color: purple;"
+const gameResultResult = document.createElement("span");
+gameResultResult.id = "game-result-result";
 
-let typeRoundResult = document.createElement("span");
-typeRoundResult.id = "type-round-result";
+const gameResultAgainstTextSpan = document.createElement("span");
+gameResultAgainstTextSpan.id = "game-result-against-text";
+gameResultAgainstTextSpan.style = "color: cyan;"
+gameResultAgainstTextSpan.textContent = "against";
 
-const againstRoundResult = document.createElement("span");
-againstRoundResult.textContent = "against";
-againstRoundResult.id = "against-round-result";
-againstRoundResult.style = "color: cyan;"
-
-
-const playerRivalScoresDiv = document.createElement("div");
-playerRivalScoresDiv.id = "player-rival-scores-div"
-
-const playerNameAndScoreDiv = document.createElement("div");
-playerNameAndScoreDiv.id = "player-name-and-score"
-
-const playerNameScoresDiv = document.createElement("div");
-playerNameScoresDiv.id = "player-name-scores-div"
-playerNameScoresDiv.textContent = playerName
-const playerScoreScoresDiv = document.createElement("div");
-playerScoreScoresDiv.id = "player-score-scores-div"
-
-const rivalNameAndScoreDiv = document.createElement("div");
-rivalNameAndScoreDiv.id = "rival-name-and-score"
-
-const rivalNameScoresDiv = document.createElement("div");
-rivalNameScoresDiv.id = "rival-name-scores-div"
-rivalNameScoresDiv.textContent = rivalName
-const rivalScoreScoresDiv = document.createElement("div");
-rivalScoreScoresDiv.id = "rival-score-scores-div"
-
-
+const gameResultRivalNameSpan = document.createElement("span");
+gameResultRivalNameSpan.id = "game-result-rival-name";
+gameResultRivalNameSpan.style = "color: purple;"
+gameResultRivalNameSpan.textContent = `${rivalName}`;
 
 let rivalChoice = getRivalChoice();
 console.log(rivalChoice)
@@ -612,19 +606,19 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(critDiv);
   }
 
-  createDiv(playerRivalScoresDiv, "buttons")
-  playerRivalScoresDiv.appendChild(playerNameAndScoreDiv)
-  playerRivalScoresDiv.appendChild(rivalNameAndScoreDiv)
+  createDiv(scoresDiv, "buttons")
+  scoresDiv.appendChild(playerScoreDiv)
+  scoresDiv.appendChild(rivalScoreDiv)
 
-  playerNameAndScoreDiv.appendChild(playerNameScoresDiv)
-  playerNameAndScoreDiv.appendChild(playerScoreScoresDiv)
-  rivalNameAndScoreDiv.appendChild(rivalNameScoresDiv)
-  rivalNameAndScoreDiv.appendChild(rivalScoreScoresDiv)
-
-
+  playerScoreDiv.appendChild(playerScoreNameSpan)
+  playerScoreDiv.appendChild(playerScoreScoreSpan)
+  rivalScoreDiv.appendChild(rivalScoreNameSpan)
+  rivalScoreDiv.appendChild(rivalScoreScoreSpan)
 
 
-  createDiv(roundTextDiv, "player-rival-scores-div");
+
+
+  createDiv(roundTextDiv, "scores");
   roundTextDiv.appendChild(playerPokémonDiv)
   roundTextDiv.appendChild(rivalPokémonDiv)
   roundTextDiv.appendChild(playerPokémonAttackDiv)
@@ -730,18 +724,18 @@ function playRound(playerChoice, rivalChoice) {
 
 
   
-  playerRivalScoresDiv.appendChild(playerNameAndScoreDiv)
-  playerRivalScoresDiv.appendChild(rivalNameAndScoreDiv)
+  scoresDiv.appendChild(playerScoreDiv)
+  scoresDiv.appendChild(rivalScoreDiv)
 
-  playerNameAndScoreDiv.appendChild(playerNameScoresDiv)
-  playerNameAndScoreDiv.appendChild(playerScoreScoresDiv)
-  rivalNameAndScoreDiv.appendChild(rivalNameScoresDiv)
-  rivalNameAndScoreDiv.appendChild(rivalScoreScoresDiv)
+  playerScoreDiv.appendChild(playerScoreNameSpan)
+  playerScoreDiv.appendChild(playerScoreScoreSpan)
+  rivalScoreDiv.appendChild(rivalScoreNameSpan)
+  rivalScoreDiv.appendChild(rivalScoreScoreSpan)
 
 
 
-  playerScoreScoresDiv.textContent = playerScore;
-  rivalScoreScoresDiv.textContent = rivalScore;
+  playerScoreScoreSpan.textContent = playerScore;
+  rivalScoreScoreSpan.textContent = rivalScore;
 
 
 
@@ -781,12 +775,12 @@ function playRound(playerChoice, rivalChoice) {
       faintPlayerPokémonSpan.textContent = ` ${rivalPokémon} `;
       expNameSpan.textContent = `${playerName}'s `;
       expPokémonSpan.textContent = playerPokémon;
-      typeRoundResult.style = "color:green;"
-      typeRoundResult.textContent = "WON"
+      gameResultResult.style = "color:green;"
+      gameResultResult.textContent = "WON"
 
     } else {
-      typeRoundResult.style = "color:red;"
-      typeRoundResult.textContent = "LOST"
+      gameResultResult.style = "color:red;"
+      gameResultResult.textContent = "LOST"
       faintNameSpan.textContent = `${playerName}'s `
       faintPlayerPokémonSpan.textContent = `${playerPokémon} `;
       expNameSpan.textContent = `${rivalName}'s `;
@@ -874,11 +868,11 @@ function playRound(playerChoice, rivalChoice) {
 
     /* GAME RESULT */
     createDiv(gameResultDiv, "stats")
-    gameResultDiv.appendChild(playerNameRoundResult)
-    gameResultDiv.appendChild(typeRoundResult)
-    gameResultDiv.appendChild(againstRoundResult)
-    gameResultDiv.appendChild(rivalNameRoundResult)
-    rivalNameRoundResult.textContent = `${rivalName}!`
+    gameResultDiv.appendChild(gameResultPlayerNameSpan)
+    gameResultDiv.appendChild(gameResultResult)
+    gameResultDiv.appendChild(gameResultAgainstTextSpan)
+    gameResultDiv.appendChild(gameResultRivalNameSpan)
+    gameResultRivalNameSpan.textContent = `${rivalName}!`
 
 
 
