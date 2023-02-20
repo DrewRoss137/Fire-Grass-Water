@@ -384,17 +384,17 @@ totalRoundsPlayedDiv.id = "total-rounds-played"
 totalRoundsPlayedDiv.textContent = "TOTAL ROUNDS "
 
 const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
-totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-text";
+totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-played-text";
 totalRoundsPlayedPlayedTextSpan.style = "color: purple;"
 totalRoundsPlayedPlayedTextSpan.textContent = "PLAYED";
 
 const totalRoundsPlayedColonSpan = document.createElement("span");
-totalRoundsPlayedColonSpan.id = "losePercentSpanWon-score-won-colon";
+totalRoundsPlayedColonSpan.id = "total-rounds-played-colon";
 totalRoundsPlayedColonSpan.style = "color: blue;"
 totalRoundsPlayedColonSpan.textContent = ": ";
 
 const totalRoundsPlayedTotalRoundsPlayedSpan = document.createElement("span");
-totalRoundsPlayedTotalRoundsPlayedSpan.id = "loawdawdSpanNumber-score-span";
+totalRoundsPlayedTotalRoundsPlayedSpan.id = "total-rounds-played-total-rounds-played";
 totalRoundsPlayedTotalRoundsPlayedSpan.style = "color: red;"
 totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
 
@@ -436,19 +436,19 @@ totalLossPercentDiv.id = "total-loss-percent"
 totalLossPercentDiv.textContent = "TOTAL "
 
 const totalLossPercentLossTextSpan = document.createElement("span");
-totalLossPercentLossTextSpan.textContent = "LOSS";
 totalLossPercentLossTextSpan.id = "total-loss-percent-loss-text";
 totalLossPercentLossTextSpan.style = "color: yellow;"
+totalLossPercentLossTextSpan.textContent = "LOSS";
 
 const totalLossPercentPrePercentSignSpan = document.createElement("span");
-totalLossPercentPrePercentSignSpan.textContent = "%";
 totalLossPercentPrePercentSignSpan.id = "total-loss-percent-pre-percent-sign";
 totalLossPercentPrePercentSignSpan.style = "color: purple;"
+totalLossPercentPrePercentSignSpan.textContent = "%";
 
 const totalLossPercentColonSpan = document.createElement("span");
-totalLossPercentColonSpan.textContent = ": ";
 totalLossPercentColonSpan.id = "total-loss-percent-colon";
 totalLossPercentColonSpan.style = "color: blue;"
+totalLossPercentColonSpan.textContent = ": ";
 
 const totalLossPercentTotalLossPercentSpan = document.createElement("span");
 totalLossPercentTotalLossPercentSpan.id = "total-loss-percent-total-loss-percent";
@@ -456,47 +456,45 @@ totalLossPercentTotalLossPercentSpan.style = "color: red;"
 totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
 
 const totalLossPercentPostPercentSpan = document.createElement("span");
-totalLossPercentPostPercentSpan.textContent = "%";
 totalLossPercentPostPercentSpan.id = "total-loss-percent-post-percent-sign";
 totalLossPercentPostPercentSpan.style = "color: cyan;"
+totalLossPercentPostPercentSpan.textContent = "%";
 
 
-/* TOTAL DRAW% */
+/* total-draw-percent */
 const totalDrawPercentDiv = document.createElement("div")
-totalDrawPercentDiv.id = "total-draw-percent-div"
-
+totalDrawPercentDiv.id = "total-draw-percent"
 totalDrawPercentDiv.textContent = "TOTAL "
 
-const totalDrawPercentSpanNumber = document.createElement("span");
-totalDrawPercentSpanNumber.textContent = totalDrawPercent;
-totalDrawPercentSpanNumber.id = "tawdeaaantSpanNumber-score-span";
-totalDrawPercentSpanNumber.style = "color: red;"
+const totalDrawPercentDrawTextSpan = document.createElement("span");
+totalDrawPercentDrawTextSpan.id = "total-draw-percent-draw-text";
+totalDrawPercentDrawTextSpan.style = "color: yellow;"
+totalDrawPercentDrawTextSpan.textContent = "DRAW";
 
-const totalDrawPercentScoreSpanWon = document.createElement("span");
-totalDrawPercentScoreSpanWon.textContent = "%";
-totalDrawPercentScoreSpanWon.id = "laaaaawdt-score-won";
-totalDrawPercentScoreSpanWon.style = "color: purple;"
+const totalDrawPercentPrePercentSignSpan = document.createElement("span");
+totalDrawPercentPrePercentSignSpan.id = "total-draw-percent-pre-percent-sign";
+totalDrawPercentPrePercentSignSpan.style = "color: purple;"
+totalDrawPercentPrePercentSignSpan.textContent = "%";
 
-const totalDrawPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
-totalDrawPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
-totalDrawPercentScoreSpanWonScoreSpanWonColon.id = "awawdaapanWon-score-won-colon";
-totalDrawPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+const totalDrawPercentColonSpan = document.createElement("span");
+totalDrawPercentColonSpan.id = "awawdaapanWon-score-won-colon";
+totalDrawPercentColonSpan.style = "color: blue;"
+totalDrawPercentColonSpan.textContent = ": ";
 
-const totalDrawPercentSign = document.createElement("span");
-totalDrawPercentSign.textContent = "%";
-totalDrawPercentSign.id = "awdawaaaawde-wawdon-colon";
-totalDrawPercentSign.style = "color: cyan;"
+const totalDrawPercentTotalDrawPercentSpan = document.createElement("span");
+totalDrawPercentTotalDrawPercentSpan.id = "total-draw-percent-total-draw-percent";
+totalDrawPercentTotalDrawPercentSpan.style = "color: red;"
+totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
 
-const totalDrawPercentPreSign = document.createElement("span");
-totalDrawPercentPreSign.textContent = "DRAW";
-totalDrawPercentPreSign.id = "awdawaaaawwe-wawdon-colon";
-totalDrawPercentPreSign.style = "color: yellow;"
+const totalDrawPercentPostPercentSignSpan = document.createElement("span");
+totalDrawPercentPostPercentSignSpan.id = "total-draw-percent-post-percent-sign";
+totalDrawPercentPostPercentSignSpan.style = "color: cyan;"
+totalDrawPercentPostPercentSignSpan.textContent = "%";
 
 
-/* GAME RESULT */
+/* game-result */
 const gameResultDiv = document.createElement("div")
 gameResultDiv.id = "game-result-div"
-
 
 const playerNameRoundResult = document.createElement("span");
 playerNameRoundResult.textContent = `${playerName} `;
@@ -515,8 +513,6 @@ const againstRoundResult = document.createElement("span");
 againstRoundResult.textContent = "against";
 againstRoundResult.id = "against-round-result";
 againstRoundResult.style = "color: cyan;"
-
-
 
 
 const playerRivalScoresDiv = document.createElement("div");
@@ -869,12 +865,12 @@ function playRound(playerChoice, rivalChoice) {
 
 
     statsDiv.appendChild(totalDrawPercentDiv)
-    totalDrawPercentSpanNumber.textContent = totalDrawPercent;
-    totalDrawPercentDiv.appendChild(totalDrawPercentPreSign)
-    totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWon)
-    totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWonScoreSpanWonColon)
-    totalDrawPercentDiv.appendChild(totalDrawPercentSpanNumber)
-    totalDrawPercentDiv.appendChild(totalDrawPercentSign)
+    totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
+    totalDrawPercentDiv.appendChild(totalDrawPercentDrawTextSpan)
+    totalDrawPercentDiv.appendChild(totalDrawPercentPrePercentSignSpan)
+    totalDrawPercentDiv.appendChild(totalDrawPercentColonSpan)
+    totalDrawPercentDiv.appendChild(totalDrawPercentTotalDrawPercentSpan)
+    totalDrawPercentDiv.appendChild(totalDrawPercentPostPercentSignSpan)
 
     /* GAME RESULT */
     createDiv(gameResultDiv, "stats")
