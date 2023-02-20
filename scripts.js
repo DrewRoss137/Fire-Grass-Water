@@ -214,7 +214,9 @@ roundResultRivalPokémonSpan.style = "color: red;"
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game"
 
+
 /* flavour-text */
+
 
 /* faintDiv */
 const faintDiv = document.createElement("div");
@@ -232,6 +234,7 @@ const faintfaintedTextSpan = document.createElement("span")
 faintfaintedTextSpan.id  ="faint-fainted-text"
 faintfaintedTextSpan.style = "color: yellow;"
 faintfaintedTextSpan.textContent = "fainted!"
+
 
 /* expDiv */
 const expDiv = document.createElement("div")
@@ -254,9 +257,11 @@ const expAmountSpan = document.createElement("span")
 expAmountSpan.id = "exp-amount";
 expAmountSpan.style = "color: Thistle;"
 
+
 /* stats */
 const statsDiv = document.createElement("div");
 statsDiv.id = "stats"
+
 
 /* rounds-won */
 const roundsWonDiv = document.createElement("div")
@@ -278,6 +283,7 @@ roundsWonPlayerScoreSpan.id = "rounds-won-player-score"
 roundsWonPlayerScoreSpan.style ="color: red;"
 roundsWonPlayerScoreSpan.textContent = playerScore;
 
+
 /* rounds-lost */
 const roundsLostDiv = document.createElement("div");
 roundsLostDiv.id = "rounds-lost"
@@ -297,6 +303,7 @@ const roundsLostRivalScoreSpan = document.createElement("span");
 roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
 roundsLostRivalScoreSpan.style = "color: red;"
 roundsLostRivalScoreSpan.textContent = rivalScore;
+
 
 /* rounds-drawn */
 const roundsDrawnDiv = document.createElement("div");
@@ -318,6 +325,7 @@ roundsDrawnRoundsDrawnSpan.id = "roundsDrawnRoundsDrawnSpan-score-span";
 roundsDrawnRoundsDrawnSpan.style = "color: red;"
 roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
 
+
 /* win-percent */
 const winPercentDiv = document.createElement("div");
 winPercentDiv.id = "win-percent-div"
@@ -329,66 +337,66 @@ winPercentPrePercentSignSpan.style = "color: purple;"
 winPercentPrePercentSignSpan.textContent = "%";
 
 const winPercentColonSpan = document.createElement("span");
-winPercentColonSpan.textContent = ": ";
 winPercentColonSpan.id = "winPercentSpanWon-score-won-colon";
 winPercentColonSpan.style = "color: blue;"
+winPercentColonSpan.textContent = ": ";
 
-const winPercentWinPercentSpan = document.createElement("span");
-winPercentWinPercentSpan.textContent = winPercent;
+const winPercentWinPercentSpan = document.createElement("span")
 winPercentWinPercentSpan.id = "winPercentWinPercentSpan-score-span";
 winPercentWinPercentSpan.style = "color: red;"
+winPercentWinPercentSpan.textContent = winPercent;
 
 const winPercentPostPercentSpan = document.createElement("span");
-winPercentPostPercentSpan.textContent = "%";
 winPercentPostPercentSpan.id = "win-percent-percent-sign";
 winPercentPostPercentSpan.style = "color: cyan;"
+winPercentPostPercentSpan.textContent = "%";
 
-/* LOSE% */
+
+/* lose-percent */
 const losePercentDiv = document.createElement("div");
 losePercentDiv.id = "lose-percent-div"
-
 losePercentDiv.textContent = "LOSS"
 
-const losePercentSpanNumber = document.createElement("span");
-losePercentSpanNumber.textContent = lossPercent;
-losePercentSpanNumber.id = "losePercentSpanNumber-score-span";
-losePercentSpanNumber.style = "color: red;"
+const losePercentPrePercentSignSpan = document.createElement("span");
+losePercentPrePercentSignSpan.id = "losePercent-score-won";
+losePercentPrePercentSignSpan.style = "color: purple;"
+losePercentPrePercentSignSpan.textContent = "%";
 
-const losePercentScoreSpanWon = document.createElement("span");
-losePercentScoreSpanWon.textContent = "%";
-losePercentScoreSpanWon.id = "losePercent-score-won";
-losePercentScoreSpanWon.style = "color: purple;"
+const losePercentColonSpan = document.createElement("span");
+losePercentColonSpan.id = "losePercentSpanWon-score-won-colon";
+losePercentColonSpan.style = "color: blue;"
+losePercentColonSpan.textContent = ": ";
 
-const losePercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
-losePercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
-losePercentScoreSpanWonScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
-losePercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+const losePercentLosePercentSpan = document.createElement("span");
+losePercentLosePercentSpan.textContent = lossPercent;
+losePercentLosePercentSpan.id = "losePercentLosePercentSpan-score-span";
+losePercentLosePercentSpan.style = "color: red;"
 
 const losePercentSign = document.createElement("span");
 losePercentSign.textContent = "%";
 losePercentSign.id = "awdawdore-wawdon-colon";
 losePercentSign.style = "color: cyan;"
 
-/* TOTAL ROUNDS PLAYED */
-const totalRoundsPlayedDiv = document.createElement("div")
-totalRoundsPlayedDiv.id = "total-rounds-played-div"
 
+/* total-rounds-played */
+const totalRoundsPlayedDiv = document.createElement("div")
+totalRoundsPlayedDiv.id = "total-rounds-played"
 totalRoundsPlayedDiv.textContent = "TOTAL ROUNDS "
+
+const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
+totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-text";
+totalRoundsPlayedPlayedTextSpan.style = "color: purple;"
+totalRoundsPlayedPlayedTextSpan.textContent = "PLAYED";
+
+const totalRoundsPlayedPlayedTextSpanScoreSpanWonColon = document.createElement("span");
+totalRoundsPlayedPlayedTextSpanScoreSpanWonColon.textContent = ": ";
+totalRoundsPlayedPlayedTextSpanScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
+totalRoundsPlayedPlayedTextSpanScoreSpanWonColon.style = "color: blue;"
 
 const totalRoundsPercentSpanNumber = document.createElement("span");
 totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
 totalRoundsPercentSpanNumber.id = "loawdawdSpanNumber-score-span";
 totalRoundsPercentSpanNumber.style = "color: red;"
-
-const totalRoundsPercentScoreSpanWon = document.createElement("span");
-totalRoundsPercentScoreSpanWon.textContent = "PLAYED";
-totalRoundsPercentScoreSpanWon.id = "losePercent-score-won";
-totalRoundsPercentScoreSpanWon.style = "color: purple;"
-
-const totalRoundsPercentScoreSpanWonScoreSpanWonColon = document.createElement("span");
-totalRoundsPercentScoreSpanWonScoreSpanWonColon.textContent = ": ";
-totalRoundsPercentScoreSpanWonScoreSpanWonColon.id = "losePercentSpanWon-score-won-colon";
-totalRoundsPercentScoreSpanWonScoreSpanWonColon.style = "color: blue;"
 
 
 /* TOTAL WIN% */
@@ -830,16 +838,16 @@ function playRound(playerChoice, rivalChoice) {
 
 
     statsDiv.appendChild(losePercentDiv)
-    losePercentSpanNumber.textContent = lossPercent;
+    losePercentLosePercentSpan.textContent = lossPercent;
     losePercentDiv.appendChild(losePercentSign);
-    losePercentDiv.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
-    losePercentDiv.appendChild(losePercentSpanNumber)
-    losePercentDiv.appendChild(losePercentScoreSpanWon)
+    losePercentDiv.appendChild(losePercentColonSpan)
+    losePercentDiv.appendChild(losePercentLosePercentSpan)
+    losePercentDiv.appendChild(losePercentPrePercentSignSpan)
 
     statsDiv.appendChild(totalRoundsPlayedDiv)
     totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
-    totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWon)
-    totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
+    totalRoundsPlayedDiv.appendChild(totalRoundsPlayedPlayedTextSpan)
+    totalRoundsPlayedDiv.appendChild(totalRoundsPlayedPlayedTextSpanScoreSpanWonColon)
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentSpanNumber)
 
     statsDiv.appendChild(totalWinPercentDiv)
