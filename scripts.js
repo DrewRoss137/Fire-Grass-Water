@@ -117,14 +117,14 @@ rivalPokémonNameSpan.style = "color: red";
 
 /* player-pokémon-attack-div */
 const playerPokémonAttackDiv = document.createElement("div");
-playerPokémonAttackDiv.id = "player-pokémon-attack-div";
+playerPokémonAttackDiv.id = "player-pokémon-attack";
 
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
 playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
 playerPokémonAttackPlayerNameSpan.style = "color: blue;"
 
 const playerPokémonAttackPokémonNameSpan = document.createElement("span");
-playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
+playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon-name";
 playerPokémonAttackPokémonNameSpan.style = "color: purple";
 
 const playerPokémonAttackUsedTextSpan = document.createElement("span");
@@ -150,7 +150,7 @@ playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effective
 
 /* rival-pokémon-attack-div */
 const rivalPokémonAttackDiv = document.createElement("div");
-rivalPokémonAttackDiv.id = "rival-pokémon-attack-div";
+rivalPokémonAttackDiv.id = "rival-pokémon-attack";
 
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
@@ -175,7 +175,7 @@ const rivalPokémonAttackEffectivenessDiv = document.createElement("div")
 rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness"
 
 const expDivrivalPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
-expDivrivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it"
+expDivrivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it-text"
 
 const rivalPokémonAttackEffectivenessTextSpan =  document.createElement("span")
 rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectiveness-text"
@@ -225,7 +225,7 @@ faintNameSpan.id = "faint-player-name"
 faintNameSpan.style = "color: pink;"
 
 const faintPlayerPokémonSpan = document.createElement("span")
-faintPlayerPokémonSpan.id = "faint-player-Pokémon"
+faintPlayerPokémonSpan.id = "faint-player-pokémon"
 faintPlayerPokémonSpan.style = "color: blue;"
 
 const faintfaintedTextSpan = document.createElement("span")
