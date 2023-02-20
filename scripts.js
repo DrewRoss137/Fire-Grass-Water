@@ -76,214 +76,212 @@ roundsDrawn = 4;
 
 
 /* round-text */
-const roundText = document.createElement("div");
-roundText.id = "round-text";
+const roundTextDiv = document.createElement("div");
+roundTextDiv.id = "round-text";
 
 
 /* player-pokémon-div */
 const playerPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "player-pokémon"
 
-const playerPokémonPlayerName = document.createElement("span");
-playerPokémonPlayerName.id = "player-pokémon-player-name";
-playerPokémonPlayerName.style = "color: orange";
+const playerPokémonPlayerNameSpan = document.createElement("span");
+playerPokémonPlayerNameSpan.id = "player-pokémon-player-name";
+playerPokémonPlayerNameSpan.style = "color: orange";
 
-const playerPokémonGoText = document.createElement("span");
-playerPokémonGoText.id = "player-pokémon-go-text";
-playerPokémonGoText.style = "color: pink";
+const playerPokémonGoTextSpan = document.createElement("span");
+playerPokémonGoTextSpan.id = "player-pokémon-go-text";
+playerPokémonGoTextSpan.style = "color: pink";
 
-const playerPokémonName = document.createElement("span");
-playerPokémonName.id = "player-pokémon-name";
-playerPokémonName.style = "color: red";
+const playerPokémonNameSpan = document.createElement("span");
+playerPokémonNameSpan.id = "player-pokémon-name";
+playerPokémonNameSpan.style = "color: red";
 
 
 /* rival-pokémon-choice-div */
 const rivalPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "rival-pokémon"
 
-const rivalPokémonRivalName = document.createElement("span");
-rivalPokémonRivalName.id = "rival-pokémon-rival-name";
-rivalPokémonRivalName.style = "color: blue";
+const rivalPokémonRivalNameSpan = document.createElement("span");
+rivalPokémonRivalNameSpan.id = "rival-pokémon-rival-name";
+rivalPokémonRivalNameSpan.style = "color: blue";
 
-const rivalPokémonGoText = document.createElement("span");
-rivalPokémonGoText.id = "rival-pokémon-go-text";
-rivalPokémonGoText.style = "color: purple";
-rivalPokémonGoText.textContent = "GO!";
+const rivalPokémonGoTextSpan = document.createElement("span");
+rivalPokémonGoTextSpan.id = "rival-pokémon-go-text";
+rivalPokémonGoTextSpan.style = "color: purple";
+rivalPokémonGoTextSpan.textContent = "GO!";
 
-const rivalPokémonName = document.createElement("span");
-rivalPokémonName.id = "rival-pokémon-name";
-rivalPokémonName.style = "color: red";
+const rivalPokémonNameSpan = document.createElement("span");
+rivalPokémonNameSpan.id = "rival-pokémon-name";
+rivalPokémonNameSpan.style = "color: red";
 
 
 /* player-pokémon-attack-div */
 const playerPokémonAttackDiv = document.createElement("div");
 playerPokémonAttackDiv.id = "player-pokémon-attack-div";
 
-const playerPokémonAttackPlayerName = document.createElement("span");
-playerPokémonAttackPlayerName.id = "player-pokémon-attack-player-name";
-playerPokémonAttackPlayerName.style = "color: blue;"
+const playerPokémonAttackPlayerNameSpan = document.createElement("span");
+playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
+playerPokémonAttackPlayerNameSpan.style = "color: blue;"
 
-const playerPokémonAttackPokémonName = document.createElement("span");
-playerPokémonAttackPokémonName.id = "player-pokémon-attack-pokémon";
-playerPokémonAttackPokémonName.style = "color: purple";
+const playerPokémonAttackPokémonNameSpan = document.createElement("span");
+playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
+playerPokémonAttackPokémonNameSpan.style = "color: purple";
 
-const playerPokémonAttackUsedText = document.createElement("span");
-playerPokémonAttackUsedText.id = "player-pokémon-attack-used-text";
-playerPokémonAttackUsedText.style = "color: yellow";
-playerPokémonAttackUsedText.textContent = "used "
+const playerPokémonAttackUsedTextSpan = document.createElement("span");
+playerPokémonAttackUsedTextSpan.id = "player-pokémon-attack-used-text";
+playerPokémonAttackUsedTextSpan.style = "color: yellow";
+playerPokémonAttackUsedTextSpan.textContent = "used "
 
-const playerPokémonAttackPokémonAttack = document.createElement("span");
-playerPokémonAttackPokémonAttack.id = "player-pokémon-attack-pokémon-attack";
-playerPokémonAttackPokémonAttack.style = "color: red";
+const playerPokémonAttackPokémonAttackSpan = document.createElement("span");
+playerPokémonAttackPokémonAttackSpan.id = "player-pokémon-attack-pokémon-attack";
+playerPokémonAttackPokémonAttackSpan.style = "color: red";
 
 
 /* player-pokémon-attack-effectiveness */
 const playerPokémonAttackEffectivenessDiv = document.createElement("div")
 playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness"
 
-const playerPokémonAttackEffectivenessItText =  document.createElement("span")
-playerPokémonAttackEffectivenessItText.id = "player-pokémon-attack-effectiveness-it-text"
+const playerPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
+playerPokémonAttackEffectivenessItTextSpan.id = "player-pokémon-attack-effectiveness-it-text"
 
-const playerPokémonAttackEffectivenessText =  document.createElement("span")
-playerPokémonAttackEffectivenessText.id = "player-pokémon-attack-effectiveness-text"
+const playerPokémonAttackEffectivenessTextSpan =  document.createElement("span")
+playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text"
 
 
 /* rival-pokémon-attack-div */
 const rivalPokémonAttackDiv = document.createElement("div");
 rivalPokémonAttackDiv.id = "rival-pokémon-attack-div";
 
-const rivalPokémonAttackRivalName = document.createElement("span");
-rivalPokémonAttackRivalName.id = "rival-pokémon-attack-rival-name";
-rivalPokémonAttackRivalName.style = "color: blue;"
+const rivalPokémonAttackRivalNameSpan = document.createElement("span");
+rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
+rivalPokémonAttackRivalNameSpan.style = "color: blue;"
 
-const rivalPokémonAttackPokémonName = document.createElement("span");
-rivalPokémonAttackPokémonName.id = "rival-pokémon-attack-pokémon";
-rivalPokémonAttackPokémonName.style = "color: purple";
+const rivalPokémonAttackPokémonNameSpan = document.createElement("span");
+rivalPokémonAttackPokémonNameSpan.id = "rival-pokémon-attack-pokémon";
+rivalPokémonAttackPokémonNameSpan.style = "color: purple";
 
-const rivalPokémonAttackUsedText = document.createElement("span");
-rivalPokémonAttackUsedText.id = "rival-pokémon-attack-used-text";
-rivalPokémonAttackUsedText.style = "color: yellow";
-rivalPokémonAttackUsedText.textContent = "used "
+const rivalPokémonAttackUsedTextSpan = document.createElement("span");
+rivalPokémonAttackUsedTextSpan.id = "rival-pokémon-attack-used-text";
+rivalPokémonAttackUsedTextSpan.style = "color: yellow";
+rivalPokémonAttackUsedTextSpan.textContent = "used "
 
-const rivalPokémonAttackPokémonNameAttack = document.createElement("span");
-rivalPokémonAttackPokémonNameAttack.id = "rival-pokémon-attack-pokémon-attack";
-rivalPokémonAttackPokémonNameAttack.style = "color: red";
+const rivalPokémonAttackPokémonNameSpanAttackSpan = document.createElement("span");
+rivalPokémonAttackPokémonNameSpanAttackSpan.id = "rival-pokémon-attack-pokémon-attack";
+rivalPokémonAttackPokémonNameSpanAttackSpan.style = "color: red";
 
 
 /* rival-pokémon-attack-effectiveness */
 const rivalPokémonAttackEffectivenessDiv = document.createElement("div")
 rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness"
 
-const rivalPokémonAttackEffectivenessItText =  document.createElement("span")
-rivalPokémonAttackEffectivenessItText.id = "rival-pokémon-attack-effectiveness-it"
+const expDivrivalPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
+expDivrivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it"
 
-const rivalPokémonAttackEffectivenessText =  document.createElement("span")
-rivalPokémonAttackEffectivenessText.id = "rival-pokémon-attack-effectiveness-text"
+const rivalPokémonAttackEffectivenessTextSpan =  document.createElement("span")
+rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectiveness-text"
 
 
 /* round-result */
 const roundResultDiv = document.createElement("div");
 roundResultDiv.id = "round-result";
 
-const roundResultPlayerName = document.createElement("span");
-roundResultPlayerName.id = "round-result-player-name"
-roundResultPlayerName.style = "color: blue";
+const roundResultPlayerNameSpan = document.createElement("span");
+roundResultPlayerNameSpan.id = "round-result-player-name"
+roundResultPlayerNameSpan.style = "color: blue";
 
-const roundResultPlayerPokémon = document.createElement("span")
-roundResultPlayerPokémon.id = "round-result-player-pokémon"
-roundResultPlayerPokémon.style = "color: purple;"
+const roundResultPlayerPokémonSpan = document.createElement("span")
+roundResultPlayerPokémonSpan.id = "round-result-player-pokémon"
+roundResultPlayerPokémonSpan.style = "color: purple;"
 
-const roundResultRoundResult = document.createElement("span")
-roundResultRoundResult.id = "round-result-round-result" 
-roundResultRoundResult.style = "color: orange;"
+const roundResultRoundResultSpan = document.createElement("span")
+roundResultRoundResultSpan.id = "round-result-round-result" 
+roundResultRoundResultSpan.style = "color: orange;"
 
-const roundResultVersusText = document.createElement("span")
-roundResultVersusText.id = "round-result-versus-text"
-roundResultVersusText.style = "color: cyan;"
+const roundResultVersusTextSpan = document.createElement("span")
+roundResultVersusTextSpan.id = "round-result-versus-text"
+roundResultVersusTextSpan.style = "color: cyan;"
 
-const roundResultRivalName = document.createElement("span")
-roundResultRivalName.id = "round-result-rival-name"
-roundResultRivalName.style = "coolr: yellow;"
+const roundResultRivalNameSpan = document.createElement("span")
+roundResultRivalNameSpan.id = "round-result-rival-name"
+roundResultRivalNameSpan.style = "coolr: yellow;"
 
-const roundResultRivalPokémon = document.createElement("span")
-roundResultRivalPokémon.id = "round-result-rival-pokémon"
-roundResultRivalPokémon.style = "color: red;"
+const roundResultRivalPokémonSpan = document.createElement("span")
+roundResultRivalPokémonSpan.id = "round-result-rival-pokémon"
+roundResultRivalPokémonSpan.style = "color: red;"
 
 
 /* post-game */
-const postGame = document.createElement("div");
-postGame.id = "post-game"
+const postGameDiv = document.createElement("div");
+postGameDiv.id = "post-game"
 
 /* flavour-text */
 
-/* faint */
-const faint = document.createElement("div");
-faint.id = "faint";
+/* faintDiv */
+const faintDiv = document.createElement("div");
+faintDiv.id = "faint";
 
-const faintName = document.createElement("span")
-faintName.id = "faint-player-name"
-faintName.style = "color: pink;"
+const faintNameSpan = document.createElement("span")
+faintNameSpan.id = "faint-player-name"
+faintNameSpan.style = "color: pink;"
 
-const faintPlayerPokémon = document.createElement("span")
-faintPlayerPokémon.id = "faint-player-Pokémon"
-faintPlayerPokémon.style = "color: blue;"
+const faintPlayerPokémonSpan = document.createElement("span")
+faintPlayerPokémonSpan.id = "faint-player-Pokémon"
+faintPlayerPokémonSpan.style = "color: blue;"
 
-const faintFaintedText = document.createElement("span")
-faintFaintedText.id  ="faint-fainted-text"
-faintFaintedText.style = "color: yellow;"
-faintFaintedText.textContent = "fainted!"
+const faintfaintedTextSpan = document.createElement("span")
+faintfaintedTextSpan.id  ="faint-fainted-text"
+faintfaintedTextSpan.style = "color: yellow;"
+faintfaintedTextSpan.textContent = "fainted!"
 
-/* exp */
-const exp = document.createElement("div")
-exp.id = "exp"
+/* expDiv */
+const expDiv = document.createElement("div")
+expDiv.id = "exp"
 
-const expName = document.createElement("span");
-expName.id = "exp-name";
-expName.style = "color: blue;"
+const expNameSpan = document.createElement("span");
+expNameSpan.id = "exp-name";
+expNameSpan.style = "color: blue;"
 
-const expPokémon = document.createElement("span");
-expPokémon.id = "exp-pokémon"
-expPokémon.style = "color: yellow;"
+const expPokémonSpan = document.createElement("span");
+expPokémonSpan.id = "exp-pokémon"
+expPokémonSpan.style = "color: yellow;"
 
-const expGainedText = document.createElement("span");
-expGainedText.id = "exp-gained-text";
-expGainedText.style = "color: green;"
-expGainedText.textContent = "gained "
+const expGainedTextSpan = document.createElement("span");
+expGainedTextSpan.id = "exp-gained-text";
+expGainedTextSpan.style = "color: green;"
+expGainedTextSpan.textContent = "gained "
 
-const expAmount = document.createElement("span")
-expAmount.id = "exp-amount";
-expAmount.style = "color: Thistle;"
+const expAmountSpan = document.createElement("span")
+expAmountSpan.id = "exp-amount";
+expAmountSpan.style = "color: Thistle;"
 
 /* stats */
+const statsDiv = document.createElement("div");
+statsDiv.id = "stats"
 
 /* rounds-won */
-const stats = document.createElement("div");
-stats.id = "stats"
+const roundsWonSpan = document.createElement("span")
+roundsWonSpan.id = "rounds-won"
+roundsWonSpan.textContent = "ROUNDS "
 
-const roundsWon = document.createElement("span")
-roundsWon.id = "rounds-won"
-roundsWon.textContent = "ROUNDS "
+const roundsWonWonTextSpan = document.createElement("span")
+roundsWonWonTextSpan.id = "rounds-won-won-text"
+roundsWonWonTextSpan.style = "color: Purple;"
+roundsWonWonTextSpan.textContent = "WON"
 
-const roundsWonWonText = document.createElement("span")
-roundsWonWonText.id = "rounds-won-won-text"
-roundsWonWonText.style = "color: Purple;"
-roundsWonWonText.textContent = "WON"
+const roundsWonColonSpan = document.createElement("span")
+roundsWonColonSpan.id = "rounds-won-colon"
+roundsWonColonSpan.style = "color: cyan"
+roundsWonColonSpan.textContent = ": "
 
-const roundsWonColon = document.createElement("span")
-roundsWonColon.id = "rounds-won-colon"
-roundsWonColon.style = "color: cyan"
-roundsWonColon.textContent = ": "
-
-const roundsWonPlayerScore = document.createElement("span")
-roundsWonPlayerScore.id = "rounds-won-player-score"
-roundsWonPlayerScore.style ="color: red;"
-roundsWonPlayerScore.textContent = playerScore;
+const roundsWonPlayerScoreSpan = document.createElement("span")
+roundsWonPlayerScoreSpan.id = "rounds-won-player-score"
+roundsWonPlayerScoreSpan.style ="color: red;"
+roundsWonPlayerScoreSpan.textContent = playerScore;
 
 
 /*ROUNDS LOST */
 const roundsLostDiv = document.createElement("div");
 roundsLostDiv.id = "rounds-lost-div"
-
 roundsLostDiv.textContent = "ROUNDS "
 
 const rivalScoreSpanNumber = document.createElement("span");
@@ -589,8 +587,8 @@ function playRound(playerChoice, rivalChoice) {
   critDiv.remove()
   totalRoundsPlayed ++;
   if (playerChoice === rivalChoice) {
-    playerPokémonAttackEffectivenessItText.textContent = "But it "
-    rivalPokémonAttackEffectivenessItText.textContent = "But it "
+    playerPokémonAttackEffectivenessItTextSpan.textContent = "But it "
+    expDivrivalPokémonAttackEffectivenessItTextSpan.textContent = "But it "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     roundsDrawn ++; 
@@ -599,16 +597,16 @@ function playRound(playerChoice, rivalChoice) {
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
-    playerPokémonAttackEffectivenessItText.textContent = "It's "
-    rivalPokémonAttackEffectivenessItText.textContent = "It's "
+    playerPokémonAttackEffectivenessItTextSpan.textContent = "It's "
+    expDivrivalPokémonAttackEffectivenessItTextSpan.textContent = "It's "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     playerScore ++;
     roundResult = roundResults[2];
     generateCriticalHitChance(critDiv);
   } else {
-    playerPokémonAttackEffectivenessItText.textContent = "It's "
-    rivalPokémonAttackEffectivenessItText.textContent = "It's "
+    playerPokémonAttackEffectivenessItTextSpan.textContent = "It's "
+    expDivrivalPokémonAttackEffectivenessItTextSpan.textContent = "It's "
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalScore ++;
@@ -628,35 +626,35 @@ function playRound(playerChoice, rivalChoice) {
 
 
 
-  createDiv(roundText, "player-rival-scores-div");
-  roundText.appendChild(playerPokémonDiv)
-  roundText.appendChild(rivalPokémonDiv)
-  roundText.appendChild(playerPokémonAttackDiv)
-  roundText.appendChild(playerPokémonAttackEffectivenessDiv)
-  playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItText)
-  playerPokémonAttackEffectivenessItText.style = "color: thistle;";
-  rivalPokémonAttackEffectivenessItText.style = "color: thistle;"
-  playerPokémonAttackEffectivenessText.style = "color: MediumAquamarine;";
-  rivalPokémonAttackEffectivenessText.style = "color: MediumAquamarine;"
-  playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessText)
-  roundText.appendChild(rivalPokémonAttackDiv)
-  roundText.appendChild(rivalPokémonAttackEffectivenessDiv)
-  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItText)
-  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessText)
-  roundText.appendChild(roundResultDiv)
+  createDiv(roundTextDiv, "player-rival-scores-div");
+  roundTextDiv.appendChild(playerPokémonDiv)
+  roundTextDiv.appendChild(rivalPokémonDiv)
+  roundTextDiv.appendChild(playerPokémonAttackDiv)
+  roundTextDiv.appendChild(playerPokémonAttackEffectivenessDiv)
+  playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItTextSpan)
+  playerPokémonAttackEffectivenessItTextSpan.style = "color: thistle;";
+  expDivrivalPokémonAttackEffectivenessItTextSpan.style = "color: thistle;"
+  playerPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;";
+  rivalPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;"
+  playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessTextSpan)
+  roundTextDiv.appendChild(rivalPokémonAttackDiv)
+  roundTextDiv.appendChild(rivalPokémonAttackEffectivenessDiv)
+  rivalPokémonAttackEffectivenessDiv.appendChild(expDivrivalPokémonAttackEffectivenessItTextSpan)
+  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan)
+  roundTextDiv.appendChild(roundResultDiv)
   
   if (roundResult === roundResults[0]) {
-    roundResultRoundResult.textContent = " drew ";
+    roundResultRoundResultSpan.textContent = " drew ";
   } else if (roundResult === roundResults[2]) {
-    roundResultRoundResult.textContent = " won ";
-    roundText.insertBefore(critDiv, playerPokémonAttackDiv.nextSibling)
+    roundResultRoundResultSpan.textContent = " won ";
+    roundTextDiv.insertBefore(critDiv, playerPokémonAttackDiv.nextSibling)
   } else if (roundResult === roundResults[1]){
-    roundResultRoundResult.textContent = " lost ";
-    roundText.insertBefore(critDiv, rivalPokémonAttackDiv.nextSibling)
+    roundResultRoundResultSpan.textContent = " lost ";
+    roundTextDiv.insertBefore(critDiv, rivalPokémonAttackDiv.nextSibling)
   }
 
 
-  roundResultRivalName.textContent = `${rivalName}'s`;
+  roundResultRivalNameSpan.textContent = `${rivalName}'s`;
 
 
 
@@ -665,68 +663,68 @@ function playRound(playerChoice, rivalChoice) {
   /* PLAYER CHOICE DIV */
  
   playerPokémonDiv.id = "player-choice-div"
-  playerPokémonDiv.appendChild(playerPokémonPlayerName)
-  playerPokémonPlayerName.textContent = `${playerName}: `
-  playerPokémonDiv.appendChild(playerPokémonGoText)
-  playerPokémonDiv.appendChild(playerPokémonName)
-  playerPokémonGoText.textContent = "GO! "
-  playerPokémonName.textContent = `${playerPokémon}!`
+  playerPokémonDiv.appendChild(playerPokémonPlayerNameSpan)
+  playerPokémonPlayerNameSpan.textContent = `${playerName}: `
+  playerPokémonDiv.appendChild(playerPokémonGoTextSpan)
+  playerPokémonDiv.appendChild(playerPokémonNameSpan)
+  playerPokémonGoTextSpan.textContent = "GO! "
+  playerPokémonNameSpan.textContent = `${playerPokémon}!`
   
 
   /* RIVAL CHOICE DIV */
 
   rivalPokémonDiv.id = "rival-choice-div"
-  rivalPokémonDiv.appendChild(rivalPokémonRivalName)
-  rivalPokémonRivalName.textContent = `${rivalName}: `
-  rivalPokémonDiv.appendChild(rivalPokémonGoText)
-  rivalPokémonGoText.textContent = "GO! "
-  rivalPokémonDiv.appendChild(rivalPokémonName)
-  rivalPokémonName.textContent = `${rivalPokémon}!`
+  rivalPokémonDiv.appendChild(rivalPokémonRivalNameSpan)
+  rivalPokémonRivalNameSpan.textContent = `${rivalName}: `
+  rivalPokémonDiv.appendChild(rivalPokémonGoTextSpan)
+  rivalPokémonGoTextSpan.textContent = "GO! "
+  rivalPokémonDiv.appendChild(rivalPokémonNameSpan)
+  rivalPokémonNameSpan.textContent = `${rivalPokémon}!`
 
   /* PLAYER ATTACK DIV */
 
   playerPokémonAttackDiv.id = "player-attack-div"
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerName)
-  playerPokémonAttackPlayerName.textContent = `${playerName}'s `
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonName)
-  playerPokémonAttackPokémonName.textContent = `${playerPokémon} `
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedText)
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttack)
-  playerPokémonAttackPokémonAttack.textContent = `${playerPokémonAttack}!`
+  playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan)
+  playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `
+  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonNameSpan)
+  playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `
+  playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedTextSpan)
+  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan)
+  playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
 
   /* PLAYER ATTACK EFFECTIVENESS DIV */
-  playerPokémonAttackEffectivenessText.textContent = playerPokémonAttackEffectiveness
+  playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
 
   /* RIVAL ATTACK DIV */
 
   rivalPokémonAttackDiv.id = "rival-attack-div"
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalName)
-  rivalPokémonAttackRivalName.textContent = `${rivalName}'s `
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonName)
-  rivalPokémonAttackPokémonName.textContent = `${rivalPokémon} `
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedText)
-  rivalPokémonAttackUsedText.textContent = "used "
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameAttack)
-  rivalPokémonAttackPokémonNameAttack.textContent = `${rivalPokémonAttack}!`
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan)
+  rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan)
+  rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
+  rivalPokémonAttackUsedTextSpan.textContent = "used "
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpanAttackSpan)
+  rivalPokémonAttackPokémonNameSpanAttackSpan.textContent = `${rivalPokémonAttack}!`
 
   /* RIVAL ATTACK EFFECTIVENESS DIV */
-  rivalPokémonAttackEffectivenessText.textContent = rivalPokémonAttackEffectiveness
+  rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
 
 
 
 
-  roundResultDiv.appendChild(roundResultPlayerName)
-  roundResultPlayerName.textContent = `${playerName}'s `
-  roundResultDiv.appendChild(roundResultPlayerPokémon)
-  roundResultPlayerPokémon.textContent = `${playerPokémon} `
-  roundResultDiv.appendChild(roundResultRoundResult)
-  roundResultDiv.appendChild(roundResultRoundResult)
-  roundResultDiv.appendChild(roundResultVersusText)
-  roundResultVersusText.textContent = " versus "
-  roundResultDiv.appendChild(roundResultRivalName)
-  roundResultRivalName.textContent = `${rivalName}'s `
-  roundResultDiv.appendChild(roundResultRivalPokémon)
-  roundResultRivalPokémon.textContent = `${rivalPokémon}!`
+  roundResultDiv.appendChild(roundResultPlayerNameSpan)
+  roundResultPlayerNameSpan.textContent = `${playerName}'s `
+  roundResultDiv.appendChild(roundResultPlayerPokémonSpan)
+  roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `
+  roundResultDiv.appendChild(roundResultRoundResultSpan)
+  roundResultDiv.appendChild(roundResultRoundResultSpan)
+  roundResultDiv.appendChild(roundResultVersusTextSpan)
+  roundResultVersusTextSpan.textContent = " versus "
+  roundResultDiv.appendChild(roundResultRivalNameSpan)
+  roundResultRivalNameSpan.textContent = `${rivalName}'s `
+  roundResultDiv.appendChild(roundResultRivalPokémonSpan)
+  roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
 
 
 
@@ -761,49 +759,49 @@ function playRound(playerChoice, rivalChoice) {
 
   if (playerScore === 5 || rivalScore === 5) {
     let exp1 = Math.floor(Math.random() * 51) + 50;
-    createDiv(postGame, "round-text");
+    createDiv(postGameDiv, "round-text");
 
-    /* FAINT TEXT */
-    postGame.appendChild(faint)
-    faint.appendChild(faintName)
-    faint.appendChild(faintPlayerPokémon)
-    faint.appendChild(faintFaintedText)
+    /* faint TEXT */
+    postGameDiv.appendChild(faintDiv)
+    faint.appendChild(faintNameSpan)
+    faint.appendChild(faintPlayerPokémonSpan)
+    faint.appendChild(faintfaintedTextSpan)
 
     /* EXP TEXT */
-    postGame.appendChild(exp)
-    exp.appendChild(expName)
-    exp.appendChild(expPokémon)
-    exp.appendChild(expGainedText)
-    exp.appendChild(expAmount)
+    postGameDiv.appendChild(expDiv)
+    exp.appendChild(expNameSpan)
+    exp.appendChild(expPokémonSpan)
+    exp.appendChild(expGainedTextSpan)
+    exp.appendChild(expAmountSpan)
   
 
 
 
 
     if (playerScore > rivalScore) {
-      faintName.textContent = `${rivalName}'s `
-      faintPlayerPokémon.textContent = ` ${rivalPokémon} `;
-      expName.textContent = `${playerName}'s `;
-      expPokémon.textContent = playerPokémon;
+      faintNameSpan.textContent = `${rivalName}'s `
+      faintPlayerPokémonSpan.textContent = ` ${rivalPokémon} `;
+      expNameSpan.textContent = `${playerName}'s `;
+      expPokémonSpan.textContent = playerPokémon;
       typeRoundResult.style = "color:green;"
       typeRoundResult.textContent = "WON"
 
     } else {
       typeRoundResult.style = "color:red;"
       typeRoundResult.textContent = "LOST"
-      faintName.textContent = `${playerName}'s `
-      faintPlayerPokémon.textContent = `${playerPokémon} `;
-      expName.textContent = `${rivalName}'s `;
-      expPokémon.textContent = ` ${rivalPokémon}`;
+      faintNameSpan.textContent = `${playerName}'s `
+      faintPlayerPokémonSpan.textContent = `${playerPokémon} `;
+      expNameSpan.textContent = `${rivalName}'s `;
+      expPokémonSpan.textContent = ` ${rivalPokémon}`;
     }
-    expGainedText.textContent = ` ${exp1} Exp. Points!`; 
+    expGainedTextSpan.textContent = ` ${exp1} Exp. Points!`; 
 
     /* STATS */
-    createDiv(postGame, "round-text")
-    postGame.appendChild(faint)
-    postGame.appendChild(exp)
-    postGame.appendChild(stats)
-    postGame.appendChild(gameResultDiv)
+    createDiv(postGameDiv, "round-text")
+    postGameDiv.appendChild(faintDiv)
+    postGameDiv.appendChild(expDiv)
+    postGameDiv.appendChild(statsDiv)
+    postGameDiv.appendChild(gameResultDiv)
 
 
     /* UNSURE OF THE PURPOSE OF THIS CODE. CAUSES STATS TO PERSIST AFTER GAME END. 
@@ -811,26 +809,26 @@ function playRound(playerChoice, rivalChoice) {
     createDiv(stats, "post-game"); 
     */
 
-    stats.appendChild(roundsWon)
-    roundsWonPlayerScore.textContent = playerScore;
-    roundsWon.appendChild(roundsWonWonText);
-    roundsWon.appendChild(roundsWonColon)
-    roundsWon.appendChild(roundsWonPlayerScore);
+    statsDiv.appendChild(roundsWonSpan)
+    roundsWonPlayerScoreSpan.textContent = playerScore;
+    roundsWonSpan.appendChild(roundsWonWonTextSpan);
+    roundsWonSpan.appendChild(roundsWonColonSpan)
+    roundsWonSpan.appendChild(roundsWonPlayerScoreSpan);
 
-    stats.appendChild(roundsLostDiv)
+    statsDiv.appendChild(roundsLostDiv)
     rivalScoreSpanNumber.textContent = rivalScore;
     roundsLostDiv.appendChild(rivalScoreSpanWon);
     roundsLostDiv.appendChild(rivalScoreSpanWonColon)
     roundsLostDiv.appendChild(rivalScoreSpanNumber);
 
-    stats.appendChild(roundsDrawnDiv)
+    statsDiv.appendChild(roundsDrawnDiv)
     drawSpanNumber.textContent = roundsDrawn;
     roundsDrawnDiv.appendChild(drawScoreSpanWon);
     roundsDrawnDiv.appendChild(drawScoreSpanWonScoreSpanWonColon)
     roundsDrawnDiv.appendChild(drawSpanNumber);
 
 
-    stats.appendChild(winPercentDiv)
+    statsDiv.appendChild(winPercentDiv)
     winPercentSpanNumber.textContent = winPercentage;
     winPercentDiv.appendChild(winPercentSign);
     winPercentDiv.appendChild(winPercentScoreSpanWonScoreSpanWonColon)
@@ -838,20 +836,20 @@ function playRound(playerChoice, rivalChoice) {
     winPercentDiv.appendChild(winPercentScoreSpanWon);
 
 
-    stats.appendChild(losePercentDiv)
+    statsDiv.appendChild(losePercentDiv)
     losePercentSpanNumber.textContent = lossPercentage;
     losePercentDiv.appendChild(losePercentSign);
     losePercentDiv.appendChild(losePercentScoreSpanWonScoreSpanWonColon)
     losePercentDiv.appendChild(losePercentSpanNumber)
     losePercentDiv.appendChild(losePercentScoreSpanWon)
 
-    stats.appendChild(totalRoundsPlayedDiv)
+    statsDiv.appendChild(totalRoundsPlayedDiv)
     totalRoundsPercentSpanNumber.textContent = totalRoundsPlayed;
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWon)
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentScoreSpanWonScoreSpanWonColon)
     totalRoundsPlayedDiv.appendChild(totalRoundsPercentSpanNumber)
 
-    stats.appendChild(totalWinPercentDiv)
+    statsDiv.appendChild(totalWinPercentDiv)
     totalWinPercentSpanNumber.textContent = totalWinPercentage;
     totalWinPercentDiv.appendChild(totalWinPercentPreSign)
     totalWinPercentDiv.appendChild(totalWinPercentScoreSpanWon)
@@ -859,7 +857,7 @@ function playRound(playerChoice, rivalChoice) {
     totalWinPercentDiv.appendChild(totalWinPercentSpanNumber)
     totalWinPercentDiv.appendChild(totalWinPercentSign)
 
-    stats.appendChild(totalLossPercentDiv)
+    statsDiv.appendChild(totalLossPercentDiv)
     totalLossPercentSpanNumber.textContent = totalLossPercentage;
     totalLossPercentDiv.appendChild(totalLossPercentPreSign)
     totalLossPercentDiv.appendChild(totalLossPercentScoreSpanWon)
@@ -868,7 +866,7 @@ function playRound(playerChoice, rivalChoice) {
     totalLossPercentDiv.appendChild(totalLossPercentSign)
 
 
-    stats.appendChild(totalDrawPercentDiv)
+    statsDiv.appendChild(totalDrawPercentDiv)
     totalDrawPercentSpanNumber.textContent = totalDrawPercentage;
     totalDrawPercentDiv.appendChild(totalDrawPercentPreSign)
     totalDrawPercentDiv.appendChild(totalDrawPercentScoreSpanWon)
@@ -894,7 +892,7 @@ function playRound(playerChoice, rivalChoice) {
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
   } else {
-    postGame.remove()
+    postGameDiv.remove()
   }
 };
 
