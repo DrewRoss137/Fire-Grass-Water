@@ -399,35 +399,36 @@ totalRoundsPlayedTotalRoundsPlayedSpan.style = "color: red;"
 totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
 
 
-/* TOTAL WIN% */
+/* total-win-percent */
 const totalWinPercentDiv = document.createElement("div")
-totalWinPercentDiv.id = "total-win-percent-div"
+totalWinPercentDiv.id = "total-win-percent"
 totalWinPercentDiv.textContent = "TOTAL "
 
-const totalwinPercentWinPercentSpan = document.createElement("span");
-totalwinPercentWinPercentSpan.textContent = totalWinPercent;
-totalwinPercentWinPercentSpan.id = "totalwinPercentWinPercentSpan-score-span";
-totalwinPercentWinPercentSpan.style = "color: red;"
+const totalWinPercentWinTextSpan = document.createElement("span");
+totalWinPercentWinTextSpan.id = "total-win-percent-win-text";
+totalWinPercentWinTextSpan.style = "color: yellow;"
+totalWinPercentWinTextSpan.textContent = "WIN";
 
 const totalwinPercentPrePercentSignSpan = document.createElement("span");
-totalwinPercentPrePercentSignSpan.textContent = "%";
-totalwinPercentPrePercentSignSpan.id = "lawdawdnt-score-won";
+totalwinPercentPrePercentSignSpan.id = "total-win-percent-pre-percent-sign";
 totalwinPercentPrePercentSignSpan.style = "color: purple;"
+totalwinPercentPrePercentSignSpan.textContent = "%";
 
-const totalwinPercentColonSpan = document.createElement("span");
-totalwinPercentColonSpan.textContent = ": ";
-totalwinPercentColonSpan.id = "awdntSpanWon-score-won-colon";
-totalwinPercentColonSpan.style = "color: blue;"
+const totalWinPercentColonSpan = document.createElement("span");
+totalWinPercentColonSpan.id = "total-win-percent-colon";
+totalWinPercentColonSpan.style = "color: blue;"
+totalWinPercentColonSpan.textContent = ": ";
 
-const totalwinPercentPostPercentSpan = document.createElement("span");
-totalwinPercentPostPercentSpan.textContent = "%";
-totalwinPercentPostPercentSpan.id = "awdawawddore-wawdon-colon";
-totalwinPercentPostPercentSpan.style = "color: cyan;"
+const totalWinPercentTotalWinPercentSpan = document.createElement("span");
+totalWinPercentTotalWinPercentSpan.id = "total-win-percent-total-win-percent";
+totalWinPercentTotalWinPercentSpan.style = "color: red;"
+totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
 
-const totalWinPercentPreSign = document.createElement("span");
-totalWinPercentPreSign.textContent = "WIN";
-totalWinPercentPreSign.id = "awdawawddore-wawdon-colon";
-totalWinPercentPreSign.style = "color: yellow;"
+const totalWinPercentPostPercentSpan = document.createElement("span");
+totalWinPercentPostPercentSpan.id = "total-win-percent-post-percent-sign";
+totalWinPercentPostPercentSpan.style = "color: cyan;"
+totalWinPercentPostPercentSpan.textContent = "%";
+
 
 /* TOTAL LOSS% */
 const totalLossPercentDiv = document.createElement("div")
@@ -851,12 +852,12 @@ function playRound(playerChoice, rivalChoice) {
     totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan)
 
     statsDiv.appendChild(totalWinPercentDiv)
-    totalwinPercentWinPercentSpan.textContent = totalWinPercent;
-    totalWinPercentDiv.appendChild(totalWinPercentPreSign)
+    totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
+    totalWinPercentDiv.appendChild(totalWinPercentWinTextSpan)
     totalWinPercentDiv.appendChild(totalwinPercentPrePercentSignSpan)
-    totalWinPercentDiv.appendChild(totalwinPercentColonSpan)
-    totalWinPercentDiv.appendChild(totalwinPercentWinPercentSpan)
-    totalWinPercentDiv.appendChild(totalwinPercentPostPercentSpan)
+    totalWinPercentDiv.appendChild(totalWinPercentColonSpan)
+    totalWinPercentDiv.appendChild(totalWinPercentTotalWinPercentSpan)
+    totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan)
 
     statsDiv.appendChild(totalLossPercentDiv)
     totalLossPercentSpanNumber.textContent = totalLossPercent;
