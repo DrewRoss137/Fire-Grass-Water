@@ -298,27 +298,25 @@ roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
 roundsLostRivalScoreSpan.style = "color: red;"
 roundsLostRivalScoreSpan.textContent = rivalScore;
 
-/*ROUNDS DRAWN */
+/* rounds-drawn */
 const roundsDrawnDiv = document.createElement("div");
-roundsDrawnDiv.id = "rounds-drawn-div"
-
+roundsDrawnDiv.id = "rounds-drawn"
 roundsDrawnDiv.textContent = "ROUNDS "
 
+const roundsDrawnDrawnTextSpan = document.createElement("span");
+roundsDrawnDrawnTextSpan.id = "roundsDrawnDrawnTextSpan-score-won";
+roundsDrawnDrawnTextSpan.style = "color: purple;"
+roundsDrawnDrawnTextSpan.textContent = "DRAWN";
 
-const drawSpanNumber = document.createElement("span");
-drawSpanNumber.textContent = roundsDrawn;
-drawSpanNumber.id = "drawSpanNumber-score-span";
-drawSpanNumber.style = "color: red;"
+const roundsDrawnColonSpan = document.createElement("span");
+roundsDrawnColonSpan.id = "rounds-drawn-colon";
+roundsDrawnColonSpan.style = "color: blue;"
+roundsDrawnColonSpan.textContent = ": ";
 
-const drawScoreSpanWon = document.createElement("span");
-drawScoreSpanWon.textContent = "DRAWN";
-drawScoreSpanWon.id = "drawScoreSpanWon-score-won";
-drawScoreSpanWon.style = "color: purple;"
-
-const drawScoreSpanWonScoreSpanWonColon = document.createElement("span");
-drawScoreSpanWonScoreSpanWonColon.textContent = ": ";
-drawScoreSpanWonScoreSpanWonColon.id = "drawScoreSpanWon-score-won-colon";
-drawScoreSpanWonScoreSpanWonColon.style = "color: blue;"
+const roundsDrawnRoundsDrawnSpan = document.createElement("span");
+roundsDrawnRoundsDrawnSpan.id = "roundsDrawnRoundsDrawnSpan-score-span";
+roundsDrawnRoundsDrawnSpan.style = "color: red;"
+roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
 
 
 /* WIN% */
@@ -820,10 +818,10 @@ function playRound(playerChoice, rivalChoice) {
     roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 
     statsDiv.appendChild(roundsDrawnDiv)
-    drawSpanNumber.textContent = roundsDrawn;
-    roundsDrawnDiv.appendChild(drawScoreSpanWon);
-    roundsDrawnDiv.appendChild(drawScoreSpanWonScoreSpanWonColon)
-    roundsDrawnDiv.appendChild(drawSpanNumber);
+    roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
+    roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
+    roundsDrawnDiv.appendChild(roundsDrawnColonSpan)
+    roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 
 
     statsDiv.appendChild(winPercentDiv)
