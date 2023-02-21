@@ -23,7 +23,7 @@ const attackEffectiveness = {
 const roundResults = ["Draw", "Lose", "Win"];
 
 
-/* Initialised Variables */
+/* Variables */
 
 /* Names */
 let playerName;
@@ -34,6 +34,10 @@ rivalName = "Rival Name";
 
 playerName = playerName.toUpperCase()
 rivalName = rivalName.toUpperCase()
+
+/* Choices */
+let playerChoice;
+let rivalChoice;
 
 /* Scores */
 let playerScore = 0;
@@ -60,11 +64,15 @@ let rivalPokémonAttackEffectiveness;
 let roundResult;
 
 /* Stats */
+let roundsPlayed;
 let winPercent;
 let lossPercent;
 let totalWinPercent;
 let totalLossPercent;
 let totalDrawPercent;
+
+
+let expValue;
 
 /* Set Scores To Efficiently Test Post-Game Content - Temporary */
 playerScore = 4;
@@ -255,8 +263,7 @@ postGameDiv.id = "post-game"
 
 /* flavour-text */
 
-
-/* faintDiv */
+/* faint */
 const faintDiv = document.createElement("div");
 faintDiv.id = "faint";
 
@@ -274,7 +281,7 @@ faintfaintedTextSpan.style = "color: yellow;"
 faintfaintedTextSpan.textContent = "fainted!"
 
 
-/* expDiv */
+/* exp */
 const expDiv = document.createElement("div")
 expDiv.id = "exp"
 
@@ -294,6 +301,7 @@ expGainedTextSpan.textContent = "gained "
 const expAmountSpan = document.createElement("span")
 expAmountSpan.id = "exp-amount";
 expAmountSpan.style = "color: Thistle;"
+
 
 
 /* stats */
@@ -550,24 +558,23 @@ gameResultAgainstTextSpan.textContent = "against";
 const gameResultRivalNameSpan = document.createElement("span");
 gameResultRivalNameSpan.id = "game-result-rival-name";
 gameResultRivalNameSpan.style = "color: purple;"
-gameResultRivalNameSpan.textContent = `${rivalName}`;
+gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
-let rivalChoice = getRivalChoice();
+rivalChoice = getRivalChoice();
 console.log(rivalChoice)
 
 function getRivalChoice() {
-    let returnedRivalChoice = Math.floor(Math.random() * choices.length);
-    return choices[returnedRivalChoice];
+  return choices[Math.floor(Math.random() * choices.length)];
 };
 
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
-    let playerChoice = element.target.alt;
+    playerChoice = element.target.alt;
     playerPokémon = pokémon[playerChoice];
     playerPokémonAttack = generateAttack(playerChoice);
     /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
-    let rivalChoice = getRivalChoice(); */
+    rivalChoice = getRivalChoice(); */
     rivalPokémon = pokémon[rivalChoice];
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice)
@@ -575,8 +582,7 @@ buttons.addEventListener("click", function getImgAlt(element) {
 });
 
 function generateAttack(choice) {
-  let attack = attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
-  return attack;
+  return attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
 };
 
 
@@ -688,124 +694,113 @@ function playRound(playerChoice, rivalChoice) {
   roundResultDiv.appendChild(roundResultRivalNameSpan)
   roundResultDiv.appendChild(roundResultRivalPokémonSpan)
 
-switch (roundResult) {
-  case roundResults[0]:
-    roundResultRoundResultSpan.textContent = " drew ";
-    break;
-  case roundResults[2]:
-    roundResultRoundResultSpan.textContent = " won ";
-    roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling);
-    break;
-  case roundResults[1]:
-    roundResultRoundResultSpan.textContent = " lost ";
-    roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
-    break;
-}
+  switch (roundResult) {
+    case roundResults[0]:
+      roundResultRoundResultSpan.textContent = " drew ";
+      break;
+    case roundResults[2]:
+      roundResultRoundResultSpan.textContent = " won ";
+      roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling);
+      break;
+    case roundResults[1]:
+      roundResultRoundResultSpan.textContent = " lost ";
+      roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
+      break;
+  }
   
-
-
-  let roundsPlayed = playerScore + rivalScore;
-  winPercent = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
-  lossPercent = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
-
-  totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
-  totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
-  totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
-
-
   if (playerScore === 5 || rivalScore === 5) {
-    let exp1 = Math.floor(Math.random() * 51) + 50;
-    insertElement(postGameDiv, "round-text");
+    expValue = Math.floor(Math.random() * 51) + 50;
 
-    /* faint TEXT */
+    insertElement(postGameDiv, "round-text");
     postGameDiv.appendChild(faintDiv)
+    postGameDiv.appendChild(expDiv)
+    postGameDiv.appendChild(statsDiv)
+    postGameDiv.appendChild(gameResultDiv)
+
     faint.appendChild(faintNameSpan)
     faint.appendChild(faintPlayerPokémonSpan)
     faint.appendChild(faintfaintedTextSpan)
 
-    /* EXP TEXT */
-    postGameDiv.appendChild(expDiv)
     exp.appendChild(expNameSpan)
     exp.appendChild(expPokémonSpan)
     exp.appendChild(expGainedTextSpan)
     exp.appendChild(expAmountSpan)
-  
+    
+    
 
-
-
+    insertElement(gameResultDiv, "stats")
 
     if (playerScore > rivalScore) {
       faintNameSpan.textContent = `${rivalName}'s `
       faintPlayerPokémonSpan.textContent = ` ${rivalPokémon} `;
       expNameSpan.textContent = `${playerName}'s `;
-      expPokémonSpan.textContent = playerPokémon;
+      expPokémonSpan.textContent = `${playerPokémon} `;
       gameResultResult.style = "color:green;"
-      gameResultResult.textContent = "WON"
-
+      gameResultResult.textContent = "WON";
     } else {
       gameResultResult.style = "color:red;"
       gameResultResult.textContent = "LOST"
       faintNameSpan.textContent = `${playerName}'s `
       faintPlayerPokémonSpan.textContent = `${playerPokémon} `;
       expNameSpan.textContent = `${rivalName}'s `;
-      expPokémonSpan.textContent = ` ${rivalPokémon}`;
+      expPokémonSpan.textContent = ` ${rivalPokémon} `;
     }
-    expGainedTextSpan.textContent = ` ${exp1} Exp. Points!`; 
-
-    /* STATS */
-    insertElement(postGameDiv, "round-text")
-    postGameDiv.appendChild(faintDiv)
-    postGameDiv.appendChild(expDiv)
-    postGameDiv.appendChild(statsDiv)
-    postGameDiv.appendChild(gameResultDiv)
+    expAmountSpan.textContent = ` ${expValue} Exp. Points!`; 
 
 
-    /* UNSURE OF THE PURPOSE OF THIS CODE. CAUSES STATS TO PERSIST AFTER GAME END. 
-    
-    insertElement(stats, "post-game"); 
-    */
+
+    /* stats */
+    roundsPlayed = playerScore + rivalScore;
+
+    winPercent = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
+    lossPercent = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
+
+    totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
+    totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
+    totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
 
     statsDiv.appendChild(roundsWonDiv)
+    statsDiv.appendChild(roundsLostDiv)
+    statsDiv.appendChild(roundsDrawnDiv)
+    statsDiv.appendChild(winPercentDiv)
+    statsDiv.appendChild(losePercentDiv)
+    statsDiv.appendChild(totalRoundsPlayedDiv)
+    statsDiv.appendChild(totalWinPercentDiv)
+    statsDiv.appendChild(totalLossPercentDiv)
+    statsDiv.appendChild(totalDrawPercentDiv)
+
     roundsWonPlayerScoreSpan.textContent = playerScore;
     roundsWonDiv.appendChild(roundsWonWonTextSpan);
     roundsWonDiv.appendChild(roundsWonColonSpan)
     roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
 
-    statsDiv.appendChild(roundsLostDiv)
     roundsLostRivalScoreSpan.textContent = rivalScore;
     roundsLostDiv.appendChild(roundsLostLostTextSpan);
     roundsLostDiv.appendChild(roundsLostColonSpan)
     roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 
-    statsDiv.appendChild(roundsDrawnDiv)
     roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
     roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
     roundsDrawnDiv.appendChild(roundsDrawnColonSpan)
     roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 
-
-    statsDiv.appendChild(winPercentDiv)
     winPercentWinPercentSpan.textContent = winPercent;
     winPercentDiv.appendChild(winPercentPostPercentSpan);
     winPercentDiv.appendChild(winPercentColonSpan)
     winPercentDiv.appendChild(winPercentWinPercentSpan);
     winPercentDiv.appendChild(winPercentPrePercentSignSpan);
 
-
-    statsDiv.appendChild(losePercentDiv)
     losePercentLosePercentSpan.textContent = lossPercent;
     losePercentDiv.appendChild(losePercentSign);
     losePercentDiv.appendChild(losePercentColonSpan)
     losePercentDiv.appendChild(losePercentLosePercentSpan)
     losePercentDiv.appendChild(losePercentPrePercentSignSpan)
 
-    statsDiv.appendChild(totalRoundsPlayedDiv)
     totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
     totalRoundsPlayedDiv.appendChild(totalRoundsPlayedPlayedTextSpan)
     totalRoundsPlayedDiv.appendChild(totalRoundsPlayedColonSpan)
     totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan)
 
-    statsDiv.appendChild(totalWinPercentDiv)
     totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
     totalWinPercentDiv.appendChild(totalWinPercentWinTextSpan)
     totalWinPercentDiv.appendChild(totalwinPercentPrePercentSignSpan)
@@ -813,7 +808,6 @@ switch (roundResult) {
     totalWinPercentDiv.appendChild(totalWinPercentTotalWinPercentSpan)
     totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan)
 
-    statsDiv.appendChild(totalLossPercentDiv)
     totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
     totalLossPercentDiv.appendChild(totalLossPercentLossTextSpan)
     totalLossPercentDiv.appendChild(totalLossPercentPrePercentSignSpan)
@@ -821,8 +815,6 @@ switch (roundResult) {
     totalLossPercentDiv.appendChild(totalLossPercentTotalLossPercentSpan)
     totalLossPercentDiv.appendChild(totalLossPercentPostPercentSpan)
 
-
-    statsDiv.appendChild(totalDrawPercentDiv)
     totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
     totalDrawPercentDiv.appendChild(totalDrawPercentDrawTextSpan)
     totalDrawPercentDiv.appendChild(totalDrawPercentPrePercentSignSpan)
@@ -830,19 +822,11 @@ switch (roundResult) {
     totalDrawPercentDiv.appendChild(totalDrawPercentTotalDrawPercentSpan)
     totalDrawPercentDiv.appendChild(totalDrawPercentPostPercentSignSpan)
 
-    /* GAME RESULT */
-    insertElement(gameResultDiv, "stats")
     gameResultDiv.appendChild(gameResultPlayerNameSpan)
     gameResultDiv.appendChild(gameResultResult)
     gameResultDiv.appendChild(gameResultAgainstTextSpan)
     gameResultDiv.appendChild(gameResultRivalNameSpan)
-    gameResultRivalNameSpan.textContent = `${rivalName}!`
-
-
-
-
-
-
+    
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
