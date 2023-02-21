@@ -1,17 +1,18 @@
 /* Arrays & Dictionaries */
+
 const choices = ["Fire", "Grass", "Water"];
 
 const pokémon = {
-  "Fire": "CHARMANDER",
-  "Grass": "BULBASAUR",
-  "Water": "SQUIRTLE"
+  Fire: "CHARMANDER",
+  Grass: "BULBASAUR",
+  Water: "SQUIRTLE",
 };
 
-const fireAttacks = ["EMBER", "FLAME THROWER"];
-
-const grassAttacks = ["RAZOR LEAF", "VINE WHIP"];
-
-const waterAttacks = ["BUBBLE", "HYDRO PUMP", "WATER GUN"];
+const attacks = {
+  Fire: ["EMBER", "FLAME THROWER"],
+  Grass: ["RAZOR LEAF", "VINE WHIP"],
+  Water: ["BUBBLE", "HYDRO PUMP", "WATER GUN"],
+};
 
 const attackEffectiveness = {
   "Draw": "failed!",
@@ -21,11 +22,18 @@ const attackEffectiveness = {
 
 const roundResults = ["Draw", "Lose", "Win"];
 
+
 /* Initialised Variables */
 
 /* Names */
-let playerName = "playername".toUpperCase();
-let rivalName = "rivalname".toUpperCase();
+let playerName;
+let rivalName;
+
+playerName = "Player Name";
+rivalName = "Rival Name";
+
+playerName = playerName.toUpperCase()
+rivalName = rivalName.toUpperCase()
 
 /* Scores */
 let playerScore = 0;
@@ -97,7 +105,6 @@ rivalScoreScoreSpan.id = "rival-score-score"
 const roundTextDiv = document.createElement("div");
 roundTextDiv.id = "round-text";
 
-
 /* player-pokémon-div */
 const playerPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "player-pokémon"
@@ -113,7 +120,6 @@ playerPokémonGoTextSpan.style = "color: pink";
 const playerPokémonNameSpan = document.createElement("span");
 playerPokémonNameSpan.id = "player-pokémon-name";
 playerPokémonNameSpan.style = "color: red";
-
 
 /* rival-pokémon-choice-div */
 const rivalPokémonDiv = document.createElement("div");
@@ -142,7 +148,7 @@ playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
 playerPokémonAttackPlayerNameSpan.style = "color: blue;"
 
 const playerPokémonAttackPokémonNameSpan = document.createElement("span");
-playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon-name";
+playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
 playerPokémonAttackPokémonNameSpan.style = "color: purple";
 
 const playerPokémonAttackUsedTextSpan = document.createElement("span");
@@ -183,9 +189,9 @@ rivalPokémonAttackUsedTextSpan.id = "rival-pokémon-attack-used-text";
 rivalPokémonAttackUsedTextSpan.style = "color: yellow";
 rivalPokémonAttackUsedTextSpan.textContent = "used "
 
-const rivalPokémonAttackPokémonNameSpanAttackSpan = document.createElement("span");
-rivalPokémonAttackPokémonNameSpanAttackSpan.id = "rival-pokémon-attack-pokémon-attack";
-rivalPokémonAttackPokémonNameSpanAttackSpan.style = "color: red";
+const rivalPokémonAttackPokémonAttackSpan = document.createElement("span");
+rivalPokémonAttackPokémonAttackSpan.id = "rival-pokémon-attack-pokémon-attack";
+rivalPokémonAttackPokémonAttackSpan.style = "color: red";
 
 
 /* rival-pokémon-attack-effectiveness */
@@ -540,18 +546,14 @@ function getRivalChoice() {
     return choices[returnedRivalChoice];
 };
 
-const buttonImgs = document.querySelector("#buttons");
-buttonImgs.addEventListener("click", function getImgAlt(element) {
+const buttons = document.querySelector("#buttons");
+buttons.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     let playerChoice = element.target.alt;
     playerPokémon = pokémon[playerChoice];
     playerPokémonAttack = generateAttack(playerChoice);
-
-
     /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
-    let rivalChoice = getRivalChoice();
-    */
-
+    let rivalChoice = getRivalChoice(); */
     rivalPokémon = pokémon[rivalChoice];
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice)
@@ -559,13 +561,7 @@ buttonImgs.addEventListener("click", function getImgAlt(element) {
 });
 
 function generateAttack(choice) {
-  if (choice === "Fire") {
-    attack = fireAttacks[Math.floor(Math.random() * fireAttacks.length)];
-  } else if (choice === "Grass") {
-    attack = grassAttacks[Math.floor(Math.random() * grassAttacks.length)];
-  } else {
-    attack = waterAttacks[Math.floor(Math.random() * waterAttacks.length)];
-  }
+  let attack = attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
   return attack;
 };
 
@@ -696,8 +692,8 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
   rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
   rivalPokémonAttackUsedTextSpan.textContent = "used "
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpanAttackSpan)
-  rivalPokémonAttackPokémonNameSpanAttackSpan.textContent = `${rivalPokémonAttack}!`
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
+  rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`
 
   /* RIVAL ATTACK EFFECTIVENESS DIV */
   rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
