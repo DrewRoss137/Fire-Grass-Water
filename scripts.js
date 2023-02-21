@@ -130,6 +130,7 @@ playerPokémonDiv.id = "rival-pokémon"
 const rivalPokémonRivalNameSpan = document.createElement("span");
 rivalPokémonRivalNameSpan.id = "rival-pokémon-rival-name";
 rivalPokémonRivalNameSpan.style = "color: blue";
+rivalPokémonRivalNameSpan.textContent = `${rivalName}: `
 
 const rivalPokémonGoTextSpan = document.createElement("span");
 rivalPokémonGoTextSpan.id = "rival-pokémon-go-text";
@@ -235,7 +236,7 @@ roundResultVersusTextSpan.style = "color: cyan;"
 
 const roundResultRivalNameSpan = document.createElement("span")
 roundResultRivalNameSpan.id = "round-result-rival-name"
-roundResultRivalNameSpan.style = "coolr: yellow;"
+roundResultRivalNameSpan.style = "color: yellow";
 
 const roundResultRivalPokémonSpan = document.createElement("span")
 roundResultRivalPokémonSpan.id = "round-result-rival-pokémon"
@@ -643,32 +644,19 @@ function playRound(playerChoice, rivalChoice) {
     roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling)
   }
 
-
-  roundResultRivalNameSpan.textContent = `${rivalName}'s`;
-
-
-
-  /* CREATED DIVS */
-
-  /* PLAYER CHOICE DIV */
+  /* player-choice */
   playerPokémonNameSpan.textContent = `${playerPokémon}!`
   playerPokémonDiv.appendChild(playerPokémonPlayerNameSpan)
   playerPokémonDiv.appendChild(playerPokémonGoTextSpan)
   playerPokémonDiv.appendChild(playerPokémonNameSpan)
 
-
-  /* RIVAL CHOICE DIV */
-
-  rivalPokémonDiv.id = "rival-choice-div"
-  rivalPokémonDiv.appendChild(rivalPokémonRivalNameSpan)
-  rivalPokémonRivalNameSpan.textContent = `${rivalName}: `
-  rivalPokémonDiv.appendChild(rivalPokémonGoTextSpan)
-  rivalPokémonGoTextSpan.textContent = "GO! "
-  rivalPokémonDiv.appendChild(rivalPokémonNameSpan)
+  /* rival-choice */
   rivalPokémonNameSpan.textContent = `${rivalPokémon}!`
+  rivalPokémonDiv.appendChild(rivalPokémonRivalNameSpan)
+  rivalPokémonDiv.appendChild(rivalPokémonGoTextSpan)
+  rivalPokémonDiv.appendChild(rivalPokémonNameSpan)
 
-  /* PLAYER ATTACK DIV */
-
+  /* player-attack */
   playerPokémonAttackDiv.id = "player-attack-div"
   playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan)
   playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `
