@@ -187,6 +187,7 @@ rivalPokémonAttackDiv.id = "rival-pokémon-attack";
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
 rivalPokémonAttackRivalNameSpan.style = "color: blue;"
+rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `
 
 const rivalPokémonAttackPokémonNameSpan = document.createElement("span");
 rivalPokémonAttackPokémonNameSpan.id = "rival-pokémon-attack-pokémon";
@@ -606,7 +607,7 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(criticalHitDiv);
   }
 
-
+  /* scores */
   insertElement(scoresDiv, "buttons")
 
   scoresDiv.appendChild(playerScoreDiv)
@@ -618,7 +619,10 @@ function playRound(playerChoice, rivalChoice) {
   rivalScoreDiv.appendChild(rivalScoreNameSpan)
   rivalScoreDiv.appendChild(rivalScoreScoreSpan)
 
+  playerScoreScoreSpan.textContent = playerScore;
+  rivalScoreScoreSpan.textContent = rivalScore;
 
+  /* round-text */
   insertElement(roundTextDiv, "scores");
   
   roundTextDiv.appendChild(playerPokémonDiv)
@@ -635,15 +639,7 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItTextSpan)
   rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan)
   
-  if (roundResult === roundResults[0]) {
-    roundResultRoundResultSpan.textContent = " drew ";
-  } else if (roundResult === roundResults[2]) {
-    roundResultRoundResultSpan.textContent = " won ";
-    roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling)
-  } else if (roundResult === roundResults[1]){
-    roundResultRoundResultSpan.textContent = " lost ";
-    roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling)
-  }
+
 
   /* player-choice */
   playerPokémonNameSpan.textContent = `${playerPokémon}!`
@@ -668,17 +664,13 @@ function playRound(playerChoice, rivalChoice) {
   /* player-attack-effectiveness */
   playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
 
-  /* RIVAL ATTACK DIV */
-
-  rivalPokémonAttackDiv.id = "rival-attack-div"
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan)
-  rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan)
+  /* rival-attack */
   rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
-  rivalPokémonAttackUsedTextSpan.textContent = "used "
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
   rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan)
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan)
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
+  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
 
   /* RIVAL ATTACK EFFECTIVENESS DIV */
   rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
@@ -700,25 +692,16 @@ function playRound(playerChoice, rivalChoice) {
   roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
 
 
-
+  if (roundResult === roundResults[0]) {
+    roundResultRoundResultSpan.textContent = " drew ";
+  } else if (roundResult === roundResults[2]) {
+    roundResultRoundResultSpan.textContent = " won ";
+    roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling)
+  } else if (roundResult === roundResults[1]){
+    roundResultRoundResultSpan.textContent = " lost ";
+    roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling)
+  }
   
-
-
-  
-  scoresDiv.appendChild(playerScoreDiv)
-  scoresDiv.appendChild(rivalScoreDiv)
-
-  playerScoreDiv.appendChild(playerScoreNameSpan)
-  playerScoreDiv.appendChild(playerScoreScoreSpan)
-  rivalScoreDiv.appendChild(rivalScoreNameSpan)
-  rivalScoreDiv.appendChild(rivalScoreScoreSpan)
-
-
-
-  playerScoreScoreSpan.textContent = playerScore;
-  rivalScoreScoreSpan.textContent = rivalScore;
-
-
 
 
   let roundsPlayed = playerScore + rivalScore;
