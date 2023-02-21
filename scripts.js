@@ -223,6 +223,7 @@ roundResultDiv.id = "round-result";
 const roundResultPlayerNameSpan = document.createElement("span");
 roundResultPlayerNameSpan.id = "round-result-player-name"
 roundResultPlayerNameSpan.style = "color: blue";
+roundResultPlayerNameSpan.textContent = `${playerName}'s `
 
 const roundResultPlayerPokémonSpan = document.createElement("span")
 roundResultPlayerPokémonSpan.id = "round-result-player-pokémon"
@@ -235,10 +236,12 @@ roundResultRoundResultSpan.style = "color: orange;"
 const roundResultVersusTextSpan = document.createElement("span")
 roundResultVersusTextSpan.id = "round-result-versus-text"
 roundResultVersusTextSpan.style = "color: cyan;"
+roundResultVersusTextSpan.textContent = " versus "
 
 const roundResultRivalNameSpan = document.createElement("span")
 roundResultRivalNameSpan.id = "round-result-rival-name"
 roundResultRivalNameSpan.style = "color: yellow";
+roundResultRivalNameSpan.textContent = `${rivalName}'s `
 
 const roundResultRivalPokémonSpan = document.createElement("span")
 roundResultRivalPokémonSpan.id = "round-result-rival-pokémon"
@@ -672,35 +675,32 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
   rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
 
-  /* RIVAL ATTACK EFFECTIVENESS DIV */
+  /* rival-attack-effectiveness */
   rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
 
-
-
-
-  roundResultDiv.appendChild(roundResultPlayerNameSpan)
-  roundResultPlayerNameSpan.textContent = `${playerName}'s `
-  roundResultDiv.appendChild(roundResultPlayerPokémonSpan)
+  /* round-result */
   roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `
-  roundResultDiv.appendChild(roundResultRoundResultSpan)
+  roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
+  roundResultDiv.appendChild(roundResultPlayerNameSpan)
+  roundResultDiv.appendChild(roundResultPlayerPokémonSpan)
   roundResultDiv.appendChild(roundResultRoundResultSpan)
   roundResultDiv.appendChild(roundResultVersusTextSpan)
-  roundResultVersusTextSpan.textContent = " versus "
   roundResultDiv.appendChild(roundResultRivalNameSpan)
-  roundResultRivalNameSpan.textContent = `${rivalName}'s `
   roundResultDiv.appendChild(roundResultRivalPokémonSpan)
-  roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
 
-
-  if (roundResult === roundResults[0]) {
+switch (roundResult) {
+  case roundResults[0]:
     roundResultRoundResultSpan.textContent = " drew ";
-  } else if (roundResult === roundResults[2]) {
+    break;
+  case roundResults[2]:
     roundResultRoundResultSpan.textContent = " won ";
-    roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling)
-  } else if (roundResult === roundResults[1]){
+    roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling);
+    break;
+  case roundResults[1]:
     roundResultRoundResultSpan.textContent = " lost ";
-    roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling)
-  }
+    roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
+    break;
+}
   
 
 
