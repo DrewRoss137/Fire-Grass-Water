@@ -149,6 +149,7 @@ playerPokémonAttackDiv.id = "player-pokémon-attack";
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
 playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
 playerPokémonAttackPlayerNameSpan.style = "color: blue;"
+playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `
 
 const playerPokémonAttackPokémonNameSpan = document.createElement("span");
 playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
@@ -657,16 +658,14 @@ function playRound(playerChoice, rivalChoice) {
   rivalPokémonDiv.appendChild(rivalPokémonNameSpan)
 
   /* player-attack */
-  playerPokémonAttackDiv.id = "player-attack-div"
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan)
-  playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonNameSpan)
   playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `
+  playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
+  playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan)
+  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonNameSpan)
   playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedTextSpan)
   playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan)
-  playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
 
-  /* PLAYER ATTACK EFFECTIVENESS DIV */
+  /* player-attack-effectiveness */
   playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
 
   /* RIVAL ATTACK DIV */
