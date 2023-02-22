@@ -586,6 +586,12 @@ gameResultRivalNameSpan.id = "game-result-rival-name";
 gameResultRivalNameSpan.style = "color: purple;"
 gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
+/* post-game append */
+postGameDiv.appendChild(faintDiv)
+postGameDiv.appendChild(expDiv)
+postGameDiv.appendChild(statsDiv)
+postGameDiv.appendChild(gameResultDiv)
+
 function generateCriticalHitChance(divName) {
   criticalHitChance = Math.random();
   if (criticalHitChance <= 100) {
@@ -802,10 +808,7 @@ function playRound(playerChoice, rivalChoice) {
     expValue = Math.floor(Math.random() * 51) + 50;
 
     insertElement(postGameDiv, "round-text");
-    postGameDiv.appendChild(faintDiv)
-    postGameDiv.appendChild(expDiv)
-    postGameDiv.appendChild(statsDiv)
-    postGameDiv.appendChild(gameResultDiv)
+
 
 
 
