@@ -485,20 +485,25 @@ totalDrawPercentPostPercentSignSpan.textContent = "%";
 const gameResultDiv = document.createElement("div")
 gameResultDiv.id = "game-result-div"
 
+
 const gameResultPlayerNameSpan = document.createElement("span");
+gameResultDiv.appendChild(gameResultPlayerNameSpan);
 gameResultPlayerNameSpan.id = "game-result-player-name";
 gameResultPlayerNameSpan.style = "color: blue;"
 gameResultPlayerNameSpan.textContent = `${playerName} `;
 
 const gameResultResult = document.createElement("span");
+gameResultDiv.appendChild(gameResultResult)
 gameResultResult.id = "game-result-result";
 
 const gameResultAgainstTextSpan = document.createElement("span");
+gameResultDiv.appendChild(gameResultAgainstTextSpan)
 gameResultAgainstTextSpan.id = "game-result-against-text";
 gameResultAgainstTextSpan.style = "color: cyan;"
 gameResultAgainstTextSpan.textContent = "against";
 
 const gameResultRivalNameSpan = document.createElement("span");
+gameResultDiv.appendChild(gameResultRivalNameSpan)
 gameResultRivalNameSpan.id = "game-result-rival-name";
 gameResultRivalNameSpan.style = "color: purple;"
 gameResultRivalNameSpan.textContent = `${rivalName}!`;
@@ -829,10 +834,7 @@ function playRound(playerChoice, rivalChoice) {
     totalDrawPercentDiv.appendChild(totalDrawPercentTotalDrawPercentSpan)
     totalDrawPercentDiv.appendChild(totalDrawPercentPostPercentSignSpan)
 
-    gameResultDiv.appendChild(gameResultPlayerNameSpan)
-    gameResultDiv.appendChild(gameResultResult)
-    gameResultDiv.appendChild(gameResultAgainstTextSpan)
-    gameResultDiv.appendChild(gameResultRivalNameSpan)
+
     
     playerScore = 0;
     rivalScore = 0;
