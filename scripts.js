@@ -391,31 +391,39 @@ totalRoundsPlayedTotalRoundsPlayedSpan.id = "total-rounds-played-total-rounds-pl
 totalRoundsPlayedTotalRoundsPlayedSpan.style = "color: red;"
 
 
+
+
+
 /* total-win-percent */
 const totalWinPercentDiv = document.createElement("div")
 totalWinPercentDiv.id = "total-win-percent"
 totalWinPercentDiv.textContent = "TOTAL "
 
 const totalWinPercentWinTextSpan = document.createElement("span");
+totalWinPercentDiv.appendChild(totalWinPercentWinTextSpan)
 totalWinPercentWinTextSpan.id = "total-win-percent-win-text";
 totalWinPercentWinTextSpan.style = "color: yellow;"
 totalWinPercentWinTextSpan.textContent = "WIN";
 
 const totalwinPercentPrePercentSignSpan = document.createElement("span");
+totalWinPercentDiv.appendChild(totalwinPercentPrePercentSignSpan)
 totalwinPercentPrePercentSignSpan.id = "total-win-percent-pre-percent-sign";
 totalwinPercentPrePercentSignSpan.style = "color: purple;"
 totalwinPercentPrePercentSignSpan.textContent = "%";
 
 const totalWinPercentColonSpan = document.createElement("span");
+totalWinPercentDiv.appendChild(totalWinPercentColonSpan)
 totalWinPercentColonSpan.id = "total-win-percent-colon";
 totalWinPercentColonSpan.style = "color: blue;"
 totalWinPercentColonSpan.textContent = ": ";
 
 const totalWinPercentTotalWinPercentSpan = document.createElement("span");
+totalWinPercentDiv.appendChild(totalWinPercentTotalWinPercentSpan)
 totalWinPercentTotalWinPercentSpan.id = "total-win-percent-total-win-percent";
 totalWinPercentTotalWinPercentSpan.style = "color: red;"
 
 const totalWinPercentPostPercentSpan = document.createElement("span");
+totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan)
 totalWinPercentPostPercentSpan.id = "total-win-percent-post-percent-sign";
 totalWinPercentPostPercentSpan.style = "color: cyan;"
 totalWinPercentPostPercentSpan.textContent = "%";
@@ -830,11 +838,7 @@ function playRound(playerChoice, rivalChoice) {
     totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan)
 
     totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
-    totalWinPercentDiv.appendChild(totalWinPercentWinTextSpan)
-    totalWinPercentDiv.appendChild(totalwinPercentPrePercentSignSpan)
-    totalWinPercentDiv.appendChild(totalWinPercentColonSpan)
-    totalWinPercentDiv.appendChild(totalWinPercentTotalWinPercentSpan)
-    totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan)
+    
 
     totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
 
