@@ -346,26 +346,32 @@ winPercentPostPercentSpan.style = "color: cyan;"
 winPercentPostPercentSpan.textContent = "%";
 
 
+
+
 /* lose-percent */
 const losePercentDiv = document.createElement("div");
 losePercentDiv.id = "lose-percent-div"
 losePercentDiv.textContent = "LOSS"
 
 const losePercentPrePercentSignSpan = document.createElement("span");
+losePercentDiv.appendChild(losePercentPrePercentSignSpan)
 losePercentPrePercentSignSpan.id = "losePercent-score-won";
 losePercentPrePercentSignSpan.style = "color: purple;"
 losePercentPrePercentSignSpan.textContent = "%";
 
 const losePercentColonSpan = document.createElement("span");
+losePercentDiv.appendChild(losePercentColonSpan)
 losePercentColonSpan.id = "losePercentSpanWon-score-won-colon";
 losePercentColonSpan.style = "color: blue;"
 losePercentColonSpan.textContent = ": ";
 
 const losePercentLosePercentSpan = document.createElement("span");
+losePercentDiv.appendChild(losePercentLosePercentSpan)
 losePercentLosePercentSpan.id = "losePercentLosePercentSpan-score-span";
 losePercentLosePercentSpan.style = "color: red;"
 
 const losePercentSign = document.createElement("span");
+losePercentDiv.appendChild(losePercentSign);
 losePercentSign.textContent = "%";
 losePercentSign.id = "awdawdore-wawdon-colon";
 losePercentSign.style = "color: cyan;"
@@ -830,10 +836,7 @@ function playRound(playerChoice, rivalChoice) {
     winPercentDiv.appendChild(winPercentPrePercentSignSpan);
 
     losePercentLosePercentSpan.textContent = lossPercent;
-    losePercentDiv.appendChild(losePercentSign);
-    losePercentDiv.appendChild(losePercentColonSpan)
-    losePercentDiv.appendChild(losePercentLosePercentSpan)
-    losePercentDiv.appendChild(losePercentPrePercentSignSpan)
+
 
     totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
 
