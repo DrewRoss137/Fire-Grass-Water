@@ -1,44 +1,30 @@
-/* Names */
-let playerName;
-let rivalName;
-
-playerName = "Player Name";
-rivalName = "Rival Name";
-
-playerName = playerName.toUpperCase()
-rivalName = rivalName.toUpperCase()
-
 /* Constants */
+const playerName = "Player Name".toUpperCase();
+const rivalName = "Rival Name".toUpperCase();
 
 const choices = ["Fire", "Grass", "Water"];
 
 const pokémon = {
   Fire: "CHARMANDER",
   Grass: "BULBASAUR",
-  Water: "SQUIRTLE",
+  Water: "SQUIRTLE"
 };
 
 const attacks = {
   Fire: ["EMBER", "FLAME THROWER"],
   Grass: ["RAZOR LEAF", "VINE WHIP"],
-  Water: ["BUBBLE", "HYDRO PUMP", "WATER GUN"],
+  Water: ["BUBBLE", "HYDRO PUMP", "WATER GUN"]
 };
 
 const attackEffectiveness = {
-  "Draw": "failed!",
-  "Lose": "not very effective...",
-  "Win": "super effective!"
-}
+  Draw: "failed!",
+  Lose: "not very effective...",
+  Win: "super effective!"
+};
 
 const roundResults = ["Draw", "Lose", "Win"];
 
 /* DOM Variables */
-
-
-
-
-
-
 
 /* scores */
 const scoresDiv = document.createElement("div");
@@ -775,118 +761,109 @@ function playRound(playerChoice, rivalChoice) {
     generateCriticalHitChance(criticalHitDiv);
   }
 
-  /* scores */
-  insertElement(scoresDiv, "buttons")
+/* scores */
+insertElement(scoresDiv, "buttons")
 
 
 
-  playerScoreScoreSpan.textContent = playerScore;
-  rivalScoreScoreSpan.textContent = rivalScore;
+playerScoreScoreSpan.textContent = playerScore;
+rivalScoreScoreSpan.textContent = rivalScore;
 
-  /* round-text */
-  insertElement(roundTextDiv, "scores");
-  
-
-
-  
-
-
-  /* player-choice */
-  playerPokémonNameSpan.textContent = `${playerPokémon}!`
-
-
-  /* rival-choice */
-  rivalPokémonNameSpan.textContent = `${rivalPokémon}!`
-
-
-  /* player-attack */
-  playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `
-  playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
-
-  /* player-attack-effectiveness */
-  playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
-
-  /* rival-attack */
-  rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
-  rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`
-
-
-  /* rival-attack-effectiveness */
-  rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
-
-  /* round-result */
-  roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `
-  roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
-
-
-  switch (roundResult) {
-    case roundResults[0]:
-      roundResultRoundResultSpan.textContent = " drew ";
-      break;
-    case roundResults[2]:
-      roundResultRoundResultSpan.textContent = " won ";
-      roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling);
-      break;
-    case roundResults[1]:
-      roundResultRoundResultSpan.textContent = " lost ";
-      roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
-      break;
-  }
-  
-  if (playerScore === 5 || rivalScore === 5) {
-    expValue = Math.floor(Math.random() * 51) + 50;
-
-    insertElement(postGameDiv, "round-text");
+/* round-text */
+insertElement(roundTextDiv, "scores");
 
 
 
 
 
-    
-    
 
-    insertElement(gameResultDiv, "stats")
+/* player-choice */
+playerPokémonNameSpan.textContent = `${playerPokémon}!`
 
-    if (playerScore > rivalScore) {
-      faintNameSpan.textContent = `${rivalName}'s `
-      faintPokémonSpan.textContent = ` ${rivalPokémon} `;
-      expNameSpan.textContent = `${playerName}'s `;
-      expPokémonSpan.textContent = `${playerPokémon} `;
-      gameResultResult.style = "color:green;"
-      gameResultResult.textContent = "WON";
-    } else {
-      gameResultResult.style = "color:red;"
-      gameResultResult.textContent = "LOST"
-      faintNameSpan.textContent = `${playerName}'s `
-      faintPokémonSpan.textContent = `${playerPokémon} `;
-      expNameSpan.textContent = `${rivalName}'s `;
-      expPokémonSpan.textContent = ` ${rivalPokémon} `;
-    }
-    expAmountSpan.textContent = ` ${expValue} Exp. Points!`; 
 
-    roundsPlayed = playerScore + rivalScore;
-    winPercent = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
-    lossPercent = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
-    totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
-    totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
-    totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
+/* rival-choice */
+rivalPokémonNameSpan.textContent = `${rivalPokémon}!`
 
-    roundsWonPlayerScoreSpan.textContent = playerScore;
-    roundsLostRivalScoreSpan.textContent = rivalScore;
-    roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
-    winPercentWinPercentSpan.textContent = winPercent;
-    lossPercentlossPercentSpan.textContent = lossPercent;
-    totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
-    totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
-    totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
-    totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
 
-    playerScore = 0;
-    rivalScore = 0;
-    totalRoundsPlayed = 0;
-    roundsDrawn = 0;
+/* player-attack */
+playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `
+playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
+
+/* player-attack-effectiveness */
+playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
+
+/* rival-attack */
+rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
+rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`
+
+
+/* rival-attack-effectiveness */
+rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
+
+/* round-result */
+roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `
+roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
+
+
+switch (roundResult) {
+  case roundResults[0]:
+    roundResultRoundResultSpan.textContent = " drew ";
+    break;
+  case roundResults[2]:
+    roundResultRoundResultSpan.textContent = " won ";
+    roundTextDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling);
+    break;
+  case roundResults[1]:
+    roundResultRoundResultSpan.textContent = " lost ";
+    roundTextDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
+    break;
+}
+
+if (playerScore === 5 || rivalScore === 5) {
+  expValue = Math.floor(Math.random() * 51) + 50;
+
+  insertElement(postGameDiv, "round-text");
+  insertElement(gameResultDiv, "stats")
+
+  if (playerScore > rivalScore) {
+    faintNameSpan.textContent = `${rivalName}'s `
+    faintPokémonSpan.textContent = ` ${rivalPokémon} `;
+    expNameSpan.textContent = `${playerName}'s `;
+    expPokémonSpan.textContent = `${playerPokémon} `;
+    gameResultResult.style = "color:green;"
+    gameResultResult.textContent = "WON";
   } else {
-    postGameDiv.remove()
+    gameResultResult.style = "color:red;"
+    gameResultResult.textContent = "LOST"
+    faintNameSpan.textContent = `${playerName}'s `
+    faintPokémonSpan.textContent = `${playerPokémon} `;
+    expNameSpan.textContent = `${rivalName}'s `;
+    expPokémonSpan.textContent = ` ${rivalPokémon} `;
   }
-};
+  expAmountSpan.textContent = ` ${expValue} Exp. Points!`; 
 
+  roundsPlayed = playerScore + rivalScore;
+  winPercent = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
+  lossPercent = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
+  totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
+  totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
+  totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
+
+  roundsWonPlayerScoreSpan.textContent = playerScore;
+  roundsLostRivalScoreSpan.textContent = rivalScore;
+  roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
+  winPercentWinPercentSpan.textContent = winPercent;
+  lossPercentlossPercentSpan.textContent = lossPercent;
+  totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
+  totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
+  totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
+  totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
+
+  playerScore = 0;
+  rivalScore = 0;
+  totalRoundsPlayed = 0;
+  roundsDrawn = 0;
+} else {
+  postGameDiv.remove()
+}
+};
