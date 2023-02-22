@@ -34,6 +34,12 @@ const roundResults = ["Draw", "Lose", "Win"];
 
 /* DOM Variables */
 
+
+
+
+
+
+
 /* scores */
 const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores"
@@ -43,10 +49,12 @@ const playerScoreDiv = document.createElement("div");
 playerScoreDiv.id = "player-score"
 
 const playerScoreNameSpan = document.createElement("span");
+playerScoreDiv.appendChild(playerScoreNameSpan)
 playerScoreNameSpan.id = "player-score-name"
 playerScoreNameSpan.textContent = playerName
 
 const playerScoreScoreSpan = document.createElement("span");
+playerScoreDiv.appendChild(playerScoreScoreSpan)
 playerScoreScoreSpan.id = "player-score-score"
 
 /* rival-score */
@@ -54,12 +62,16 @@ const rivalScoreDiv = document.createElement("div");
 rivalScoreDiv.id = "rival-score"
 
 const rivalScoreNameSpan = document.createElement("span");
+rivalScoreDiv.appendChild(rivalScoreNameSpan)
 rivalScoreNameSpan.id = "rival-score-name"
 rivalScoreNameSpan.textContent = rivalName
 
 const rivalScoreScoreSpan = document.createElement("span");
+rivalScoreDiv.appendChild(rivalScoreScoreSpan)
 rivalScoreScoreSpan.id = "rival-score-score"
 
+scoresDiv.appendChild(playerScoreDiv)
+scoresDiv.appendChild(rivalScoreDiv)
 
 /* round-text */
 const roundTextDiv = document.createElement("div");
@@ -766,14 +778,7 @@ function playRound(playerChoice, rivalChoice) {
   /* scores */
   insertElement(scoresDiv, "buttons")
 
-  scoresDiv.appendChild(playerScoreDiv)
-  scoresDiv.appendChild(rivalScoreDiv)
 
-  playerScoreDiv.appendChild(playerScoreNameSpan)
-  playerScoreDiv.appendChild(playerScoreScoreSpan)
-
-  rivalScoreDiv.appendChild(rivalScoreNameSpan)
-  rivalScoreDiv.appendChild(rivalScoreScoreSpan)
 
   playerScoreScoreSpan.textContent = playerScore;
   rivalScoreScoreSpan.textContent = rivalScore;
@@ -859,48 +864,23 @@ function playRound(playerChoice, rivalChoice) {
     }
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`; 
 
-
-
-    /* stats */
     roundsPlayed = playerScore + rivalScore;
-
     winPercent = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
     lossPercent = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
-
     totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
     totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
     totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
 
-
-
     roundsWonPlayerScoreSpan.textContent = playerScore;
-
-
     roundsLostRivalScoreSpan.textContent = rivalScore;
-
     roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
-
-
     winPercentWinPercentSpan.textContent = winPercent;
-
-
     lossPercentlossPercentSpan.textContent = lossPercent;
-
-
     totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
-
-
     totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
-    
-
     totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
-
-
     totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
 
-
-
-    
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
