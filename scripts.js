@@ -291,71 +291,70 @@ expDiv.appendChild(expAmountSpan);
 /* Stats */
 
 /* Rounds Won */
-const roundsWonDiv = document.createElement("div")
-roundsWonDiv.id = "rounds-won"
-roundsWonDiv.textContent = "ROUNDS "
+const roundsWonDiv = document.createElement("div");
+roundsWonDiv.id = "rounds-won";
+roundsWonDiv.textContent = "ROUNDS ";
 
-const roundsWonWonTextSpan = document.createElement("span")
+const roundsWonWonTextSpan = document.createElement("span");
+roundsWonWonTextSpan.id = "rounds-won-won-text";
+roundsWonWonTextSpan.style.color = "purple";
+roundsWonWonTextSpan.textContent = "WON";
 roundsWonDiv.appendChild(roundsWonWonTextSpan);
-roundsWonWonTextSpan.id = "rounds-won-won-text"
-roundsWonWonTextSpan.style = "color: Purple;"
-roundsWonWonTextSpan.textContent = "WON"
 
-const roundsWonColonSpan = document.createElement("span")
-roundsWonDiv.appendChild(roundsWonColonSpan)
-roundsWonColonSpan.id = "rounds-won-colon"
-roundsWonColonSpan.style = "color: cyan"
-roundsWonColonSpan.textContent = ": "
+const roundsWonColonSpan = document.createElement("span");
+roundsWonColonSpan.id = "rounds-won-colon";
+roundsWonColonSpan.style.color = "cyan";
+roundsWonColonSpan.textContent = ": ";
+roundsWonDiv.appendChild(roundsWonColonSpan);
 
-const roundsWonPlayerScoreSpan = document.createElement("span")
+const roundsWonPlayerScoreSpan = document.createElement("span");
+roundsWonPlayerScoreSpan.id = "rounds-won-player-score";
+roundsWonPlayerScoreSpan.style.color = "red";
 roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
-roundsWonPlayerScoreSpan.id = "rounds-won-player-score"
-roundsWonPlayerScoreSpan.style ="color: red;"
-
 
 /* Rounds Lost */
 const roundsLostDiv = document.createElement("div");
-roundsLostDiv.id = "rounds-lost"
-roundsLostDiv.textContent = "ROUNDS "
+roundsLostDiv.id = "rounds-lost";
+roundsLostDiv.textContent = "ROUNDS ";
 
 const roundsLostLostTextSpan = document.createElement("span");
-roundsLostDiv.appendChild(roundsLostLostTextSpan);
+roundsLostLostTextSpan.id = "rounds-lost-lost-text";
+roundsLostLostTextSpan.style.color = "purple";
 roundsLostLostTextSpan.textContent = "LOST";
-roundsLostLostTextSpan.id = "rival-lost-lost-text";
-roundsLostLostTextSpan.style = "color: purple;"
+roundsLostDiv.appendChild(roundsLostLostTextSpan);
 
 const roundsLostColonSpan = document.createElement("span");
-roundsLostDiv.appendChild(roundsLostColonSpan)
-roundsLostColonSpan.textContent = ": ";
 roundsLostColonSpan.id = "rounds-lost-colon";
-roundsLostColonSpan.style = "color: blue;"
+roundsLostColonSpan.style.color = "blue";
+roundsLostColonSpan.textContent = ": ";
+roundsLostDiv.appendChild(roundsLostColonSpan);
 
 const roundsLostRivalScoreSpan = document.createElement("span");
-roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
-roundsLostRivalScoreSpan.style = "color: red;"
+roundsLostRivalScoreSpan.style.color = "red";
+roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 
 /* Rounds Drawn */
 const roundsDrawnDiv = document.createElement("div");
-roundsDrawnDiv.id = "rounds-drawn"
-roundsDrawnDiv.textContent = "ROUNDS "
+roundsDrawnDiv.id = "rounds-drawn";
+roundsDrawnDiv.textContent = "ROUNDS ";
 
 const roundsDrawnDrawnTextSpan = document.createElement("span");
-roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
 roundsDrawnDrawnTextSpan.id = "roundsDrawnDrawnTextSpan-score-won";
-roundsDrawnDrawnTextSpan.style = "color: purple;"
+roundsDrawnDrawnTextSpan.style.color = "purple";
 roundsDrawnDrawnTextSpan.textContent = "DRAWN";
+roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
 
 const roundsDrawnColonSpan = document.createElement("span");
-roundsDrawnDiv.appendChild(roundsDrawnColonSpan)
 roundsDrawnColonSpan.id = "rounds-drawn-colon";
-roundsDrawnColonSpan.style = "color: blue;"
+roundsDrawnColonSpan.style.color = "blue";
 roundsDrawnColonSpan.textContent = ": ";
+roundsDrawnDiv.appendChild(roundsDrawnColonSpan);
 
 const roundsDrawnRoundsDrawnSpan = document.createElement("span");
-roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 roundsDrawnRoundsDrawnSpan.id = "roundsDrawnRoundsDrawnSpan-score-span";
-roundsDrawnRoundsDrawnSpan.style = "color: red;"
+roundsDrawnRoundsDrawnSpan.style.color = "red";
+roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 
 /* Win Percent */
 const winPercentDiv = document.createElement("div");
