@@ -233,24 +233,31 @@ faintfaintedTextSpan.style = "color: yellow;"
 faintfaintedTextSpan.textContent = "fainted!"
 
 
+
+
+
 /* exp */
 const expDiv = document.createElement("div")
 expDiv.id = "exp"
 
 const expNameSpan = document.createElement("span");
+expDiv.appendChild(expNameSpan)
 expNameSpan.id = "exp-name";
 expNameSpan.style = "color: blue;"
 
 const expPokémonSpan = document.createElement("span");
+expDiv.appendChild(expPokémonSpan)
 expPokémonSpan.id = "exp-pokémon"
 expPokémonSpan.style = "color: yellow;"
 
 const expGainedTextSpan = document.createElement("span");
+expDiv.appendChild(expGainedTextSpan)
 expGainedTextSpan.id = "exp-gained-text";
 expGainedTextSpan.style = "color: green;"
 expGainedTextSpan.textContent = "gained "
 
 const expAmountSpan = document.createElement("span")
+expDiv.appendChild(expAmountSpan)
 expAmountSpan.id = "exp-amount";
 expAmountSpan.style = "color: Thistle;"
 
@@ -536,6 +543,16 @@ totalDrawPercentPostPercentSignSpan.id = "total-draw-percent-post-percent-sign";
 totalDrawPercentPostPercentSignSpan.style = "color: cyan;"
 totalDrawPercentPostPercentSignSpan.textContent = "%";
 
+/* stats appendChild() */
+statsDiv.appendChild(roundsWonDiv)
+statsDiv.appendChild(roundsLostDiv)
+statsDiv.appendChild(roundsDrawnDiv)
+statsDiv.appendChild(winPercentDiv)
+statsDiv.appendChild(lossPercentDiv)
+statsDiv.appendChild(totalRoundsPlayedDiv)
+statsDiv.appendChild(totalWinPercentDiv)
+statsDiv.appendChild(totalLossPercentDiv)
+statsDiv.appendChild(totalDrawPercentDiv)
 
 /* game-result */
 const gameResultDiv = document.createElement("div")
@@ -789,10 +806,7 @@ function playRound(playerChoice, rivalChoice) {
     faint.appendChild(faintPlayerPokémonSpan)
     faint.appendChild(faintfaintedTextSpan)
 
-    exp.appendChild(expNameSpan)
-    exp.appendChild(expPokémonSpan)
-    exp.appendChild(expGainedTextSpan)
-    exp.appendChild(expAmountSpan)
+
     
     
 
@@ -827,15 +841,7 @@ function playRound(playerChoice, rivalChoice) {
     totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
     totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
 
-    statsDiv.appendChild(roundsWonDiv)
-    statsDiv.appendChild(roundsLostDiv)
-    statsDiv.appendChild(roundsDrawnDiv)
-    statsDiv.appendChild(winPercentDiv)
-    statsDiv.appendChild(lossPercentDiv)
-    statsDiv.appendChild(totalRoundsPlayedDiv)
-    statsDiv.appendChild(totalWinPercentDiv)
-    statsDiv.appendChild(totalLossPercentDiv)
-    statsDiv.appendChild(totalDrawPercentDiv)
+
 
     roundsWonPlayerScoreSpan.textContent = playerScore;
 
