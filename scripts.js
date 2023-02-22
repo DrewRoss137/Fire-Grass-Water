@@ -301,22 +301,27 @@ roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
 roundsLostRivalScoreSpan.style = "color: red;"
 
 
+
+
 /* rounds-drawn */
 const roundsDrawnDiv = document.createElement("div");
 roundsDrawnDiv.id = "rounds-drawn"
 roundsDrawnDiv.textContent = "ROUNDS "
 
 const roundsDrawnDrawnTextSpan = document.createElement("span");
+roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
 roundsDrawnDrawnTextSpan.id = "roundsDrawnDrawnTextSpan-score-won";
 roundsDrawnDrawnTextSpan.style = "color: purple;"
 roundsDrawnDrawnTextSpan.textContent = "DRAWN";
 
 const roundsDrawnColonSpan = document.createElement("span");
+roundsDrawnDiv.appendChild(roundsDrawnColonSpan)
 roundsDrawnColonSpan.id = "rounds-drawn-colon";
 roundsDrawnColonSpan.style = "color: blue;"
 roundsDrawnColonSpan.textContent = ": ";
 
 const roundsDrawnRoundsDrawnSpan = document.createElement("span");
+roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 roundsDrawnRoundsDrawnSpan.id = "roundsDrawnRoundsDrawnSpan-score-span";
 roundsDrawnRoundsDrawnSpan.style = "color: red;"
 
@@ -832,9 +837,7 @@ function playRound(playerChoice, rivalChoice) {
     roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 
     roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
-    roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
-    roundsDrawnDiv.appendChild(roundsDrawnColonSpan)
-    roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
+
 
     winPercentWinPercentSpan.textContent = winPercent;
 
