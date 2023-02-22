@@ -141,12 +141,18 @@ const playerPokémonAttackEffectivenessDiv = document.createElement("div")
 playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness"
 
 const playerPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
+playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItTextSpan)
 playerPokémonAttackEffectivenessItTextSpan.id = "player-pokémon-attack-effectiveness-it-text"
 playerPokémonAttackEffectivenessItTextSpan.style = "color: thistle;";
 
 const playerPokémonAttackEffectivenessTextSpan =  document.createElement("span")
+playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessTextSpan)
 playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text"
 playerPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;";
+
+
+
+
 
 
 
@@ -184,10 +190,12 @@ const rivalPokémonAttackEffectivenessDiv = document.createElement("div")
 rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness"
 
 const rivalPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
+rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItTextSpan)
 rivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it-text"
 rivalPokémonAttackEffectivenessItTextSpan.style = "color: thistle;"
 
 const rivalPokémonAttackEffectivenessTextSpan =  document.createElement("span")
+rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan)
 rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectiveness-text"
 rivalPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;"
 
@@ -765,11 +773,6 @@ function playRound(playerChoice, rivalChoice) {
   roundTextDiv.appendChild(rivalPokémonAttackEffectivenessDiv)
   roundTextDiv.appendChild(roundResultDiv)
 
-  playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItTextSpan)
-  playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessTextSpan)
-
-  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItTextSpan)
-  rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan)
   
 
 
