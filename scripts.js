@@ -421,31 +421,38 @@ totalWinPercentPostPercentSpan.style = "color: cyan;"
 totalWinPercentPostPercentSpan.textContent = "%";
 
 
+
+
 /* total-loss-percent */
 const totalLossPercentDiv = document.createElement("div")
 totalLossPercentDiv.id = "total-loss-percent"
 totalLossPercentDiv.textContent = "TOTAL "
 
 const totalLossPercentLossTextSpan = document.createElement("span");
+totalLossPercentDiv.appendChild(totalLossPercentLossTextSpan)
 totalLossPercentLossTextSpan.id = "total-loss-percent-loss-text";
 totalLossPercentLossTextSpan.style = "color: yellow;"
 totalLossPercentLossTextSpan.textContent = "LOSS";
 
 const totalLossPercentPrePercentSignSpan = document.createElement("span");
+totalLossPercentDiv.appendChild(totalLossPercentPrePercentSignSpan)
 totalLossPercentPrePercentSignSpan.id = "total-loss-percent-pre-percent-sign";
 totalLossPercentPrePercentSignSpan.style = "color: purple;"
 totalLossPercentPrePercentSignSpan.textContent = "%";
 
 const totalLossPercentColonSpan = document.createElement("span");
+totalLossPercentDiv.appendChild(totalLossPercentColonSpan)
 totalLossPercentColonSpan.id = "total-loss-percent-colon";
 totalLossPercentColonSpan.style = "color: blue;"
 totalLossPercentColonSpan.textContent = ": ";
 
 const totalLossPercentTotalLossPercentSpan = document.createElement("span");
+totalLossPercentDiv.appendChild(totalLossPercentTotalLossPercentSpan)
 totalLossPercentTotalLossPercentSpan.id = "total-loss-percent-total-loss-percent";
 totalLossPercentTotalLossPercentSpan.style = "color: red;"
 
 const totalLossPercentPostPercentSpan = document.createElement("span");
+totalLossPercentDiv.appendChild(totalLossPercentPostPercentSpan)
 totalLossPercentPostPercentSpan.id = "total-loss-percent-post-percent-sign";
 totalLossPercentPostPercentSpan.style = "color: cyan;"
 totalLossPercentPostPercentSpan.textContent = "%";
@@ -830,11 +837,7 @@ function playRound(playerChoice, rivalChoice) {
     totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan)
 
     totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
-    totalLossPercentDiv.appendChild(totalLossPercentLossTextSpan)
-    totalLossPercentDiv.appendChild(totalLossPercentPrePercentSignSpan)
-    totalLossPercentDiv.appendChild(totalLossPercentColonSpan)
-    totalLossPercentDiv.appendChild(totalLossPercentTotalLossPercentSpan)
-    totalLossPercentDiv.appendChild(totalLossPercentPostPercentSpan)
+
 
     totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
 
