@@ -215,19 +215,24 @@ postGameDiv.id = "post-game"
 
 /* flavour-text */
 
+
+
 /* faint */
 const faintDiv = document.createElement("div");
 faintDiv.id = "faint";
 
 const faintNameSpan = document.createElement("span")
+faintDiv.appendChild(faintNameSpan)
 faintNameSpan.id = "faint-player-name"
 faintNameSpan.style = "color: pink;"
 
-const faintPlayerPokémonSpan = document.createElement("span")
-faintPlayerPokémonSpan.id = "faint-player-pokémon"
-faintPlayerPokémonSpan.style = "color: blue;"
+const faintPokémonSpan = document.createElement("span")
+faintDiv.appendChild(faintPokémonSpan)
+faintPokémonSpan.id = "faint-player-pokémon"
+faintPokémonSpan.style = "color: blue;"
 
 const faintfaintedTextSpan = document.createElement("span")
+faintDiv.appendChild(faintfaintedTextSpan)
 faintfaintedTextSpan.id  ="faint-fainted-text"
 faintfaintedTextSpan.style = "color: yellow;"
 faintfaintedTextSpan.textContent = "fainted!"
@@ -802,9 +807,7 @@ function playRound(playerChoice, rivalChoice) {
     postGameDiv.appendChild(statsDiv)
     postGameDiv.appendChild(gameResultDiv)
 
-    faint.appendChild(faintNameSpan)
-    faint.appendChild(faintPlayerPokémonSpan)
-    faint.appendChild(faintfaintedTextSpan)
+
 
 
     
@@ -814,7 +817,7 @@ function playRound(playerChoice, rivalChoice) {
 
     if (playerScore > rivalScore) {
       faintNameSpan.textContent = `${rivalName}'s `
-      faintPlayerPokémonSpan.textContent = ` ${rivalPokémon} `;
+      faintPokémonSpan.textContent = ` ${rivalPokémon} `;
       expNameSpan.textContent = `${playerName}'s `;
       expPokémonSpan.textContent = `${playerPokémon} `;
       gameResultResult.style = "color:green;"
@@ -823,7 +826,7 @@ function playRound(playerChoice, rivalChoice) {
       gameResultResult.style = "color:red;"
       gameResultResult.textContent = "LOST"
       faintNameSpan.textContent = `${playerName}'s `
-      faintPlayerPokémonSpan.textContent = `${playerPokémon} `;
+      faintPokémonSpan.textContent = `${playerPokémon} `;
       expNameSpan.textContent = `${rivalName}'s `;
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
     }
