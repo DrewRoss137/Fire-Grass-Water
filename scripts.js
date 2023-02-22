@@ -451,31 +451,40 @@ totalLossPercentPostPercentSpan.style = "color: cyan;"
 totalLossPercentPostPercentSpan.textContent = "%";
 
 
+
+
+
+
 /* total-draw-percent */
 const totalDrawPercentDiv = document.createElement("div")
 totalDrawPercentDiv.id = "total-draw-percent"
 totalDrawPercentDiv.textContent = "TOTAL "
 
 const totalDrawPercentDrawTextSpan = document.createElement("span");
+totalDrawPercentDiv.appendChild(totalDrawPercentDrawTextSpan);
 totalDrawPercentDrawTextSpan.id = "total-draw-percent-draw-text";
 totalDrawPercentDrawTextSpan.style = "color: yellow;"
 totalDrawPercentDrawTextSpan.textContent = "DRAW";
 
 const totalDrawPercentPrePercentSignSpan = document.createElement("span");
+totalDrawPercentDiv.appendChild(totalDrawPercentPrePercentSignSpan);
 totalDrawPercentPrePercentSignSpan.id = "total-draw-percent-pre-percent-sign";
 totalDrawPercentPrePercentSignSpan.style = "color: purple;"
 totalDrawPercentPrePercentSignSpan.textContent = "%";
 
 const totalDrawPercentColonSpan = document.createElement("span");
+totalDrawPercentDiv.appendChild(totalDrawPercentColonSpan);
 totalDrawPercentColonSpan.id = "awawdaapanWon-score-won-colon";
 totalDrawPercentColonSpan.style = "color: blue;"
 totalDrawPercentColonSpan.textContent = ": ";
 
 const totalDrawPercentTotalDrawPercentSpan = document.createElement("span");
+totalDrawPercentDiv.appendChild(totalDrawPercentTotalDrawPercentSpan)
 totalDrawPercentTotalDrawPercentSpan.id = "total-draw-percent-total-draw-percent";
 totalDrawPercentTotalDrawPercentSpan.style = "color: red;"
 
 const totalDrawPercentPostPercentSignSpan = document.createElement("span");
+totalDrawPercentDiv.appendChild(totalDrawPercentPostPercentSignSpan)
 totalDrawPercentPostPercentSignSpan.id = "total-draw-percent-post-percent-sign";
 totalDrawPercentPostPercentSignSpan.style = "color: cyan;"
 totalDrawPercentPostPercentSignSpan.textContent = "%";
@@ -828,11 +837,7 @@ function playRound(playerChoice, rivalChoice) {
     totalLossPercentDiv.appendChild(totalLossPercentPostPercentSpan)
 
     totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
-    totalDrawPercentDiv.appendChild(totalDrawPercentDrawTextSpan)
-    totalDrawPercentDiv.appendChild(totalDrawPercentPrePercentSignSpan)
-    totalDrawPercentDiv.appendChild(totalDrawPercentColonSpan)
-    totalDrawPercentDiv.appendChild(totalDrawPercentTotalDrawPercentSpan)
-    totalDrawPercentDiv.appendChild(totalDrawPercentPostPercentSignSpan)
+
 
 
     
