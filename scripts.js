@@ -287,18 +287,25 @@ roundsLostDiv.id = "rounds-lost"
 roundsLostDiv.textContent = "ROUNDS "
 
 const roundsLostLostTextSpan = document.createElement("span");
+roundsLostDiv.appendChild(roundsLostLostTextSpan);
 roundsLostLostTextSpan.textContent = "LOST";
 roundsLostLostTextSpan.id = "rival-lost-lost-text";
 roundsLostLostTextSpan.style = "color: purple;"
 
 const roundsLostColonSpan = document.createElement("span");
+roundsLostDiv.appendChild(roundsLostColonSpan)
 roundsLostColonSpan.textContent = ": ";
 roundsLostColonSpan.id = "rounds-lost-colon";
 roundsLostColonSpan.style = "color: blue;"
 
 const roundsLostRivalScoreSpan = document.createElement("span");
+roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
 roundsLostRivalScoreSpan.style = "color: red;"
+
+
+
+
 
 
 
@@ -832,9 +839,6 @@ function playRound(playerChoice, rivalChoice) {
     roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
 
     roundsLostRivalScoreSpan.textContent = rivalScore;
-    roundsLostDiv.appendChild(roundsLostLostTextSpan);
-    roundsLostDiv.appendChild(roundsLostColonSpan)
-    roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 
     roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
 
