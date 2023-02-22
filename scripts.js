@@ -176,34 +176,45 @@ rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectivene
 rivalPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;"
 
 
+
+
+
+
+
 /* round-result */
 const roundResultDiv = document.createElement("div");
 roundResultDiv.id = "round-result";
 
 const roundResultPlayerNameSpan = document.createElement("span");
+roundResultDiv.appendChild(roundResultPlayerNameSpan)
 roundResultPlayerNameSpan.id = "round-result-player-name"
 roundResultPlayerNameSpan.style = "color: blue";
 roundResultPlayerNameSpan.textContent = `${playerName}'s `
 
 const roundResultPlayerPokémonSpan = document.createElement("span")
+roundResultDiv.appendChild(roundResultPlayerPokémonSpan)
 roundResultPlayerPokémonSpan.id = "round-result-player-pokémon"
 roundResultPlayerPokémonSpan.style = "color: purple;"
 
 const roundResultRoundResultSpan = document.createElement("span")
+roundResultDiv.appendChild(roundResultRoundResultSpan)
 roundResultRoundResultSpan.id = "round-result-round-result" 
 roundResultRoundResultSpan.style = "color: orange;"
 
 const roundResultVersusTextSpan = document.createElement("span")
+roundResultDiv.appendChild(roundResultVersusTextSpan)
 roundResultVersusTextSpan.id = "round-result-versus-text"
 roundResultVersusTextSpan.style = "color: cyan;"
 roundResultVersusTextSpan.textContent = " versus "
 
 const roundResultRivalNameSpan = document.createElement("span")
+roundResultDiv.appendChild(roundResultRivalNameSpan)
 roundResultRivalNameSpan.id = "round-result-rival-name"
 roundResultRivalNameSpan.style = "color: yellow";
 roundResultRivalNameSpan.textContent = `${rivalName}'s `
 
 const roundResultRivalPokémonSpan = document.createElement("span")
+roundResultDiv.appendChild(roundResultRivalPokémonSpan)
 roundResultRivalPokémonSpan.id = "round-result-rival-pokémon"
 roundResultRivalPokémonSpan.style = "color: red;"
 
@@ -783,12 +794,7 @@ function playRound(playerChoice, rivalChoice) {
   /* round-result */
   roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `
   roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
-  roundResultDiv.appendChild(roundResultPlayerNameSpan)
-  roundResultDiv.appendChild(roundResultPlayerPokémonSpan)
-  roundResultDiv.appendChild(roundResultRoundResultSpan)
-  roundResultDiv.appendChild(roundResultVersusTextSpan)
-  roundResultDiv.appendChild(roundResultRivalNameSpan)
-  roundResultDiv.appendChild(roundResultRivalPokémonSpan)
+
 
   switch (roundResult) {
     case roundResults[0]:
