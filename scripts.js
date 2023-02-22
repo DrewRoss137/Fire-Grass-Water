@@ -66,6 +66,10 @@ scoresDiv.appendChild(rivalScoreDiv);
 Round Text
 */
 
+/* Critical Hit */
+const criticalHitDiv = document.createElement("div");
+criticalHitDiv.id = "critical-hit";
+
 /* Player Pokémon */
 const playerPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "player-pokémon";
@@ -131,81 +135,62 @@ playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedTextSpan);
 
 const playerPokémonAttackPokémonAttackSpan = document.createElement("span");
 playerPokémonAttackPokémonAttackSpan.id = "player-pokémon-attack-pokémon-attack";
-playerPokémonAttackPokémonAttackSpan.style = "color: red";
+playerPokémonAttackPokémonAttackSpan.style.color = "red";
 playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan);
 
-/* critical-hit-div */
-const criticalHitDiv = document.createElement("div");
-criticalHitDiv.id = "critical-hit"
+/* Player Pokémon Attack Effectiveness */
+const playerPokémonAttackEffectivenessDiv = document.createElement("div");
+playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness";
 
-/* player-pokémon-attack-effectiveness */
-const playerPokémonAttackEffectivenessDiv = document.createElement("div")
-playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness"
+const playerPokémonAttackEffectivenessItTextSpan = document.createElement("span");
+playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItTextSpan);
+playerPokémonAttackEffectivenessItTextSpan.id = "player-pokémon-attack-effectiveness-it-text";
+playerPokémonAttackEffectivenessItTextSpan.style.color = "thistle";
 
-const playerPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
-playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItTextSpan)
-playerPokémonAttackEffectivenessItTextSpan.id = "player-pokémon-attack-effectiveness-it-text"
-playerPokémonAttackEffectivenessItTextSpan.style = "color: thistle;";
+const playerPokémonAttackEffectivenessTextSpan = document.createElement("span");
+playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessTextSpan);
+playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text";
+playerPokémonAttackEffectivenessTextSpan.style.color = "MediumAquamarine";
 
-const playerPokémonAttackEffectivenessTextSpan =  document.createElement("span")
-playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessTextSpan)
-playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text"
-playerPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;";
-
-
-
-
-
-
-
-
-
-/* rival-pokémon-attack-div */
+/* Rival Pokémon Attack */
 const rivalPokémonAttackDiv = document.createElement("div");
 rivalPokémonAttackDiv.id = "rival-pokémon-attack";
 
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan)
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan);
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
-rivalPokémonAttackRivalNameSpan.style = "color: blue;"
-rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `
+rivalPokémonAttackRivalNameSpan.style.color = "blue";
+rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `;
 
 const rivalPokémonAttackPokémonNameSpan = document.createElement("span");
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan)
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan);
 rivalPokémonAttackPokémonNameSpan.id = "rival-pokémon-attack-pokémon";
-rivalPokémonAttackPokémonNameSpan.style = "color: purple";
+rivalPokémonAttackPokémonNameSpan.style.color = "purple";
 
 const rivalPokémonAttackUsedTextSpan = document.createElement("span");
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan);
 rivalPokémonAttackUsedTextSpan.id = "rival-pokémon-attack-used-text";
-rivalPokémonAttackUsedTextSpan.style = "color: yellow";
-rivalPokémonAttackUsedTextSpan.textContent = "used "
+rivalPokémonAttackUsedTextSpan.style.color = "yellow";
+rivalPokémonAttackUsedTextSpan.textContent = "used ";
 
 const rivalPokémonAttackPokémonAttackSpan = document.createElement("span");
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan);
 rivalPokémonAttackPokémonAttackSpan.id = "rival-pokémon-attack-pokémon-attack";
-rivalPokémonAttackPokémonAttackSpan.style = "color: red";
+rivalPokémonAttackPokémonAttackSpan.style.color = "red";
 
+/* Rival Pokémon Attack Effectiveness */
+const rivalPokémonAttackEffectivenessDiv = document.createElement("div");
+rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness";
 
-/* rival-pokémon-attack-effectiveness */
-const rivalPokémonAttackEffectivenessDiv = document.createElement("div")
-rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness"
+const rivalPokémonAttackEffectivenessItTextSpan = document.createElement("span");
+rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItTextSpan);
+rivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it-text";
+rivalPokémonAttackEffectivenessItTextSpan.style.color = "thistle";
 
-const rivalPokémonAttackEffectivenessItTextSpan =  document.createElement("span")
-rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItTextSpan)
-rivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it-text"
-rivalPokémonAttackEffectivenessItTextSpan.style = "color: thistle;"
-
-const rivalPokémonAttackEffectivenessTextSpan =  document.createElement("span")
-rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan)
-rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectiveness-text"
-rivalPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;"
-
-
-
-
-
-
+const rivalPokémonAttackEffectivenessTextSpan = document.createElement("span");
+rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan);
+rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectiveness-text";
+rivalPokémonAttackEffectivenessTextSpan.style.color = "MediumAquamarine"
 
 /* round-result */
 const roundResultDiv = document.createElement("div");
