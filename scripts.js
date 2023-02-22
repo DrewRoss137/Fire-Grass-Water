@@ -70,16 +70,19 @@ const playerPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "player-pokémon"
 
 const playerPokémonPlayerNameSpan = document.createElement("span");
+playerPokémonDiv.appendChild(playerPokémonPlayerNameSpan)
 playerPokémonPlayerNameSpan.id = "player-pokémon-player-name";
 playerPokémonPlayerNameSpan.style = "color: orange";
 playerPokémonPlayerNameSpan.textContent = `${playerName}: `
 
 const playerPokémonGoTextSpan = document.createElement("span");
+playerPokémonDiv.appendChild(playerPokémonGoTextSpan)
 playerPokémonGoTextSpan.id = "player-pokémon-go-text";
 playerPokémonGoTextSpan.style = "color: pink";
 playerPokémonGoTextSpan.textContent = "GO! "
 
 const playerPokémonNameSpan = document.createElement("span");
+playerPokémonDiv.appendChild(playerPokémonNameSpan)
 playerPokémonNameSpan.id = "player-pokémon-name";
 playerPokémonNameSpan.style = "color: red";
 
@@ -99,7 +102,7 @@ const rivalPokémonGoTextSpan = document.createElement("span");
 rivalPokémonDiv.appendChild(rivalPokémonGoTextSpan)
 rivalPokémonGoTextSpan.id = "rival-pokémon-go-text";
 rivalPokémonGoTextSpan.style = "color: purple";
-rivalPokémonGoTextSpan.textContent = "GO!";
+rivalPokémonGoTextSpan.textContent = "GO! ";
 
 const rivalPokémonNameSpan = document.createElement("span");
 rivalPokémonDiv.appendChild(rivalPokémonNameSpan)
@@ -783,9 +786,7 @@ function playRound(playerChoice, rivalChoice) {
 
   /* player-choice */
   playerPokémonNameSpan.textContent = `${playerPokémon}!`
-  playerPokémonDiv.appendChild(playerPokémonPlayerNameSpan)
-  playerPokémonDiv.appendChild(playerPokémonGoTextSpan)
-  playerPokémonDiv.appendChild(playerPokémonNameSpan)
+
 
   /* rival-choice */
   rivalPokémonNameSpan.textContent = `${rivalPokémon}!`
