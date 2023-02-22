@@ -102,25 +102,33 @@ rivalPokémonNameSpan.id = "rival-pokémon-name";
 rivalPokémonNameSpan.style = "color: red";
 
 
+
+
+
+
 /* player-pokémon-attack-div */
 const playerPokémonAttackDiv = document.createElement("div");
 playerPokémonAttackDiv.id = "player-pokémon-attack";
 
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
+playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan)
 playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
 playerPokémonAttackPlayerNameSpan.style = "color: blue;"
 playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `
 
 const playerPokémonAttackPokémonNameSpan = document.createElement("span");
+playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonNameSpan)
 playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
 playerPokémonAttackPokémonNameSpan.style = "color: purple";
 
 const playerPokémonAttackUsedTextSpan = document.createElement("span");
+playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedTextSpan)
 playerPokémonAttackUsedTextSpan.id = "player-pokémon-attack-used-text";
 playerPokémonAttackUsedTextSpan.style = "color: yellow";
 playerPokémonAttackUsedTextSpan.textContent = "used "
 
 const playerPokémonAttackPokémonAttackSpan = document.createElement("span");
+playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan)
 playerPokémonAttackPokémonAttackSpan.id = "player-pokémon-attack-pokémon-attack";
 playerPokémonAttackPokémonAttackSpan.style = "color: red";
 
@@ -780,10 +788,6 @@ function playRound(playerChoice, rivalChoice) {
   /* player-attack */
   playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `
   playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan)
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonNameSpan)
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedTextSpan)
-  playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan)
 
   /* player-attack-effectiveness */
   playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
