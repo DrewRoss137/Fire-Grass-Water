@@ -377,16 +377,19 @@ totalRoundsPlayedDiv.id = "total-rounds-played"
 totalRoundsPlayedDiv.textContent = "TOTAL ROUNDS "
 
 const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
+totalRoundsPlayedDiv.appendChild(totalRoundsPlayedPlayedTextSpan)
 totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-played-text";
 totalRoundsPlayedPlayedTextSpan.style = "color: purple;"
 totalRoundsPlayedPlayedTextSpan.textContent = "PLAYED";
 
 const totalRoundsPlayedColonSpan = document.createElement("span");
+totalRoundsPlayedDiv.appendChild(totalRoundsPlayedColonSpan)
 totalRoundsPlayedColonSpan.id = "total-rounds-played-colon";
 totalRoundsPlayedColonSpan.style = "color: blue;"
 totalRoundsPlayedColonSpan.textContent = ": ";
 
 const totalRoundsPlayedTotalRoundsPlayedSpan = document.createElement("span");
+totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan)
 totalRoundsPlayedTotalRoundsPlayedSpan.id = "total-rounds-played-total-rounds-played";
 totalRoundsPlayedTotalRoundsPlayedSpan.style = "color: red;"
 
@@ -833,9 +836,7 @@ function playRound(playerChoice, rivalChoice) {
     losePercentDiv.appendChild(losePercentPrePercentSignSpan)
 
     totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
-    totalRoundsPlayedDiv.appendChild(totalRoundsPlayedPlayedTextSpan)
-    totalRoundsPlayedDiv.appendChild(totalRoundsPlayedColonSpan)
-    totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan)
+
 
     totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
     
