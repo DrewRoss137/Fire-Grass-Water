@@ -261,22 +261,26 @@ const statsDiv = document.createElement("div");
 statsDiv.id = "stats"
 
 
+
 /* rounds-won */
 const roundsWonDiv = document.createElement("div")
 roundsWonDiv.id = "rounds-won"
 roundsWonDiv.textContent = "ROUNDS "
 
 const roundsWonWonTextSpan = document.createElement("span")
+roundsWonDiv.appendChild(roundsWonWonTextSpan);
 roundsWonWonTextSpan.id = "rounds-won-won-text"
 roundsWonWonTextSpan.style = "color: Purple;"
 roundsWonWonTextSpan.textContent = "WON"
 
 const roundsWonColonSpan = document.createElement("span")
+roundsWonDiv.appendChild(roundsWonColonSpan)
 roundsWonColonSpan.id = "rounds-won-colon"
 roundsWonColonSpan.style = "color: cyan"
 roundsWonColonSpan.textContent = ": "
 
 const roundsWonPlayerScoreSpan = document.createElement("span")
+roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
 roundsWonPlayerScoreSpan.id = "rounds-won-player-score"
 roundsWonPlayerScoreSpan.style ="color: red;"
 
@@ -834,9 +838,7 @@ function playRound(playerChoice, rivalChoice) {
     statsDiv.appendChild(totalDrawPercentDiv)
 
     roundsWonPlayerScoreSpan.textContent = playerScore;
-    roundsWonDiv.appendChild(roundsWonWonTextSpan);
-    roundsWonDiv.appendChild(roundsWonColonSpan)
-    roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
+
 
     roundsLostRivalScoreSpan.textContent = rivalScore;
 
