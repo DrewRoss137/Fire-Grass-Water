@@ -250,6 +250,14 @@ roundResultDiv.appendChild(roundResultRivalPokémonSpan)
 roundResultRivalPokémonSpan.id = "round-result-rival-pokémon"
 roundResultRivalPokémonSpan.style = "color: red;"
 
+/* round-text append */
+roundTextDiv.appendChild(playerPokémonDiv)
+roundTextDiv.appendChild(rivalPokémonDiv)
+roundTextDiv.appendChild(playerPokémonAttackDiv)
+roundTextDiv.appendChild(playerPokémonAttackEffectivenessDiv)
+roundTextDiv.appendChild(rivalPokémonAttackDiv)
+roundTextDiv.appendChild(rivalPokémonAttackEffectivenessDiv)
+roundTextDiv.appendChild(roundResultDiv)
 
 /* post-game */
 const postGameDiv = document.createElement("div");
@@ -773,13 +781,7 @@ function playRound(playerChoice, rivalChoice) {
   /* round-text */
   insertElement(roundTextDiv, "scores");
   
-  roundTextDiv.appendChild(playerPokémonDiv)
-  roundTextDiv.appendChild(rivalPokémonDiv)
-  roundTextDiv.appendChild(playerPokémonAttackDiv)
-  roundTextDiv.appendChild(playerPokémonAttackEffectivenessDiv)
-  roundTextDiv.appendChild(rivalPokémonAttackDiv)
-  roundTextDiv.appendChild(rivalPokémonAttackEffectivenessDiv)
-  roundTextDiv.appendChild(roundResultDiv)
+
 
   
 
