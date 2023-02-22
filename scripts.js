@@ -1,4 +1,4 @@
-/* Constants */
+/* Const */
 const playerName = "Player Name".toUpperCase();
 const rivalName = "Rival Name".toUpperCase();
 
@@ -23,8 +23,6 @@ const attackEffectiveness = {
 };
 
 const roundResults = ["Draw", "Lose", "Win"];
-
-/* DOM Elements */
 
 /****************************************************************************
 Scores 
@@ -63,7 +61,7 @@ scoresDiv.appendChild(playerScoreDiv);
 scoresDiv.appendChild(rivalScoreDiv);
 
 /****************************************************************************
-Round Text
+Round
 *****************************************************************************/
 
 /* Critical Hit */
@@ -243,72 +241,56 @@ roundDiv.appendChild(roundResultDiv);
 /****************************************************************************
 Post-Game
 *****************************************************************************/
-const postGameDiv = document.createElement("div");
-postGameDiv.id = "post-game"
 
-
-/* flavour-text */
-
-
-
-/* faint */
+/* Faint */
 const faintDiv = document.createElement("div");
 faintDiv.id = "faint";
 
-const faintNameSpan = document.createElement("span")
-faintDiv.appendChild(faintNameSpan)
-faintNameSpan.id = "faint-player-name"
-faintNameSpan.style = "color: pink;"
+const faintNameSpan = document.createElement("span");
+faintNameSpan.id = "faint-player-name";
+faintNameSpan.style.color = "pink";
+faintDiv.appendChild(faintNameSpan);
 
-const faintPokémonSpan = document.createElement("span")
-faintDiv.appendChild(faintPokémonSpan)
-faintPokémonSpan.id = "faint-player-pokémon"
-faintPokémonSpan.style = "color: blue;"
+const faintPokémonSpan = document.createElement("span");
+faintPokémonSpan.id = "faint-player-pokémon";
+faintPokémonSpan.style.color = "blue";
+faintDiv.appendChild(faintPokémonSpan);
 
-const faintfaintedTextSpan = document.createElement("span")
-faintDiv.appendChild(faintfaintedTextSpan)
-faintfaintedTextSpan.id  ="faint-fainted-text"
-faintfaintedTextSpan.style = "color: yellow;"
-faintfaintedTextSpan.textContent = "fainted!"
+const faintFaintedTextSpan = document.createElement("span");
+faintFaintedTextSpan.id = "faint-fainted-text";
+faintFaintedTextSpan.style.color = "yellow";
+faintFaintedTextSpan.textContent = "fainted!";
+faintDiv.appendChild(faintFaintedTextSpan);
 
-
-
-
-
-/* exp */
-const expDiv = document.createElement("div")
-expDiv.id = "exp"
+/* Exp */
+const expDiv = document.createElement("div");
+expDiv.id = "exp";
 
 const expNameSpan = document.createElement("span");
-expDiv.appendChild(expNameSpan)
 expNameSpan.id = "exp-name";
-expNameSpan.style = "color: blue;"
+expNameSpan.style.color = "blue";
+expDiv.appendChild(expNameSpan);
 
 const expPokémonSpan = document.createElement("span");
-expDiv.appendChild(expPokémonSpan)
-expPokémonSpan.id = "exp-pokémon"
-expPokémonSpan.style = "color: yellow;"
+expDiv.appendChild(expPokémonSpan);
+expPokémonSpan.id = "exp-pokémon";
+expPokémonSpan.style.color = "yellow";
 
 const expGainedTextSpan = document.createElement("span");
-expDiv.appendChild(expGainedTextSpan)
 expGainedTextSpan.id = "exp-gained-text";
-expGainedTextSpan.style = "color: green;"
-expGainedTextSpan.textContent = "gained "
+expGainedTextSpan.style.color = "green";
+expGainedTextSpan.textContent = "gained ";
+expDiv.appendChild(expGainedTextSpan);
 
-const expAmountSpan = document.createElement("span")
-expDiv.appendChild(expAmountSpan)
+const expAmountSpan = document.createElement("span");
 expAmountSpan.id = "exp-amount";
-expAmountSpan.style = "color: Thistle;"
+expAmountSpan.style.color = "Thistle";
+expDiv.appendChild(expAmountSpan);
 
 
+/* Stats */
 
-/* stats */
-const statsDiv = document.createElement("div");
-statsDiv.id = "stats"
-
-
-
-/* rounds-won */
+/* Rounds Won */
 const roundsWonDiv = document.createElement("div")
 roundsWonDiv.id = "rounds-won"
 roundsWonDiv.textContent = "ROUNDS "
@@ -331,7 +313,7 @@ roundsWonPlayerScoreSpan.id = "rounds-won-player-score"
 roundsWonPlayerScoreSpan.style ="color: red;"
 
 
-/* rounds-lost */
+/* Rounds Lost */
 const roundsLostDiv = document.createElement("div");
 roundsLostDiv.id = "rounds-lost"
 roundsLostDiv.textContent = "ROUNDS "
@@ -353,14 +335,7 @@ roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
 roundsLostRivalScoreSpan.style = "color: red;"
 
-
-
-
-
-
-
-
-/* rounds-drawn */
+/* Rounds Drawn */
 const roundsDrawnDiv = document.createElement("div");
 roundsDrawnDiv.id = "rounds-drawn"
 roundsDrawnDiv.textContent = "ROUNDS "
@@ -382,11 +357,7 @@ roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 roundsDrawnRoundsDrawnSpan.id = "roundsDrawnRoundsDrawnSpan-score-span";
 roundsDrawnRoundsDrawnSpan.style = "color: red;"
 
-
-
-
-
-/* win-percent */
+/* Win Percent */
 const winPercentDiv = document.createElement("div");
 winPercentDiv.id = "win-percent-div"
 winPercentDiv.textContent = "WIN"
@@ -414,10 +385,7 @@ winPercentPostPercentSpan.id = "win-percent-percent-sign";
 winPercentPostPercentSpan.style = "color: cyan;"
 winPercentPostPercentSpan.textContent = "%";
 
-
-
-
-/* loss-percent */
+/* Loss Percent */
 const lossPercentDiv = document.createElement("div");
 lossPercentDiv.id = "loss-percent-div"
 lossPercentDiv.textContent = "LOSS"
@@ -445,8 +413,7 @@ lossPercentSign.textContent = "%";
 lossPercentSign.id = "awdawdore-wawdon-colon";
 lossPercentSign.style = "color: cyan;"
 
-
-/* total-rounds-played */
+/* Total Rounds Played */
 const totalRoundsPlayedDiv = document.createElement("div")
 totalRoundsPlayedDiv.id = "total-rounds-played"
 totalRoundsPlayedDiv.textContent = "TOTAL ROUNDS "
@@ -468,11 +435,7 @@ totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan)
 totalRoundsPlayedTotalRoundsPlayedSpan.id = "total-rounds-played-total-rounds-played";
 totalRoundsPlayedTotalRoundsPlayedSpan.style = "color: red;"
 
-
-
-
-
-/* total-win-percent */
+/* Total Win Percent */
 const totalWinPercentDiv = document.createElement("div")
 totalWinPercentDiv.id = "total-win-percent"
 totalWinPercentDiv.textContent = "TOTAL "
@@ -506,10 +469,7 @@ totalWinPercentPostPercentSpan.id = "total-win-percent-post-percent-sign";
 totalWinPercentPostPercentSpan.style = "color: cyan;"
 totalWinPercentPostPercentSpan.textContent = "%";
 
-
-
-
-/* total-loss-percent */
+/* Total Loss Percent */
 const totalLossPercentDiv = document.createElement("div")
 totalLossPercentDiv.id = "total-loss-percent"
 totalLossPercentDiv.textContent = "TOTAL "
@@ -543,12 +503,7 @@ totalLossPercentPostPercentSpan.id = "total-loss-percent-post-percent-sign";
 totalLossPercentPostPercentSpan.style = "color: cyan;"
 totalLossPercentPostPercentSpan.textContent = "%";
 
-
-
-
-
-
-/* total-draw-percent */
+/* Total Draw Percent */
 const totalDrawPercentDiv = document.createElement("div")
 totalDrawPercentDiv.id = "total-draw-percent"
 totalDrawPercentDiv.textContent = "TOTAL "
@@ -582,7 +537,9 @@ totalDrawPercentPostPercentSignSpan.id = "total-draw-percent-post-percent-sign";
 totalDrawPercentPostPercentSignSpan.style = "color: cyan;"
 totalDrawPercentPostPercentSignSpan.textContent = "%";
 
-/* stats appendChild() */
+/* Stats */
+const statsDiv = document.createElement("div");
+statsDiv.id = "stats"
 statsDiv.appendChild(roundsWonDiv)
 statsDiv.appendChild(roundsLostDiv)
 statsDiv.appendChild(roundsDrawnDiv)
@@ -593,7 +550,7 @@ statsDiv.appendChild(totalWinPercentDiv)
 statsDiv.appendChild(totalLossPercentDiv)
 statsDiv.appendChild(totalDrawPercentDiv)
 
-/* game-result */
+/* Game Result */
 const gameResultDiv = document.createElement("div")
 gameResultDiv.id = "game-result-div"
 
@@ -620,7 +577,9 @@ gameResultRivalNameSpan.id = "game-result-rival-name";
 gameResultRivalNameSpan.style = "color: purple;"
 gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
-/* post-game append */
+/* Post-Game */
+const postGameDiv = document.createElement("div");
+postGameDiv.id = "post-game"
 postGameDiv.appendChild(faintDiv)
 postGameDiv.appendChild(expDiv)
 postGameDiv.appendChild(statsDiv)
@@ -807,7 +766,7 @@ switch (roundResult) {
 if (playerScore === 5 || rivalScore === 5) {
   expValue = Math.floor(Math.random() * 51) + 50;
 
-  insertElement(postGameDiv, "round-text");
+  insertElement(postGameDiv, "round");
   insertElement(gameResultDiv, "stats")
 
   if (playerScore > rivalScore) {
