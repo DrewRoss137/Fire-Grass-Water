@@ -140,25 +140,33 @@ const playerPokémonAttackEffectivenessTextSpan =  document.createElement("span"
 playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text"
 playerPokémonAttackEffectivenessTextSpan.style = "color: MediumAquamarine;";
 
+
+
+
+
 /* rival-pokémon-attack-div */
 const rivalPokémonAttackDiv = document.createElement("div");
 rivalPokémonAttackDiv.id = "rival-pokémon-attack";
 
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan)
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
 rivalPokémonAttackRivalNameSpan.style = "color: blue;"
 rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `
 
 const rivalPokémonAttackPokémonNameSpan = document.createElement("span");
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan)
 rivalPokémonAttackPokémonNameSpan.id = "rival-pokémon-attack-pokémon";
 rivalPokémonAttackPokémonNameSpan.style = "color: purple";
 
 const rivalPokémonAttackUsedTextSpan = document.createElement("span");
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
 rivalPokémonAttackUsedTextSpan.id = "rival-pokémon-attack-used-text";
 rivalPokémonAttackUsedTextSpan.style = "color: yellow";
 rivalPokémonAttackUsedTextSpan.textContent = "used "
 
 const rivalPokémonAttackPokémonAttackSpan = document.createElement("span");
+rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
 rivalPokémonAttackPokémonAttackSpan.id = "rival-pokémon-attack-pokémon-attack";
 rivalPokémonAttackPokémonAttackSpan.style = "color: red";
 
@@ -783,10 +791,7 @@ function playRound(playerChoice, rivalChoice) {
   /* rival-attack */
   rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
   rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan)
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan)
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan)
-  rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan)
+
 
   /* rival-attack-effectiveness */
   rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
