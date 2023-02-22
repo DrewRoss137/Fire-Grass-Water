@@ -321,26 +321,33 @@ roundsDrawnRoundsDrawnSpan.id = "roundsDrawnRoundsDrawnSpan-score-span";
 roundsDrawnRoundsDrawnSpan.style = "color: red;"
 
 
+
+
+
 /* win-percent */
 const winPercentDiv = document.createElement("div");
 winPercentDiv.id = "win-percent-div"
 winPercentDiv.textContent = "WIN"
 
 const winPercentPrePercentSignSpan = document.createElement("span");
+winPercentDiv.appendChild(winPercentPrePercentSignSpan);
 winPercentPrePercentSignSpan.id = "winPercent-score-won";
 winPercentPrePercentSignSpan.style = "color: purple;"
 winPercentPrePercentSignSpan.textContent = "%";
 
 const winPercentColonSpan = document.createElement("span");
+winPercentDiv.appendChild(winPercentColonSpan)
 winPercentColonSpan.id = "winPercentSpanWon-score-won-colon";
 winPercentColonSpan.style = "color: blue;"
 winPercentColonSpan.textContent = ": ";
 
 const winPercentWinPercentSpan = document.createElement("span")
+winPercentDiv.appendChild(winPercentWinPercentSpan);
 winPercentWinPercentSpan.id = "winPercentWinPercentSpan-score-span";
 winPercentWinPercentSpan.style = "color: red;"
 
 const winPercentPostPercentSpan = document.createElement("span");
+winPercentDiv.appendChild(winPercentPostPercentSpan);
 winPercentPostPercentSpan.id = "win-percent-percent-sign";
 winPercentPostPercentSpan.style = "color: cyan;"
 winPercentPostPercentSpan.textContent = "%";
@@ -348,33 +355,33 @@ winPercentPostPercentSpan.textContent = "%";
 
 
 
-/* lose-percent */
-const losePercentDiv = document.createElement("div");
-losePercentDiv.id = "lose-percent-div"
-losePercentDiv.textContent = "LOSS"
+/* loss-percent */
+const lossPercentDiv = document.createElement("div");
+lossPercentDiv.id = "loss-percent-div"
+lossPercentDiv.textContent = "LOSS"
 
-const losePercentPrePercentSignSpan = document.createElement("span");
-losePercentDiv.appendChild(losePercentPrePercentSignSpan)
-losePercentPrePercentSignSpan.id = "losePercent-score-won";
-losePercentPrePercentSignSpan.style = "color: purple;"
-losePercentPrePercentSignSpan.textContent = "%";
+const lossPercentPrePercentSignSpan = document.createElement("span");
+lossPercentDiv.appendChild(lossPercentPrePercentSignSpan)
+lossPercentPrePercentSignSpan.id = "lossPercent-score-won";
+lossPercentPrePercentSignSpan.style = "color: purple;"
+lossPercentPrePercentSignSpan.textContent = "%";
 
-const losePercentColonSpan = document.createElement("span");
-losePercentDiv.appendChild(losePercentColonSpan)
-losePercentColonSpan.id = "losePercentSpanWon-score-won-colon";
-losePercentColonSpan.style = "color: blue;"
-losePercentColonSpan.textContent = ": ";
+const lossPercentColonSpan = document.createElement("span");
+lossPercentDiv.appendChild(lossPercentColonSpan)
+lossPercentColonSpan.id = "lossPercentSpanWon-score-won-colon";
+lossPercentColonSpan.style = "color: blue;"
+lossPercentColonSpan.textContent = ": ";
 
-const losePercentLosePercentSpan = document.createElement("span");
-losePercentDiv.appendChild(losePercentLosePercentSpan)
-losePercentLosePercentSpan.id = "losePercentLosePercentSpan-score-span";
-losePercentLosePercentSpan.style = "color: red;"
+const lossPercentlossPercentSpan = document.createElement("span");
+lossPercentDiv.appendChild(lossPercentlossPercentSpan)
+lossPercentlossPercentSpan.id = "lossPercentlossPercentSpan-score-span";
+lossPercentlossPercentSpan.style = "color: red;"
 
-const losePercentSign = document.createElement("span");
-losePercentDiv.appendChild(losePercentSign);
-losePercentSign.textContent = "%";
-losePercentSign.id = "awdawdore-wawdon-colon";
-losePercentSign.style = "color: cyan;"
+const lossPercentSign = document.createElement("span");
+lossPercentDiv.appendChild(lossPercentSign);
+lossPercentSign.textContent = "%";
+lossPercentSign.id = "awdawdore-wawdon-colon";
+lossPercentSign.style = "color: cyan;"
 
 
 /* total-rounds-played */
@@ -808,7 +815,7 @@ function playRound(playerChoice, rivalChoice) {
     statsDiv.appendChild(roundsLostDiv)
     statsDiv.appendChild(roundsDrawnDiv)
     statsDiv.appendChild(winPercentDiv)
-    statsDiv.appendChild(losePercentDiv)
+    statsDiv.appendChild(lossPercentDiv)
     statsDiv.appendChild(totalRoundsPlayedDiv)
     statsDiv.appendChild(totalWinPercentDiv)
     statsDiv.appendChild(totalLossPercentDiv)
@@ -830,12 +837,9 @@ function playRound(playerChoice, rivalChoice) {
     roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 
     winPercentWinPercentSpan.textContent = winPercent;
-    winPercentDiv.appendChild(winPercentPostPercentSpan);
-    winPercentDiv.appendChild(winPercentColonSpan)
-    winPercentDiv.appendChild(winPercentWinPercentSpan);
-    winPercentDiv.appendChild(winPercentPrePercentSignSpan);
 
-    losePercentLosePercentSpan.textContent = lossPercent;
+
+    lossPercentlossPercentSpan.textContent = lossPercent;
 
 
     totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
