@@ -24,42 +24,44 @@ const attackEffectiveness = {
 
 const roundResults = ["Draw", "Lose", "Win"];
 
-/* DOM Variables */
+/* DOM Elements */
 
-/* scores */
-const scoresDiv = document.createElement("div");
-scoresDiv.id = "scores"
+/* Scores */
 
-/* player-score */
+/* Player Score */
 const playerScoreDiv = document.createElement("div");
-playerScoreDiv.id = "player-score"
+playerScoreDiv.id = "player-score";
 
 const playerScoreNameSpan = document.createElement("span");
-playerScoreDiv.appendChild(playerScoreNameSpan)
-playerScoreNameSpan.id = "player-score-name"
-playerScoreNameSpan.textContent = playerName
+playerScoreNameSpan.id = "player-score-name";
+playerScoreNameSpan.textContent = playerName;
+playerScoreDiv.appendChild(playerScoreNameSpan);
 
 const playerScoreScoreSpan = document.createElement("span");
-playerScoreDiv.appendChild(playerScoreScoreSpan)
-playerScoreScoreSpan.id = "player-score-score"
+playerScoreScoreSpan.id = "player-score-score";
+playerScoreDiv.appendChild(playerScoreScoreSpan);
 
-/* rival-score */
+/* Rival Score */
 const rivalScoreDiv = document.createElement("div");
-rivalScoreDiv.id = "rival-score"
+rivalScoreDiv.id = "rival-score";
 
 const rivalScoreNameSpan = document.createElement("span");
-rivalScoreDiv.appendChild(rivalScoreNameSpan)
-rivalScoreNameSpan.id = "rival-score-name"
-rivalScoreNameSpan.textContent = rivalName
+rivalScoreNameSpan.id = "rival-score-name";
+rivalScoreNameSpan.textContent = rivalName;
+rivalScoreDiv.appendChild(rivalScoreNameSpan);
 
 const rivalScoreScoreSpan = document.createElement("span");
-rivalScoreDiv.appendChild(rivalScoreScoreSpan)
-rivalScoreScoreSpan.id = "rival-score-score"
+rivalScoreScoreSpan.id = "rival-score-score";
+rivalScoreDiv.appendChild(rivalScoreScoreSpan);
 
-scoresDiv.appendChild(playerScoreDiv)
-scoresDiv.appendChild(rivalScoreDiv)
+/* Scores Div */
+const scoresDiv = document.createElement("div");
+scoresDiv.id = "scores";
+scoresDiv.appendChild(playerScoreDiv);
+scoresDiv.appendChild(rivalScoreDiv);
 
-/* round-text */
+
+/* Round Text */
 const roundTextDiv = document.createElement("div");
 roundTextDiv.id = "round-text";
 
