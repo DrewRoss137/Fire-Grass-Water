@@ -1,4 +1,18 @@
 /* Const */
+const buttons = document.querySelector("#buttons");
+buttons.addEventListener("click", function getImgAlt(element) {
+  if (element.target.tagName === "IMG") {
+    playerChoice = element.target.alt;
+    playerPokémon = pokémon[playerChoice];
+    playerPokémonAttack = generateAttack(playerChoice);
+    /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
+    rivalChoice = getRivalChoice(); */
+    rivalPokémon = pokémon[rivalChoice];
+    rivalPokémonAttack = generateAttack(rivalChoice);
+    playRound(playerChoice, rivalChoice)
+  }
+});
+
 const playerName = "Player Name".toUpperCase();
 const rivalName = "Rival Name".toUpperCase();
 
@@ -415,7 +429,6 @@ lossPercentDiv.appendChild(lossPercentColonSpan);
 lossPercentDiv.appendChild(lossPercentLossPercentSpan);
 lossPercentDiv.appendChild(lossPercentSign);
 
-
 /* Total Rounds Played */
 const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
 totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-played-text";
@@ -587,23 +600,8 @@ postGameDiv.appendChild(expDiv)
 postGameDiv.appendChild(statsDiv)
 postGameDiv.appendChild(gameResultDiv)
 
-function generateCriticalHitChance(divName) {
-  criticalHitChance = Math.random();
-  if (criticalHitChance <= 100) {
-    return divName.textContent = "A critical hit!";
-    }
-  } 
-
-function insertElement(newDiv, divID) {
-  let overheadDiv = document.getElementById(divID);
-  let overheadDivParent = overheadDiv.parentNode;
-  return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling)
-}
-
 
 /* Variables */
-
-
 
 /* Choices */
 let playerChoice;
@@ -635,6 +633,9 @@ let rivalPokémonAttackEffectiveness;
 /* Round Result */
 let roundResult;
 
+/* Exp */
+let expValue;
+
 /* Stats */
 let roundsPlayed;
 let winPercent;
@@ -643,39 +644,19 @@ let totalWinPercent;
 let totalLossPercent;
 let totalDrawPercent;
 
-
-let expValue;
-
-/* Set Scores To Efficiently Test Post-Game Content - Temporary */
+/* Temporary - Test Post-Game Efficiently */
 playerScore = 4;
 rivalScore = 4;
 roundsDrawn = 4;
 
-
-
-
-function getRivalChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
-};
-
-const buttons = document.querySelector("#buttons");
-buttons.addEventListener("click", function getImgAlt(element) {
-  if (element.target.tagName === "IMG") {
-    playerChoice = element.target.alt;
-    playerPokémon = pokémon[playerChoice];
-    playerPokémonAttack = generateAttack(playerChoice);
-    /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
-    rivalChoice = getRivalChoice(); */
-    rivalPokémon = pokémon[rivalChoice];
-    rivalPokémonAttack = generateAttack(rivalChoice);
-    playRound(playerChoice, rivalChoice)
-  }
-});
-
+/* Functions */
 function generateAttack(choice) {
   return attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
 };
 
+function getRivalChoice() {
+  return choices[Math.floor(Math.random() * choices.length)];
+};
 
 function playRound(playerChoice, rivalChoice) {
   criticalHitDiv.remove()
@@ -706,51 +687,20 @@ function playRound(playerChoice, rivalChoice) {
     roundResult = roundResults[1];
     generateCriticalHitChance(criticalHitDiv);
   }
-
-/* scores */
 insertElement(scoresDiv, "buttons")
-
-
-
 playerScoreScoreSpan.textContent = playerScore;
 rivalScoreScoreSpan.textContent = rivalScore;
-
-/* round-text */
 insertElement(roundDiv, "scores");
-
-
-
-
-
-
-/* player-choice */
 playerPokémonNameSpan.textContent = `${playerPokémon}!`
-
-
-/* rival-choice */
 rivalPokémonNameSpan.textContent = `${rivalPokémon}!`
-
-
-/* player-attack */
 playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `
 playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`
-
-/* player-attack-effectiveness */
 playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness
-
-/* rival-attack */
 rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `
 rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`
-
-
-/* rival-attack-effectiveness */
 rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness
-
-/* round-result */
 roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `
 roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`
-
-
 switch (roundResult) {
   case roundResults[0]:
     roundResultRoundResultSpan.textContent = " drew ";
@@ -764,13 +714,10 @@ switch (roundResult) {
     roundDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
     break;
 }
-
 if (playerScore === 5 || rivalScore === 5) {
   expValue = Math.floor(Math.random() * 51) + 50;
-
   insertElement(postGameDiv, "round");
   insertElement(gameResultDiv, "stats")
-
   if (playerScore > rivalScore) {
     faintNameSpan.textContent = `${rivalName}'s `
     faintPokémonSpan.textContent = ` ${rivalPokémon} `;
@@ -787,24 +734,21 @@ if (playerScore === 5 || rivalScore === 5) {
     expPokémonSpan.textContent = ` ${rivalPokémon} `;
   }
   expAmountSpan.textContent = ` ${expValue} Exp. Points!`; 
-
   roundsPlayed = playerScore + rivalScore;
   winPercent = ((playerScore / (roundsPlayed)) * 100).toFixed(2);
   lossPercent = ((rivalScore / (roundsPlayed)) * 100).toFixed(2);
   totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
   totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
   totalDrawPercent = ((roundsDrawn/ totalRoundsPlayed) * 100).toFixed(2);
-
   roundsWonPlayerScoreSpan.textContent = playerScore;
   roundsLostRivalScoreSpan.textContent = rivalScore;
   roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
   winPercentWinPercentSpan.textContent = winPercent;
-  lossPercentlossPercentSpan.textContent = lossPercent;
+  lossPercentLossPercentSpan.textContent = lossPercent;
   totalRoundsPlayedTotalRoundsPlayedSpan.textContent = totalRoundsPlayed;
   totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
   totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
   totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
-
   playerScore = 0;
   rivalScore = 0;
   totalRoundsPlayed = 0;
@@ -813,3 +757,16 @@ if (playerScore === 5 || rivalScore === 5) {
   postGameDiv.remove()
 }
 };
+
+function generateCriticalHitChance(divName) {
+  criticalHitChance = Math.random();
+  if (criticalHitChance <= 100) {
+    return divName.textContent = "A critical hit!";
+    }
+  } 
+
+function insertElement(newDiv, divID) {
+  let overheadDiv = document.getElementById(divID);
+  let overheadDivParent = overheadDiv.parentNode;
+  return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling)
+}
