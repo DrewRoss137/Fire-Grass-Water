@@ -9,7 +9,7 @@ buttons.addEventListener("click", function getImgAlt(element) {
     rivalChoice = getRivalChoice(); */
     rivalPokémon = pokémon[rivalChoice];
     rivalPokémonAttack = generateAttack(rivalChoice);
-    playRound(playerChoice, rivalChoice)
+    playRound(playerChoice, rivalChoice);
   }
 });
 
@@ -369,10 +369,6 @@ roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
 roundsDrawnDiv.appendChild(roundsDrawnColonSpan);
 roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 
-/****************************************************************************
-To-Do:
-*****************************************************************************/
-
 /* Win Percent */
 const winPercentPrePercentSignSpan = document.createElement("span");
 winPercentPrePercentSignSpan.id = "win-percent-pre-percent-sign";
@@ -719,7 +715,7 @@ function playRound(playerChoice, rivalChoice) {
       roundResultRoundResultSpan.textContent = "lost ";
       roundDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
       break;
-  }
+  };
 
   if (playerScore === 5 || rivalScore === 5) {
     expValue = Math.floor(Math.random() * 51) + 50;
@@ -768,7 +764,7 @@ function playRound(playerChoice, rivalChoice) {
 function generateCriticalHitChance(divName) {
   const criticalHitChance = Math.random();
   console.log(criticalHitChance);
-  if (criticalHitChance <= 0.0625) {
+  if (criticalHitChance <= 100) {
     divName.textContent = "A critical hit!";
   }
 };
