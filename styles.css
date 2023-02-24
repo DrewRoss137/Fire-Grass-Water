@@ -124,10 +124,9 @@ img {
     flex-direction: row;
     gap: 128px;
 }
-
-#button-border-fire,
-#button-border-grass,
-#button-border-water {
+#fire-button-border,
+#grass-button-border,
+#water-button-border {
     align-items: center;
     background: radial-gradient(circle, rgb(175, 175, 175) 0%, rgba(0, 0, 0) 125%);
     border-color: rgba(255, 255, 255, 0.04);
@@ -152,7 +151,7 @@ img {
     transform: scale(1.1);
 }
 
-##grass-button-border:hover {
+#grass-button-border:hover {
     box-shadow: 0px 0px 40px 5px rgb(255, 0, 0);
 }
 
