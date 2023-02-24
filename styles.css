@@ -164,9 +164,9 @@ img {
     box-shadow: 0px 0px 40px 5px rgb(0, 0, 255);
 }
 
-#button-text-fire,
-#button-text-grass,
-#button-text-water {
+#fire-button-text,
+#grass-button-text,
+#water-button-text {
     align-items: center;
     display: flex;
     font-size: 64px;
