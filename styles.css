@@ -175,15 +175,15 @@ img {
     margin-bottom: 75px;
 }
 
-#button-text-fire {
+#fire-button-text {
     text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(64, 25, 25), 0px 12px rgb(32, 13, 13), 0px 18px rgb(16, 7, 7);
 }
 
-#button-text-grass {
+#grass-button-text {
     text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(25, 64, 25), 0px 12px rgb(13, 32, 13), 0px 18px rgb(7, 16, 7);
 }
 
-#button-text-water {
+#water-button-text {
     text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(25, 25, 64), 0px 12px rgb(13, 13, 32), 0px 18px rgb(7, 7, 16);
 }
 
