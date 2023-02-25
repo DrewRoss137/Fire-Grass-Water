@@ -253,11 +253,11 @@ roundDiv.appendChild(roundResultDiv);
 
 /* Faint */
 const faintNameSpan = document.createElement("span");
-faintNameSpan.id = "faint-player-name";
+faintNameSpan.id = "faint-name";
 faintNameSpan.style.color = "pink";
 
 const faintPokémonSpan = document.createElement("span");
-faintPokémonSpan.id = "faint-player-pokémon";
+faintPokémonSpan.id = "faint-pokémon";
 faintPokémonSpan.style.color = "blue";
 
 const faintFaintedTextSpan = document.createElement("span");
@@ -365,6 +365,11 @@ roundsDrawnDiv.appendChild(roundsDrawnColonSpan);
 roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 
 /* Win Percent */
+const winPercentWinText = document.createElement("span");
+winPercentWinText.id = "win-percent-win-text";
+winPercentWinText.style.color = "Honeydew";
+winPercentWinText.textContent = "WIN";
+
 const winPercentPrePercentSignSpan = document.createElement("span");
 winPercentPrePercentSignSpan.id = "win-percent-pre-percent-sign";
 winPercentPrePercentSignSpan.style.color = "purple";
@@ -386,13 +391,18 @@ winPercentPostPercentSpan.textContent = "%";
 
 const winPercentDiv = document.createElement("div");
 winPercentDiv.id = "win-percent-div";
-winPercentDiv.textContent = "WIN";
+winPercentDiv.appendChild(winPercentWinText)
 winPercentDiv.appendChild(winPercentPrePercentSignSpan);
 winPercentDiv.appendChild(winPercentColonSpan);
 winPercentDiv.appendChild(winPercentWinPercentSpan);
 winPercentDiv.appendChild(winPercentPostPercentSpan);
 
 /* Loss Percent */
+const lossPercentLossText = document.createElement("span");
+lossPercentLossText.id = "loss-percent-loss-text";
+lossPercentLossText.style.color = "Honeydew";
+lossPercentLossText.textContent = "LOSS";
+
 const lossPercentPrePercentSignSpan = document.createElement("span");
 lossPercentPrePercentSignSpan.id = "loss-percent-pre-percent-sign";
 lossPercentPrePercentSignSpan.style.color = "purple";
@@ -414,7 +424,7 @@ lossPercentSign.style.color = "cyan";
 
 const lossPercentDiv = document.createElement("div");
 lossPercentDiv.id = "loss-percent-div";
-lossPercentDiv.textContent = "LOSS";
+lossPercentDiv.appendChild(lossPercentLossText);
 lossPercentDiv.appendChild(lossPercentPrePercentSignSpan);
 lossPercentDiv.appendChild(lossPercentColonSpan);
 lossPercentDiv.appendChild(lossPercentLossPercentSpan);
@@ -577,7 +587,7 @@ gameResultRivalNameSpan.style.color = "purple";
 gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
 const gameResultDiv = document.createElement("div");
-gameResultDiv.id = "game-result-div";
+gameResultDiv.id = "game-result";
 gameResultDiv.appendChild(gameResultPlayerNameSpan);
 gameResultDiv.appendChild(gameResultResult);
 gameResultDiv.appendChild(gameResultAgainstTextSpan);
