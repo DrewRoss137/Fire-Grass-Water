@@ -390,7 +390,7 @@ winPercentPostPercentSpan.style.color = "cyan";
 winPercentPostPercentSpan.textContent = "%";
 
 const winPercentDiv = document.createElement("div");
-winPercentDiv.id = "win-percent-div";
+winPercentDiv.id = "win-percent";
 winPercentDiv.appendChild(winPercentWinText)
 winPercentDiv.appendChild(winPercentPrePercentSignSpan);
 winPercentDiv.appendChild(winPercentColonSpan);
@@ -423,7 +423,7 @@ lossPercentSign.id = "loss-percent-post-percent-sign";
 lossPercentSign.style.color = "cyan";
 
 const lossPercentDiv = document.createElement("div");
-lossPercentDiv.id = "loss-percent-div";
+lossPercentDiv.id = "loss-percent";
 lossPercentDiv.appendChild(lossPercentLossText);
 lossPercentDiv.appendChild(lossPercentPrePercentSignSpan);
 lossPercentDiv.appendChild(lossPercentColonSpan);
