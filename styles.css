@@ -1,12 +1,12 @@
 html {
     scroll-behavior: smooth;
 }
-
+  
 @font-face {
     font-family: "PokemonDSFont";
     src: url(pokemon-ds-font.ttf) format("truetype");
 }
-
+  
 body {
     background: radial-gradient(circle, rgb(75, 75, 75) 0%, rgb(0, 0, 0) 100%);
     color: rgb(255, 255, 255);
@@ -14,14 +14,14 @@ body {
     margin: 0;
     padding: 0;
 }
-
+  
 img {
     align-items: center;
     display: flex;
     justify-content: center;
     padding: 55px;
 }
-
+  
 #fire-title,
 #grass-title,
 #water-title,
@@ -47,16 +47,8 @@ img {
 #rounds-drawn-drawn-text,
 #rounds-drawn-colon,
 #rounds-drawn-rounds-drawn,
-#win-percent-win-text,
-#win-percent-pre-percent-sign,
-#win-percent-colon,
-#win-percent-win-percent,
-#win-percent-post-percent-sign,
-#loss-percent-loss-text,
-#loss-percent-pre-percent-sign,
-#loss-percent-colon,
-#loss-percent-loss-percent,
-#loss-percent-post-percent-sign,
+#win-percent,
+#loss-percent,
 #total-rounds-played-played-text,
 #total-rounds-played-colon,
 #total-rounds-played-total-rounds-played,
@@ -81,94 +73,76 @@ img {
     font-weight: bold;
 }
 
-#title-fire,
-#title-grass,
-#title-water {
-    margin: 0;
-    padding: 0;
-}
-
-#title-fire,
-#button-text-fire {
-    color: rgb(255, 100, 100);
-}
-
-#title-grass,
-#button-text-grass {
-    color: rgb(160, 255, 160);
-}
-
-#title-water,
-#button-text-water {
-    color: rgb(100, 100, 255);
-}
-
-#button-text-fire,
-#button-text-grass,
-#button-text-water,
-#title-fire,
-#title-grass,
-#title-water {
-    letter-spacing: 0.7px;
-}
-
-#button-text-water .S {
-    letter-spacing: 1px;
-}
-
-#button-text-water .UI {
-    letter-spacing: -2px;
-}
-
 #header {
     align-items: center;
     display: flex;
     font-size: 50px;
     gap: 32px;
     justify-content: center;
+    margin-bottom: 114px;
     margin-top: 48px;
-    margin-bottom: 92px;
 }
 
-#title-fire {
+#fire-title,
+#grass-title,
+#water-title {
+    margin: 0;
+}
+
+#fire-title {
     text-shadow: 0px 2px rgb(0, 0, 0), 0px 8px rgb(64, 25, 25), 0px 16px rgb(32, 13, 13), 0px 24px rgb(16, 7, 7);
 }
 
-#title-fire .FI {
+#fire-title .FI {
     letter-spacing: -5.5px;
 }
 
-#title-grass {
+#grass-title {
     text-shadow: 0px 2px rgb(0, 0, 0), 0px 8px rgb(25, 64, 25), 0px 16px rgb(13, 32, 13), 0px 22px rgb(7, 16, 7);
 }
 
-#title-water {
+#water-title {
     text-shadow: 0px 2px rgb(0, 0, 0), 0px 8px rgb(25, 25, 64), 0px 16px rgb(13, 13, 32), 0px 22px rgb(7, 7, 16);
 }
 
-/* Obsolete CSS Styles - Future Use?
-#player-flavour {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+#fire-title,
+#grass-title,
+#water-title,
+#fire-button-text,
+#grass-button-text,
+#water-button-text {
+    letter-spacing: 0.7px;
 }
 
-#player-flavour-text {
-    align-self: center;
-    display: flex;
-    font-size: 36px;
-    justify-content: center;
-    margin-top: 32px;
-    margin-bottom: 96px;
-    text-shadow: 0px 3px rgb(100, 100, 100), 0px 6px rgb(50, 50, 50), 0px 9px rgb(0, 0, 0);
-} */
+#fire-title,
+#fire-button-text {
+    color: rgb(255, 100, 100);
+}
+
+#grass-title,
+#grass-button-text {
+    color: rgb(160, 255, 160);
+}
+
+#water-title,
+#water-button-text {
+    color: rgb(100, 100, 255);
+}
+
+#water-button-text .S {
+    letter-spacing: 1px;
+}
+
+#water-button-text .UI {
+    letter-spacing: -2px;
+}
 
 #buttons {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     flex-direction: row;
     gap: 128px;
+    justify-content: center;
 }
 
 #fire-button-border,
@@ -183,11 +157,12 @@ img {
     box-shadow: 0px 0px 20px 10px black;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     height: 400px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
     transition: transform 0.5s;
     width: 400px;   
-
 }
 
 #fire-button-border:hover,
@@ -198,7 +173,7 @@ img {
     transform: scale(1.1);
 }
 
-#grass-button-border:hover {
+#fire-button-border:hover {
     box-shadow: 0px 0px 40px 5px rgb(255, 0, 0);
 }
 
@@ -217,20 +192,30 @@ img {
     display: flex;
     font-size: 64px;
     justify-content: center;
-    margin-top: 58px;
-    margin-bottom: 75px;
+    margin-bottom: 70px;
+    margin-top: 59px;
 }
 
 #fire-button-text {
-    text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(64, 25, 25), 0px 12px rgb(32, 13, 13), 0px 18px rgb(16, 7, 7);
+    text-shadow: 0px 1.5px rgb(0, 0, 0), 0px 6px rgb(64, 25, 25), 0px 12px rgb(32, 13, 13), 0px 18px rgb(16, 7, 7);
 }
 
 #grass-button-text {
-    text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(25, 64, 25), 0px 12px rgb(13, 32, 13), 0px 18px rgb(7, 16, 7);
+    text-shadow: 0px 1.5px rgb(0, 0, 0), 0px 6px rgb(25, 64, 25), 0px 12px rgb(13, 32, 13), 0px 18px rgb(7, 16, 7);
 }
 
 #water-button-text {
-    text-shadow: 0px 2px rgb(0, 0, 0), 0px 6px rgb(25, 25, 64), 0px 12px rgb(13, 13, 32), 0px 18px rgb(7, 7, 16);
+    text-shadow: 0px 1.5px rgb(0, 0, 0), 0px 6px rgb(25, 25, 64), 0px 12px rgb(13, 13, 32), 0px 18px rgb(7, 7, 16);
+}
+
+#scores {
+    align-items: center;
+    display: flex;
+    font-size: 75px;
+    gap: 75px;
+    justify-content: center;
+    margin-bottom: 48px;
+    letter-spacing: 0.7px;
 }
 
 #player-rival-choices,
@@ -249,15 +234,7 @@ img {
     text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92), 4.25px 4.25px rgb(86, 73, 92)
 }
 
-#scoreboard {
-    align-items: center;
-    display: flex;
-    font-size: 75px;
-    gap: 75px;
-    justify-content: center;
-    margin-bottom: 0px;
-    letter-spacing: 0.7px;
-}
+
 
 #player-name {
     color: rgb(255, 255, 175);
