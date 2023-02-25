@@ -1,21 +1,28 @@
-/* Const */
+/****************************************************************************
+Const
+****************************************************************************/
+
+/* Buttons */
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", function getImgAlt(element) {
   if (element.target.tagName === "IMG") {
     playerChoice = element.target.alt;
     playerPokémon = pokémon[playerChoice];
     playerPokémonAttack = generateAttack(playerChoice);
-    /* ACTUAL CODE TO BE USED WHEN GAME IS READY. DO THIS WHEN TESTS NEED NOT BE CARRIED OUT (IT IS USEFUL TO KNOW AND SEE RIVAL CHOICE IN CONSOLE FOR TESTING WINS, DRAWS, LOSSES.)
-    rivalChoice = getRivalChoice(); */
+    /* Temporary - Uncomment When Game Ready;)
+    rivalChoice = getRivalChoice(); 
+    */
     rivalPokémon = pokémon[rivalChoice];
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice);
   }
 });
 
+/* Names */
 const playerName = "Player Name".toUpperCase();
 const rivalName = "Rival Name".toUpperCase();
 
+/* Round Text */
 const choices = ["Fire", "Grass", "Water"];
 
 const pokémon = {
@@ -37,10 +44,6 @@ const attackEffectiveness = {
 };
 
 const roundResults = ["Draw", "Lose", "Win"];
-
-/****************************************************************************
-Scores 
-****************************************************************************/
 
 /* Player Score */
 const playerScoreNameSpan = document.createElement("span");
@@ -73,10 +76,6 @@ const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
 scoresDiv.appendChild(playerScoreDiv);
 scoresDiv.appendChild(rivalScoreDiv);
-
-/****************************************************************************
-Round
-*****************************************************************************/
 
 /* Critical Hit */
 const criticalHitDiv = document.createElement("div");
@@ -251,10 +250,6 @@ roundDiv.appendChild(playerPokémonAttackEffectivenessDiv);
 roundDiv.appendChild(rivalPokémonAttackDiv);
 roundDiv.appendChild(rivalPokémonAttackEffectivenessDiv);
 roundDiv.appendChild(roundResultDiv);
-
-/****************************************************************************
-Post-Game
-*****************************************************************************/
 
 /* Faint */
 const faintNameSpan = document.createElement("span");
@@ -596,8 +591,9 @@ postGameDiv.appendChild(expDiv);
 postGameDiv.appendChild(statsDiv);
 postGameDiv.appendChild(gameResultDiv);
 
-
-/* Variables */
+/****************************************************************************
+Variables
+****************************************************************************/
 
 /* Choices */
 let playerChoice;
@@ -640,12 +636,15 @@ let totalWinPercent;
 let totalLossPercent;
 let totalDrawPercent;
 
-/* Temporary - Test Post-Game Efficiently */
+/* Temporary - Test Post-Game Efficiently  - Remove When Game Ready */
 playerScore = 4;
 rivalScore = 4;
 roundsDrawn = 4;
 
-/* Functions */
+/****************************************************************************
+Functions 
+****************************************************************************/
+
 function generateAttack(choice) {
   return attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
 };
