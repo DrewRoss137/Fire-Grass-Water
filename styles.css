@@ -16,9 +16,6 @@ body {
 }
   
 img {
-    align-items: center;
-    display: flex;
-    justify-content: center;
     padding: 55px;
 }
   
@@ -73,12 +70,27 @@ img {
     font-weight: bold;
 }
 
-#header {
+img,
+#header,
+#buttons,
+#fire-button-text,
+#grass-button-text,
+#water-button-text,
+#scores,
+#round,
+#post-game,
+#stats,
+#quote,
+#footer
+ {
     align-items: center;
     display: flex;
+    justify-content: center;
+}
+
+#header {
     font-size: 50px;
     gap: 32px;
-    justify-content: center;
     margin-bottom: 114px;
     margin-top: 48px;
 }
@@ -138,27 +150,21 @@ img {
 }
 
 #buttons {
-    align-items: center;
-    display: flex;
     flex-direction: row;
     gap: 128px;
-    justify-content: center;
 }
 
 #fire-button-border,
 #grass-button-border,
 #water-button-border {
-    align-items: center;
     background: radial-gradient(circle, rgb(175, 175, 175) 0%, rgba(0, 0, 0) 125%);
     border-color: rgba(255, 255, 255, 0.04);
     border-radius: 15px;
     border-style: solid;
     border-width: 4px;
     box-shadow: 0px 0px 20px 10px black;
-    display: flex;
     flex-direction: row;
     height: 400px;
-    justify-content: center;
     margin: 0;
     padding: 0;
     transition: transform 0.5s;
@@ -188,10 +194,7 @@ img {
 #fire-button-text,
 #grass-button-text,
 #water-button-text {
-    align-items: center;
-    display: flex;
     font-size: 64px;
-    justify-content: center;
     margin-bottom: 70px;
     margin-top: 59px;
 }
@@ -209,32 +212,10 @@ img {
 }
 
 #scores {
-    align-items: center;
-    display: flex;
     font-size: 75px;
-    gap: 75px;
-    justify-content: center;
+    gap: 100px;
     margin-bottom: 48px;
-    letter-spacing: 0.7px;
 }
-
-#player-rival-choices,
-#stats,
-#faint-flavour-text,
-#exp-flavour-text,
-#round,
-#stats-div,
-#game-result-div {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-size: 50px;
-    gap: 24px;
-    justify-content: center;
-    text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92), 4.25px 4.25px rgb(86, 73, 92)
-}
-
-
 
 #player-name {
     color: rgb(255, 255, 175);
@@ -256,20 +237,29 @@ img {
     text-shadow: 0px 3px rgb(0, 0, 0), 0px 5px rgb(64, 32, 64), 0px 10px rgb(128, 88, 128), 0px 15px rgb(255, 175, 255);
 }
 
+#player-rival-choices,
+#stats,
+#faint-flavour-text,
+#exp-flavour-text,
+#round,
+#stats-div,
+#game-result-div {
+    flex-direction: column;
+    font-size: 50px;
+    gap: 24px;
+    text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92), 4.25px 4.25px rgb(86, 73, 92)
+}
+
+
+
 #score-player,
 #score-rival {
-    align-items: center;
-    display: flex;
     flex-direction: column;
     gap: 48px;
-    justify-content: center;
 }
 
 #scoreboard {
-    align-items: center;
-    display: flex;
     gap: 48px;
-    justify-content: center;
     margin-bottom: 58px;
 }
 
@@ -280,11 +270,8 @@ img {
 
 #game-result/*,
  #game-result-2 */ {
-    align-items: center;
-    display: flex;
     font-size: 75px;
     font-weight: bold;
-    justify-content: center;
     margin-top: 58px;
     text-shadow: 0px 1px rgb(0, 0, 0), 0px 5px rgb(100, 100, 100), 0px 10px rgb(50, 50, 50), 0px 15px rgb(0, 0, 0);
 }
@@ -294,12 +281,9 @@ img {
 }
 
 #quote {
-    align-items: center;
-    display: flex;
     flex-direction: column;
     gap: 24px;
     margin-top: 58px;
-    justify-content: center;
     text-align: center;
 }
 
@@ -319,9 +303,7 @@ img {
 }
 
 #footer {
-    align-items: center;
     color: rgb(30, 30, 30);
-    display: flex;
     justify-content: flex-end;
     padding: 16px;
     text-shadow: 0px 2px rgba(0, 0, 0, 0.6);
@@ -336,10 +318,7 @@ img {
 }
 
 #post-game-flavour-text {
-    align-items: center;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 24px;
     margin-top: 24px;
 }
@@ -348,11 +327,8 @@ img {
 #exp-flavour-text,
 #stats-div,
 #game-result-div {
-    display: flex;
     flex-direction: row;
     gap: 0px;
-    align-items: center;
-    justify-content: center;
 }
 
 #stats-div {
@@ -367,8 +343,6 @@ img {
 
 
 #player-rival-scores-div {
-    align-items: center;
-    display: flex;
     font-size: 75px;
     gap: 75px;
     justify-content: center;
@@ -377,7 +351,6 @@ img {
     align-items: center;
     display: flex;
     gap: 48px;
-    justify-content: center;
     margin-bottom: 58px;
     font-weight: bold;
 }
@@ -404,19 +377,17 @@ img {
 
 #player-score-scores-div,
 #rival-score-scores-div {
-    align-items: center;
-    display: flex;
     flex-direction: column;
     gap: 48px;
-    justify-content: center;
     font-size: 100px;
 }
 
 #player-name-and-score,
 #rival-name-and-score {
-    align-items: center;
-    display: flex;
     flex-direction: column;
     gap: 48px;
-    justify-content: center;
+}
+
+#post-game {
+    flex-direction: column;
 }
