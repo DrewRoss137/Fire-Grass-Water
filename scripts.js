@@ -419,7 +419,7 @@ lossPercentLossPercentSpan.style.color = "red";
 
 const lossPercentSign = document.createElement("span");
 lossPercentSign.textContent = "%";
-lossPercentSign.id = "loss-percent-loss-percent";
+lossPercentSign.id = "loss-percent-post-percent-sign";
 lossPercentSign.style.color = "cyan";
 
 const lossPercentDiv = document.createElement("div");
@@ -576,10 +576,10 @@ gameResultPlayerNameSpan.textContent = `${playerName} `;
 const gameResultResult = document.createElement("span");
 gameResultResult.id = "game-result-result";
 
-const gameResultAgainstTextSpan = document.createElement("span");
-gameResultAgainstTextSpan.id = "game-result-against-text";
-gameResultAgainstTextSpan.style.color = "cyan";
-gameResultAgainstTextSpan.textContent = "against";
+const gameResultVersusTextSpan = document.createElement("span");
+gameResultVersusTextSpan.id = "game-result-versus-text";
+gameResultVersusTextSpan.style.color = "cyan";
+gameResultVersusTextSpan.textContent = "versus";
 
 const gameResultRivalNameSpan = document.createElement("span");
 gameResultRivalNameSpan.id = "game-result-rival-name";
@@ -590,7 +590,7 @@ const gameResultDiv = document.createElement("div");
 gameResultDiv.id = "game-result";
 gameResultDiv.appendChild(gameResultPlayerNameSpan);
 gameResultDiv.appendChild(gameResultResult);
-gameResultDiv.appendChild(gameResultAgainstTextSpan);
+gameResultDiv.appendChild(gameResultVersusTextSpan);
 gameResultDiv.appendChild(gameResultRivalNameSpan);
 
 /* Post-Game */
