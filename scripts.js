@@ -664,28 +664,28 @@ function playRound(playerChoice, rivalChoice) {
   insertElement(scoresDiv, "buttons");
   playerScoreScoreSpan.textContent = playerScore;
   rivalScoreScoreSpan.textContent = rivalScore;
-  
+
   insertElement(roundDiv, "scores");
   playerPokémonNameSpan.textContent = `${playerPokémon}!`;
   rivalPokémonNameSpan.textContent = `${rivalPokémon}!`;
   playerPokémonNameSpan.style.color = pokémonColours[playerPokémon];
   rivalPokémonNameSpan.style.color = pokémonColours[rivalPokémon];
-  
+
   playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `;
   playerPokémonAttackPokémonNameSpan.style.color = pokémonColours[playerPokémon];
   playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`;
   playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness;
-  
+
   rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `;
   rivalPokémonAttackPokémonNameSpan.style.color = pokémonColours[rivalPokémon];
   rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`;
   rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness;
-  
+
   roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `;
   roundResultPlayerPokémonSpan.style.color = pokémonColours[playerPokémon];
   roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`;
   roundResultRivalPokémonSpan.style.color = pokémonColours[rivalPokémon];
-  
+
   switch (roundResult) {
     case roundResults[0]:
       roundResultRoundResultSpan.textContent = "drew ";
@@ -699,16 +699,17 @@ function playRound(playerChoice, rivalChoice) {
       roundDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
       break;
   };
-
+  
   if (playerScore === 5 || rivalScore === 5) {
-    expValue = Math.floor(Math.random() * 51) + 50;
+    const expValue = Math.floor(Math.random() * 51) + 50;
     insertElement(postGameDiv, "round");
     insertElement(gameResultDiv, "stats");
+  
     if (playerScore > rivalScore) {
       faintNameSpan.style.color = playerColours[rivalName];
-      faintPokémonSpan.style.color = pokémonColours[rivalPokémon]
+      faintPokémonSpan.style.color = pokémonColours[rivalPokémon];
       expNameSpan.style.color = playerColours[playerName];
-      expPokémonSpan.style.color = pokémonColours[playerPokémon]
+      expPokémonSpan.style.color = pokémonColours[playerPokémon];
       faintNameSpan.textContent = `${rivalName}'s `;
       faintPokémonSpan.textContent = ` ${rivalPokémon} `;
       expNameSpan.textContent = `${playerName}'s `;
@@ -717,19 +718,19 @@ function playRound(playerChoice, rivalChoice) {
       gameResultResult.textContent = "WON ";
     } else {
       faintNameSpan.style.color = playerColours[playerName];
-      faintPokémonSpan.style.color = pokémonColours[playerPokémon]
+      faintPokémonSpan.style.color = pokémonColours[playerPokémon];
       expNameSpan.style.color = playerColours[rivalName];
-      expPokémonSpan.style.color = pokémonColours[rivalPokémon]
-      gameResultResult.style.color = "rgb(255, 0, 0)";
-      gameResultResult.textContent = "LOST ";
+      expPokémonSpan.style.color = pokémonColours[rivalPokémon];
       faintNameSpan.textContent = `${playerName}'s `;
       faintPokémonSpan.textContent = `${playerPokémon} `;
       expNameSpan.textContent = `${rivalName}'s `;
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
+      gameResultResult.style.color = "rgb(255, 0, 0)";
+      gameResultResult.textContent = "LOST ";
     }
+  
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
-    roundDiv.appendChild(faintDiv)
-    roundDiv.appendChild(expDiv)
+    roundDiv.append(faintDiv, expDiv);
     roundsPlayed = playerScore + rivalScore;
     winPercent = ((playerScore / roundsPlayed) * 100).toFixed(2);
     lossPercent = ((rivalScore / roundsPlayed) * 100).toFixed(2);
@@ -745,16 +746,17 @@ function playRound(playerChoice, rivalChoice) {
     totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
     totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
     totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
+  
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
   } else {
-    faintDiv.remove()
-    expDiv.remove()
+    faintDiv.remove();
+    expDiv.remove();
     postGameDiv.remove();
   }
-}
+};
 
 function generateCriticalHitChance(divName) {
   const criticalHitChance = Math.random();
