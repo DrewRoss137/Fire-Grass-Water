@@ -30,14 +30,22 @@ img {
 #grass-button-text,
 #water-button-text,
 #player-pokémon-player-name,
+#player-pokémon-name,
 #rival-pokémon-rival-name,
+#rival-pokémon-name,
 #player-pokémon-attack-player-name,
+#player-pokémon-attack-pokémon,
 #rival-pokémon-attack-rival-name,
+#rival-pokémon-attack-pokémon,
 #critical-hit,
 #round-result-player-name,
+#round-result-player-pokémon,
 #round-result-rival-name,
+#round-result-rival-pokémon,
 #faint-name,
+#faint-pokémon,
 #exp-name,
+#exp-pokémon,
 #scores,
 #rounds-won-won-text,
 #rounds-won-colon,
@@ -149,18 +157,61 @@ Pre-Round
 }
 
 #fire-title,
-#fire-button-text {
+#fire-button-text,
+#rounds-lost-lost-text,
+#loss-percent-loss-text,
+#total-loss-percent-loss-text,
+#total-loss-percent-total-loss-percent,
+#loss-percent-loss-percent,
+#loss-percent-colon,
+#rounds-lost-colon,
+#total-loss-percent-colon,
+#rounds-lost-rival-score {
     color: rgb(255, 100, 100);
 }
 
+#total-loss-percent-pre-percent-sign,
+#total-loss-percent-post-percent-sign,
+#loss-percent-pre-percent-sign,
+#loss-percent-post-percent-sign {
+    color: rgb(64, 25, 25);
+}
+
 #grass-title,
-#grass-button-text {
+#grass-button-text,
+#rounds-won-won-text,
+#win-percent-win-text,
+#total-win-percent-win-text,
+#rounds-won-player-score,
+#win-percent-win-percent,
+#win-percent-colon,
+#total-win-percent-colon,
+#total-win-percent-total-win-percent,
+#rounds-won-colon {
     color: rgb(160, 255, 160);
 }
 
+#total-win-percent-pre-percent-sign,
+#total-win-percent-post-percent-sign,
+#win-percent-pre-percent-sign,
+#win-percent-post-percent-sign {
+    color: rgb(25, 64, 25);
+}
+
 #water-title,
-#water-button-text {
+#water-button-text,
+#rounds-drawn-drawn-text,
+#rounds-drawn-rounds-drawn,
+#total-draw-percent-draw-text,
+#total-draw-percent-total-draw-percent,
+#rounds-drawn-colon,
+#total-draw-percent-colon {
     color: rgb(100, 100, 255);
+}
+
+#total-draw-percent-pre-percent-sign,
+#total-draw-percent-post-percent-sign {
+    color: rgb(25, 25, 64);
 }
 
 #water-button-text .S {
@@ -262,15 +313,30 @@ Pre-Round
 }
 
 #player-score-name,
+#player-score-score,
+#player-pokémon-player-name,
+#player-pokémon-attack-player-name,
+#round-result-player-name {
+    color: rgb(0, 0, 255);
+}
+
+#rival-score-name,
+#rival-score-score,
+#rival-pokémon-rival-name,
+#rival-pokémon-attack-rival-name,
+#round-result-rival-name,
+#critical-hit {
+    color: rgb(255, 0, 0);
+}
+
+#player-score-name,
 #player-score-score {
-    color: rgb(255, 255, 175);
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.25), 0px 7px rgb(128, 128, 88), 0px 14px rgb(64, 64, 44), 0px 21px rgb(32, 32, 22);
+    text-shadow: 0px 2px rgba(0, 0, 0), 0px 7px rgb(0, 0, 64), 0px 14px rgb(0, 0, 32), 0px 21px rgb(0, 0, 15);
 }
 
 #rival-score-name,
 #rival-score-score  {
-    color: rgb(255, 175, 255);
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.25), 0px 7px rgb(128, 88, 128), 0px 14px rgb(64, 32, 64), 0px 21px rgb(32, 22, 32);
+    text-shadow: 0px 2px rgba(0, 0, 0), 0px 7px rgb(64, 0, 0), 0px 14px rgb(32, 0, 0), 0px 21px rgb(15, 0, 0);
 }
 
 /**************
@@ -291,13 +357,14 @@ Round
 }
 
 #critical-hit { 
-    color: red;
     text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(255, 255, 0), 3px 3px rgb(255, 255, 0), 4px 4px rgb(255, 255, 0);
 }
 
 /**************
 Post-Game
 **************/
+
+
 
 #post-game {
     flex-direction: column;
