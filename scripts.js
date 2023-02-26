@@ -248,21 +248,6 @@ roundResultDiv.appendChild(roundResultVersusTextSpan);
 roundResultDiv.appendChild(roundResultRivalNameSpan);
 roundResultDiv.appendChild(roundResultRivalPokémonSpan);
 
-/* Round */
-const roundDiv = document.createElement("div");
-roundDiv.id = "round";
-roundDiv.appendChild(playerPokémonDiv);
-roundDiv.appendChild(rivalPokémonDiv);
-roundDiv.appendChild(playerPokémonAttackDiv);
-roundDiv.appendChild(playerPokémonAttackEffectivenessDiv);
-roundDiv.appendChild(rivalPokémonAttackDiv);
-roundDiv.appendChild(rivalPokémonAttackEffectivenessDiv);
-roundDiv.appendChild(roundResultDiv);
-
-/**************
-Post-Game
-**************/
-
 /* Faint */
 const faintNameSpan = document.createElement("span");
 faintNameSpan.id = "faint-name";
@@ -307,6 +292,23 @@ expDiv.appendChild(expNameSpan);
 expDiv.appendChild(expPokémonSpan);
 expDiv.appendChild(expGainedTextSpan);
 expDiv.appendChild(expAmountSpan);
+
+/* Round */
+const roundDiv = document.createElement("div");
+roundDiv.id = "round";
+roundDiv.appendChild(playerPokémonDiv);
+roundDiv.appendChild(rivalPokémonDiv);
+roundDiv.appendChild(playerPokémonAttackDiv);
+roundDiv.appendChild(playerPokémonAttackEffectivenessDiv);
+roundDiv.appendChild(rivalPokémonAttackDiv);
+roundDiv.appendChild(rivalPokémonAttackEffectivenessDiv);
+roundDiv.appendChild(roundResultDiv);
+
+/**************
+Post-Game
+**************/
+
+
 
 /**************
 Stats
@@ -610,8 +612,6 @@ gameResultDiv.appendChild(gameResultRivalNameSpan);
 /* Post-Game */
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
-postGameDiv.appendChild(faintDiv);
-postGameDiv.appendChild(expDiv);
 postGameDiv.appendChild(statsDiv);
 postGameDiv.appendChild(gameResultDiv);
 
@@ -760,6 +760,8 @@ function playRound(playerChoice, rivalChoice) {
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
     }
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
+    roundDiv.appendChild(faintDiv)
+    roundDiv.appendChild(expDiv)
     roundsPlayed = playerScore + rivalScore;
     winPercent = ((playerScore / roundsPlayed) * 100).toFixed(2);
     lossPercent = ((rivalScore / roundsPlayed) * 100).toFixed(2);
@@ -780,9 +782,11 @@ function playRound(playerChoice, rivalChoice) {
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
   } else {
+    faintDiv.remove()
+    expDiv.remove()
     postGameDiv.remove();
   }
-};
+}
 
 function generateCriticalHitChance(divName) {
   const criticalHitChance = Math.random();
