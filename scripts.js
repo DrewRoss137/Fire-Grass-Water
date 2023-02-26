@@ -1,6 +1,6 @@
-/****************************************************************************
+/**************
 Const
-****************************************************************************/
+**************/
 
 /* Buttons */
 const buttons = document.querySelector("#buttons");
@@ -45,6 +45,10 @@ const attackEffectiveness = {
 
 const roundResults = ["Draw", "Lose", "Win"];
 
+/**************
+Scores
+**************/
+
 /* Player Score */
 const playerScoreNameSpan = document.createElement("span");
 playerScoreNameSpan.id = "player-score-name";
@@ -76,6 +80,10 @@ const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
 scoresDiv.appendChild(playerScoreDiv);
 scoresDiv.appendChild(rivalScoreDiv);
+
+/**************
+Round
+**************/
 
 /* Critical Hit */
 const criticalHitDiv = document.createElement("div");
@@ -251,6 +259,10 @@ roundDiv.appendChild(rivalPokémonAttackDiv);
 roundDiv.appendChild(rivalPokémonAttackEffectivenessDiv);
 roundDiv.appendChild(roundResultDiv);
 
+/**************
+Post-Game
+**************/
+
 /* Faint */
 const faintNameSpan = document.createElement("span");
 faintNameSpan.id = "faint-name";
@@ -296,7 +308,9 @@ expDiv.appendChild(expPokémonSpan);
 expDiv.appendChild(expGainedTextSpan);
 expDiv.appendChild(expAmountSpan);
 
-/* Stats */
+/**************
+Stats
+**************/
 
 /* Rounds Won */
 const roundsWonWonTextSpan = document.createElement("span");
@@ -601,9 +615,9 @@ postGameDiv.appendChild(expDiv);
 postGameDiv.appendChild(statsDiv);
 postGameDiv.appendChild(gameResultDiv);
 
-/****************************************************************************
+/**************
 Variables
-****************************************************************************/
+**************/
 
 /* Choices */
 let playerChoice;
@@ -651,9 +665,9 @@ playerScore = 4;
 rivalScore = 4;
 roundsDrawn = 4;
 
-/****************************************************************************
-Functions 
-****************************************************************************/
+/**************
+Functions
+**************/
 
 function generateAttack(choice) {
   return attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
