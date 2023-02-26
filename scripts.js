@@ -696,7 +696,9 @@ function playRound(playerChoice, rivalChoice) {
     insertElement(gameResultDiv, "stats");
     if (playerScore > rivalScore) {
       faintNameSpan.style.color = playerColours[rivalName];
+      faintPokémonSpan.style.color = pokémonColours[rivalPokémon]
       expNameSpan.style.color = playerColours[playerName];
+      expPokémonSpan.style.color = pokémonColours[playerPokémon]
       faintNameSpan.textContent = `${rivalName}'s `;
       faintPokémonSpan.textContent = ` ${rivalPokémon} `;
       expNameSpan.textContent = `${playerName}'s `;
@@ -705,7 +707,9 @@ function playRound(playerChoice, rivalChoice) {
       gameResultResult.textContent = "WON ";
     } else {
       faintNameSpan.style.color = playerColours[playerName];
+      faintPokémonSpan.style.color = pokémonColours[playerPokémon]
       expNameSpan.style.color = playerColours[rivalName];
+      expPokémonSpan.style.color = pokémonColours[rivalPokémon]
       gameResultResult.style.color = "rgb(255, 0, 0)";
       gameResultResult.textContent = "LOST ";
       faintNameSpan.textContent = `${playerName}'s `;
