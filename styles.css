@@ -78,7 +78,12 @@ img {
 #total-draw-percent-post-percent-sign,
 #game-result-player-name,
 #game-result-result,
-#game-result-rival-name {
+#game-result-rival-name,
+#player-pokémon-attack-pokémon-attack,
+#rival-pokémon-attack-pokémon-attack,
+#exp-amount,
+#rival-pokémon-attack-effectiveness-text,
+#player-pokémon-attack-effectiveness-text {
     font-weight: bold;
 }
 
@@ -316,7 +321,8 @@ Pre-Round
 #player-score-score,
 #player-pokémon-player-name,
 #player-pokémon-attack-player-name,
-#round-result-player-name {
+#round-result-player-name,
+#game-result-player-name {
     color: rgb(0, 0, 255);
 }
 
@@ -325,7 +331,8 @@ Pre-Round
 #rival-pokémon-rival-name,
 #rival-pokémon-attack-rival-name,
 #round-result-rival-name,
-#critical-hit {
+#critical-hit,
+#game-result-rival-name {
     color: rgb(255, 0, 0);
 }
 
