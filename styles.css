@@ -159,53 +159,53 @@ Pre-Round
 #fire-title,
 #fire-button-text,
 #rounds-lost-lost-text,
-#loss-percent-loss-text,
-#total-loss-percent-loss-text,
-#total-loss-percent-total-loss-percent,
-#loss-percent-loss-percent,
-#loss-percent-colon,
 #rounds-lost-colon,
+#rounds-lost-rival-score,
+#loss-percent-loss-text,
+#loss-percent-colon,
+#loss-percent-loss-percent,
+#total-loss-percent-loss-text,
 #total-loss-percent-colon,
-#rounds-lost-rival-score {
+#total-loss-percent-total-loss-percent {
     color: rgb(255, 100, 100);
 }
 
-#total-loss-percent-pre-percent-sign,
-#total-loss-percent-post-percent-sign,
 #loss-percent-pre-percent-sign,
-#loss-percent-post-percent-sign {
+#loss-percent-post-percent-sign, 
+#total-loss-percent-pre-percent-sign,
+#total-loss-percent-post-percent-sign {
     color: rgb(64, 25, 25);
 }
 
 #grass-title,
 #grass-button-text,
 #rounds-won-won-text,
-#win-percent-win-text,
-#total-win-percent-win-text,
+#rounds-won-colon,
 #rounds-won-player-score,
-#win-percent-win-percent,
+#win-percent-win-text,
 #win-percent-colon,
+#win-percent-win-percent,
+#total-win-percent-win-text,
 #total-win-percent-colon,
-#total-win-percent-total-win-percent,
-#rounds-won-colon {
+#total-win-percent-total-win-percent {
     color: rgb(160, 255, 160);
 }
 
-#total-win-percent-pre-percent-sign,
-#total-win-percent-post-percent-sign,
 #win-percent-pre-percent-sign,
-#win-percent-post-percent-sign {
+#win-percent-post-percent-sign,
+#total-win-percent-pre-percent-sign,
+#total-win-percent-post-percent-sign {
     color: rgb(25, 64, 25);
 }
 
 #water-title,
 #water-button-text,
 #rounds-drawn-drawn-text,
+#rounds-drawn-colon,
 #rounds-drawn-rounds-drawn,
 #total-draw-percent-draw-text,
-#total-draw-percent-total-draw-percent,
-#rounds-drawn-colon,
-#total-draw-percent-colon {
+#total-draw-percent-colon,
+#total-draw-percent-total-draw-percent {
     color: rgb(100, 100, 255);
 }
 
@@ -363,8 +363,6 @@ Round
 /**************
 Post-Game
 **************/
-
-
 
 #post-game {
     flex-direction: column;
