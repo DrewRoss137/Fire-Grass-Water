@@ -56,6 +56,12 @@ const pokémonColours = {
   "SQUIRTLE": "rgb(100, 100, 255)"
 };
 
+/* Player Colours */
+const playerColours = {
+  [playerName]: "rgb(0, 0, 255)",
+  [rivalName]: "rgb(255, 0, 0)",
+}
+
 /**************
 Scores
 **************/
@@ -689,23 +695,23 @@ function playRound(playerChoice, rivalChoice) {
     insertElement(postGameDiv, "round");
     insertElement(gameResultDiv, "stats");
     if (playerScore > rivalScore) {
+      faintNameSpan.style.color = playerColours[rivalName];
+      expNameSpan.style.color = playerColours[playerName];
       faintNameSpan.textContent = `${rivalName}'s `;
       faintPokémonSpan.textContent = ` ${rivalPokémon} `;
-      faintPokémonSpan.style.color = pokémonColours[rivalPokémon];
       expNameSpan.textContent = `${playerName}'s `;
       expPokémonSpan.textContent = `${playerPokémon} `;
-      expPokémonSpan.style.color = pokémonColours[playerPokémon];
       gameResultResult.style.color = "rgb(0, 255, 0)";
       gameResultResult.textContent = "WON ";
     } else {
+      faintNameSpan.style.color = playerColours[playerName];
+      expNameSpan.style.color = playerColours[rivalName];
       gameResultResult.style.color = "rgb(255, 0, 0)";
       gameResultResult.textContent = "LOST ";
       faintNameSpan.textContent = `${playerName}'s `;
       faintPokémonSpan.textContent = `${playerPokémon} `;
-      faintPokémonSpan.style.color = pokémonColours[playerPokémon];
       expNameSpan.textContent = `${rivalName}'s `;
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
-      expPokémonSpan.style.color = pokémonColours[rivalPokémon];
     }
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
     roundDiv.appendChild(faintDiv)
