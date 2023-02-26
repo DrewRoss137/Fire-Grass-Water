@@ -94,6 +94,13 @@ img,
     justify-content: center;
 }
 
+#body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 /**************
 Pre-Round
 **************/
@@ -167,13 +174,19 @@ Pre-Round
 
 #fire-button-border,
 #grass-button-border,
-#water-button-border {
-    background: radial-gradient(circle, rgb(175, 175, 175) 0%, rgba(0, 0, 0) 125%);
+#water-button-border,
+#stats {
     border-color: rgba(255, 255, 255, 0.04);
     border-radius: 15px;
     border-style: solid;
-    border-width: 5px;
+    border-width: 3px;
     box-shadow: 0px 0px 20px 10px black;
+}
+
+#fire-button-border,
+#grass-button-border,
+#water-button-border {
+    background: radial-gradient(circle, rgb(175, 175, 175) 0%, rgba(0, 0, 0) 125%);
     flex-direction: row;
     height: 400px;
     margin: 0;
@@ -231,7 +244,7 @@ Pre-Round
 #player-score,
 #rival-score {
     flex-direction: column;
-    gap: 48px;
+    gap: 24px;
 }
 
 #player-score-name,
@@ -249,6 +262,16 @@ Pre-Round
 /**************
 Round
 **************/
+
+#round {
+    border-color: rgba(255, 255, 255, 0.04);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 3px;
+    box-shadow: 0px 0px 20px 10px black;
+    max-width: 1100px;
+    padding: 32px 16px;
+  }
 
 #round,
 #faint,
@@ -275,8 +298,10 @@ Post-Game
 }
 
 #stats {
-    margin-bottom: 22px;
-    margin-top: 11px;
+    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgb(40, 40, 40) 125%);
+    margin-bottom: 48px;
+    margin-top: 24px;
+    padding: 24px;
 }
 
 #game-result {
