@@ -87,8 +87,7 @@ img,
 #post-game,
 #stats,
 #quote,
-#footer
- {
+#footer {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -175,18 +174,19 @@ Pre-Round
 #fire-button-border,
 #grass-button-border,
 #water-button-border,
+#round,
 #stats {
-    border-color: rgba(255, 255, 255, 0.04);
+    background: radial-gradient(circle, rgb(100, 100, 100) 0%, rgba(20, 20, 20) 125%);
+    border-color: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     border-style: solid;
-    border-width: 3px;
+    border-width: 4px;
     box-shadow: 0px 0px 20px 10px black;
 }
 
 #fire-button-border,
 #grass-button-border,
 #water-button-border {
-    background: radial-gradient(circle, rgb(175, 175, 175) 0%, rgba(0, 0, 0) 125%);
     flex-direction: row;
     height: 400px;
     margin: 0;
@@ -264,24 +264,17 @@ Round
 **************/
 
 #round {
-    border-color: rgba(255, 255, 255, 0.04);
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 3px;
-    box-shadow: 0px 0px 20px 10px black;
     max-width: 1100px;
-    padding: 32px 16px;
+    padding: 24px 18px;
   }
 
 #round,
-#faint,
-#exp,
 #stats {
     flex-direction: column;
     font-size: 50px;
     gap: 20px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px rgb(0, 0, 0), 2px 2px rgb(86, 73, 92), 3px 3px rgb(86, 73, 92), 4px 4px rgb(86, 73, 92), 4.25px 4.25px rgb(86, 73, 92)
+    text-shadow: 2px 2px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4px rgb(86, 73, 92), 5px 4px rgb(86, 73, 92);
 }
 
 #critical-hit { 
@@ -298,7 +291,6 @@ Post-Game
 }
 
 #stats {
-    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgb(40, 40, 40) 125%);
     margin-bottom: 48px;
     margin-top: 24px;
     padding: 24px;
