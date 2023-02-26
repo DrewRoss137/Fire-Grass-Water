@@ -92,17 +92,14 @@ criticalHitDiv.id = "critical-hit";
 /* Player Pokémon */
 const playerPokémonPlayerNameSpan = document.createElement("span");
 playerPokémonPlayerNameSpan.id = "player-pokémon-player-name";
-playerPokémonPlayerNameSpan.style.color = "orange";
 playerPokémonPlayerNameSpan.textContent = `${playerName}: `;
 
 const playerPokémonGoTextSpan = document.createElement("span");
 playerPokémonGoTextSpan.id = "player-pokémon-go-text";
-playerPokémonGoTextSpan.style.color = "pink";
 playerPokémonGoTextSpan.textContent = "GO! ";
 
 const playerPokémonNameSpan = document.createElement("span");
 playerPokémonNameSpan.id = "player-pokémon-name";
-playerPokémonNameSpan.style.color = "red";
 
 const playerPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "player-pokémon";
@@ -113,17 +110,14 @@ playerPokémonDiv.appendChild(playerPokémonNameSpan);
 /* Rival Pokémon */
 const rivalPokémonRivalNameSpan = document.createElement("span");
 rivalPokémonRivalNameSpan.id = "rival-pokémon-rival-name";
-rivalPokémonRivalNameSpan.style.color = "blue";
 rivalPokémonRivalNameSpan.textContent = `${rivalName}: `;
 
 const rivalPokémonGoTextSpan = document.createElement("span");
 rivalPokémonGoTextSpan.id = "rival-pokémon-go-text";
-rivalPokémonGoTextSpan.style.color = "purple";
 rivalPokémonGoTextSpan.textContent = "GO! ";
 
 const rivalPokémonNameSpan = document.createElement("span");
 rivalPokémonNameSpan.id = "rival-pokémon-name";
-rivalPokémonNameSpan.style.color = "red";
 
 const rivalPokémonDiv = document.createElement("div");
 rivalPokémonDiv.id = "rival-pokémon";
@@ -134,21 +128,17 @@ rivalPokémonDiv.appendChild(rivalPokémonNameSpan);
 /* Player Pokémon Attack */
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
 playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
-playerPokémonAttackPlayerNameSpan.style.color = "blue";
 playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `;
 
 const playerPokémonAttackPokémonNameSpan = document.createElement("span");
 playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
-playerPokémonAttackPokémonNameSpan.style.color = "purple";
 
 const playerPokémonAttackUsedTextSpan = document.createElement("span");
 playerPokémonAttackUsedTextSpan.id = "player-pokémon-attack-used-text";
-playerPokémonAttackUsedTextSpan.style.color = "yellow";
 playerPokémonAttackUsedTextSpan.textContent = "used ";
 
 const playerPokémonAttackPokémonAttackSpan = document.createElement("span");
 playerPokémonAttackPokémonAttackSpan.id = "player-pokémon-attack-pokémon-attack";
-playerPokémonAttackPokémonAttackSpan.style.color = "red";
 
 const playerPokémonAttackDiv = document.createElement("div");
 playerPokémonAttackDiv.id = "player-pokémon-attack";
@@ -160,11 +150,9 @@ playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan);
 /* Player Pokémon Attack Effectiveness */
 const playerPokémonAttackEffectivenessItTextSpan = document.createElement("span");
 playerPokémonAttackEffectivenessItTextSpan.id = "player-pokémon-attack-effectiveness-it-text";
-playerPokémonAttackEffectivenessItTextSpan.style.color = "thistle";
 
 const playerPokémonAttackEffectivenessTextSpan = document.createElement("span");
 playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text";
-playerPokémonAttackEffectivenessTextSpan.style.color = "MediumAquamarine";
 
 const playerPokémonAttackEffectivenessDiv = document.createElement("div");
 playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness";
@@ -174,21 +162,17 @@ playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivene
 /* Rival Pokémon Attack */
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
-rivalPokémonAttackRivalNameSpan.style.color = "blue";
 rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `;
 
 const rivalPokémonAttackPokémonNameSpan = document.createElement("span");
 rivalPokémonAttackPokémonNameSpan.id = "rival-pokémon-attack-pokémon";
-rivalPokémonAttackPokémonNameSpan.style.color = "purple";
 
 const rivalPokémonAttackUsedTextSpan = document.createElement("span");
 rivalPokémonAttackUsedTextSpan.id = "rival-pokémon-attack-used-text";
-rivalPokémonAttackUsedTextSpan.style.color = "yellow";
 rivalPokémonAttackUsedTextSpan.textContent = "used ";
 
 const rivalPokémonAttackPokémonAttackSpan = document.createElement("span");
 rivalPokémonAttackPokémonAttackSpan.id = "rival-pokémon-attack-pokémon-attack";
-rivalPokémonAttackPokémonAttackSpan.style.color = "red";
 
 const rivalPokémonAttackDiv = document.createElement("div");
 rivalPokémonAttackDiv.id = "rival-pokémon-attack";
@@ -200,11 +184,9 @@ rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan);
 /* Rival Pokémon Attack Effectiveness */
 const rivalPokémonAttackEffectivenessItTextSpan = document.createElement("span");
 rivalPokémonAttackEffectivenessItTextSpan.id = "rival-pokémon-attack-effectiveness-it-text";
-rivalPokémonAttackEffectivenessItTextSpan.style.color = "thistle";
 
 const rivalPokémonAttackEffectivenessTextSpan = document.createElement("span");
 rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectiveness-text";
-rivalPokémonAttackEffectivenessTextSpan.style.color = "MediumAquamarine";
 
 const rivalPokémonAttackEffectivenessDiv = document.createElement("div");
 rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness";
@@ -214,30 +196,24 @@ rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectiveness
 /* Round Result */
 const roundResultPlayerNameSpan = document.createElement("span");
 roundResultPlayerNameSpan.id = "round-result-player-name";
-roundResultPlayerNameSpan.style.color = "blue";
 roundResultPlayerNameSpan.textContent = `${playerName}'s `;
 
 const roundResultPlayerPokémonSpan = document.createElement("span");
 roundResultPlayerPokémonSpan.id = "round-result-player-pokémon";
-roundResultPlayerPokémonSpan.style.color = "purple";
 
 const roundResultRoundResultSpan = document.createElement("span");
 roundResultRoundResultSpan.id = "round-result-round-result"; 
-roundResultRoundResultSpan.style.color = "orange";
 
 const roundResultVersusTextSpan = document.createElement("span");
 roundResultVersusTextSpan.id = "round-result-versus-text";
-roundResultVersusTextSpan.style.color = "cyan";
 roundResultVersusTextSpan.textContent = " versus ";
 
 const roundResultRivalNameSpan = document.createElement("span");
 roundResultRivalNameSpan.id = "round-result-rival-name";
-roundResultRivalNameSpan.style.color = "yellow";
 roundResultRivalNameSpan.textContent = `${rivalName}'s `;
 
 const roundResultRivalPokémonSpan = document.createElement("span");
 roundResultRivalPokémonSpan.id = "round-result-rival-pokémon";
-roundResultRivalPokémonSpan.style.color = "red";
 
 const roundResultDiv = document.createElement("div");
 roundResultDiv.id = "round-result";
@@ -251,15 +227,12 @@ roundResultDiv.appendChild(roundResultRivalPokémonSpan);
 /* Faint */
 const faintNameSpan = document.createElement("span");
 faintNameSpan.id = "faint-name";
-faintNameSpan.style.color = "pink";
 
 const faintPokémonSpan = document.createElement("span");
 faintPokémonSpan.id = "faint-pokémon";
-faintPokémonSpan.style.color = "blue";
 
 const faintFaintedTextSpan = document.createElement("span");
 faintFaintedTextSpan.id = "faint-fainted-text";
-faintFaintedTextSpan.style.color = "yellow";
 faintFaintedTextSpan.textContent = "fainted!";
 
 const faintDiv = document.createElement("div");
@@ -271,20 +244,16 @@ faintDiv.appendChild(faintFaintedTextSpan);
 /* Exp */
 const expNameSpan = document.createElement("span");
 expNameSpan.id = "exp-name";
-expNameSpan.style.color = "blue";
 
 const expPokémonSpan = document.createElement("span");
 expPokémonSpan.id = "exp-pokémon";
-expPokémonSpan.style.color = "yellow";
 
 const expGainedTextSpan = document.createElement("span");
 expGainedTextSpan.id = "exp-gained-text";
-expGainedTextSpan.style.color = "green";
 expGainedTextSpan.textContent = "gained ";
 
 const expAmountSpan = document.createElement("span");
 expAmountSpan.id = "exp-amount";
-expAmountSpan.style.color = "Thistle";
 
 const expDiv = document.createElement("div");
 expDiv.id = "exp";
@@ -308,8 +277,6 @@ roundDiv.appendChild(roundResultDiv);
 Post-Game
 **************/
 
-
-
 /**************
 Stats
 **************/
@@ -317,17 +284,14 @@ Stats
 /* Rounds Won */
 const roundsWonWonTextSpan = document.createElement("span");
 roundsWonWonTextSpan.id = "rounds-won-won-text";
-roundsWonWonTextSpan.style.color = "purple";
 roundsWonWonTextSpan.textContent = "WON";
 
 const roundsWonColonSpan = document.createElement("span");
 roundsWonColonSpan.id = "rounds-won-colon";
-roundsWonColonSpan.style.color = "cyan";
 roundsWonColonSpan.textContent = ": ";
 
 const roundsWonPlayerScoreSpan = document.createElement("span");
 roundsWonPlayerScoreSpan.id = "rounds-won-player-score";
-roundsWonPlayerScoreSpan.style.color = "red";
 
 const roundsWonDiv = document.createElement("div");
 roundsWonDiv.id = "rounds-won";
@@ -339,17 +303,14 @@ roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
 /* Rounds Lost */
 const roundsLostLostTextSpan = document.createElement("span");
 roundsLostLostTextSpan.id = "rounds-lost-lost-text";
-roundsLostLostTextSpan.style.color = "purple";
 roundsLostLostTextSpan.textContent = "LOST";
 
 const roundsLostColonSpan = document.createElement("span");
 roundsLostColonSpan.id = "rounds-lost-colon";
-roundsLostColonSpan.style.color = "blue";
 roundsLostColonSpan.textContent = ": ";
 
 const roundsLostRivalScoreSpan = document.createElement("span");
 roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
-roundsLostRivalScoreSpan.style.color = "red";
 
 const roundsLostDiv = document.createElement("div");
 roundsLostDiv.id = "rounds-lost";
@@ -361,17 +322,14 @@ roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
 /* Rounds Drawn */
 const roundsDrawnDrawnTextSpan = document.createElement("span");
 roundsDrawnDrawnTextSpan.id = "rounds-drawn-drawn-text";
-roundsDrawnDrawnTextSpan.style.color = "purple";
 roundsDrawnDrawnTextSpan.textContent = "DRAWN";
 
 const roundsDrawnColonSpan = document.createElement("span");
 roundsDrawnColonSpan.id = "rounds-drawn-colon";
-roundsDrawnColonSpan.style.color = "blue";
 roundsDrawnColonSpan.textContent = ": ";
 
 const roundsDrawnRoundsDrawnSpan = document.createElement("span");
 roundsDrawnRoundsDrawnSpan.id = "rounds-drawn-rounds-drawn";
-roundsDrawnRoundsDrawnSpan.style.color = "red";
 
 const roundsDrawnDiv = document.createElement("div");
 roundsDrawnDiv.id = "rounds-drawn";
@@ -383,26 +341,21 @@ roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
 /* Win Percent */
 const winPercentWinText = document.createElement("span");
 winPercentWinText.id = "win-percent-win-text";
-winPercentWinText.style.color = "Honeydew";
 winPercentWinText.textContent = "WIN";
 
 const winPercentPrePercentSignSpan = document.createElement("span");
 winPercentPrePercentSignSpan.id = "win-percent-pre-percent-sign";
-winPercentPrePercentSignSpan.style.color = "purple";
 winPercentPrePercentSignSpan.textContent = "%";
 
 const winPercentColonSpan = document.createElement("span");
 winPercentColonSpan.id = "win-percent-colon";
-winPercentColonSpan.style.color = "blue";
 winPercentColonSpan.textContent = ": ";
 
 const winPercentWinPercentSpan = document.createElement("span");
 winPercentWinPercentSpan.id = "win-percent-win-percent";
-winPercentWinPercentSpan.style.color = "red";
 
 const winPercentPostPercentSpan = document.createElement("span");
 winPercentPostPercentSpan.id = "win-percent-post-percent-sign";
-winPercentPostPercentSpan.style.color = "cyan";
 winPercentPostPercentSpan.textContent = "%";
 
 const winPercentDiv = document.createElement("div");
@@ -416,27 +369,22 @@ winPercentDiv.appendChild(winPercentPostPercentSpan);
 /* Loss Percent */
 const lossPercentLossText = document.createElement("span");
 lossPercentLossText.id = "loss-percent-loss-text";
-lossPercentLossText.style.color = "Honeydew";
 lossPercentLossText.textContent = "LOSS";
 
 const lossPercentPrePercentSignSpan = document.createElement("span");
 lossPercentPrePercentSignSpan.id = "loss-percent-pre-percent-sign";
-lossPercentPrePercentSignSpan.style.color = "purple";
 lossPercentPrePercentSignSpan.textContent = "%";
 
 const lossPercentColonSpan = document.createElement("span");
 lossPercentColonSpan.id = "loss-percent-colon";
-lossPercentColonSpan.style.color = "blue";
 lossPercentColonSpan.textContent = ": ";
 
 const lossPercentLossPercentSpan = document.createElement("span");
 lossPercentLossPercentSpan.id = "loss-percent-loss-percent";
-lossPercentLossPercentSpan.style.color = "red";
 
 const lossPercentSign = document.createElement("span");
 lossPercentSign.textContent = "%";
 lossPercentSign.id = "loss-percent-post-percent-sign";
-lossPercentSign.style.color = "cyan";
 
 const lossPercentDiv = document.createElement("div");
 lossPercentDiv.id = "loss-percent";
@@ -449,17 +397,14 @@ lossPercentDiv.appendChild(lossPercentSign);
 /* Total Rounds Played */
 const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
 totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-played-text";
-totalRoundsPlayedPlayedTextSpan.style.color = "purple";
 totalRoundsPlayedPlayedTextSpan.textContent = "PLAYED";
 
 const totalRoundsPlayedColonSpan = document.createElement("span");
 totalRoundsPlayedColonSpan.id = "total-rounds-played-colon";
-totalRoundsPlayedColonSpan.style.color = "blue";
 totalRoundsPlayedColonSpan.textContent = ": ";
 
 const totalRoundsPlayedTotalRoundsPlayedSpan = document.createElement("span");
 totalRoundsPlayedTotalRoundsPlayedSpan.id = "total-rounds-played-total-rounds-played";
-totalRoundsPlayedTotalRoundsPlayedSpan.style.color = "red";
 
 const totalRoundsPlayedDiv = document.createElement("div");
 totalRoundsPlayedDiv.id = "total-rounds-played";
@@ -471,26 +416,21 @@ totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan);
 /* Total Win Percent */
 const totalWinPercentWinTextSpan = document.createElement("span");
 totalWinPercentWinTextSpan.id = "total-win-percent-win-text";
-totalWinPercentWinTextSpan.style.color = "yellow";
 totalWinPercentWinTextSpan.textContent = "WIN";
 
 const totalWinPercentPrePercentSignSpan = document.createElement("span");
 totalWinPercentPrePercentSignSpan.id = "total-win-percent-pre-percent-sign";
-totalWinPercentPrePercentSignSpan.style.color = "purple";
 totalWinPercentPrePercentSignSpan.textContent = "%";
 
 const totalWinPercentColonSpan = document.createElement("span");
 totalWinPercentColonSpan.id = "total-win-percent-colon";
-totalWinPercentColonSpan.style.color = "blue";
 totalWinPercentColonSpan.textContent = ": ";
 
 const totalWinPercentTotalWinPercentSpan = document.createElement("span");
 totalWinPercentTotalWinPercentSpan.id = "total-win-percent-total-win-percent";
-totalWinPercentTotalWinPercentSpan.style.color = "red";
 
 const totalWinPercentPostPercentSpan = document.createElement("span");
 totalWinPercentPostPercentSpan.id = "total-win-percent-post-percent-sign";
-totalWinPercentPostPercentSpan.style.color = "cyan";
 totalWinPercentPostPercentSpan.textContent = "%";
 
 const totalWinPercentDiv = document.createElement("div");
@@ -505,26 +445,21 @@ totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan);
 /* Total Loss Percent */
 const totalLossPercentLossTextSpan = document.createElement("span");
 totalLossPercentLossTextSpan.id = "total-loss-percent-loss-text";
-totalLossPercentLossTextSpan.style.color = "yellow";
 totalLossPercentLossTextSpan.textContent = "LOSS";
 
 const totalLossPercentPrePercentSignSpan = document.createElement("span");
 totalLossPercentPrePercentSignSpan.id = "total-loss-percent-pre-percent-sign";
-totalLossPercentPrePercentSignSpan.style.color = "purple";
 totalLossPercentPrePercentSignSpan.textContent = "%";
 
 const totalLossPercentColonSpan = document.createElement("span");
 totalLossPercentColonSpan.id = "total-loss-percent-colon";
-totalLossPercentColonSpan.style.color = "blue";
 totalLossPercentColonSpan.textContent = ": ";
 
 const totalLossPercentTotalLossPercentSpan = document.createElement("span");
 totalLossPercentTotalLossPercentSpan.id = "total-loss-percent-total-loss-percent";
-totalLossPercentTotalLossPercentSpan.style.color = "red";
 
 const totalLossPercentPostPercentSpan = document.createElement("span");
 totalLossPercentPostPercentSpan.id = "total-loss-percent-post-percent-sign";
-totalLossPercentPostPercentSpan.style.color = "cyan";
 totalLossPercentPostPercentSpan.textContent = "%";
 
 const totalLossPercentDiv = document.createElement("div");
@@ -539,26 +474,21 @@ totalLossPercentDiv.appendChild(totalLossPercentPostPercentSpan);
 /* Total Draw Percent */
 const totalDrawPercentDrawTextSpan = document.createElement("span");
 totalDrawPercentDrawTextSpan.id = "total-draw-percent-draw-text";
-totalDrawPercentDrawTextSpan.style.color = "yellow";
 totalDrawPercentDrawTextSpan.textContent = "DRAW";
 
 const totalDrawPercentPrePercentSignSpan = document.createElement("span");
 totalDrawPercentPrePercentSignSpan.id = "total-draw-percent-pre-percent-sign";
-totalDrawPercentPrePercentSignSpan.style.color = "purple";
 totalDrawPercentPrePercentSignSpan.textContent = "%";
 
 const totalDrawPercentColonSpan = document.createElement("span");
 totalDrawPercentColonSpan.id = "total-draw-percent-colon";
-totalDrawPercentColonSpan.style.color = "blue";
 totalDrawPercentColonSpan.textContent = ": ";
 
 const totalDrawPercentTotalDrawPercentSpan = document.createElement("span");
 totalDrawPercentTotalDrawPercentSpan.id = "total-draw-percent-total-draw-percent";
-totalDrawPercentTotalDrawPercentSpan.style.color = "red";
 
 const totalDrawPercentPostPercentSignSpan = document.createElement("span");
 totalDrawPercentPostPercentSignSpan.id = "total-draw-percent-post-percent-sign";
-totalDrawPercentPostPercentSignSpan.style.color = "cyan";
 totalDrawPercentPostPercentSignSpan.textContent = "%";
 
 const totalDrawPercentDiv = document.createElement("div");
@@ -586,7 +516,6 @@ statsDiv.appendChild(totalDrawPercentDiv);
 /* Game Result */
 const gameResultPlayerNameSpan = document.createElement("span");
 gameResultPlayerNameSpan.id = "game-result-player-name";
-gameResultPlayerNameSpan.style.color = "blue";
 gameResultPlayerNameSpan.textContent = `${playerName} `;
 
 const gameResultResult = document.createElement("span");
@@ -594,12 +523,10 @@ gameResultResult.id = "game-result-result";
 
 const gameResultVersusTextSpan = document.createElement("span");
 gameResultVersusTextSpan.id = "game-result-versus-text";
-gameResultVersusTextSpan.style.color = "cyan";
 gameResultVersusTextSpan.textContent = "versus";
 
 const gameResultRivalNameSpan = document.createElement("span");
 gameResultRivalNameSpan.id = "game-result-rival-name";
-gameResultRivalNameSpan.style.color = "purple";
 gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
 const gameResultDiv = document.createElement("div");
