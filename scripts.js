@@ -635,8 +635,8 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
     roundsDrawn++;
     roundResult = roundResults[0];
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 0, 255)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 0, 255)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(100, 100, 255)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(100, 100, 255)";
   } else if (playerChoice === "Fire" && rivalChoice === "Grass" ||
             playerChoice === "Grass" && rivalChoice === "Water" ||
             playerChoice === "Water" && rivalChoice === "Fire") {
@@ -644,8 +644,8 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 255, 0)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 0, 0)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(160, 255, 160)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 100, 100)";
     playerScore++;
     roundResult = roundResults[2];
     generateCriticalHitChance(criticalHitDiv);
@@ -654,8 +654,8 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 0, 0)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 255, 0)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 100, 100)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(160, 255, 160)";
     rivalScore++;
     roundResult = roundResults[1];
     generateCriticalHitChance(criticalHitDiv);
