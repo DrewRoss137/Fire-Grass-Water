@@ -22,28 +22,39 @@ buttons.addEventListener("click", function getImgAlt(element) {
 const playerName = "Player Name".toUpperCase();
 const rivalName = "Rival Name".toUpperCase();
 
-/* Round Text */
+/* Choices */
 const choices = ["Fire", "Grass", "Water"];
 
+/* Pokémon */
 const pokémon = {
   Fire: "CHARMANDER",
   Grass: "BULBASAUR",
   Water: "SQUIRTLE"
 };
 
+/* Attacks */
 const attacks = {
   Fire: ["EMBER", "FLAME THROWER"],
   Grass: ["RAZOR LEAF", "VINE WHIP"],
   Water: ["BUBBLE", "HYDRO PUMP", "WATER GUN"]
 };
 
+/* Attack Effectiveness */
 const attackEffectiveness = {
   Draw: "failed!",
   Lose: "not very effective...",
   Win: "super effective!"
 };
 
+/* Round Results */
 const roundResults = ["Draw", "Lose", "Win"];
+
+/* Pokémon Colours */
+const pokémonColours = {
+  "CHARMANDER": "rgb(255, 100, 100)",
+  "BULBASAUR": "rgb(160, 255, 160)",
+  "SQUIRTLE": "rgb(100, 100, 255)"
+};
 
 /**************
 Scores
@@ -523,7 +534,7 @@ gameResultResult.id = "game-result-result";
 
 const gameResultVersusTextSpan = document.createElement("span");
 gameResultVersusTextSpan.id = "game-result-versus-text";
-gameResultVersusTextSpan.textContent = "versus";
+gameResultVersusTextSpan.textContent = "versus ";
 
 const gameResultRivalNameSpan = document.createElement("span");
 gameResultRivalNameSpan.id = "game-result-rival-name";
@@ -641,17 +652,23 @@ function playRound(playerChoice, rivalChoice) {
   insertElement(roundDiv, "scores");
   playerPokémonNameSpan.textContent = `${playerPokémon}!`;
   rivalPokémonNameSpan.textContent = `${rivalPokémon}!`;
+  playerPokémonNameSpan.style.color = pokémonColours[playerPokémon];
+  rivalPokémonNameSpan.style.color = pokémonColours[rivalPokémon];
   
   playerPokémonAttackPokémonNameSpan.textContent = `${playerPokémon} `;
+  playerPokémonAttackPokémonNameSpan.style.color = pokémonColours[playerPokémon];
   playerPokémonAttackPokémonAttackSpan.textContent = `${playerPokémonAttack}!`;
   playerPokémonAttackEffectivenessTextSpan.textContent = playerPokémonAttackEffectiveness;
   
   rivalPokémonAttackPokémonNameSpan.textContent = `${rivalPokémon} `;
+  rivalPokémonAttackPokémonNameSpan.style.color = pokémonColours[rivalPokémon];
   rivalPokémonAttackPokémonAttackSpan.textContent = `${rivalPokémonAttack}!`;
   rivalPokémonAttackEffectivenessTextSpan.textContent = rivalPokémonAttackEffectiveness;
   
   roundResultPlayerPokémonSpan.textContent = `${playerPokémon} `;
+  roundResultPlayerPokémonSpan.style.color = pokémonColours[playerPokémon];
   roundResultRivalPokémonSpan.textContent = `${rivalPokémon}!`;
+  roundResultRivalPokémonSpan.style.color = pokémonColours[rivalPokémon];
   
   switch (roundResult) {
     case roundResults[0]:
@@ -674,17 +691,21 @@ function playRound(playerChoice, rivalChoice) {
     if (playerScore > rivalScore) {
       faintNameSpan.textContent = `${rivalName}'s `;
       faintPokémonSpan.textContent = ` ${rivalPokémon} `;
+      faintPokémonSpan.style.color = pokémonColours[rivalPokémon];
       expNameSpan.textContent = `${playerName}'s `;
       expPokémonSpan.textContent = `${playerPokémon} `;
-      gameResultResult.style.color = "green";
-      gameResultResult.textContent = "WON";
+      expPokémonSpan.style.color = pokémonColours[playerPokémon];
+      gameResultResult.style.color = "rgb(0, 255, 0)";
+      gameResultResult.textContent = "WON ";
     } else {
-      gameResultResult.style.color = "red";
-      gameResultResult.textContent = "LOST";
+      gameResultResult.style.color = "rgb(255, 0, 0)";
+      gameResultResult.textContent = "LOST ";
       faintNameSpan.textContent = `${playerName}'s `;
       faintPokémonSpan.textContent = `${playerPokémon} `;
+      faintPokémonSpan.style.color = pokémonColours[playerPokémon];
       expNameSpan.textContent = `${rivalName}'s `;
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
+      expPokémonSpan.style.color = pokémonColours[rivalPokémon];
     }
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
     roundDiv.appendChild(faintDiv)
