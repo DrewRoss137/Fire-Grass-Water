@@ -324,7 +324,7 @@ Pre-Round
 #player-pokémon-attack-player-name,
 #round-result-player-name,
 #game-result-player-name {
-    color: rgb(0, 0, 255);
+    color: rgb(0, 100, 255);
 }
 
 #rival-score-name,
@@ -334,7 +334,7 @@ Pre-Round
 #round-result-rival-name,
 #critical-hit,
 #game-result-rival-name {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 100, 0);
 }
 
 #player-score-name,

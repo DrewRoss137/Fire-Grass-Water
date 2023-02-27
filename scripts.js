@@ -65,8 +65,8 @@ const pokémonAttackColours = {
 
 /* Player Colours */
 const playerColours = {
-  [playerName]: "rgb(0, 0, 255)",
-  [rivalName]: "rgb(255, 0, 0)",
+  [playerName]: "rgb(0, 100, 255)",
+  [rivalName]: "rgb(255, 100, 0)",
 }
 
 /**************
