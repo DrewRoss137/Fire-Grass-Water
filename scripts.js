@@ -116,6 +116,7 @@ Round
 /* Critical Hit */
 const criticalHitDiv = document.createElement("div");
 criticalHitDiv.id = "critical-hit";
+criticalHitDiv.textContent = "A critical hit!"
 
 /* Player Pokémon */
 const playerPokémonPlayerNameSpan = document.createElement("span");
@@ -594,9 +595,6 @@ let rivalPokémon;
 let playerPokémonAttack;
 let rivalPokémonAttack;
 
-/* Critical Hit Chance */
-let criticalHitChance;
-
 /* Pokémon Attack Effectiveness */
 let playerPokémonAttackEffectiveness;
 let rivalPokémonAttackEffectiveness;
@@ -635,6 +633,7 @@ function getRivalChoice() {
 function playRound(playerChoice, rivalChoice) {
   criticalHitDiv.remove();
   totalRoundsPlayed++;
+  insertCriticalHit(roundResult);
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
@@ -657,7 +656,6 @@ function playRound(playerChoice, rivalChoice) {
     playerScore++;
     roundResultRoundResultSpan.style.color = "rgb(40, 64, 40)"
     roundResult = roundResults[2];
-    generateCriticalHitChance(criticalHitDiv);
   } else {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
@@ -668,7 +666,6 @@ function playRound(playerChoice, rivalChoice) {
     rivalScore++;
     roundResultRoundResultSpan.style.color = "rgb(32, 13, 13)"
     roundResult = roundResults[1];
-    generateCriticalHitChance(criticalHitDiv);
   }
 
   insertElement(scoresDiv, "buttons");
@@ -704,11 +701,9 @@ function playRound(playerChoice, rivalChoice) {
       break;
     case roundResults[2]:
       roundResultRoundResultSpan.textContent = "won ";
-      roundDiv.insertBefore(criticalHitDiv, playerPokémonAttackDiv.nextSibling);
       break;
     case roundResults[1]:
       roundResultRoundResultSpan.textContent = "lost ";
-      roundDiv.insertBefore(criticalHitDiv, rivalPokémonAttackDiv.nextSibling);
       break;
   };
   
@@ -770,16 +765,19 @@ function playRound(playerChoice, rivalChoice) {
   }
 };
 
-function generateCriticalHitChance(divName) {
-  const criticalHitChance = Math.random();
-  console.log(criticalHitChance);
-  if (criticalHitChance <= 100) {
-    divName.textContent = "A critical hit!";
-  }
-};
-
 function insertElement(newDiv, divID) {
   const overheadDiv = document.getElementById(divID);
   const overheadDivParent = overheadDiv.parentNode;
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling);
+};
+
+function insertCriticalHit(roundResult) {
+  if (roundResult === roundResults[2] || roundResult === roundResults[1]) {
+    const attackElement = roundResult === roundResults[2]
+      ? document.getElementById("player-pokémon-attack")
+      : document.getElementById("rival-pokémon-attack");
+    if (Math.random() <= 0.25) {
+      attackElement.insertAdjacentElement("afterend", criticalHitDiv);
+    }
+  }
 };
