@@ -399,14 +399,10 @@ Post-Game
     color: rgb(12, 12, 12);
     flex-direction: column;
     gap: 12px;
-    margin-top: 58px;
-    opacity: 0.75;
-    text-align: center;
-}
-
-#quote,
-#footer {
     letter-spacing: -1.5px;
+    opacity: 0.5;
+    padding-top: 58px;
+    text-align: center;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.4);
 }
 
@@ -415,8 +411,7 @@ Post-Game
     max-width: 400px;
 }
 
-#quote-attribution,
-#footer {
+#quote-attribution {
     font-size: 24px;
 }
 
@@ -428,6 +423,6 @@ Post-Game
     filter: invert(1);
     max-width: 40px;
     opacity: 0.03;
-    padding-bottom: 4px;
-    padding-right: 8px;
+    padding-bottom: 16px;
+    padding-right: 16px;
 }
