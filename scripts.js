@@ -69,10 +69,6 @@ const playerColours = {
   [rivalName]: "rgb(255, 0, 0)",
 }
 
-/* Pokémon Attack Effectiveness Colours */
-const pokémonAttackEffectivenessColours = {
-}
-
 /**************
 Scores
 **************/
@@ -87,8 +83,7 @@ playerScoreScoreSpan.id = "player-score-score";
 
 const playerScoreDiv = document.createElement("div");
 playerScoreDiv.id = "player-score";
-playerScoreDiv.appendChild(playerScoreNameSpan);
-playerScoreDiv.appendChild(playerScoreScoreSpan);
+playerScoreDiv.append(playerScoreNameSpan, playerScoreScoreSpan);
 
 /* Rival Score */
 const rivalScoreNameSpan = document.createElement("span");
@@ -100,14 +95,12 @@ rivalScoreScoreSpan.id = "rival-score-score";
 
 const rivalScoreDiv = document.createElement("div");
 rivalScoreDiv.id = "rival-score";
-rivalScoreDiv.appendChild(rivalScoreNameSpan);
-rivalScoreDiv.appendChild(rivalScoreScoreSpan);
+rivalScoreDiv.append(rivalScoreNameSpan, rivalScoreScoreSpan);
 
-/* Scores Div */
+/* Scores */
 const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
-scoresDiv.appendChild(playerScoreDiv);
-scoresDiv.appendChild(rivalScoreDiv);
+scoresDiv.append(playerScoreDiv, rivalScoreDiv);
 
 /**************
 Round
@@ -132,9 +125,7 @@ playerPokémonNameSpan.id = "player-pokémon-name";
 
 const playerPokémonDiv = document.createElement("div");
 playerPokémonDiv.id = "player-pokémon";
-playerPokémonDiv.appendChild(playerPokémonPlayerNameSpan);
-playerPokémonDiv.appendChild(playerPokémonGoTextSpan);
-playerPokémonDiv.appendChild(playerPokémonNameSpan);
+playerPokémonDiv.append(playerPokémonPlayerNameSpan, playerPokémonGoTextSpan, playerPokémonNameSpan);
 
 /* Rival Pokémon */
 const rivalPokémonRivalNameSpan = document.createElement("span");
@@ -150,9 +141,7 @@ rivalPokémonNameSpan.id = "rival-pokémon-name";
 
 const rivalPokémonDiv = document.createElement("div");
 rivalPokémonDiv.id = "rival-pokémon";
-rivalPokémonDiv.appendChild(rivalPokémonRivalNameSpan);
-rivalPokémonDiv.appendChild(rivalPokémonGoTextSpan);
-rivalPokémonDiv.appendChild(rivalPokémonNameSpan);
+rivalPokémonDiv.append(rivalPokémonRivalNameSpan, rivalPokémonGoTextSpan, rivalPokémonNameSpan);
 
 /* Player Pokémon Attack */
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
@@ -171,10 +160,7 @@ playerPokémonAttackPokémonAttackSpan.id = "player-pokémon-attack-pokémon-att
 
 const playerPokémonAttackDiv = document.createElement("div");
 playerPokémonAttackDiv.id = "player-pokémon-attack";
-playerPokémonAttackDiv.appendChild(playerPokémonAttackPlayerNameSpan);
-playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonNameSpan);
-playerPokémonAttackDiv.appendChild(playerPokémonAttackUsedTextSpan);
-playerPokémonAttackDiv.appendChild(playerPokémonAttackPokémonAttackSpan);
+playerPokémonAttackDiv.append(playerPokémonAttackPlayerNameSpan, playerPokémonAttackPokémonNameSpan, playerPokémonAttackUsedTextSpan, playerPokémonAttackPokémonAttackSpan);
 
 /* Player Pokémon Attack Effectiveness */
 const playerPokémonAttackEffectivenessItTextSpan = document.createElement("span");
@@ -185,8 +171,7 @@ playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effective
 
 const playerPokémonAttackEffectivenessDiv = document.createElement("div");
 playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness";
-playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessItTextSpan);
-playerPokémonAttackEffectivenessDiv.appendChild(playerPokémonAttackEffectivenessTextSpan);
+playerPokémonAttackEffectivenessDiv.append(playerPokémonAttackEffectivenessItTextSpan, playerPokémonAttackEffectivenessTextSpan);
 
 /* Rival Pokémon Attack */
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
@@ -205,10 +190,7 @@ rivalPokémonAttackPokémonAttackSpan.id = "rival-pokémon-attack-pokémon-attac
 
 const rivalPokémonAttackDiv = document.createElement("div");
 rivalPokémonAttackDiv.id = "rival-pokémon-attack";
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackRivalNameSpan);
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonNameSpan);
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackUsedTextSpan);
-rivalPokémonAttackDiv.appendChild(rivalPokémonAttackPokémonAttackSpan);
+rivalPokémonAttackDiv.append(rivalPokémonAttackRivalNameSpan, rivalPokémonAttackPokémonNameSpan, rivalPokémonAttackUsedTextSpan, rivalPokémonAttackPokémonAttackSpan);
 
 /* Rival Pokémon Attack Effectiveness */
 const rivalPokémonAttackEffectivenessItTextSpan = document.createElement("span");
@@ -219,8 +201,7 @@ rivalPokémonAttackEffectivenessTextSpan.id = "rival-pokémon-attack-effectivene
 
 const rivalPokémonAttackEffectivenessDiv = document.createElement("div");
 rivalPokémonAttackEffectivenessDiv.id = "rival-pokémon-attack-effectiveness";
-rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessItTextSpan);
-rivalPokémonAttackEffectivenessDiv.appendChild(rivalPokémonAttackEffectivenessTextSpan);
+rivalPokémonAttackEffectivenessDiv.append(rivalPokémonAttackEffectivenessItTextSpan, rivalPokémonAttackEffectivenessTextSpan);
 
 /* Round Result */
 const roundResultPlayerNameSpan = document.createElement("span");
@@ -246,12 +227,7 @@ roundResultRivalPokémonSpan.id = "round-result-rival-pokémon";
 
 const roundResultDiv = document.createElement("div");
 roundResultDiv.id = "round-result";
-roundResultDiv.appendChild(roundResultPlayerNameSpan);
-roundResultDiv.appendChild(roundResultPlayerPokémonSpan);
-roundResultDiv.appendChild(roundResultRoundResultSpan);
-roundResultDiv.appendChild(roundResultVersusTextSpan);
-roundResultDiv.appendChild(roundResultRivalNameSpan);
-roundResultDiv.appendChild(roundResultRivalPokémonSpan);
+roundResultDiv.append(roundResultPlayerNameSpan, roundResultPlayerPokémonSpan, roundResultRoundResultSpan, roundResultVersusTextSpan, roundResultRivalNameSpan, roundResultRivalPokémonSpan);
 
 /* Faint */
 const faintNameSpan = document.createElement("span");
@@ -266,9 +242,7 @@ faintFaintedTextSpan.textContent = "fainted!";
 
 const faintDiv = document.createElement("div");
 faintDiv.id = "faint";
-faintDiv.appendChild(faintNameSpan);
-faintDiv.appendChild(faintPokémonSpan);
-faintDiv.appendChild(faintFaintedTextSpan);
+faintDiv.append(faintNameSpan, faintPokémonSpan, faintFaintedTextSpan);
 
 /* Exp */
 const expNameSpan = document.createElement("span");
@@ -286,21 +260,12 @@ expAmountSpan.id = "exp-amount";
 
 const expDiv = document.createElement("div");
 expDiv.id = "exp";
-expDiv.appendChild(expNameSpan);
-expDiv.appendChild(expPokémonSpan);
-expDiv.appendChild(expGainedTextSpan);
-expDiv.appendChild(expAmountSpan);
+expDiv.append(expNameSpan, expPokémonSpan, expGainedTextSpan, expAmountSpan);
 
 /* Round */
 const roundDiv = document.createElement("div");
 roundDiv.id = "round";
-roundDiv.appendChild(playerPokémonDiv);
-roundDiv.appendChild(rivalPokémonDiv);
-roundDiv.appendChild(playerPokémonAttackDiv);
-roundDiv.appendChild(playerPokémonAttackEffectivenessDiv);
-roundDiv.appendChild(rivalPokémonAttackDiv);
-roundDiv.appendChild(rivalPokémonAttackEffectivenessDiv);
-roundDiv.appendChild(roundResultDiv);
+roundDiv.append(playerPokémonDiv, rivalPokémonDiv, playerPokémonAttackDiv, playerPokémonAttackEffectivenessDiv, rivalPokémonAttackDiv, rivalPokémonAttackEffectivenessDiv, roundResultDiv);
 
 /**************
 Post-Game
@@ -325,9 +290,7 @@ roundsWonPlayerScoreSpan.id = "rounds-won-player-score";
 const roundsWonDiv = document.createElement("div");
 roundsWonDiv.id = "rounds-won";
 roundsWonDiv.textContent = "ROUNDS ";
-roundsWonDiv.appendChild(roundsWonWonTextSpan);
-roundsWonDiv.appendChild(roundsWonColonSpan);
-roundsWonDiv.appendChild(roundsWonPlayerScoreSpan);
+roundsWonDiv.append(roundsWonWonTextSpan, roundsWonColonSpan, roundsWonPlayerScoreSpan);
 
 /* Rounds Lost */
 const roundsLostLostTextSpan = document.createElement("span");
@@ -344,9 +307,7 @@ roundsLostRivalScoreSpan.id = "rounds-lost-rival-score";
 const roundsLostDiv = document.createElement("div");
 roundsLostDiv.id = "rounds-lost";
 roundsLostDiv.textContent = "ROUNDS ";
-roundsLostDiv.appendChild(roundsLostLostTextSpan);
-roundsLostDiv.appendChild(roundsLostColonSpan);
-roundsLostDiv.appendChild(roundsLostRivalScoreSpan);
+roundsLostDiv.append(roundsLostLostTextSpan, roundsLostColonSpan, roundsLostRivalScoreSpan);
 
 /* Rounds Drawn */
 const roundsDrawnDrawnTextSpan = document.createElement("span");
@@ -363,9 +324,7 @@ roundsDrawnRoundsDrawnSpan.id = "rounds-drawn-rounds-drawn";
 const roundsDrawnDiv = document.createElement("div");
 roundsDrawnDiv.id = "rounds-drawn";
 roundsDrawnDiv.textContent = "ROUNDS ";
-roundsDrawnDiv.appendChild(roundsDrawnDrawnTextSpan);
-roundsDrawnDiv.appendChild(roundsDrawnColonSpan);
-roundsDrawnDiv.appendChild(roundsDrawnRoundsDrawnSpan);
+roundsDrawnDiv.append(roundsDrawnDrawnTextSpan, roundsDrawnColonSpan, roundsDrawnRoundsDrawnSpan);
 
 /* Win Percent */
 const winPercentWinText = document.createElement("span");
@@ -389,11 +348,7 @@ winPercentPostPercentSpan.textContent = "%";
 
 const winPercentDiv = document.createElement("div");
 winPercentDiv.id = "win-percent";
-winPercentDiv.appendChild(winPercentWinText)
-winPercentDiv.appendChild(winPercentPrePercentSignSpan);
-winPercentDiv.appendChild(winPercentColonSpan);
-winPercentDiv.appendChild(winPercentWinPercentSpan);
-winPercentDiv.appendChild(winPercentPostPercentSpan);
+winPercentDiv.append(winPercentWinText, winPercentPrePercentSignSpan, winPercentColonSpan, winPercentWinPercentSpan, winPercentPostPercentSpan)
 
 /* Loss Percent */
 const lossPercentLossText = document.createElement("span");
@@ -417,11 +372,7 @@ lossPercentSign.id = "loss-percent-post-percent-sign";
 
 const lossPercentDiv = document.createElement("div");
 lossPercentDiv.id = "loss-percent";
-lossPercentDiv.appendChild(lossPercentLossText);
-lossPercentDiv.appendChild(lossPercentPrePercentSignSpan);
-lossPercentDiv.appendChild(lossPercentColonSpan);
-lossPercentDiv.appendChild(lossPercentLossPercentSpan);
-lossPercentDiv.appendChild(lossPercentSign);
+lossPercentDiv.append(lossPercentLossText, lossPercentPrePercentSignSpan, lossPercentColonSpan, lossPercentLossPercentSpan, lossPercentSign);
 
 /* Total Rounds Played */
 const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
@@ -438,9 +389,7 @@ totalRoundsPlayedTotalRoundsPlayedSpan.id = "total-rounds-played-total-rounds-pl
 const totalRoundsPlayedDiv = document.createElement("div");
 totalRoundsPlayedDiv.id = "total-rounds-played";
 totalRoundsPlayedDiv.textContent = "TOTAL ROUNDS ";
-totalRoundsPlayedDiv.appendChild(totalRoundsPlayedPlayedTextSpan);
-totalRoundsPlayedDiv.appendChild(totalRoundsPlayedColonSpan);
-totalRoundsPlayedDiv.appendChild(totalRoundsPlayedTotalRoundsPlayedSpan);
+totalRoundsPlayedDiv.append(totalRoundsPlayedPlayedTextSpan, totalRoundsPlayedColonSpan, totalRoundsPlayedTotalRoundsPlayedSpan);
 
 /* Total Win Percent */
 const totalWinPercentWinTextSpan = document.createElement("span");
@@ -465,11 +414,7 @@ totalWinPercentPostPercentSpan.textContent = "%";
 const totalWinPercentDiv = document.createElement("div");
 totalWinPercentDiv.id = "total-win-percent";
 totalWinPercentDiv.textContent = "TOTAL ";
-totalWinPercentDiv.appendChild(totalWinPercentWinTextSpan);
-totalWinPercentDiv.appendChild(totalWinPercentPrePercentSignSpan);
-totalWinPercentDiv.appendChild(totalWinPercentColonSpan);
-totalWinPercentDiv.appendChild(totalWinPercentTotalWinPercentSpan);
-totalWinPercentDiv.appendChild(totalWinPercentPostPercentSpan);
+totalWinPercentDiv.append(totalWinPercentWinTextSpan, totalWinPercentPrePercentSignSpan, totalWinPercentColonSpan, totalWinPercentTotalWinPercentSpan, totalWinPercentPostPercentSpan);
 
 /* Total Loss Percent */
 const totalLossPercentLossTextSpan = document.createElement("span");
@@ -494,11 +439,7 @@ totalLossPercentPostPercentSpan.textContent = "%";
 const totalLossPercentDiv = document.createElement("div");
 totalLossPercentDiv.id = "total-loss-percent";
 totalLossPercentDiv.textContent = "TOTAL ";
-totalLossPercentDiv.appendChild(totalLossPercentLossTextSpan);
-totalLossPercentDiv.appendChild(totalLossPercentPrePercentSignSpan);
-totalLossPercentDiv.appendChild(totalLossPercentColonSpan);
-totalLossPercentDiv.appendChild(totalLossPercentTotalLossPercentSpan);
-totalLossPercentDiv.appendChild(totalLossPercentPostPercentSpan);
+totalLossPercentDiv.append(totalLossPercentLossTextSpan, totalLossPercentPrePercentSignSpan, totalLossPercentColonSpan, totalLossPercentTotalLossPercentSpan, totalLossPercentPostPercentSpan);
 
 /* Total Draw Percent */
 const totalDrawPercentDrawTextSpan = document.createElement("span");
@@ -523,24 +464,12 @@ totalDrawPercentPostPercentSignSpan.textContent = "%";
 const totalDrawPercentDiv = document.createElement("div");
 totalDrawPercentDiv.id = "total-draw-percent";
 totalDrawPercentDiv.textContent = "TOTAL ";
-totalDrawPercentDiv.appendChild(totalDrawPercentDrawTextSpan);
-totalDrawPercentDiv.appendChild(totalDrawPercentPrePercentSignSpan);
-totalDrawPercentDiv.appendChild(totalDrawPercentColonSpan);
-totalDrawPercentDiv.appendChild(totalDrawPercentTotalDrawPercentSpan);
-totalDrawPercentDiv.appendChild(totalDrawPercentPostPercentSignSpan);
+totalDrawPercentDiv.append(totalDrawPercentDrawTextSpan, totalDrawPercentPrePercentSignSpan, totalDrawPercentColonSpan, totalDrawPercentTotalDrawPercentSpan, totalDrawPercentPostPercentSignSpan);
 
 /* Stats */
 const statsDiv = document.createElement("div");
 statsDiv.id = "stats";
-statsDiv.appendChild(roundsWonDiv);
-statsDiv.appendChild(roundsLostDiv);
-statsDiv.appendChild(roundsDrawnDiv);
-statsDiv.appendChild(winPercentDiv);
-statsDiv.appendChild(lossPercentDiv);
-statsDiv.appendChild(totalRoundsPlayedDiv);
-statsDiv.appendChild(totalWinPercentDiv);
-statsDiv.appendChild(totalLossPercentDiv);
-statsDiv.appendChild(totalDrawPercentDiv);
+statsDiv.append(roundsWonDiv, roundsLostDiv, roundsDrawnDiv, winPercentDiv, lossPercentDiv, totalRoundsPlayedDiv, totalWinPercentDiv, totalLossPercentDiv, totalDrawPercentDiv);
 
 /* Game Result */
 const gameResultPlayerNameSpan = document.createElement("span");
@@ -560,16 +489,12 @@ gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
 const gameResultDiv = document.createElement("div");
 gameResultDiv.id = "game-result";
-gameResultDiv.appendChild(gameResultPlayerNameSpan);
-gameResultDiv.appendChild(gameResultResult);
-gameResultDiv.appendChild(gameResultVersusTextSpan);
-gameResultDiv.appendChild(gameResultRivalNameSpan);
+gameResultDiv.append(gameResultPlayerNameSpan, gameResultResult, gameResultVersusTextSpan, gameResultRivalNameSpan);
 
 /* Post-Game */
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
-postGameDiv.appendChild(statsDiv);
-postGameDiv.appendChild(gameResultDiv);
+postGameDiv.append(statsDiv, gameResultDiv);
 
 /**************
 Variables
@@ -633,7 +558,7 @@ function getRivalChoice() {
 function playRound(playerChoice, rivalChoice) {
   criticalHitDiv.remove();
   totalRoundsPlayed++;
-  insertCriticalHit(roundResult);
+  generateCriticalHit(roundResult);
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
@@ -771,12 +696,12 @@ function insertElement(newDiv, divID) {
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling);
 };
 
-function insertCriticalHit(roundResult) {
+function generateCriticalHit(roundResult) {
   if (roundResult === roundResults[2] || roundResult === roundResults[1]) {
     const attackElement = roundResult === roundResults[2]
       ? document.getElementById("player-pokémon-attack")
       : document.getElementById("rival-pokémon-attack");
-    if (Math.random() <= 0.25) {
+    if (Math.random() <= 0.33) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
