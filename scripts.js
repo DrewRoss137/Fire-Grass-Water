@@ -1,8 +1,9 @@
 /**************
 Test - Temporary
 **************/
+ 
+/* Display Elements From Left To Write, Letter By Letter
 
-/* Display Elements From Left To Write, Letter By Letter */
 function typeElementText(element) {
   const text = element.textContent;
   element.textContent = "";
@@ -13,8 +14,9 @@ function typeElementText(element) {
   };
   setTimeout(addChar, 100);
 };
+*/
 
-/* Fade-In */
+/* Fade-In 
 const overlay = document.createElement("div");
 overlay.id = "overlay";
 overlay.style.position = "fixed";
@@ -26,10 +28,10 @@ overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 document.body.appendChild(overlay);
 
 function fadeOutOverlay() {
-  // Select the element with the ID "black-screen"
+
   const overlay = document.getElementById("overlay");
   
-  // Set the CSS properties for the black screen
+
   overlay.style.position = "fixed";
   overlay.style.top = "0";
   overlay.style.left = "0";
@@ -38,18 +40,75 @@ function fadeOutOverlay() {
   overlay.style.backgroundColor = "black";
   overlay.style.opacity = "1";
   overlay.style.transition = "opacity 2s ease-in-out";
-  
-  // Wait for the page to load
+
   window.addEventListener("load", function() {
-    // Fade out the black screen
+
     overlay.style.opacity = "0";
   });
 }
-
-// Call the function when the page is loaded
 window.addEventListener("load", fadeOutOverlay);
+*/
 
-fadeOutOverlay()
+function showOverlay() {
+  // create overlay element
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'black';
+  overlay.style.opacity = '1';
+  overlay.style.zIndex = '9999';
+  overlay.style.transition = 'opacity 2s'; // added this line
+  document.body.appendChild(overlay);
+
+  // create form element
+  const form = document.createElement('form');
+  form.style.position = 'absolute';
+  form.style.top = '50%';
+  form.style.left = '50%';
+  form.style.transform = 'translate(-50%, -50%)';
+  form.style.zIndex = '10000';
+  overlay.appendChild(form);
+
+  // create input for playerName
+  const playerNameInput = document.createElement('input');
+  playerNameInput.type = 'text';
+  playerNameInput.placeholder = 'Enter your name';
+  playerNameInput.required = true;
+  form.appendChild(playerNameInput);
+
+  // create input for rivalName
+  const rivalNameInput = document.createElement('input');
+  rivalNameInput.type = 'text';
+  rivalNameInput.placeholder = 'Enter your rival\'s name';
+  rivalNameInput.required = true;
+  form.appendChild(rivalNameInput);
+
+  // create submit button
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Start game';
+  form.appendChild(submitButton);
+
+  // handle form submission
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const playerName = playerNameInput.value;
+    const rivalName = rivalNameInput.value;
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      document.body.removeChild(overlay);
+    }, 2000); // changed duration to 2000ms
+  });
+}
+
+window.addEventListener('load', showOverlay);
+
+
+
+
 
 /**************
 Const
