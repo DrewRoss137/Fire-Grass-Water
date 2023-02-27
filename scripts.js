@@ -660,7 +660,7 @@ function playRound(playerChoice, rivalChoice) {
     const expValue = Math.floor(Math.random() * 51) + 50;
     insertElement(postGameDiv, "round");
     insertElement(gameResultDiv, "stats");
-  
+
     if (playerScore > rivalScore) {
       faintNameSpan.style.color = playerColours[rivalName];
       faintPokémonSpan.style.color = pokémonColours[rivalPokémon];
@@ -672,6 +672,7 @@ function playRound(playerChoice, rivalChoice) {
       expPokémonSpan.textContent = `${playerPokémon} `;
       gameResultResult.style.color = "rgb(0, 255, 0)";
       gameResultResult.textContent = "WON ";
+
     } else {
       faintNameSpan.style.color = playerColours[playerName];
       faintPokémonSpan.style.color = pokémonColours[playerPokémon];
@@ -684,15 +685,17 @@ function playRound(playerChoice, rivalChoice) {
       gameResultResult.style.color = "rgb(255, 0, 0)";
       gameResultResult.textContent = "LOST ";
     }
-  
+
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
     roundDiv.append(faintDiv, expDiv);
+
     roundsPlayed = playerScore + rivalScore;
     winPercent = ((playerScore / roundsPlayed) * 100).toFixed(2);
     lossPercent = ((rivalScore / roundsPlayed) * 100).toFixed(2);
     totalWinPercent = ((playerScore / totalRoundsPlayed) * 100).toFixed(2);
     totalLossPercent = ((rivalScore / totalRoundsPlayed) * 100).toFixed(2);
     totalDrawPercent = ((roundsDrawn / totalRoundsPlayed) * 100).toFixed(2);
+
     roundsWonPlayerScoreSpan.textContent = playerScore;
     roundsLostRivalScoreSpan.textContent = rivalScore;
     roundsDrawnRoundsDrawnSpan.textContent = roundsDrawn;
@@ -702,7 +705,7 @@ function playRound(playerChoice, rivalChoice) {
     totalWinPercentTotalWinPercentSpan.textContent = totalWinPercent;
     totalLossPercentTotalLossPercentSpan.textContent = totalLossPercent;
     totalDrawPercentTotalDrawPercentSpan.textContent = totalDrawPercent;
-  
+    
     playerScore = 0;
     rivalScore = 0;
     totalRoundsPlayed = 0;
@@ -729,4 +732,15 @@ function generateCriticalHit(roundResult) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
+};
+
+function typeElementText(element) {
+  const text = element.textContent;
+  element.textContent = "";
+  let i = 0;
+  const addChar = () => {
+    element.textContent += text[i++];
+    if (i < text.length) setTimeout(addChar, 100);
+  };
+  setTimeout(addChar, 100);
 };
