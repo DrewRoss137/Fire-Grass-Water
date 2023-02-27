@@ -5,17 +5,23 @@ Const
 /* Buttons */
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", function getImgAlt(element) {
-  if (element.target.tagName === "IMG") {
+  if (element.target.tagName === "IMG" && element.target.classList.contains("pokémon")) {
     playerChoice = element.target.alt;
     playerPokémon = pokémon[playerChoice];
     playerPokémonAttack = generateAttack(playerChoice);
-    /* Temporary - Uncomment When Game Ready;)
+    /* Temporary - Uncomment When Game Ready
     rivalChoice = getRivalChoice(); 
     */
     rivalPokémon = pokémon[rivalChoice];
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice);
   }
+});
+
+/* GitHub Logo */
+const githubLogo = document.querySelector("#github-logo");
+githubLogo.addEventListener("click", function openGitHubProfile() {
+  window.open("https://github.com/DrewRoss137", "_blank")
 });
 
 /* Names */
