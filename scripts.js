@@ -32,15 +32,15 @@ const pokémon = {
   Water: "SQUIRTLE"
 };
 
-/* Attacks */
-const attacks = {
+/* Pokémon Attacks */
+const pokémonAttacks = {
   Fire: ["EMBER", "FLAME THROWER"],
   Grass: ["RAZOR LEAF", "VINE WHIP"],
   Water: ["BUBBLE", "HYDRO PUMP", "WATER GUN"]
 };
 
-/* Attack Effectiveness */
-const attackEffectiveness = {
+/* Pokémon Attack Effectiveness */
+const pokémonAttackEffectiveness = {
   Draw: "failed!",
   Lose: "not very effective...",
   Win: "super effective!"
@@ -548,7 +548,7 @@ Functions
 **************/
 
 function generateAttack(choice) {
-  return attacks[choice][Math.floor(Math.random() * attacks[choice].length)];
+  return pokémonAttacks[choice][Math.floor(Math.random() * pokémonAttacks[choice].length)];
 };
 
 function getRivalChoice() {
@@ -564,8 +564,8 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
     playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(25, 25, 64)";
     rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(25, 25, 64)";
-    playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
-    rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[0]];
+    playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[0]];
+    rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[0]];
     roundsDrawn++;
     roundResultRoundResultSpan.style.color = "rgb(50, 50, 128)"
     roundResult = roundResults[0];
@@ -576,8 +576,8 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(128, 50, 50)";
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
-    playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
-    rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
+    playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[2]];
+    rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[1]];
     playerScore++;
     roundResultRoundResultSpan.style.color = "rgb(40, 64, 40)"
     roundResult = roundResults[2];
@@ -586,8 +586,8 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(128, 50, 50)";
     rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(50, 128, 50)";
-    playerPokémonAttackEffectiveness = attackEffectiveness[roundResults[1]];
-    rivalPokémonAttackEffectiveness = attackEffectiveness[roundResults[2]];
+    playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[1]];
+    rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[2]];
     rivalScore++;
     roundResultRoundResultSpan.style.color = "rgb(32, 13, 13)"
     roundResult = roundResults[1];
