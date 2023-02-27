@@ -1,4 +1,57 @@
 /**************
+Test - Temporary
+**************/
+
+/* Display Elements From Left To Write, Letter By Letter */
+function typeElementText(element) {
+  const text = element.textContent;
+  element.textContent = "";
+  let i = 0;
+  const addChar = () => {
+    element.textContent += text[i++];
+    if (i < text.length) setTimeout(addChar, 100);
+  };
+  setTimeout(addChar, 100);
+};
+
+/* Fade-In */
+const overlay = document.createElement("div");
+overlay.id = "overlay";
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+document.body.appendChild(overlay);
+
+function fadeOutOverlay() {
+  // Select the element with the ID "black-screen"
+  const overlay = document.getElementById("overlay");
+  
+  // Set the CSS properties for the black screen
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "black";
+  overlay.style.opacity = "1";
+  overlay.style.transition = "opacity 2s ease-in-out";
+  
+  // Wait for the page to load
+  window.addEventListener("load", function() {
+    // Fade out the black screen
+    overlay.style.opacity = "0";
+  });
+}
+
+// Call the function when the page is loaded
+window.addEventListener("load", fadeOutOverlay);
+
+fadeOutOverlay()
+
+/**************
 Const
 **************/
 
@@ -732,15 +785,4 @@ function generateCriticalHit(roundResult) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
-};
-
-function typeElementText(element) {
-  const text = element.textContent;
-  element.textContent = "";
-  let i = 0;
-  const addChar = () => {
-    element.textContent += text[i++];
-    if (i < text.length) setTimeout(addChar, 100);
-  };
-  setTimeout(addChar, 100);
 };
