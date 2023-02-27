@@ -18,8 +18,12 @@ body {
     margin: 0;
     padding: 0;
 }
-  
+
 img {
+    cursor: pointer;
+}
+
+img .pokémon {
     padding: 55px;
 }
   
@@ -88,7 +92,7 @@ img {
     font-weight: bold;
 }
 
-img,
+img .pokémon,
 #header,
 #buttons,
 #fire-button-text,
@@ -417,7 +421,13 @@ Post-Game
 }
 
 #footer {
-    color: rgb(25, 25, 25);
     justify-content: flex-end;
-    padding: 16px;
+}
+
+#github-logo {
+    filter: invert(1);
+    max-width: 40px;
+    opacity: 0.03;
+    padding-bottom: 4px;
+    padding-right: 8px;
 }
