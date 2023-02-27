@@ -5,7 +5,7 @@ Const
 /* Buttons */
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", function getImgAlt(element) {
-  if (element.target.tagName === "IMG" && element.target.classList.contains("pokémon")) {
+  if (element.target.tagName === "IMG") {
     playerChoice = element.target.alt;
     playerPokémon = pokémon[playerChoice];
     playerPokémonAttack = generateAttack(playerChoice);
@@ -497,10 +497,28 @@ const gameResultDiv = document.createElement("div");
 gameResultDiv.id = "game-result";
 gameResultDiv.append(gameResultPlayerNameSpan, gameResultResult, gameResultVersusTextSpan, gameResultRivalNameSpan);
 
+/* Retry Button */
+const retryButtonDiv = document.createElement("div");
+retryButtonDiv.id = "retry-button";
+
+const retryButtonGoAGSpan = document.createElement("span");
+retryButtonGoAGSpan.id = "retry-button-go-ag-text";
+retryButtonGoAGSpan.textContent = "GO AG"
+
+const retryButtonAINSpan = document.createElement("span");
+retryButtonAINSpan.id = "retry-button-ain-text";
+retryButtonAINSpan.textContent = "AIN!"
+
+const retryButtonTextSpan = document.createElement("span");
+retryButtonTextSpan.id = "retry-button-text";
+retryButtonTextSpan.append(retryButtonGoAGSpan, retryButtonAINSpan)
+
+retryButtonDiv.appendChild(retryButtonTextSpan);
+
 /* Post-Game */
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
-postGameDiv.append(statsDiv, gameResultDiv);
+postGameDiv.append(statsDiv, gameResultDiv, retryButtonDiv);
 
 /**************
 Variables
