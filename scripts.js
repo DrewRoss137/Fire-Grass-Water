@@ -4,135 +4,133 @@ Test - Temporary
  
 function fadeIn() {
   // create overlay element
-  const overlay = document.createElement('div');
-  overlay.style.position = 'fixed';
-  overlay.style.top = '0';
-  overlay.style.left = '0';
-  overlay.style.width = '100%';
-  overlay.style.height = '100%';
-  overlay.style.backgroundColor = 'black';
-  overlay.style.opacity = '0'; // set initial opacity to 0
-  overlay.style.zIndex = '9999';
-  overlay.style.transition = 'opacity 2s'; // added this line
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "black";
+  overlay.style.opacity = "0"; // set initial opacity to 0
+  overlay.style.zIndex = "9999";
+  overlay.style.transition = "opacity 2s"; // added this line
 
   // apply flex display and center its children
-  overlay.style.display = 'flex';
-  overlay.style.justifyContent = 'center';
-  overlay.style.alignItems = 'center';
+  overlay.style.display = "flex";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignItems = "center";
 
   document.body.appendChild(overlay);
 
   // fade in the overlay after 5 seconds
   setTimeout(() => {
-    overlay.style.opacity = '1';
+    overlay.style.opacity = "1";
   }, 250);
 
   // create form and text elements after another 2 seconds
   setTimeout(() => {
     // create div element for displaying text
-    const textDiv = document.createElement('div');
-    textDiv.style.color = 'white';
-    textDiv.style.marginBottom = '10px';
-    textDiv.style.opacity = '0'; // set initial opacity to 0
-    textDiv.style.transition = 'opacity 1s'; // added this line
+    const textDiv = document.createElement("div");
+    textDiv.style.color = "white";
+    textDiv.style.marginBottom = "10px";
+    textDiv.style.opacity = "0"; // set initial opacity to 0
+    textDiv.style.transition = "opacity 1s"; // added this line
     textDiv.textContent = "Let's begin with your name. What is it?";
 
     overlay.appendChild(textDiv);
 
     // fade in the text element
     setTimeout(() => {
-      textDiv.style.opacity = '1';
+      textDiv.style.opacity = "1";
     }, 1000);
 
     // create form element after another delay
     setTimeout(() => {
-      const form = document.createElement('form');
-      form.style.opacity = '0'; // set initial opacity to 0
-      form.style.transition = 'opacity 1s'; // added this line
-      form.style.marginTop = '20px';
-      form.style.display = 'flex';
-      form.style.flexDirection = 'column';
-      form.style.alignItems = 'center';
+      const form = document.createElement("form");
+      form.style.opacity = "0"; // set initial opacity to 0
+      form.style.transition = "opacity 1s"; // added this line
+      form.style.marginTop = "20px";
+      form.style.display = "flex";
+      form.style.flexDirection = "column";
+      form.style.alignItems = "center";
 
       overlay.appendChild(form);
 
       // create input for playerName
-      const playerNameInput = document.createElement('input');
-      playerNameInput.type = 'text';
-      playerNameInput.placeholder = 'Enter your name';
+      const playerNameInput = document.createElement("input");
+      playerNameInput.type = "text";
+      playerNameInput.placeholder = "Enter your name";
       playerNameInput.required = true;
-      playerNameInput.style.opacity = '0'; // set initial opacity to 0
-      playerNameInput.style.transition = 'opacity 1s'; // added this line
+      playerNameInput.style.opacity = "0"; // set initial opacity to 0
+      playerNameInput.style.transition = "opacity 1s"; // added this line
       form.appendChild(playerNameInput);
 
       // create submit button
-      const submitButton = document.createElement('button');
-      submitButton.type = 'submit';
-      submitButton.textContent = 'Next';
-      submitButton.style.opacity = '0'; // set initial opacity to 0
-      submitButton.style.transition = 'opacity 1s'; // added this line
+      const submitButton = document.createElement("button");
+      submitButton.type = "submit";
+      submitButton.textContent = "Next";
+      submitButton.style.opacity = "0"; // set initial opacity to 0
+      submitButton.style.transition = "opacity 1s"; // added this line
       form.appendChild(submitButton);
 
       // fade in the form elements moments after the text element fades in
       setTimeout(() => {
-        playerNameInput.style.opacity = '1';
-        submitButton.style.opacity = '1';
-        form.style.opacity = '1';
+        playerNameInput.style.opacity = "1";
+        submitButton.style.opacity = "1";
+        form.style.opacity = "1";
       }, 1500);
 
       // handle form submission
-      submitButton.addEventListener('click', (event) => {
+      submitButton.addEventListener("click", (event) => {
         event.preventDefault();
         const playerName = playerNameInput.value;
-        textDiv.style.opacity = '0'; // fade out the text
-        playerNameInput.style.opacity = '0'; // fade out     // the player name input
-        submitButton.style.opacity = '0'; // fade out the next button
+        textDiv.style.opacity = "0"; // fade out the text
+        playerNameInput.style.opacity = "0"; // fade out     // the player name input
+        submitButton.style.opacity = "0"; // fade out the next button
     
         // fade in the rival name input and start game button
         setTimeout(() => {
-          textDiv.textContent = `Right... so your name is ${playerName}. And your rival since you both were babies...Erm, what was his name now?`;
+          textDiv.textContent = `Right... so your name is ${playerName}. And your rival since you both were babies ...Erm, what was his name now?`;
           textDiv.style.opacity = "1";
-    
-          // create div element for displaying rival name
                 // create div element for displaying rival name
-      const rivalNameInput = document.createElement('input');
-      rivalNameInput.type = 'text';
-      rivalNameInput.placeholder = 'Enter your rival\'s name';
+      const rivalNameInput = document.createElement("input");
+      rivalNameInput.type = "text";
+      rivalNameInput.placeholder = "Enter your rival's name";
       rivalNameInput.required = true;
-      rivalNameInput.style.opacity = '0'; // set initial opacity to 0
-      rivalNameInput.style.transition = 'opacity 1s'; // added this line
+      rivalNameInput.style.opacity = "0"; // set initial opacity to 0
+      rivalNameInput.style.transition = "opacity 1s"; // added this line
       form.appendChild(rivalNameInput);
 
-      const submitButton2 = document.createElement('button');
-      submitButton2.type = 'submit';
-      submitButton2.textContent = 'Start game';
-      submitButton2.style.opacity = '0'; // set initial opacity to 0
-      submitButton2.style.transition = 'opacity 1s'; // added this line
+      const submitButton2 = document.createElement("button");
+      submitButton2.type = "submit";
+      submitButton2.textContent = "Start game";
+      submitButton2.style.opacity = "0"; // set initial opacity to 0
+      submitButton2.style.transition = "opacity 1s"; // added this line
       form.appendChild(submitButton2);
 
       // fade in the rival name input and start game button moments after the text fades in
       setTimeout(() => {
-        rivalNameInput.style.opacity = '1';
-        submitButton2.style.opacity = '1';
+        rivalNameInput.style.opacity = "1";
+        submitButton2.style.opacity = "1";
       }, 1000);
 
-      submitButton2.addEventListener('click', (event) => {
+      submitButton2.addEventListener("click", (event) => {
         event.preventDefault();
         const rivalName = rivalNameInput.value;
-        textDiv.style.opacity = '0'; // fade out the text
-        rivalNameInput.style.opacity = '0'; // fade out the rival name input
-        submitButton2.style.opacity = '0'; // fade out the start game button
+        textDiv.style.opacity = "0"; // fade out the text
+        rivalNameInput.style.opacity = "0"; // fade out the rival name input
+        submitButton2.style.opacity = "0"; // fade out the start game button
 
         // fade in the rival's text box
         setTimeout(() => {
           textDiv.textContent = `${rivalName}: Wait, ${playerName}! Let's check out our POKéMON! Come on! I'll take you on!`;
-          textDiv.style.opacity = '1'; // fade in the rival's text
+          textDiv.style.opacity = "1"; // fade in the rival's text
         }, 1500);
 
         // fade out the rival's text box and overlay
         setTimeout(() => {
-          textDiv.style.opacity = '0'; // fade out the rival's text
-          overlay.style.opacity = '0'; // fade out the overlay
+          textDiv.style.opacity = "0"; // fade out the rival's text
+          overlay.style.opacity = "0"; // fade out the overlay
 
           // remove the overlay after it fades out
           setTimeout(() => {
@@ -146,8 +144,8 @@ function fadeIn() {
 }, 5000); // wait 5 seconds before fading in the overlay
 }
 
-window.addEventListener('load', fadeIn);
-  
+window.addEventListener("load", fadeIn);
+
 /**************
 Const
 **************/
