@@ -66,6 +66,14 @@ function fadeIn() {
   overlay.style.transition = 'opacity 2s'; // added this line
   document.body.appendChild(overlay);
 
+  // fade in the overlay after 5 seconds
+  setTimeout(() => {
+    overlay.style.opacity = '1';
+  }, 250);
+
+  // create form and text elements after another 2 seconds
+// create form and text elements after another delay
+setTimeout(() => {
   // create form element
   const form = document.createElement('form');
   form.style.position = 'absolute';
@@ -73,12 +81,16 @@ function fadeIn() {
   form.style.left = '50%';
   form.style.transform = 'translate(-50%, -50%)';
   form.style.zIndex = '10000';
+  form.style.opacity = '0'; // set initial opacity to 0
+  form.style.transition = 'opacity 1s'; // added this line
   overlay.appendChild(form);
 
   // create div element for displaying text
   const textDiv = document.createElement('div');
   textDiv.style.color = 'white';
   textDiv.style.marginBottom = '10px';
+  textDiv.style.opacity = '0'; // set initial opacity to 0
+  textDiv.style.transition = 'opacity 1s'; // added this line
   textDiv.textContent = "Let's begin with your name. What is it?";
   form.appendChild(textDiv);
 
@@ -94,6 +106,12 @@ function fadeIn() {
   submitButton.type = 'submit';
   submitButton.textContent = 'Next';
   form.appendChild(submitButton);
+
+  // fade in the form and text elements
+  setTimeout(() => {
+    form.style.opacity = '1';
+    textDiv.style.opacity = '1';
+  }, 1000);
 
   // handle form submission
   submitButton.addEventListener('click', (event) => {
@@ -115,22 +133,20 @@ function fadeIn() {
       event.preventDefault();
       const rivalName = rivalNameInput.value;
       textDiv.textContent = `${rivalName}: Wait, ${playerName}! Let's check out our POKéMON! Come on! I'll take you on!`;
+      form.style.opacity = '0'; // fade out the form
       setTimeout(() => {
         window.playerName = playerName;
         window.rivalName = rivalName;
         overlay.style.opacity = '0';
         setTimeout(() => {
           document.body.removeChild(overlay);
-        }, 2000);
+        }, 3000);
       }, 3000);
     });
   });
-
-  // fade in the overlay
-  setTimeout(() => {
-    overlay.style.opacity = '1';
-  }, 0); // added a delay of 0ms to allow the DOM to update before the opacity change
+}, 1500);
 }
+
 
 
 
