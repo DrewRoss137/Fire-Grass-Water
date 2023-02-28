@@ -2,162 +2,17 @@
 Test - Temporary
 **************/
  
-/* 
-function fadeIn() {
-  // create overlay element
-  const overlay = document.createElement("div");
-  overlay.style.position = "fixed";
-  overlay.style.top = "0";
-  overlay.style.left = "0";
-  overlay.style.width = "100%";
-  overlay.style.height = "100%";
-  overlay.style.backgroundColor = "black";
-  overlay.style.opacity = "0"; // set initial opacity to 0
-  overlay.style.zIndex = "9999";
-  overlay.style.transition = "opacity 2s"; // added this line
-
-  // apply flex display and center its children
-  overlay.style.display = "flex";
-  overlay.style.justifyContent = "center";
-  overlay.style.alignItems = "center";
-
-  document.body.appendChild(overlay);
-
-  // fade in the overlay after 5 seconds
-  setTimeout(() => {
-    overlay.style.opacity = "1";
-  }, 250);
-
-  // create form and text elements after another 2 seconds
-  setTimeout(() => {
-    // create div element for displaying text
-    const textDiv = document.createElement("div");
-    textDiv.style.color = "white";
-    textDiv.style.marginBottom = "10px";
-    textDiv.style.opacity = "0"; // set initial opacity to 0
-    textDiv.style.transition = "opacity 1s"; // added this line
-    textDiv.textContent = "Let's begin with your name. What is it?";
-
-    overlay.appendChild(textDiv);
-
-    // fade in the text element
-    setTimeout(() => {
-      textDiv.style.opacity = "1";
-    }, 1000);
-
-    // create form element after another delay
-    setTimeout(() => {
-      const form = document.createElement("form");
-      form.style.opacity = "0"; // set initial opacity to 0
-      form.style.transition = "opacity 1s"; // added this line
-      form.style.marginTop = "20px";
-      form.style.display = "flex";
-      form.style.flexDirection = "column";
-      form.style.alignItems = "center";
-
-      overlay.appendChild(form);
-
-      // create input for playerName
-      const playerNameInput = document.createElement("input");
-      playerNameInput.type = "text";
-      playerNameInput.placeholder = "Enter your name";
-      playerNameInput.required = true;
-      playerNameInput.style.opacity = "0"; // set initial opacity to 0
-      playerNameInput.style.transition = "opacity 1s"; // added this line
-      form.appendChild(playerNameInput);
-
-      // create submit button
-      const submitButton = document.createElement("button");
-      submitButton.type = "submit";
-      submitButton.textContent = "Next";
-      submitButton.style.opacity = "0"; // set initial opacity to 0
-      submitButton.style.transition = "opacity 1s"; // added this line
-      form.appendChild(submitButton);
-
-      // fade in the form elements moments after the text element fades in
-      setTimeout(() => {
-        playerNameInput.style.opacity = "1";
-        submitButton.style.opacity = "1";
-        form.style.opacity = "1";
-      }, 1500);
-
-      // handle form submission
-      submitButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        const playerName = playerNameInput.value;
-        textDiv.style.opacity = "0"; // fade out the text
-        playerNameInput.style.opacity = "0"; // fade out     // the player name input
-        submitButton.style.opacity = "0"; // fade out the next button
-    
-        // fade in the rival name input and start game button
-        setTimeout(() => {
-          textDiv.textContent = `Right... so your name is ${playerName}. And your rival since you both were babies ...Erm, what was his name now?`;
-          textDiv.style.opacity = "1";
-                // create div element for displaying rival name
-        const rivalNameInput = document.createElement("input");
-        rivalNameInput.type = "text";
-        rivalNameInput.placeholder = "Enter your rival's name";
-        rivalNameInput.required = true;
-        rivalNameInput.style.opacity = "0"; // set initial opacity to 0
-        rivalNameInput.style.transition = "opacity 1s"; // added this line
-        form.appendChild(rivalNameInput);
-
-        const submitButton2 = document.createElement("button");
-        submitButton2.type = "submit";
-        submitButton2.textContent = "Start game";
-        submitButton2.style.opacity = "0"; // set initial opacity to 0
-        submitButton2.style.transition = "opacity 1s"; // added this line
-        form.appendChild(submitButton2);
-
-        // fade in the rival name input and start game button moments after the text fades in
-        setTimeout(() => {
-          rivalNameInput.style.opacity = "1";
-          submitButton2.style.opacity = "1";
-        }, 1000);
-
-      submitButton2.addEventListener("click", (event) => {
-        event.preventDefault();
-        const rivalName = rivalNameInput.value;
-        textDiv.style.opacity = "0"; // fade out the text
-        rivalNameInput.style.opacity = "0"; // fade out the rival name input
-        submitButton2.style.opacity = "0"; // fade out the start game button
-
-        // fade in the rival's text box
-        setTimeout(() => {
-          textDiv.textContent = `${rivalName}: Wait, ${playerName}! Let's check out our POKéMON! Come on! I'll take you on!`;
-          textDiv.style.opacity = "1"; // fade in the rival's text
-        }, 1500);
-
-        // fade out the rival's text box and overlay
-        setTimeout(() => {
-          textDiv.style.opacity = "0"; // fade out the rival's text
-          overlay.style.opacity = "0"; // fade out the overlay
-
-          // remove the overlay after it fades out
-          setTimeout(() => {
-            document.body.removeChild(overlay);
-          }, 2000);
-        }, 5000);
-      });
-    }, 1500); // wait 1.5 seconds before changing text
-  });
-}, 3000); // create the form after a delay of 3 seconds
-}, 5000); // wait 5 seconds before fading in the overlay
-}
-
-window.addEventListener("load", fadeIn);
-*/
-
 function fadeIn() {
   // Overlay the entire page with a black screen
   const overlay = document.createElement("div");
+  overlay.id = "overlay"
   overlay.style.position = "fixed";
   overlay.style.top = "0";
   overlay.style.left = "0";
   overlay.style.width = "100%";
   overlay.style.height = "100%";
   overlay.style.backgroundColor = "black";
-  overlay.style.opacity = "0";
+  overlay.style.opacity = "0.9"; // Make the overlay darker and less transparent
   document.body.appendChild(overlay);
 
   // Fade in the overlay
@@ -172,7 +27,7 @@ function fadeIn() {
     text.textContent = "Let's begin with your name. What is it?";
     text.style.color = "white";
     text.style.position = "fixed";
-    text.style.top = "50%";
+    text.style.top = "40%";
     text.style.left = "50%";
     text.style.transform = "translate(-50%, -50%)";
     text.style.opacity = "0";
@@ -180,254 +35,253 @@ function fadeIn() {
 
     // Fade in the text
     setTimeout(() => {
-      text.style.transition = "opacity 1s";
+      text.style.transition = "opacity 2s"; // Increase the time for the text to fade in
       text.style.opacity = "1";
-    }, 0);
+    }, 1000); // Wait for 1 second before fading in the text
 
     // Fade in the text-box for user input
     setTimeout(() => {
       const input = document.createElement("input");
       input.type = "text";
       input.style.position = "fixed";
-      input.style.top = "60%";
+      input.style.top = "50%";
       input.style.left = "50%";
       input.style.transform = "translate(-50%, -50%)";
       input.style.opacity = "0";
+      input.style.transition = "opacity 1s"; // Add transition to the input box
       document.body.appendChild(input);
 
       // Fade in the text-box
       setTimeout(() => {
-        input.style.transition = "opacity 1s";
         input.style.opacity = "1";
-      }, 0);
+      }, 1000); // Wait for 1 second before fading in the input box
 
-      // Fade out the text and the text-box after input
-      input.addEventListener("input", () => {
-        setTimeout(() => {
-          text.style.transition = "opacity 1s";
-          text.style.opacity = "0";
-          input.style.transition = "opacity 1s";
-          input.style.opacity = "0";
-        }, 0);
-
-        // Fade in the text "Right..."
-        setTimeout(() => {
-          const text2 = document.createElement("div");
-          text2.textContent = "Right...";
-          text2.style.color = "white";
-          text2.style.position = "fixed";
-          text2.style.top = "50%";
-          text2.style.left = "50%";
-          text2.style.transform = "translate(-50%, -50%)";
-          text2.style.opacity = "0";
-          document.body.appendChild(text2);
-
-          // Fade in the text
+      // Fade out the text and the text-box after enter key pressed
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
           setTimeout(() => {
-            text2.style.transition = "opacity 1s";
-            text2.style.opacity = "1";
+            text.style.opacity = "0";
+            input.style.opacity = "0";
           }, 0);
 
-          // Fade out the text "Right..."
+          // Fade in the text "Right..."
           setTimeout(() => {
-            text2.style.transition = "opacity 1s";
+            const text2 = document.createElement("div");
+            text2.textContent = "Right...";
+            text2.style.color = "white";
+            text2.style.position = "fixed";
+            text2.style.top = "40%";
+            text2.style.left = "50%";
+            text2.style.transform = "translate(-50%, -50%)";
             text2.style.opacity = "0";
-          }, 3000);
-
-          // Fade in the text "So your name is playerName."
-          setTimeout(() => {
-            const text3 = document.createElement("div");
-            text3.textContent = `So your name is ${input.value}.`;
-            text3.style.color = "white";
-            text3.style.position = "fixed";
-            text3.style.top = "50%";
-            text3.style.left = "50%";
-            text3.style.transform = "translate(-50%, -50%)";
-            text3.style.opacity = "0";
-           
-            document.body.appendChild(text3);
+            document.body.appendChild(text2);
 
             // Fade in the text
             setTimeout(() => {
-              text3.style.transition = "opacity 1s";
-              text3.style.opacity = "1";
-            }, 0);
-    
-            // Fade out the text "So your name is playerName."
+              text2.style.transition = "opacity 2s"; // Increase the time for the text to fade in
+              text2.style.opacity = "1";
+            }, 1000); // Wait for 1 second before fading in the text
+
+            // Fade out the text "Right..."
             setTimeout(() => {
-              text3.style.transition = "opacity 1s";
-              text3.style.opacity = "0";
-            }, 3000);
-    
-            // Fade in the text "And your rival since you both were babies..."
+              text2.style.transition = "opacity 2s"; // Increase the time for the text to fade out
+              text2.style.opacity = "0";
+            }, 3000); // Wait for 3 seconds before fading out the text
+
+            // Fade in the text "So your         // name is playerName."
+        setTimeout(() => {
+          const text3 = document.createElement("div");
+          text3.textContent = `So your name is ${input.value}.`;
+          text3.style.color = "white";
+          text3.style.position = "fixed";
+          text3.style.top = "40%";
+          text3.style.left = "50%";
+          text3.style.transform = "translate(-50%, -50%)";
+          text3.style.opacity = "0";
+          document.body.appendChild(text3);
+
+          // Fade in the text
+          setTimeout(() => {
+            text3.style.transition = "opacity 2s"; // Increase the time for the text to fade in
+            text3.style.opacity = "1";
+          }, 4000); // Wait for 4 seconds before fading in the text
+
+          // Fade out the text "So your name is playerName."
+          setTimeout(() => {
+            text3.style.transition = "opacity 2s"; // Increase the time for the text to fade out
+            text3.style.opacity = "0";
+          }, 7000); // Wait for 7 seconds before fading out the text
+
+          // Fade in the text "And your rival since you both were babies..."
+          setTimeout(() => {
+            const text4 = document.createElement("div");
+            text4.textContent = "And your rival since you both were babies...";
+            text4.style.color = "white";
+            text4.style.position = "fixed";
+            text4.style.top = "40%";
+            text4.style.left = "50%";
+            text4.style.transform = "translate(-50%, -50%)";
+            text4.style.opacity = "0";
+            document.body.appendChild(text4);
+
+            // Fade in the text
             setTimeout(() => {
-              const text4 = document.createElement("div");
-              text4.textContent = "And your rival since you both were babies...";
-              text4.style.color = "white";
-              text4.style.position = "fixed";
-              text4.style.top = "50%";
-              text4.style.left = "50%";
-              text4.style.transform = "translate(-50%, -50%)";
+              text4.style.transition = "opacity 2s"; // Increase the time for the text to fade in
+              text4.style.opacity = "1";
+            }, 8000); // Wait for 8 seconds before fading in the text
+
+            // Fade out the text "And your rival since you both were babies..."
+            setTimeout(() => {
+              text4.style.transition = "opacity 2s"; // Increase the time for the text to fade out
               text4.style.opacity = "0";
-              document.body.appendChild(text4);
-    
+            }, 11000); // Wait for 11 seconds before fading out the text
+
+            // Fade in the text "...Erm, what was his name now?"
+            setTimeout(() => {
+              const text5 = document.createElement("div");
+              text5.textContent = "...Erm, what was his name now?";
+              text5.style.color = "white";
+              text5.style.position = "fixed";
+              text5.style.top = "40%";
+              text5.style.left = "50%";
+              text5.style.transform = "translate(-50%, -50%)";
+              text5.style.opacity = "0";
+              document.body.appendChild(text5);
+
               // Fade in the text
               setTimeout(() => {
-                text4.style.transition = "opacity 1s";
-                text4.style.opacity = "1";
-              }, 0);
-    
-              // Fade out the text "And your rival since you both were babies..."
+                text5.style.transition = "opacity 2s"; // Increase the time for the text to fade in
+                text5.style.opacity = "1";
+              }, 12000); // Wait for 12 seconds before fading in the text
+
+              // Fade in the text-box for user input
               setTimeout(() => {
-                text4.style.transition = "opacity 1s";
-                text4.style.opacity = "0";
-              }, 3000);
-    
-              // Fade in the text "...Erm, what was his name now?"
-              setTimeout(() => {
-                const text5 = document.createElement("div");
-                text5.textContent = "...Erm, what was his name now?";
-                text5.style.color = "white";
-                text5.style.position = "fixed";
-                text5.style.top = "50%";
-                text5.style.left = "50%";
-                text5.style.transform = "translate(-50%, -50%)";
-                text5.style.opacity = "0";
-                document.body.appendChild(text5);
-    
-                // Fade in the text
+                const input2 = document.createElement("input");
+                input2.type = "text";
+                input2.style.position = "fixed";
+                input2.style.top = "50%";
+                input2.style.left = "50%";
+                input2.style.transform = "translate(-50%, -50%)";
+                input2.style.opacity = "0";
+                input2.style.transition = "opacity 1s"; // Add transition to the input box
+                document.body.appendChild(input2);
+
+               
+                // Fade in the text-box
                 setTimeout(() => {
-                  text5.style.transition = "opacity 1s";
-                  text5.style.opacity = "1";
-                }, 0);
-    
-                // Fade in the text-box for user input
-                setTimeout(() => {
-                  const input2 = document.createElement("input");
-                  input2.type = "text";
-                  input2.style.position = "fixed";
-                  input2.style.top = "60%";
-                  input2.style.left = "50%";
-                  input2.style.transform = "translate(-50%, -50%)";
-                  input2.style.opacity = "0";
-                  document.body.appendChild(input2);
-    
-                  // Fade in the text-box
-                  setTimeout(() => {
-                    input2.style.transition = "opacity 1s";
-                    input2.style.opacity = "1";
-                  }, 0);
-    
-                  // Fade out the text and the text-box after input
-                  input2.addEventListener("input", () => {
+                  input2.style.opacity = "1";
+                }, 12000); // Wait for 12 seconds before fading in the input box
+
+                // Fade out the text and the text-box after enter key pressed
+                input2.addEventListener("keydown", (event) => {
+                  if (event.key === "Enter") {
                     setTimeout(() => {
-                      text5.style.transition = "opacity 1s";
                       text5.style.opacity = "0";
-                      input2.style.transition = "opacity 1s";
                       input2.style.opacity = "0";
                     }, 0);
-    
+
                     // Fade in the text "That's right! I remember now! His name is rivalName!"
                     setTimeout(() => {
                       const text6 = document.createElement("div");
-                      text6.textContent = `That's right! I remember now! His name is ${input2.value}!`;
+                      text6.textContent = "That's right! I remember now! His name is " + input2.value + "!";
                       text6.style.color = "white";
                       text6.style.position = "fixed";
-                      text6.style.top = "50%";
+                      text6.style.top = "40%";
                       text6.style.left = "50%";
                       text6.style.transform = "translate(-50%, -50%)";
                       text6.style.opacity = "0";
-                     
                       document.body.appendChild(text6);
 
                       // Fade in the text
                       setTimeout(() => {
-                        text6.style.transition = "opacity 1s";
+                        text6.style.transition = "opacity 2s"; // Increase the time for the text to fade in
                         text6.style.opacity = "1";
-                      }, 0);
-    
+                      }, 1000); // Wait for 1 second before fading in the text
+
                       // Fade out the text "That's right! I remember now! His name is rivalName!"
                       setTimeout(() => {
-                        text6.style.transition = "opacity 1s";
+                        text6.style.transition = "opacity 2s"; // Increase the time for the text to fade out
                         text6.style.opacity = "0";
-                      }, 3000);
-    
+                      }, 4000); // Wait for 4 seconds before fading out the text
+
                       // Fade in the text "rivalName: Wait, playerName! Let's check out our pokemon!"
                       setTimeout(() => {
                         const text7 = document.createElement("div");
                         text7.textContent = `${input2.value}: Wait, ${input.value}! Let's check out our pokemon!`;
                         text7.style.color = "white";
                         text7.style.position = "fixed";
-                        text7.style.top = "50%";
+                        text7.style.top = "40%";
                         text7.style.left = "50%";
                         text7.style.transform = "translate(-50%, -50%)";
                         text7.style.opacity = "0";
                         document.body.appendChild(text7);
-    
+
                         // Fade in the text
                         setTimeout(() => {
-                          text7.style.transition = "opacity 1s";
+                          text7.style.transition = "opacity 2s"; // Increase the time for the text to fade in
                           text7.style.opacity = "1";
-                        }, 0);
-    
+                        }, 5000); // Wait for 5 seconds before fading in the text
+
                         // Fade out the text "rivalName: Wait, playerName! Let's check out our pokemon!"
                         setTimeout(() => {
-                          text7.style.transition = "opacity 1s";
+                          text7.style.transition = "opacity 2s"; // Increase the time for the text to fade out
                           text7.style.opacity = "0";
-                        }, 3000);
-    
+                        }, 8000); // Wait for 8 seconds before fading out the text
+
                         // Fade in the text "Come on! I'll take you on!"
                         setTimeout(() => {
                           const text8 = document.createElement("div");
-                          text8.textContent = "Come on! I'll take you on!";
+                          text8.textContent = `${input2.value}: Come on! I'll take you on!`;
                           text8.style.color = "white";
                           text8.style.position = "fixed";
-                          text8.style.top = "50%";
+                          text8.style.top = "40%";
                           text8.style.left = "50%";
                           text8.style.transform = "translate(-50%, -50%)";
                           text8.style.opacity = "0";
                           document.body.appendChild(text8);
-    
+
                           // Fade in the text
                           setTimeout(() => {
-                            text8.style.transition = "opacity 1s";
+                            text8.style.transition = "opacity 2s"; // Increase the time for the text to fade in
                             text8.style.opacity = "1";
-                          }, 0);
-    
+                          }, 9000); // Wait for 9 seconds before fading in the text
+
                           // Fade out the text "Come on! I'll take you on!"
                           setTimeout(() => {
-                            text8.style.transition = "opacity 1s";
+                            text8.style.transition = "opacity 2s"; // Increase the time for the text to fade out
                             text8.style.opacity = "0";
-                          }, 3000);
-    
-                          // Fade out the black overlay
+                          }, 12000); // Wait for 12 seconds before fading out the text
+
+                          // Fade out the overlay
                           setTimeout(() => {
-                            overlay.style.transition = "opacity 1s";
+                            overlay.style.transition = "opacity 2s"; // Increase the time for the overlay to fade out
                             overlay.style.opacity = "0";
-                          }, 3000);
-                        }, 3000);
-                      }, 3000);
-                    }, 3000);
-                  }, 3000);
-                }, 3000);
-              }, 3000);
-            }, 3000);
-          }, 3000);
-        }, 3000);
-      });
-    }, 3000);
-  }, 0);
+                              // Add event listener to remove overlay div when fade out is complete
+                            overlay.addEventListener("transitionend", () => {
+                            overlay.remove();
+                            });
+                          }, 14000); // Wait for 14 seconds before fading out the overlay
+
+                        }, 9000); // Wait for 9 seconds before fading in the text "Come on! I'll take you on!"
+
+                      }, 4000); // Wait for 4 seconds before fading out the text "That's right! I remember now! His name is rivalName!"
+
+                    }, 0); // Wait for the input box to disappear before showing the text "That's right! I remember now! His name is rivalName!"
+
+                  }
+                });
+              }, 14000); // Wait for 14 seconds before fading in the input box
+            }, 11000); // Wait for 11 seconds before fading out the text "...Erm, what was his name now?"
+          }, 8000); // Wait for 8 seconds before fading in the text "And your rival since you both were babies..."
+        }, 7000); // Wait for 7 seconds before fading out the text "So your name is playerName."
+      }, 4000); // Wait for 4 seconds before fading in the text "Right..."
+    }
+  });
+}, 3000); // Wait for 3 seconds before fading out the text "Let's begin with your name. What is it?"
+}, 1000); // Wait for 1 second before fading in the text "Let's begin with your name. What is it?"
 }
 
 fadeIn()
-
-
-                   
-
-
-    
-
-
 
 /**************
 Const
