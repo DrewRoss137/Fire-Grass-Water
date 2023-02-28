@@ -435,7 +435,7 @@ function fadeIn() {
   overlay.style.backgroundColor = 'black';
   overlay.style.opacity = '0'; // set initial opacity to 0
   overlay.style.zIndex = '9999';
-  overlay.style.transition = 'opacity 5s'; // added this line
+  overlay.style.transition = 'opacity 2s'; // added this line
   document.body.appendChild(overlay);
 
   // fade in the overlay after 5 seconds
@@ -452,6 +452,10 @@ function fadeIn() {
     textDiv.style.opacity = '0'; // set initial opacity to 0
     textDiv.style.transition = 'opacity 1s'; // added this line
     textDiv.textContent = "Let's begin with your name. What is it?";
+    textDiv.style.position = 'absolute';
+    textDiv.style.top = '50%';
+    textDiv.style.left = '50%';
+    textDiv.style.transform = 'translate(-50%, -50%)';
     overlay.appendChild(textDiv);
 
     // fade in the text element
@@ -502,7 +506,7 @@ function fadeIn() {
         textDiv.style.opacity = '0'; // fade out the text
         playerNameInput.style.opacity = '0'; // fade out the player name input
         submitButton.style.opacity = '0'; // fade out the next button
-
+    
         // fade in the rival name input and start game button
         setTimeout(() => {
           textDiv.textContent = `Right... so your name is ${playerName}. And your rival since you both were babies...Erm, what was his name now?`;
