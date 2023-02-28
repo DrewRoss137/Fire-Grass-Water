@@ -49,7 +49,10 @@ function fadeOutOverlay() {
 window.addEventListener("load", fadeOutOverlay);
 */
 
-function showOverlay() {
+let playerName;
+let rivalName;
+
+function fadeIn() {
   // create overlay element
   const overlay = document.createElement('div');
   overlay.style.position = 'fixed';
@@ -58,7 +61,7 @@ function showOverlay() {
   overlay.style.width = '100%';
   overlay.style.height = '100%';
   overlay.style.backgroundColor = 'black';
-  overlay.style.opacity = '1';
+  overlay.style.opacity = '0'; // set initial opacity to 0
   overlay.style.zIndex = '9999';
   overlay.style.transition = 'opacity 2s'; // added this line
   document.body.appendChild(overlay);
@@ -95,16 +98,26 @@ function showOverlay() {
   // handle form submission
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const playerName = playerNameInput.value;
-    const rivalName = rivalNameInput.value;
+    window.playerName = playerNameInput.value;
+    window.rivalName = rivalNameInput.value;
     overlay.style.opacity = '0';
     setTimeout(() => {
       document.body.removeChild(overlay);
     }, 2000); // changed duration to 2000ms
   });
+
+  // fade in the overlay
+  setTimeout(() => {
+    overlay.style.opacity = '1';
+  }, 0); // added a delay of 0ms to allow the DOM to update before the opacity change
 }
 
-window.addEventListener('load', showOverlay);
+
+
+window.addEventListener("load", fadeIn);
+
+console.log(playerName)
+console.log(rivalName)
 
 
 
@@ -136,9 +149,7 @@ githubLogo.addEventListener("click", function openGitHubProfile() {
   window.open("https://github.com/DrewRoss137", "_blank")
 });
 
-/* Names */
-const playerName = "Player Name".toUpperCase();
-const rivalName = "Rival Name".toUpperCase();
+
 
 /* Choices */
 const choices = ["Fire", "Grass", "Water"];
