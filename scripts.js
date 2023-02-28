@@ -12,13 +12,13 @@ function fadeIn() {
   overlay.style.width = "100%";
   overlay.style.height = "100%";
   overlay.style.backgroundColor = "black";
-  overlay.style.opacity = "0.9"; // Make the overlay darker and less transparent
+  overlay.style.opacity = "0"; // Start with 0 opacity
   document.body.appendChild(overlay);
 
   // Fade in the overlay
   setTimeout(() => {
-    overlay.style.transition = "opacity 1s";
-    overlay.style.opacity = "0.7";
+    overlay.style.transition = "opacity 3s";
+    overlay.style.opacity = "1"; // Fade into 90% opacity
   }, 0);
 
   // Fade in the text "Let's begin with your name. What is it?"
