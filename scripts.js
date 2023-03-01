@@ -13,33 +13,39 @@ const body = document.querySelector("body");
 const main = document.querySelector("main");
 
 function fadeIn() {
-  /* Pre-Overlay */
+  /* Fade In Overlay: Definition */
   const fadeInOverlay = document.createElement("div");
   fadeInOverlay.id = "fade-in-overlay"
   document.body.insertBefore(fadeInOverlay, body.firstChild)
   
-  /* Text: "OAK: Let's begin with your name. What is it?" */
-  setTimeout(() => {
-    const fadeInOverlayText = document.createElement("span");
-    fadeInOverlayText.id = "fade-in-overlay-text";
-    fadeInOverlayText.textContent = "OAK: Let's begin with your name. What is it?";
-    fadeInOverlayText.style.opacity = "0";
-    fadeInOverlay.appendChild(fadeInOverlayText);
+  /* Fade In Overlay Text 0: Definition */ 
+    setTimeout(() => {
+      const fadeInOverlayProfessorOakText = document.createElement("span");
+      fadeInOverlayProfessorOakText.id = "fade-in-overlay-professor-oak-text";
+      fadeInOverlayProfessorOakText.textContent = "PROFESSOR OAK: ";
 
-    /* Fade In Text: "OAK: Let's begin with your name. What is it?" */
+      const fadeInOverlayFlavourText = document.createElement("span");
+      fadeInOverlayFlavourText.id = "fade-in-overlay-flavour-text";
+      fadeInOverlayFlavourText.textContent = "Let's begin with your name. What is it?";
+
+      const fadeInOverlayText = document.createElement("span");
+      fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+      fadeInOverlayText.id = "fade-in-overlay-text";
+      fadeInOverlayText.style.opacity = "0";
+      fadeInOverlayText.append(fadeInOverlayProfessorOakText, fadeInOverlayFlavourText);
+      fadeInOverlay.appendChild(fadeInOverlayText) 
+
+    /* Fade In Overlay Text 0: Fade In */
     setTimeout(() => {
       fadeInOverlayText.style.transition = "opacity 1s";
       fadeInOverlayText.style.opacity = "1";
     }, 1000);
 
-    /* Input Box */
+    /* Fade In Overlay Input Box */
     setTimeout(() => {
       const fadeInOverlayInputBox = document.createElement("input");
+      fadeInOverlayInputBox.id = "fade-in-overlay-input-box"
       fadeInOverlayInputBox.type = "text";
-      fadeInOverlayInputBox.style.position = "fixed";
-      fadeInOverlayInputBox.style.top = "50%";
-      fadeInOverlayInputBox.style.left = "50%";
-      fadeInOverlayInputBox.style.transform = "translate(-50%, -50%)";
       fadeInOverlayInputBox.style.opacity = "0";
       fadeInOverlayInputBox.style.transition = "opacity 1s"; // Add transition to the input box
       document.body.appendChild(fadeInOverlayInputBox);
@@ -50,11 +56,11 @@ function fadeIn() {
       }, 1000); // Wait for 1 second before fading in the input box
 
       // Fade out the text and the text-box after enter key pressed
-      input.addEventListener("keydown", (event) => {
+      fadeInOverlayInputBox.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           setTimeout(() => {
             fadeInOverlayText.style.opacity = "0";
-            input.style.opacity = "0";
+            fadeInOverlayInputBox.style.opacity = "0";
           }, 0);
 
           // Fade in the text "Right..."
@@ -84,7 +90,7 @@ function fadeIn() {
             // Fade in the text "So your         // name is playerName."
         setTimeout(() => {
           const text3 = document.createElement("div");
-          text3.textContent = `So your name is ${input.value}.`;
+          text3.textContent = `So your name is ${fadeInOverlayInputBox.value}.`;
           text3.style.color = "white";
           text3.style.position = "fixed";
           text3.style.top = "40%";
