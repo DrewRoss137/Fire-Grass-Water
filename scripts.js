@@ -13,12 +13,12 @@ const body = document.querySelector("body");
 const main = document.querySelector("main");
 
 function fadeIn() {
-  /* Fade In Overlay: Definition */
+  /* Fade In Overlay: Variables */
   const fadeInOverlay = document.createElement("div");
   fadeInOverlay.id = "fade-in-overlay"
   document.body.insertBefore(fadeInOverlay, body.firstChild)
   
-  /* Fade In Overlay Text 0: Definition */ 
+  /* Fade In Overlay Text 0: Variables */ 
     setTimeout(() => {
       const fadeInOverlayProfessorOakText = document.createElement("span");
       fadeInOverlayProfessorOakText.id = "fade-in-overlay-professor-oak-text";
@@ -46,6 +46,8 @@ function fadeIn() {
       const fadeInOverlayInputBox = document.createElement("input");
       fadeInOverlayInputBox.id = "fade-in-overlay-input-box"
       fadeInOverlayInputBox.type = "text";
+      fadeInOverlayInputBox.style.borderColor = "rgb(0, 100, 255)";
+      fadeInOverlayInputBox.style.color = "rgb(0, 100, 255)";
       fadeInOverlayInputBox.style.opacity = "0";
       fadeInOverlayInputBox.style.transition = "opacity 1s"; // Add transition to the input box
       document.body.appendChild(fadeInOverlayInputBox);
