@@ -1,14 +1,28 @@
 /**************
 Test - Temporary
 **************/
+
+/* */
+
+/**************
+Data Structures
+**************/
+
+/**************
+Elements
+**************/
+
+/* Body */
 const body = document.querySelector("body");
+
+/* Main */
 const main = document.querySelector("main");
 
 function fadeIn() {
   /* Pre-Overlay */
-  const preOverlayDiv = document.createElement("div");
-  preOverlayDiv.id = "pre-overlay"
-  document.body.insertBefore(preOverlayDiv, body.firstChild)
+  const preOverlay = document.createElement("div");
+  preOverlay.id = "overlay"
+  document.body.insertBefore(preOverlay, body.firstChild)
   
   /* Fade in the text "Let's begin with your name. What is it?" */
   setTimeout(() => {
@@ -267,11 +281,11 @@ function fadeIn() {
 
                           // Fade out the overlay
                           setTimeout(() => {
-                            overlay.style.transition = "opacity 2s"; // Increase the time for the overlay to fade out
-                            overlay.style.opacity = "0";
+                            preOverlay.style.transition = "opacity 2s"; // Increase the time for the overlay to fade out
+                            preOverlay.style.opacity = "0";
                               // Add event listener to remove overlay div when fade out is complete
-                            overlay.addEventListener("transitionend", () => {
-                            overlay.remove();
+                            preOverlay.addEventListener("transitionend", () => {
+                            preOverlay.remove();
                             });
                           }, 14000); // Wait for 14 seconds before fading out the overlay
 
@@ -298,9 +312,8 @@ function fadeIn() {
 
 fadeIn()
 
-/**************
-Const
-**************/
+
+
 
 let playerName;
 let rivalName;
