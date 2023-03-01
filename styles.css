@@ -137,16 +137,41 @@ Fade In
     width: 100%;
 }
 
-#fade-in-overlay-text {
-    color: white;
+#fade-in-overlay-professor-oak-text {
+    color: rgb(174, 77, 85);
     font-size: 64px;
-    font-weight: bold;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    font-weight: 900;
+    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92);
 }
 
+#fade-in-overlay-text {
+    border-radius:  30px;
+    color: rgb(255, 255, 255);
+    font-size: 64px;
+    padding: 24px;
+    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgba(0, 0, 0) 125%);
+    border-color: rgb(86, 73, 92);
+    border-style: solid;
+    border-width: 3px;
+    box-shadow: 0px 0px 20px 10px black;
+    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92);
+}
+
+#fade-in-overlay-input-box {
+    left: 50%;
+    position: fixed;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #ff0000; /* sets the border of the input box to 2px solid #ccc */
+    background-color: #000000; /* sets the background color of the input box to #f2f2f2 */
+    color: #ffffff; /* sets the text color of the input box to #333 */
+    padding: 10px; /* adds 10px of padding to the inside of the input box */
+    font-size: 32px;
+    font-family: "PokemonDSFont";
+}
 
 
 /**************
