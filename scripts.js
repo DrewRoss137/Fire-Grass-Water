@@ -41,7 +41,7 @@ function fadeIn() {
       fadeInOverlayText.style.opacity = "1";
     }, 1000);
 
-    /* Fade In Overlay Input Box */
+    /* Fade In Overlay Input Box: Variables */
     setTimeout(() => {
       const fadeInOverlayInputBox = document.createElement("input");
       fadeInOverlayInputBox.id = "fade-in-overlay-input-box"
@@ -61,10 +61,12 @@ function fadeIn() {
       fadeInOverlayInputBox.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           setTimeout(() => {
-            fadeInOverlayText.style.opacity = "0";
             fadeInOverlayInputBox.style.opacity = "0";
-          }, 0);
-
+          }, 1000); // Delay the fade-out of the input box by 100ms
+          setTimeout(() => {
+            fadeInOverlayText.style.opacity = "0";
+          }, 1500); // Fade out the text after 200ms
+    
           // Fade in the text "Right..."
           setTimeout(() => {
             const text2 = document.createElement("div");
