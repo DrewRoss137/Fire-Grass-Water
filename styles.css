@@ -21,9 +21,6 @@ body {
 
 img {
     cursor: pointer;
-}
-
-img {
     padding: 55px;
 }
   
@@ -119,6 +116,21 @@ img .pokémon,
     justify-content: center;
     flex-direction: column;
 }
+
+/**************
+Fade In
+**************/
+
+#pre-overlay {
+    background: radial-gradient(circle, rgb(30, 30, 30) 0%, rgb(0, 0, 0) 100%);
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 
 /**************
 Pre-Round
