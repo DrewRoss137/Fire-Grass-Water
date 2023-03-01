@@ -204,6 +204,30 @@ function fadeIn() {
                         text6.style.opacity = "0";
                       }, 4000); // Wait for 4 seconds before fading out the text
 
+                      //Fade in the text
+                      setTimeout(() => {
+                        const text11 = document.createElement("div");
+                        text11.textContent = "Talk of the Devil! Here comes " + input2.value + "!";
+                        text11.style.color = "white";
+                        text11.style.position = "fixed";
+                        text11.style.top = "40%";
+                        text11.style.left = "50%";
+                        text11.style.transform = "translate(-50%, -50%)";
+                        text11.style.opacity = "0";
+                        document.body.appendChild(text11);
+
+                      // Fade in the text
+                      setTimeout(() => {
+                        text11.style.transition = "opacity 2s"; // Increase the time for the text to fade in
+                        text11.style.opacity = "1";
+                      }, 1000); // Wait for 1 second before fading in the text
+
+                      // Fade out the text "That's right! I remember now! His name is rivalName!"
+                      setTimeout(() => {
+                        text11.style.transition = "opacity 2s"; // Increase the time for the text to fade out
+                        text11.style.opacity = "0";
+                      }, 4000); // Wait for 4 seconds before fading out the text
+
                       // Fade in the text "rivalName: Wait, playerName! Let's check out our pokemon!"
                       setTimeout(() => {
                         const text7 = document.createElement("div");
@@ -263,6 +287,8 @@ function fadeIn() {
                           }, 14000); // Wait for 14 seconds before fading out the overlay
 
                         }, 9000); // Wait for 9 seconds before fading in the text "Come on! I'll take you on!"
+
+                      }, 5000); 
 
                       }, 4000); // Wait for 4 seconds before fading out the text "That's right! I remember now! His name is rivalName!"
 
