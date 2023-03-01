@@ -1,10 +1,4 @@
 /**************
-Test - Temporary
-**************/
-
-/* */
-
-/**************
 Data Structures
 **************/
 
@@ -20,50 +14,46 @@ const main = document.querySelector("main");
 
 function fadeIn() {
   /* Pre-Overlay */
-  const preOverlay = document.createElement("div");
-  preOverlay.id = "overlay"
-  document.body.insertBefore(preOverlay, body.firstChild)
+  const fadeInOverlay = document.createElement("div");
+  fadeInOverlay.id = "fade-in-overlay"
+  document.body.insertBefore(fadeInOverlay, body.firstChild)
   
-  /* Fade in the text "Let's begin with your name. What is it?" */
+  /* Text: "OAK: Let's begin with your name. What is it?" */
   setTimeout(() => {
-    const text = document.createElement("div");
-    text.textContent = "Let's begin with your name. What is it?";
-    text.style.color = "white";
-    text.style.position = "fixed";
-    text.style.top = "40%";
-    text.style.left = "50%";
-    text.style.transform = "translate(-50%, -50%)";
-    text.style.opacity = "0";
-    document.body.appendChild(text);
+    const fadeInOverlayText = document.createElement("span");
+    fadeInOverlayText.id = "fade-in-overlay-text";
+    fadeInOverlayText.textContent = "OAK: Let's begin with your name. What is it?";
+    fadeInOverlayText.style.opacity = "0";
+    fadeInOverlay.appendChild(fadeInOverlayText);
 
-    // Fade in the text
+    /* Fade In Text: "OAK: Let's begin with your name. What is it?" */
     setTimeout(() => {
-      text.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-      text.style.opacity = "1";
-    }, 1000); // Wait for 1 second before fading in the text
+      fadeInOverlayText.style.transition = "opacity 1s";
+      fadeInOverlayText.style.opacity = "1";
+    }, 1000);
 
-    // Fade in the text-box for user input
+    /* Input Box */
     setTimeout(() => {
-      const input = document.createElement("input");
-      input.type = "text";
-      input.style.position = "fixed";
-      input.style.top = "50%";
-      input.style.left = "50%";
-      input.style.transform = "translate(-50%, -50%)";
-      input.style.opacity = "0";
-      input.style.transition = "opacity 1s"; // Add transition to the input box
-      document.body.appendChild(input);
+      const fadeInOverlayInputBox = document.createElement("input");
+      fadeInOverlayInputBox.type = "text";
+      fadeInOverlayInputBox.style.position = "fixed";
+      fadeInOverlayInputBox.style.top = "50%";
+      fadeInOverlayInputBox.style.left = "50%";
+      fadeInOverlayInputBox.style.transform = "translate(-50%, -50%)";
+      fadeInOverlayInputBox.style.opacity = "0";
+      fadeInOverlayInputBox.style.transition = "opacity 1s"; // Add transition to the input box
+      document.body.appendChild(fadeInOverlayInputBox);
 
       // Fade in the text-box
       setTimeout(() => {
-        input.style.opacity = "1";
+        fadeInOverlayInputBox.style.opacity = "1";
       }, 1000); // Wait for 1 second before fading in the input box
 
       // Fade out the text and the text-box after enter key pressed
       input.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           setTimeout(() => {
-            text.style.opacity = "0";
+            fadeInOverlayText.style.opacity = "0";
             input.style.opacity = "0";
           }, 0);
 
@@ -281,11 +271,11 @@ function fadeIn() {
 
                           // Fade out the overlay
                           setTimeout(() => {
-                            preOverlay.style.transition = "opacity 2s"; // Increase the time for the overlay to fade out
-                            preOverlay.style.opacity = "0";
+                            fadeInOverlay.style.transition = "opacity 2s"; // Increase the time for the overlay to fade out
+                            fadeInOverlay.style.opacity = "0";
                               // Add event listener to remove overlay div when fade out is complete
-                            preOverlay.addEventListener("transitionend", () => {
-                            preOverlay.remove();
+                            fadeInOverlay.addEventListener("transitionend", () => {
+                            fadeInOverlay.remove();
                             });
                           }, 14000); // Wait for 14 seconds before fading out the overlay
 
