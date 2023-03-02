@@ -632,6 +632,213 @@ fadeInOverlay.id = "fade-in-overlay"
 function fadeIn() {
   /* Pre-Fade Overlay: Variables */
   body.insertBefore(fadeInOverlay, body.firstChild)
+
+  setTimeout(() => {
+    fadeInOverlayFlavourText.textContent = "Hello, there! Glad to meet you!";
+
+    fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "Welcome to the world of POKéMON!";
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "My name is OAK.";
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "People affectionately refer to me as the POKéMON Professor.";
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "This world is inhabited far and wide by creatures called POKéMON."
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "For some people, POKéMON are pets. Others use them for battling."
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "As for myself..."
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "I study POKéMON as a profession."
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
+  setTimeout(() => {
+
+    fadeInOverlayFlavourText.textContent = "But first, tell me a little about yourself."
+
+    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+    fadeInOverlayText.style.opacity = "0";
+
+    fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+    fadeInOverlay.appendChild(fadeInOverlayText) 
+
+
+  setTimeout(() => {
+    fadeInOverlayText.style.opacity = "1";
+    fadeInOverlayText.style.transition = "opacity 1s";
+  }, 1000);
+
+
+  /* Pre-Fade Overlay Text 1: Fade-Out */
+  setTimeout(() => {
+    fadeInOverlayText.style.transition = "opacity 2s";
+    fadeInOverlayText.style.opacity = "0";
+  }, 3000);
+
   
   /* Pre-Fade Overlay Text 0: Variables */ 
     setTimeout(() => {
@@ -893,7 +1100,16 @@ function fadeIn() {
     }
   });
 }, 3000); // Wait for 3 seconds before fading out the text "Let's begin with your name. What is it?"
-}, 1000); // Wait for 1 second before fading in the text "Let's begin with your name. What is it?"
+}, 3000); // Wait for 1 second before fading in the text "Let's begin with your name. What is it?"
+}, 3000);
+}, 3000);
+}, 3000);
+}, 3000);
+}, 3000);
+}, 3000);
+}, 3000);
+}, 3000);
+}, 3000);
 }
 
 fadeIn()
