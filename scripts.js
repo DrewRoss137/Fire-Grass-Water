@@ -7,6 +7,9 @@ Elements
 **************/
 
 /* Body */
+let playerNameInput, rivalNameInput;
+let inputCounter = 0;
+
 const body = document.querySelector("body");
 
 /* Main */
@@ -60,6 +63,14 @@ function fadeIn() {
       // Fade out the text and the text-box after enter key pressed
       fadeInOverlayInputBox.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
+          // Assign input value to variable based on counter value
+          if (inputCounter === 0) {
+            playerNameInput = fadeInOverlayInputBox.value;
+            console.log(`PLAYER NAME: ${playerNameInput}`)
+          }
+
+      // Increment counter
+          inputCounter++;
           setTimeout(() => {
             fadeInOverlayInputBox.style.opacity = "0";
           }, 1000); // Delay the fade-out of the input box by 100ms
@@ -157,36 +168,40 @@ function fadeIn() {
                 text5.style.opacity = "1";
               }, 12000); // Wait for 12 seconds before fading in the text
 
-              // Fade in the text-box for user input
+               // Fade in the text-box for user input
               setTimeout(() => {
-                const input2 = document.createElement("input");
-                input2.type = "text";
-                input2.style.position = "fixed";
-                input2.style.top = "50%";
-                input2.style.left = "50%";
-                input2.style.transform = "translate(-50%, -50%)";
-                input2.style.opacity = "0";
-                input2.style.transition = "opacity 1s"; // Add transition to the input box
-                document.body.appendChild(input2);
+                const fadeInOverlayInputBox = document.createElement("input");
+                fadeInOverlayInputBox.id = "fade-in-overlay-input-box"
+                fadeInOverlayInputBox.type = "text";
+                fadeInOverlayInputBox.style.borderColor = "rgb(0, 100, 255)";
+                fadeInOverlayInputBox.style.color = "rgb(0, 100, 255)";
+                fadeInOverlayInputBox.style.opacity = "0";
+                fadeInOverlayInputBox.style.transition = "opacity 1s"; // Add transition to the input box
+                document.body.appendChild(fadeInOverlayInputBox); 
 
                
                 // Fade in the text-box
                 setTimeout(() => {
-                  input2.style.opacity = "1";
+                  fadeInOverlayInputBox.style.opacity = "1";
                 }, 12000); // Wait for 12 seconds before fading in the input box
 
                 // Fade out the text and the text-box after enter key pressed
-                input2.addEventListener("keydown", (event) => {
+                fadeInOverlayInputBox.addEventListener("keydown", (event) => {
                   if (event.key === "Enter") {
                     setTimeout(() => {
+                            // Increment counter
+                    if (inputCounter === 1) {
+                      rivalNameInput = fadeInOverlayInputBox.value;
+                      console.log(`RIVAL NAME: ${rivalNameInput}`)
+                    }
                       text5.style.opacity = "0";
-                      input2.style.opacity = "0";
+                      fadeInOverlayInputBox.style.opacity = "0";
                     }, 0);
 
                     // Fade in the text "That's right! I remember now! His name is rivalName!"
                     setTimeout(() => {
                       const text6 = document.createElement("div");
-                      text6.textContent = "That's right! I remember now! His name is " + input2.value + "!";
+                      text6.textContent = "That's right! I remember now! His name is " + rivalNameInput + "!";
                       text6.style.color = "white";
                       text6.style.position = "fixed";
                       text6.style.top = "40%";
@@ -210,7 +225,7 @@ function fadeIn() {
                       //Fade in the text
                       setTimeout(() => {
                         const text11 = document.createElement("div");
-                        text11.textContent = "Talk of the Devil! Here comes " + input2.value + "!";
+                        text11.textContent = "Talk of the Devil! Here comes " + rivalNameInput + "!";
                         text11.style.color = "white";
                         text11.style.position = "fixed";
                         text11.style.top = "40%";
@@ -234,7 +249,7 @@ function fadeIn() {
                       // Fade in the text "rivalName: Wait, playerName! Let's check out our pokemon!"
                       setTimeout(() => {
                         const text7 = document.createElement("div");
-                        text7.textContent = `${input2.value}: Wait, ${input.value}! Let's check out our pokemon!`;
+                        text7.textContent = `${rivalNameInput}: Wait, ${playerNameInput}! Let's check out our pokemon!`;
                         text7.style.color = "white";
                         text7.style.position = "fixed";
                         text7.style.top = "40%";
@@ -258,7 +273,7 @@ function fadeIn() {
                         // Fade in the text "Come on! I'll take you on!"
                         setTimeout(() => {
                           const text8 = document.createElement("div");
-                          text8.textContent = `${input2.value}: Come on! I'll take you on!`;
+                          text8.textContent = `${rivalNameInput}: Come on! I'll take you on!`;
                           text8.style.color = "white";
                           text8.style.position = "fixed";
                           text8.style.top = "40%";
