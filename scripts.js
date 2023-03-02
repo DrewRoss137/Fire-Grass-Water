@@ -621,6 +621,10 @@ const fadeInOverlayText = document.createElement("span");
 fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
 fadeInOverlayText.id = "fade-in-overlay-text";
 
+/* Pre-Fade Additional Flavour Text */
+const fadeInOverlayAdditionalFlavourText = document.createElement("span");
+fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text";
+
 /* Pre-Fade Overlay */
 const fadeInOverlay = document.createElement("div");
 fadeInOverlay.id = "fade-in-overlay"
@@ -637,9 +641,16 @@ function fadeIn() {
       fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
       fadeInOverlayText.style.opacity = "0";
 
-      fadeInOverlayFlavourText.textContent = "Let's begin with your name. What is it?";
+      fadeInOverlayFlavourText.textContent = "Let's begin with ";
 
-      fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+      fadeInOverlayNameText.textContent = "your ";
+    
+      fadeInOverlayAdditionalFlavourText.textContent = "name. What is it?";
+
+      fadeInOverlayNameText.style.color = "rgb(0, 100, 255)"
+
+
+      fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText, fadeInOverlayNameText, fadeInOverlayAdditionalFlavourText);
       fadeInOverlay.appendChild(fadeInOverlayText) 
 
     /* Pre-Fade Overlay Text 0: Fade In */
@@ -669,13 +680,11 @@ function fadeIn() {
           }, 1000);
           setTimeout(() => {
             fadeInOverlayText.style.opacity = "0";
-          }, 1500);
+          }, 2000);
     
           /* Pre-Fade Overlay Text 1: Variables */
           setTimeout(() => {
-            fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
             fadeInOverlayFlavourText.textContent = "Right...";
-            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
             fadeInOverlayText.style.opacity = "0";
             fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
             fadeInOverlay.appendChild(fadeInOverlayText) 
@@ -694,7 +703,6 @@ function fadeIn() {
 
          /* Pre-Fade Overlay Text 2: Variables */
         setTimeout(() => {
-          fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
           fadeInOverlayFlavourText.textContent = `So your name is ${playerNameInput}.`;
           fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
           fadeInOverlayText.style.opacity = "0";
@@ -715,7 +723,6 @@ function fadeIn() {
 
           /* Pre-Fade Overlay Text 3: Variables */
           setTimeout(() => {
-            fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
             fadeInOverlayFlavourText.textContent = `And your rival since you both were babies...`;
             fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
             fadeInOverlayText.style.opacity = "0";
@@ -754,8 +761,8 @@ function fadeIn() {
                 const fadeInOverlayInputBox = document.createElement("input");
                 fadeInOverlayInputBox.id = "fade-in-overlay-input-box"
                 fadeInOverlayInputBox.type = "text";
-                fadeInOverlayInputBox.style.borderColor = "rgb(0, 100, 255)";
-                fadeInOverlayInputBox.style.color = "rgb(0, 100, 255)";
+                fadeInOverlayInputBox.style.color = "rgb(255, 100, 0)";
+                fadeInOverlayInputBox.style.borderColor = "rgb(255, 100, 0)";
                 fadeInOverlayInputBox.style.opacity = "0";
                 fadeInOverlayInputBox.style.transition = "opacity 1s";
                 document.body.appendChild(fadeInOverlayInputBox); 
@@ -776,7 +783,6 @@ function fadeIn() {
 
                     /* Pre-Fade Overlay Text 5: Variables */
                     setTimeout(() => {
-                      fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
                       fadeInOverlayFlavourText.textContent = `That's right! I remember now! Their name is ${rivalNameInput}!`;
                       fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
                       fadeInOverlayText.style.opacity = "0";
@@ -797,7 +803,6 @@ function fadeIn() {
 
                       /* Pre-Fade Overlay Text 6: Variables */
                       setTimeout(() => {
-                        fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
                         fadeInOverlayFlavourText.textContent = `Talk of the Devil! Here comes ${rivalNameInput}!`;
                         fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
                         fadeInOverlayText.style.opacity = "0";
@@ -818,7 +823,9 @@ function fadeIn() {
 
                       /* Pre-Fade Overlay Text 7: Definition */
                       setTimeout(() => {
-                        fadeInOverlayNameText.textContent = `${rivalNameInput}: `;
+                        fadeInOverlayAttributionText.textContent = `${rivalNameInput}`
+                        fadeInOverlayAttributionText.style.color = "rgb(255, 100, 0)";
+                        fadeInOverlayText.style.borderColor = "rgb(255, 100, 0)";
                         fadeInOverlayFlavourText.textContent = `Wait, ${playerNameInput}! Let's check out our pokemon!`;
                         fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
                         fadeInOverlayText.style.opacity = "0";
