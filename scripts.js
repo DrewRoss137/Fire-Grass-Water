@@ -27,9 +27,12 @@ function fadeIn() {
   
   /* Pre-Fade Overlay Text 0: Variables */ 
     setTimeout(() => {
-      const fadeInOverlayProfessorOakText = document.createElement("span");
-      fadeInOverlayProfessorOakText.id = "fade-in-overlay-professor-oak-text";
-      fadeInOverlayProfessorOakText.textContent = "PROFESSOR OAK: ";
+      const fadeInOverlayAttributionText = document.createElement("span");
+      fadeInOverlayAttributionText.id = "fade-in-overlay-attribution-text";
+
+      const fadeInOverlayNameText = document.createElement("span");
+      fadeInOverlayNameText.id = "fade-in-overlay-name-text";
+      fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
 
       const fadeInOverlayFlavourText = document.createElement("span");
       fadeInOverlayFlavourText.id = "fade-in-overlay-flavour-text";
@@ -39,7 +42,7 @@ function fadeIn() {
       fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
       fadeInOverlayText.id = "fade-in-overlay-text";
       fadeInOverlayText.style.opacity = "0";
-      fadeInOverlayText.append(fadeInOverlayProfessorOakText, fadeInOverlayFlavourText);
+      fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
       fadeInOverlay.appendChild(fadeInOverlayText) 
 
     /* Pre-Fade Overlay Text 0: Fade In */
@@ -59,12 +62,12 @@ function fadeIn() {
       fadeInOverlayInputBox.style.transition = "opacity 1s";
       document.body.appendChild(fadeInOverlayInputBox);
 
-      /* Pre-Fade Overlay Input Box: Fade In */
+      /* Pre-Fade Overlay Input Box 0: Fade In */
       setTimeout(() => {
         fadeInOverlayInputBox.style.opacity = "1";
       }, 1000);
 
-      /* Pre-Fade Overlay Input Box: Fade Out */
+      /* Pre-Fade Overlay Input Box 0: Fade Out */
       fadeInOverlayInputBox.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           if (inputCounter === 0) {
@@ -79,96 +82,85 @@ function fadeIn() {
             fadeInOverlayText.style.opacity = "0";
           }, 1500);
     
-          /* Pre-Fade Overlay Text 1: Fade In */
+          /* Pre-Fade Overlay Text 1: Variables */
           setTimeout(() => {
-            fadeInOverlayProfessorOakText.textContent = "PROFESSOR OAK: ";
+            fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
             fadeInOverlayFlavourText.textContent = "Right...";
             fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
             fadeInOverlayText.style.opacity = "0";
-            fadeInOverlayText.append(fadeInOverlayProfessorOakText, fadeInOverlayFlavourText);
+            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
             fadeInOverlay.appendChild(fadeInOverlayText) 
 
-
-
-            // Fade in the text
+            /* Pre-Fade Overlay Text 1: Fade-In */
             setTimeout(() => {
-              fadeInOverlayText.style.transition = "opacity 2s"; // Increase the time for the text to fade in
+              fadeInOverlayText.style.transition = "opacity 2s";
               fadeInOverlayText.style.opacity = "1";
-            }, 1000); // Wait for 1 second before fading in the text
+            }, 1000);
 
-            // Fade out the text "Right..."
+            /* Pre-Fade Overlay Text 1: Fade-Out */
             setTimeout(() => {
-              fadeInOverlayText.style.transition = "opacity 2s"; // Increase the time for the text to fade out
+              fadeInOverlayText.style.transition = "opacity 2s";
               fadeInOverlayText.style.opacity = "0";
-            }, 3000); // Wait for 3 seconds before fading out the text
+            }, 3000);
 
-            // Fade in the text "So your         // name is playerName."
+         /* Pre-Fade Overlay Text 2: Variables */
         setTimeout(() => {
-          const text3 = document.createElement("div");
-          text3.textContent = `So your name is ${fadeInOverlayInputBox.value}.`;
-          text3.style.color = "white";
-          text3.style.position = "fixed";
-          text3.style.top = "40%";
-          text3.style.left = "50%";
-          text3.style.transform = "translate(-50%, -50%)";
-          text3.style.opacity = "0";
-          document.body.appendChild(text3);
+          fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
+          fadeInOverlayFlavourText.textContent = `So your name is ${playerNameInput}.`;
+          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+          fadeInOverlayText.style.opacity = "0";
+          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+          fadeInOverlay.appendChild(fadeInOverlayText) 
 
-          // Fade in the text
+          /* Pre-Fade Overlay Text 2: Fade-In */
           setTimeout(() => {
-            text3.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-            text3.style.opacity = "1";
-          }, 4000); // Wait for 4 seconds before fading in the text
+            fadeInOverlayText.style.transition = "opacity 2s";
+            fadeInOverlayText.style.opacity = "1";
+          }, 4000);
 
-          // Fade out the text "So your name is playerName."
+          /* Pre-Fade Overlay Text 2: Fade-Out */
           setTimeout(() => {
-            text3.style.transition = "opacity 2s"; // Increase the time for the text to fade out
-            text3.style.opacity = "0";
-          }, 7000); // Wait for 7 seconds before fading out the text
+            fadeInOverlayText.style.transition = "opacity 2s";
+            fadeInOverlayText.style.opacity = "0";
+          }, 7000);
 
-          // Fade in the text "And your rival since you both were babies..."
+          /* Pre-Fade Overlay Text 3: Variables */
           setTimeout(() => {
-            const text4 = document.createElement("div");
-            text4.textContent = "And your rival since you both were babies...";
-            text4.style.color = "white";
-            text4.style.position = "fixed";
-            text4.style.top = "40%";
-            text4.style.left = "50%";
-            text4.style.transform = "translate(-50%, -50%)";
-            text4.style.opacity = "0";
-            document.body.appendChild(text4);
+            fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
+            fadeInOverlayFlavourText.textContent = `And your rival since you both were babies...`;
+            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+            fadeInOverlayText.style.opacity = "0";
+            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+            fadeInOverlay.appendChild(fadeInOverlayText);
 
-            // Fade in the text
+            /* Pre-Fade Overlay Text 3: Fade-In */
             setTimeout(() => {
-              text4.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-              text4.style.opacity = "1";
-            }, 8000); // Wait for 8 seconds before fading in the text
+              fadeInOverlayText.style.transition = "opacity 2s";
+              fadeInOverlayText.style.opacity = "1";
+            }, 8000);
 
-            // Fade out the text "And your rival since you both were babies..."
+            /* Pre-Fade Overlay Text 3: Fade-Out */
             setTimeout(() => {
-              text4.style.transition = "opacity 2s"; // Increase the time for the text to fade out
-              text4.style.opacity = "0";
-            }, 11000); // Wait for 11 seconds before fading out the text
+              fadeInOverlayText.style.transition = "opacity 2s";
+              fadeInOverlayText.style.opacity = "0";
+            }, 11000);
 
-            // Fade in the text "...Erm, what was his name now?"
+            /* Pre-Fade Overlay Text 4: Variables */
             setTimeout(() => {
-              const text5 = document.createElement("div");
-              text5.textContent = "...Erm, what was his name now?";
-              text5.style.color = "white";
-              text5.style.position = "fixed";
-              text5.style.top = "40%";
-              text5.style.left = "50%";
-              text5.style.transform = "translate(-50%, -50%)";
-              text5.style.opacity = "0";
-              document.body.appendChild(text5);
+              fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
+              fadeInOverlayFlavourText.textContent = "...Erm, what was their name now?";
+              fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+              fadeInOverlayText.style.opacity = "0";
+              fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+              fadeInOverlay.appendChild(fadeInOverlayText);
 
-              // Fade in the text
+              /* Pre-Fade Overlay Text 4: Fade-In */
               setTimeout(() => {
-                text5.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-                text5.style.opacity = "1";
-              }, 12000); // Wait for 12 seconds before fading in the text
+                fadeInOverlayText.style.transition = "opacity 2s";
+                fadeInOverlayText.style.opacity = "1";
+              }, 12000);
 
-               // Fade in the text-box for user input
+              /* Pre-Fade Overlay Input 1: Variables */
               setTimeout(() => {
                 const fadeInOverlayInputBox = document.createElement("input");
                 fadeInOverlayInputBox.id = "fade-in-overlay-input-box"
@@ -176,125 +168,110 @@ function fadeIn() {
                 fadeInOverlayInputBox.style.borderColor = "rgb(0, 100, 255)";
                 fadeInOverlayInputBox.style.color = "rgb(0, 100, 255)";
                 fadeInOverlayInputBox.style.opacity = "0";
-                fadeInOverlayInputBox.style.transition = "opacity 1s"; // Add transition to the input box
+                fadeInOverlayInputBox.style.transition = "opacity 1s";
                 document.body.appendChild(fadeInOverlayInputBox); 
 
-               
-                // Fade in the text-box
+                /* Pre-Fade Overlay Input 1: Fade-In */
                 setTimeout(() => {
                   fadeInOverlayInputBox.style.opacity = "1";
-                }, 12000); // Wait for 12 seconds before fading in the input box
+                }, 12000);
 
-                // Fade out the text and the text-box after enter key pressed
                 fadeInOverlayInputBox.addEventListener("keydown", (event) => {
                   if (event.key === "Enter") {
                     setTimeout(() => {
-                            // Increment counter
                     if (inputCounter === 1) {
                       rivalNameInput = fadeInOverlayInputBox.value;
                       console.log(`RIVAL NAME: ${rivalNameInput}`)
                     }
-                      text5.style.opacity = "0";
+                      fadeInOverlayText.style.opacity = "0";
                       fadeInOverlayInputBox.style.opacity = "0";
                     }, 0);
 
-                    // Fade in the text "That's right! I remember now! His name is rivalName!"
+                    /* Pre-Fade Overlay Text 5: Variables */
                     setTimeout(() => {
-                      const text6 = document.createElement("div");
-                      text6.textContent = "That's right! I remember now! His name is " + rivalNameInput + "!";
-                      text6.style.color = "white";
-                      text6.style.position = "fixed";
-                      text6.style.top = "40%";
-                      text6.style.left = "50%";
-                      text6.style.transform = "translate(-50%, -50%)";
-                      text6.style.opacity = "0";
-                      document.body.appendChild(text6);
-
-                      // Fade in the text
+                      fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
+                      fadeInOverlayFlavourText.textContent = `That's right! I remember now! Their name is ${rivalNameInput}!`;
+                      fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                      fadeInOverlayText.style.opacity = "0";
+                      fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                      fadeInOverlay.appendChild(fadeInOverlayText);
+                      
+                      /* Pre-Fade Overlay Text 5: Fade-In */
                       setTimeout(() => {
-                        text6.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-                        text6.style.opacity = "1";
-                      }, 1000); // Wait for 1 second before fading in the text
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "1";
+                      }, 1000);
 
-                      // Fade out the text "That's right! I remember now! His name is rivalName!"
+                      /* Pre-Fade Overlay Text 5: Fade-Out */
                       setTimeout(() => {
-                        text6.style.transition = "opacity 2s"; // Increase the time for the text to fade out
-                        text6.style.opacity = "0";
-                      }, 4000); // Wait for 4 seconds before fading out the text
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "0";
+                      }, 4000);
 
-                      //Fade in the text
+                      /* Pre-Fade Overlay Text 6: Variables */
                       setTimeout(() => {
-                        const text11 = document.createElement("div");
-                        text11.textContent = "Talk of the Devil! Here comes " + rivalNameInput + "!";
-                        text11.style.color = "white";
-                        text11.style.position = "fixed";
-                        text11.style.top = "40%";
-                        text11.style.left = "50%";
-                        text11.style.transform = "translate(-50%, -50%)";
-                        text11.style.opacity = "0";
-                        document.body.appendChild(text11);
+                        fadeInOverlayNameText.textContent = "PROFESSOR OAK: ";
+                        fadeInOverlayFlavourText.textContent = `Talk of the Devil! Here comes ${rivalNameInput}!`;
+                        fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                        fadeInOverlayText.style.opacity = "0";
+                        fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                        fadeInOverlay.appendChild(fadeInOverlayText);
 
-                      // Fade in the text
+                      /* Pre-Fade Overlay Text 6: Fade-In */
                       setTimeout(() => {
-                        text11.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-                        text11.style.opacity = "1";
-                      }, 1000); // Wait for 1 second before fading in the text
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "1";
+                      }, 1000);
 
-                      // Fade out the text "That's right! I remember now! His name is rivalName!"
+                      /* Pre-Fade Overlay Text 6: Fade-Out */
                       setTimeout(() => {
-                        text11.style.transition = "opacity 2s"; // Increase the time for the text to fade out
-                        text11.style.opacity = "0";
-                      }, 4000); // Wait for 4 seconds before fading out the text
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "0";
+                      }, 4000);
 
-                      // Fade in the text "rivalName: Wait, playerName! Let's check out our pokemon!"
+                      /* Pre-Fade Overlay Text 7: Definition */
                       setTimeout(() => {
-                        const text7 = document.createElement("div");
-                        text7.textContent = `${rivalNameInput}: Wait, ${playerNameInput}! Let's check out our pokemon!`;
-                        text7.style.color = "white";
-                        text7.style.position = "fixed";
-                        text7.style.top = "40%";
-                        text7.style.left = "50%";
-                        text7.style.transform = "translate(-50%, -50%)";
-                        text7.style.opacity = "0";
-                        document.body.appendChild(text7);
+                        fadeInOverlayNameText.textContent = `${rivalNameInput}: `;
+                        fadeInOverlayFlavourText.textContent = `Wait, ${playerNameInput}! Let's check out our pokemon!`;
+                        fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                        fadeInOverlayText.style.opacity = "0";
+                        fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                        fadeInOverlay.appendChild(fadeInOverlayText);
 
-                        // Fade in the text
+                        /* Pre-Fade Overlay Text 7: Fade-In */
                         setTimeout(() => {
-                          text7.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-                          text7.style.opacity = "1";
-                        }, 5000); // Wait for 5 seconds before fading in the text
+                          fadeInOverlayText.style.transition = "opacity 2s";
+                          fadeInOverlayText.style.opacity = "1";
+                        }, 5000);
 
-                        // Fade out the text "rivalName: Wait, playerName! Let's check out our pokemon!"
+                        /* Pre-Fade Overlay Text 7: Fade-Out */
                         setTimeout(() => {
-                          text7.style.transition = "opacity 2s"; // Increase the time for the text to fade out
-                          text7.style.opacity = "0";
-                        }, 8000); // Wait for 8 seconds before fading out the text
+                          fadeInOverlayText.style.transition = "opacity 2s";
+                          fadeInOverlayText.style.opacity = "0";
+                        }, 8000);
 
-                        // Fade in the text "Come on! I'll take you on!"
+                        /* Pre-Fade Overlay Text 8: Definition */
                         setTimeout(() => {
-                          const text8 = document.createElement("div");
-                          text8.textContent = `${rivalNameInput}: Come on! I'll take you on!`;
-                          text8.style.color = "white";
-                          text8.style.position = "fixed";
-                          text8.style.top = "40%";
-                          text8.style.left = "50%";
-                          text8.style.transform = "translate(-50%, -50%)";
-                          text8.style.opacity = "0";
-                          document.body.appendChild(text8);
-
-                          // Fade in the text
+                          fadeInOverlayNameText.textContent = `${rivalNameInput}: `;
+                          fadeInOverlayFlavourText.textContent = `Come on! I'll take you on!`;
+                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                          fadeInOverlayText.style.opacity = "0";
+                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                          fadeInOverlay.appendChild(fadeInOverlayText);
+                          
+                          /* Pre-Fade Overlay Text 8: Fade-In */
                           setTimeout(() => {
-                            text8.style.transition = "opacity 2s"; // Increase the time for the text to fade in
-                            text8.style.opacity = "1";
-                          }, 9000); // Wait for 9 seconds before fading in the text
+                            fadeInOverlayText.style.transition = "opacity 2s";
+                            fadeInOverlayText.style.opacity = "1";
+                          }, 9000);
 
-                          // Fade out the text "Come on! I'll take you on!"
+                          /* Pre-Fade Overlay Text 8: Fade-Out */
                           setTimeout(() => {
-                            text8.style.transition = "opacity 2s"; // Increase the time for the text to fade out
-                            text8.style.opacity = "0";
-                          }, 12000); // Wait for 12 seconds before fading out the text
+                            fadeInOverlayText.style.transition = "opacity 2s";
+                            fadeInOverlayText.style.opacity = "0";
+                          }, 12000);
 
-                          // Fade out the overlay
+                          /* Pre-Fade Overlay: Fade-Out */
                           setTimeout(() => {
                             fadeInOverlay.style.transition = "opacity 2s"; // Increase the time for the overlay to fade out
                             fadeInOverlay.style.opacity = "0";
@@ -327,7 +304,6 @@ function fadeIn() {
 
 fadeIn()
 
-console.log(playerNameInput, rivalNameInput)
 
 
 let playerName;
