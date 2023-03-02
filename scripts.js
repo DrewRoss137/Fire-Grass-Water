@@ -1669,6 +1669,29 @@ function fadeIn() {
 
                         }, 9000); // Wait for 9 seconds before fading in the text "Come on! I'll take you on!"
 
+                      }, 9000);
+                    }, 9000);
+                  }, 9000);
+                }, 9000);
+              }, 9000);
+            }, 9000);
+          }, 9000);
+        }, 9000);
+      }, 9000);
+    }, 9000);
+  }, 9000);
+  }, 9000);
+  }, 9000);
+  }, 9000);
+}, 9000);
+}, 9000);
+}, 9000);
+}, 9000);
+}, 9000);
+}, 9000);
+}, 9000);
+}, 9000);
+
                       }, 5000); 
 
                       }, 4000); // Wait for 4 seconds before fading out the text "That's right! I remember now! His name is rivalName!"
