@@ -1049,6 +1049,67 @@ function fadeIn() {
                         fadeInOverlayText.style.opacity = "0";
                       }, 4000);
 
+                                          /* Pre-Fade Overlay Text 5: Variables */
+                    setTimeout(() => {
+                      fadeInOverlayFlavourText.textContent = `${playerNameInput}!`;
+                      fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                      fadeInOverlayText.style.opacity = "0";
+                      fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                      fadeInOverlay.appendChild(fadeInOverlayText);
+                      
+                      /* Pre-Fade Overlay Text 5: Fade-In */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "1";
+                      }, 1000);
+
+                      /* Pre-Fade Overlay Text 5: Fade-Out */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "0";
+                      }, 4000);
+
+                                                             /* Pre-Fade Overlay Text 5: Variables */
+                    setTimeout(() => {
+                      fadeInOverlayFlavourText.textContent = `Your very own POKéMON leend is about to unfold!`;
+                      fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                      fadeInOverlayText.style.opacity = "0";
+                      fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                      fadeInOverlay.appendChild(fadeInOverlayText);
+                      
+                      /* Pre-Fade Overlay Text 5: Fade-In */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "1";
+                      }, 1000);
+
+                      /* Pre-Fade Overlay Text 5: Fade-Out */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "0";
+                      }, 4000);
+
+
+                                                             /* Pre-Fade Overlay Text 5: Variables */
+                    setTimeout(() => {
+                      fadeInOverlayFlavourText.textContent = `A world of dreams and adventures with POKéMON awaits! Let's go!`;
+                      fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                      fadeInOverlayText.style.opacity = "0";
+                      fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                      fadeInOverlay.appendChild(fadeInOverlayText);
+                      
+                      /* Pre-Fade Overlay Text 5: Fade-In */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "1";
+                      }, 1000);
+
+                      /* Pre-Fade Overlay Text 5: Fade-Out */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "0";
+                      }, 4000);
+
                       /* Pre-Fade Overlay Text 6: Variables */
                       setTimeout(() => {
                         fadeInOverlayFlavourText.textContent = `Talk of the Devil! Here comes ${rivalNameInput}!`;
@@ -1068,6 +1129,489 @@ function fadeIn() {
                         fadeInOverlayText.style.transition = "opacity 2s";
                         fadeInOverlayText.style.opacity = "0";
                       }, 4000);
+
+
+                      /* Pre-Fade Overlay Text 6: Variables */
+                      setTimeout(() => {
+                        fadeInOverlayFlavourText.textContent = `Gramps! I'm fed up with waiting!`;
+                        fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                        fadeInOverlayText.style.opacity = "0";
+                        fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                        fadeInOverlay.appendChild(fadeInOverlayText);
+
+                      /* Pre-Fade Overlay Text 6: Fade-In */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "1";
+                      }, 1000);
+
+                      /* Pre-Fade Overlay Text 6: Fade-Out */
+                      setTimeout(() => {
+                        fadeInOverlayText.style.transition = "opacity 2s";
+                        fadeInOverlayText.style.opacity = "0";
+                      }, 4000);
+
+                                          /* Pre-Fade Overlay Text 6: Variables */
+                                          setTimeout(() => {
+                                            fadeInOverlayFlavourText.textContent = `${rivalNameInput}? Let me think...`;
+                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                            fadeInOverlayText.style.opacity = "0";
+                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                    
+                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                          setTimeout(() => {
+                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                            fadeInOverlayText.style.opacity = "1";
+                                          }, 1000);
+                    
+                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                          setTimeout(() => {
+                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                            fadeInOverlayText.style.opacity = "0";
+                                          }, 4000);
+
+                                        }, 4000);
+
+                                        /* Pre-Fade Overlay Text 6: Variables */
+                                        setTimeout(() => {
+                                          fadeInOverlayFlavourText.textContent = `Oh, that's right, I told you to come! Just wait!`;
+                                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                          fadeInOverlayText.style.opacity = "0";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlay.appendChild(fadeInOverlayText);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-In */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "1";
+                                        }, 1000);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-Out */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 4000);
+
+
+                                        /* Pre-Fade Overlay Text 6: Variables */
+                                        setTimeout(() => {
+                                          fadeInOverlayFlavourText.textContent = `Here, ${playerNameInput}.`;
+                                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                          fadeInOverlayText.style.opacity = "0";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlay.appendChild(fadeInOverlayText);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-In */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "1";
+                                        }, 1000);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-Out */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 4000);
+
+
+
+                                        /* Pre-Fade Overlay Text 6: Variables */
+                                        setTimeout(() => {
+                                          fadeInOverlayFlavourText.textContent = `Haha!`;
+                                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                          fadeInOverlayText.style.opacity = "0";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlay.appendChild(fadeInOverlayText);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-In */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "1";
+                                        }, 1000);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-Out */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 4000);
+
+
+
+                                        /* Pre-Fade Overlay Text 6: Variables */
+                                        setTimeout(() => {
+                                          fadeInOverlayFlavourText.textContent = `There are three POKEMON here. `;
+                                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                          fadeInOverlayText.style.opacity = "0";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlay.appendChild(fadeInOverlayText);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-In */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "1";
+                                        }, 1000);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-Out */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 4000);
+
+
+
+                                        /* Pre-Fade Overlay Text 6: Variables */
+                                        setTimeout(() => {
+                                          fadeInOverlayFlavourText.textContent = `The POKEMON are held inside these POKe BALLS. `;
+                                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                          fadeInOverlayText.style.opacity = "0";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlay.appendChild(fadeInOverlayText);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-In */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "1";
+                                        }, 1000);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-Out */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 4000);
+
+
+
+                                        /* Pre-Fade Overlay Text 6: Variables */
+                                        setTimeout(() => {
+                                          fadeInOverlayFlavourText.textContent = `When I was young, I was a serious POKeMON TRAINER. `;
+                                          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                          fadeInOverlayText.style.opacity = "0";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlay.appendChild(fadeInOverlayText);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-In */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "1";
+                                        }, 1000);
+                  
+                                        /* Pre-Fade Overlay Text 6: Fade-Out */
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.transition = "opacity 2s";
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 4000);
+
+                                                                   /* Pre-Fade Overlay Text 6: Variables */
+                                                                   setTimeout(() => {
+                                                                    fadeInOverlayFlavourText.textContent = `But now, in my old age, I have only these six left.`;
+                                                                    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                    fadeInOverlayText.style.opacity = "0";
+                                                                    fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                    fadeInOverlay.appendChild(fadeInOverlayText);
+                                            
+                                                                  /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                  setTimeout(() => {
+                                                                    fadeInOverlayText.style.transition = "opacity 2s";
+                                                                    fadeInOverlayText.style.opacity = "1";
+                                                                  }, 1000);
+                                            
+                                                                  /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                  setTimeout(() => {
+                                                                    fadeInOverlayText.style.transition = "opacity 2s";
+                                                                    fadeInOverlayText.style.opacity = "0";
+                                                                  }, 4000);
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `You can have three. Go on, choose!`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `Hey! Gramps! No fair! What about me?`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `Be patient, ${rivalNameInput}. You can have three, too!`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `I see! BULBSAUR is your first choice. It's very easy to raise.`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `Hm! SQUIRTLE is second choice. It's one worth raising.`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `Ah! CHARMANDER is your third choice. You should raise it patiently.`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `These POKeMON are really quite energetic!`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+       /* Pre-Fade Overlay Text 6: Variables */
+       setTimeout(() => {
+        fadeInOverlayFlavourText.textContent = `${playerNameInput} received the SQUIRTLE, BULBASAUR, and CHARMANDER from PROF. OAK!`;
+        fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+        fadeInOverlayText.style.opacity = "0";
+        fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+        fadeInOverlay.appendChild(fadeInOverlayText);
+
+      /* Pre-Fade Overlay Text 6: Fade-In */
+      setTimeout(() => {
+        fadeInOverlayText.style.transition = "opacity 2s";
+        fadeInOverlayText.style.opacity = "1";
+      }, 1000);
+
+      /* Pre-Fade Overlay Text 6: Fade-Out */
+      setTimeout(() => {
+        fadeInOverlayText.style.transition = "opacity 2s";
+        fadeInOverlayText.style.opacity = "0";
+      }, 4000);
+
+        /* Pre-Fade Overlay Text 6: Variables */
+        setTimeout(() => {
+          fadeInOverlayFlavourText.textContent = `I'll take these ones, then!`;
+          fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+          fadeInOverlayText.style.opacity = "0";
+          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+          fadeInOverlay.appendChild(fadeInOverlayText);
+  
+        /* Pre-Fade Overlay Text 6: Fade-In */
+        setTimeout(() => {
+          fadeInOverlayText.style.transition = "opacity 2s";
+          fadeInOverlayText.style.opacity = "1";
+        }, 1000);
+  
+        /* Pre-Fade Overlay Text 6: Fade-Out */
+        setTimeout(() => {
+          fadeInOverlayText.style.transition = "opacity 2s";
+          fadeInOverlayText.style.opacity = "0";
+        }, 4000);
+
+             /* Pre-Fade Overlay Text 6: Variables */
+       setTimeout(() => {
+        fadeInOverlayFlavourText.textContent = `${rivalNameInput} received the SQUIRTLE, BULBASAUR, and CHARMANDER from PROF. OAK!`;
+        fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+        fadeInOverlayText.style.opacity = "0";
+        fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+        fadeInOverlay.appendChild(fadeInOverlayText);
+
+      /* Pre-Fade Overlay Text 6: Fade-In */
+      setTimeout(() => {
+        fadeInOverlayText.style.transition = "opacity 2s";
+        fadeInOverlayText.style.opacity = "1";
+      }, 1000);
+
+      /* Pre-Fade Overlay Text 6: Fade-Out */
+      setTimeout(() => {
+        fadeInOverlayText.style.transition = "opacity 2s";
+        fadeInOverlayText.style.opacity = "0";
+      }, 4000);
+
+                                                                                          /* Pre-Fade Overlay Text 6: Variables */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayFlavourText.textContent = `My POKeMON look a lot tougher than yours.`;
+                                                                                            fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                            fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "1";
+                                                                                          }, 1000);
+                                                                    
+                                                                                          /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                          setTimeout(() => {
+                                                                                            fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                            fadeInOverlayText.style.opacity = "0";
+                                                                                          }, 4000);
+
+                                                                                                      /* Pre-Fade Overlay Text 6: Variables */
+                                                                                                      setTimeout(() => {
+                                                                                                        fadeInOverlayFlavourText.textContent = `${rivalNameInput}, you both have identical POKeMON...`;
+                                                                                                        fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                                        fadeInOverlayText.style.opacity = "0";
+                                                                                                        fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                                        fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                                
+                                                                                                      /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                                      setTimeout(() => {
+                                                                                                        fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                                        fadeInOverlayText.style.opacity = "1";
+                                                                                                      }, 1000);
+                                                                                
+                                                                                                      /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                                      setTimeout(() => {
+                                                                                                        fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                                        fadeInOverlayText.style.opacity = "0";
+                                                                                                      }, 4000);
+
+                                                                                                                                /* Pre-Fade Overlay Text 6: Variables */
+                                                                                                                                setTimeout(() => {
+                                                                                                                                  fadeInOverlayFlavourText.textContent = `If a wild POKeMON appears, your POKeMON can battle it.`;
+                                                                                                                                  fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                                                                  fadeInOverlayText.style.opacity = "0";
+                                                                                                                                  fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                                                                  fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                                                          
+                                                                                                                                /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                                                                setTimeout(() => {
+                                                                                                                                  fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                                                                  fadeInOverlayText.style.opacity = "1";
+                                                                                                                                }, 1000);
+                                                                                                          
+                                                                                                                                /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                                                                setTimeout(() => {
+                                                                                                                                  fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                                                                  fadeInOverlayText.style.opacity = "0";
+                                                                                                                                }, 4000);
+
+                                                                                                  /* Pre-Fade Overlay Text 6: Variables */
+                                                                                                  setTimeout(() => {
+                                                                                                    fadeInOverlayFlavourText.textContent = `With them at your side, you should be able to reach the next town.`;
+                                                                                                    fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
+                                                                                                    fadeInOverlayText.style.opacity = "0";
+                                                                                                    fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                                                    fadeInOverlay.appendChild(fadeInOverlayText);
+                                                                            
+                                                                                                  /* Pre-Fade Overlay Text 6: Fade-In */
+                                                                                                  setTimeout(() => {
+                                                                                                    fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                                    fadeInOverlayText.style.opacity = "1";
+                                                                                                  }, 1000);
+                                                                            
+                                                                                                  /* Pre-Fade Overlay Text 6: Fade-Out */
+                                                                                                  setTimeout(() => {
+                                                                                                    fadeInOverlayText.style.transition = "opacity 2s";
+                                                                                                    fadeInOverlayText.style.opacity = "0";
+                                                                                                  }, 4000);
+                                                                                          
+
 
                       /* Pre-Fade Overlay Text 7: Definition */
                       setTimeout(() => {
@@ -1128,7 +1672,10 @@ function fadeIn() {
                       }, 5000); 
 
                       }, 4000); // Wait for 4 seconds before fading out the text "That's right! I remember now! His name is rivalName!"
-                    }, 5000)
+                    }, 5000);
+                  }, 5000)
+                }, 5000)
+              }, 5000)
                     }, 1000); // Wait for the input box to disappear before showing the text "That's right! I remember now! His name is rivalName!"
 
                   }
