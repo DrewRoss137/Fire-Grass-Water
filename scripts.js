@@ -724,6 +724,8 @@ fadeInOverlayInputBox.type = "text";
 /* Pre-Fade Text */
 const fadeInOverlayText = document.createElement("span");
 fadeInOverlayText.id = "fade-in-overlay-text";
+fadeInOverlayText.style.opacity = "0";
+fadeInOverlayText.append(fadeInOverlayFlavourText);
 
 /* Pre-Fade Additional Flavour Text */
 const fadeInOverlayAdditionalFlavourText = document.createElement("span");
@@ -732,44 +734,75 @@ fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text
 /* Pre-Fade Overlay */
 const fadeInOverlay = document.createElement("div");
 fadeInOverlay.id = "fade-in-overlay";
+fadeInOverlay.append(fadeInOverlayText);
 
 function fadeIn() {
   body.insertBefore(fadeInOverlay, body.firstChild);
 
   setTimeout(() => {
-    fadeInOverlayFlavourText.style.textShadow =
-      "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+    fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
     fadeInOverlayFlavourText.textContent = "Hello, there! Glad to meet you!";
     fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
-    fadeInOverlayText.style.opacity = "0";
-    fadeInOverlayText.append(fadeInOverlayFlavourText);
-    fadeInOverlay.append(fadeInOverlayText);
 
     setTimeout(() => {
       fadeInOverlayText.style.opacity = "1";
-      fadeInOverlayText.style.transition = "opacity 2s";
+      fadeInOverlayText.style.transition = "opacity 3s";
     }, 1000);
 
     setTimeout(() => {
       fadeInOverlayText.style.opacity = "0";
-      fadeInOverlayText.style.transition = "opacity 2s";
+      fadeInOverlayText.style.transition = "opacity 1.5s";
     }, 3000);
 
     setTimeout(() => {
       fadeInOverlayFlavourText.textContent = "Welcome to the world of POKéMON!";
-      fadeInOverlayText.style.opacity = "0";
 
       setTimeout(() => {
         fadeInOverlayText.style.opacity = "1";
-        fadeInOverlayText.style.transition = "opacity 2s";
+        fadeInOverlayText.style.transition = "opacity 3s";
       }, 1000);
 
       setTimeout(() => {
         fadeInOverlayText.style.opacity = "0";
-        fadeInOverlayText.style.transition = "opacity 2s";
+        fadeInOverlayText.style.transition = "opacity 1.5s";
       }, 3000);
+      
+      setTimeout(() => {
+        fadeInOverlayFlavourText.textContent = "My name is OAK.";
+  
+        setTimeout(() => {
+          fadeInOverlayText.style.opacity = "1";
+          fadeInOverlayText.style.transition = "opacity 3s";
+        }, 1000);
+  
+        setTimeout(() => {
+          fadeInOverlayText.style.opacity = "0";
+          fadeInOverlayText.style.transition = "opacity 1.5s";
+        }, 3000);
+        
+        setTimeout(() => {
+          fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(87, 78, 45), 5px 5px rgb(44, 39, 23)";
+          fadeInOverlayAttributionText.textContent = "OAK: ";
+          fadeInOverlayFlavourText.textContent = "People affectionately refer to me as the POKéMON Professor.";
+          fadeInOverlayText.append(fadeInOverlayAttributionText);
+          fadeInOverlayText.append(fadeInOverlayFlavourText);
 
-    }, 4750);
+          setTimeout(() => {
+            fadeInOverlayText.style.opacity = "1";
+            fadeInOverlayText.style.transition = "opacity 3s";
+          }, 1000);
+    
+          setTimeout(() => {
+            fadeInOverlayText.style.opacity = "0";
+            fadeInOverlayText.style.transition = "opacity 1.5s";
+          }, 3000);
+
+
+
+
+        }, 4175);
+      }, 4175);
+    }, 4175);
   }, 0);
 }
 
@@ -778,28 +811,7 @@ function fadeIn() {
     
 
 
-  // setTimeout(() => {
-  // fadeInOverlayFlavourText.textContent = "My name is OAK.";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition = "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
+  
 
   // setTimeout(() => {
   // fadeInOverlayAttributionText.textContent = "OAK: ";
