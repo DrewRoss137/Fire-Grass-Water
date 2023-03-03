@@ -718,11 +718,21 @@ fadeInOverlayFlavourText.id = "fade-in-overlay-flavour-text";
 const fadeInOverlayNameText = document.createElement("span");
 fadeInOverlayNameText.id = "fade-in-overlay-name-text";
 
-/* Pre-Fade Input Box */
-const fadeInOverlayInputBox = document.createElement("input");
-fadeInOverlayInputBox.id = "fade-in-overlay-input-box";
-fadeInOverlayInputBox.style.opacity = "0";
-fadeInOverlayInputBox.type = "text";
+/* Pre-Fade Player Input Box */
+const fadeInOverlayPlayerInputBox = document.createElement("input");
+fadeInOverlayPlayerInputBox.id = "fade-in-overlay-player-input-box";
+fadeInOverlayPlayerInputBox.style.borderColor = "rgb(0, 100, 255)";
+fadeInOverlayPlayerInputBox.style.opacity = "0";
+fadeInOverlayPlayerInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
+fadeInOverlayPlayerInputBox.type = "text";
+
+/* Pre-Fade Rival Input Box */
+const fadeInOverlayRivalInputBox = document.createElement("input");
+fadeInOverlayRivalInputBox.id = "fade-in-overlay-rival-input-box";
+fadeInOverlayRivalInputBox.style.borderColor = "rgb(0, 100, 255)";
+fadeInOverlayRivalInputBox.style.opacity = "0";
+fadeInOverlayRivalInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+fadeInOverlayRivalInputBox.type = "text";
 
 /* Pre-Fade Text */
 const fadeInOverlayText = document.createElement("span");
@@ -875,35 +885,24 @@ function fadeIn() {
                       }, 1000);
                       
                       setTimeout(() => {
-                        fadeInOverlayInputBox.style.borderColor = "rgb(0, 100, 255)";
-                        fadeInOverlayInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
-                        fadeInOverlay.appendChild(fadeInOverlayInputBox);
+                        fadeInOverlay.appendChild(fadeInOverlayPlayerInputBox);
                         
                         setTimeout(() => {
-                          fadeInOverlayInputBox.style.opacity = "1";
-                          fadeInOverlayInputBox.style.transition = "opacity 3s";
+                          fadeInOverlayPlayerInputBox.style.opacity = "1";
+                          fadeInOverlayPlayerInputBox.style.transition = "opacity 3s";
                         }, 1000);
                         
-                        fadeInOverlayInputBox.addEventListener("keydown", (event) => {
+                        fadeInOverlayPlayerInputBox.addEventListener("keydown", (event) => {
                           if (event.key === "Enter") {
+                            playerNameInput = fadeInOverlayPlayerInputBox.value;
                             setTimeout(() => {
-                              fadeInOverlayInputBox.style.opacity = "0";
+                              fadeInOverlayPlayerInputBox.style.opacity = "0";
                             }, 0);
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "0";
                             }, 500);
-                            if (inputCounter === 0) {
-                              playerNameInput = fadeInOverlayInputBox.value;
-                              console.log(`Player Name: ${playerNameInput}`);
-                              inputCounter++;
-                            } else if (inputCounter === 1) {
-                              rivalNameInput = fadeInOverlayInputBox.value;
-                              console.log(`Rival Name: ${rivalNameInput}`);
-                            }
                           }
 
-
-      
                         setTimeout(() => {
                           fadeInOverlayFlavourText.textContent = "Right...";
                           
@@ -916,8 +915,7 @@ function fadeIn() {
                             fadeInOverlayText.style.opacity = "0";
                             fadeInOverlayText.style.transition = "opacity 1.5s";
                           }, 3000);
-                          fadeInOverlayInputBox.value = "";
-                          fadeInOverlayInputBox.remove();
+                          fadeInOverlayPlayerInputBox.remove();
 
                           setTimeout(() => {
                             fadeInOverlayText.appendChild(fadeInOverlayNameText);
@@ -937,7 +935,7 @@ function fadeIn() {
 
                             setTimeout(() => {
                               fadeInOverlayNameText.remove();
-                              fadeInOverlayFlavourText.textContent = "This is my grandchild.";
+                              fadeInOverlayFlavourText.textContent = "I'm sure you remember my grandchild...";
                               
                               setTimeout(() => {
                                 fadeInOverlayText.style.opacity = "1";
@@ -971,25 +969,43 @@ function fadeIn() {
                                   }, 1000);
                                   
                                   setTimeout(() => {
-                                    fadeInOverlayInputBox.style.borderColor = "rgb(255, 100, 0)";
-                                    fadeInOverlayInputBox.style.opacity = "0";
-                                    fadeInOverlayInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
-                                    fadeInOverlay.appendChild(fadeInOverlayInputBox);
+                                    fadeInOverlay.appendChild(fadeInOverlayRivalInputBox);
                                     
                                     setTimeout(() => {
-                                      fadeInOverlayInputBox.style.opacity = "1";
-                                      fadeInOverlayInputBox.style.transition = "opacity 3s";
+                                      fadeInOverlayRivalInputBox.style.opacity = "1";
+                                      fadeInOverlayRivalInputBox.style.transition = "opacity 3s";
                                     }, 1000);
                                     
-                                    fadeInOverlayInputBox.addEventListener("keydown", (event) => {
+                                    fadeInOverlayRivalInputBox.addEventListener("keydown", (event) => {
                                       if (event.key === "Enter") {
+                                        rivalNameInput = fadeInOverlayRivalInputBox.value;
                                         setTimeout(() => {
-                                          fadeInOverlayInputBox.style.opacity = "0";
+                                          fadeInOverlayRivalInputBox.style.opacity = "0";
                                         }, 0);
                                         setTimeout(() => {
                                           fadeInOverlayText.style.opacity = "0";
                                         }, 500);
                                       }
+
+                                    setTimeout(() => {
+                                      fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                      fadeInOverlayNameText.textContent = `${rivalNameInput}?`;
+                                      fadeInOverlayFlavourText.textContent = "...Er, was it ";
+                                      fadeInOverlayText.appendChild(fadeInOverlayNameText);
+                                      
+                                      setTimeout(() => {
+                                        fadeInOverlayText.style.opacity = "1";
+                                        fadeInOverlayText.style.transition = "opacity 3s";
+                                      }, 1000);
+                          
+                                      setTimeout(() => {
+                                        fadeInOverlayText.style.opacity = "0";
+                                        fadeInOverlayText.style.transition = "opacity 1.5s";
+                                      }, 3000);
+      
+
+
+                                          }, 4300);
                                         }, 4300);
                                       }, 4300);
                                     }, 4300);
@@ -1042,42 +1058,42 @@ function fadeIn() {
 
   // /* Pre-Fade Overlay Input 1: Variables */
   // setTimeout(() => {
-  // const fadeInOverlayInputBox =
+  // const fadeInOverlayPlayerInputBox =
   // document.createElement("input");
-  // fadeInOverlayInputBox.id =
+  // fadeInOverlayPlayerInputBox.id =
   // "fade-in-overlay-input-box";
-  // fadeInOverlayInputBox.type = "text";
-  // fadeInOverlayInputBox.style.color =
+  // fadeInOverlayPlayerInputBox.type = "text";
+  // fadeInOverlayPlayerInputBox.style.color =
   // "rgb(255, 100, 0)";
-  // fadeInOverlayInputBox.style.borderColor =
+  // fadeInOverlayPlayerInputBox.style.borderColor =
   // "rgb(255, 100, 0)";
-  // fadeInOverlayInputBox.style.opacity =
+  // fadeInOverlayPlayerInputBox.style.opacity =
   // "0";
-  // fadeInOverlayInputBox.style.transition =
+  // fadeInOverlayPlayerInputBox.style.transition =
   // "opacity 1s";
   // document.body.appendChild(
-  // fadeInOverlayInputBox
+  // fadeInOverlayPlayerInputBox
   // );
 
   // /* Pre-Fade Overlay Input 1: Fade-In */
   // setTimeout(() => {
-  // fadeInOverlayInputBox.style.opacity =
+  // fadeInOverlayPlayerInputBox.style.opacity =
   // "1";
   // }, 12000);
 
-  // fadeInOverlayInputBox.addEventListener(
+  // fadeInOverlayPlayerInputBox.addEventListener(
   // "keydown",
   // (event) => {
   // if (event.key === "Enter") {
   // setTimeout(() => {
   // rivalNameInput =
-  // fadeInOverlayInputBox.value;
+  // fadeInOverlayPlayerInputBox.value;
   // console.log(
   // `RIVAL NAME: ${rivalNameInput}`
   // );
   // fadeInOverlayText.style.opacity =
   // "0";
-  // fadeInOverlayInputBox.style.opacity =
+  // fadeInOverlayPlayerInputBox.style.opacity =
   // "0";
   // }, 0);
 

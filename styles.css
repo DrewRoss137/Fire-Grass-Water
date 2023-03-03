@@ -158,7 +158,8 @@ Fade In
     text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92);
 }
 
-#fade-in-overlay-input-box {
+#fade-in-overlay-player-input-box,
+#fade-in-overlay-rival-input-box {
     background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgba(0, 0, 0) 125%);
     border-radius: 10px;
     border-style: solid;
@@ -177,7 +178,8 @@ Fade In
     width: 600px;
 }
 
-#fade-in-overlay-input-box:focus {
+#fade-in-overlay-player-input-box:focus,
+#fade-in-overlay-rival-input-box:focus {
     outline: none;
     filter: brightness(1.05);
 }
