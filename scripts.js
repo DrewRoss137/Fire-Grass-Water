@@ -1099,7 +1099,7 @@ fadeInOverlayText.style.opacity = "0";
 
 /* Pre-Fade Overlay Text 3: Variables */
 setTimeout(() => {
-fadeInOverlayFlavourText.textContent = `They've been your rival since you both were babies...`;
+fadeInOverlayFlavourText.textContent = `They've been your rival since you both were babies.`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity = "0";
@@ -1285,7 +1285,7 @@ fadeInOverlayText.style.opacity =
 
 /* Pre-Fade Overlay Text 5: Variables */
 setTimeout(() => {
-fadeInOverlayFlavourText.textContent = `Your very own POKéMON leend is about to unfold!`;
+fadeInOverlayFlavourText.textContent = `Your very own POKéMON legend is about to unfold!`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -1338,37 +1338,6 @@ fadeInOverlayText.style.opacity =
 }, 1000);
 
 /* Pre-Fade Overlay Text 5: Fade-Out */
-setTimeout(() => {
-fadeInOverlayText.style.transition =
-"opacity 2s";
-fadeInOverlayText.style.opacity =
-"0";
-}, 4000);
-
-/* Pre-Fade Overlay Text 6: Variables */
-setTimeout(() => {
-fadeInOverlayFlavourText.textContent = `Talk of the Devil! Here comes ${rivalNameInput}!`;
-fadeInOverlayText.style.borderColor =
-"rgb(174, 77, 85)";
-fadeInOverlayText.style.opacity =
-"0";
-fadeInOverlayText.append(
-fadeInOverlayNameText,
-fadeInOverlayFlavourText
-);
-fadeInOverlay.appendChild(
-fadeInOverlayText
-);
-
-/* Pre-Fade Overlay Text 6: Fade-In */
-setTimeout(() => {
-fadeInOverlayText.style.transition =
-"opacity 2s";
-fadeInOverlayText.style.opacity =
-"1";
-}, 1000);
-
-/* Pre-Fade Overlay Text 6: Fade-Out */
 setTimeout(() => {
 fadeInOverlayText.style.transition =
 "opacity 2s";
@@ -1522,6 +1491,44 @@ fadeInOverlayText.style.opacity =
 
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
+  () => {
+  fadeInOverlayFlavourText.textContent = `There are three POKéMON for you here. `;
+  fadeInOverlayText.style.borderColor =
+  "rgb(174, 77, 85)";
+  fadeInOverlayText.style.opacity =
+  "0";
+  fadeInOverlayText.append(
+  fadeInOverlayNameText,
+  fadeInOverlayFlavourText
+  );
+  fadeInOverlay.appendChild(
+  fadeInOverlayText
+  );
+  
+  /* Pre-Fade Overlay Text 6: Fade-In */
+  setTimeout(
+  () => {
+  fadeInOverlayText.style.transition =
+  "opacity 2s";
+  fadeInOverlayText.style.opacity =
+  "1";
+  },
+  1000
+  );
+  
+  /* Pre-Fade Overlay Text 6: Fade-Out */
+  setTimeout(
+  () => {
+  fadeInOverlayText.style.transition =
+  "opacity 2s";
+  fadeInOverlayText.style.opacity =
+  "0";
+  },
+  4000
+  );
+
+/* Pre-Fade Overlay Text 6: Variables */
+setTimeout(
 () => {
 fadeInOverlayFlavourText.textContent = `Haha!`;
 fadeInOverlayText.style.borderColor =
@@ -1558,10 +1565,12 @@ fadeInOverlayText.style.opacity =
 4000
 );
 
+
+
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `There are three POKEMON here. `;
+fadeInOverlayFlavourText.textContent = `The POKéMON are held inside these POKé BALLS. `;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -1599,45 +1608,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `The POKEMON are held inside these POKe BALLS. `;
-fadeInOverlayText.style.borderColor =
-"rgb(174, 77, 85)";
-fadeInOverlayText.style.opacity =
-"0";
-fadeInOverlayText.append(
-fadeInOverlayNameText,
-fadeInOverlayFlavourText
-);
-fadeInOverlay.appendChild(
-fadeInOverlayText
-);
-
-/* Pre-Fade Overlay Text 6: Fade-In */
-setTimeout(
-() => {
-fadeInOverlayText.style.transition =
-"opacity 2s";
-fadeInOverlayText.style.opacity =
-"1";
-},
-1000
-);
-
-/* Pre-Fade Overlay Text 6: Fade-Out */
-setTimeout(
-() => {
-fadeInOverlayText.style.transition =
-"opacity 2s";
-fadeInOverlayText.style.opacity =
-"0";
-},
-4000
-);
-
-/* Pre-Fade Overlay Text 6: Variables */
-setTimeout(
-() => {
-fadeInOverlayFlavourText.textContent = `When I was young, I was a serious POKeMON TRAINER. `;
+fadeInOverlayFlavourText.textContent = `When I was young, I was a serious POKéMON TRAINER. `;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -1865,7 +1836,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `Hm! SQUIRTLE is second choice. It's one worth raising.`;
+fadeInOverlayFlavourText.textContent = `Hm! SQUIRTLE is your second choice. It's one worth raising.`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -1941,7 +1912,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `These POKeMON are really quite energetic!`;
+fadeInOverlayFlavourText.textContent = `These POKéMON are really quite energetic!`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -1979,7 +1950,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `${playerNameInput} received the SQUIRTLE, BULBASAUR, and CHARMANDER from PROF. OAK!`;
+fadeInOverlayFlavourText.textContent = `${playerNameInput} received the BULBASAUR, SQUIRTLE, and CHARMANDER from PROF. OAK!`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -2055,7 +2026,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `${rivalNameInput} received the SQUIRTLE, BULBASAUR, and CHARMANDER from PROF. OAK!`;
+fadeInOverlayFlavourText.textContent = `${rivalNameInput} received the BULBASAUR, SQUIRTLE, and CHARMANDER from PROF. OAK!`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -2093,7 +2064,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `My POKeMON look a lot tougher than yours.`;
+fadeInOverlayFlavourText.textContent = `My POKéMON look a lot tougher than yours.`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -2131,7 +2102,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `${rivalNameInput}, you both have identical POKeMON...`;
+fadeInOverlayFlavourText.textContent = `${rivalNameInput}, you both have identical POKéMON...`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -2169,7 +2140,7 @@ fadeInOverlayText.style.opacity =
 /* Pre-Fade Overlay Text 6: Variables */
 setTimeout(
 () => {
-fadeInOverlayFlavourText.textContent = `If a wild POKeMON appears, your POKeMON can battle it.`;
+fadeInOverlayFlavourText.textContent = `If a wild POKéMON appears, your POKéMON can battle it.`;
 fadeInOverlayText.style.borderColor =
 "rgb(174, 77, 85)";
 fadeInOverlayText.style.opacity =
@@ -2409,7 +2380,7 @@ fadeInOverlay.remove();
 );
 }, 9000);
 }, 5000);
-}, 4000); // Wait for 4 seconds before fading out the text "That's right! I remember now! His name is rivalName!"
+ // Wait for 4 seconds before fading out the text "That's right! I remember now! His name is rivalName!"
 }, 5000);
 }, 5000);
 }, 5000);
