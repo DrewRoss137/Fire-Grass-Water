@@ -888,11 +888,46 @@ function fadeIn() {
                             console.log(`PLAYER NAME: ${playerNameInput}`);
                             setTimeout(() => {
                               fadeInOverlayInputBox.style.opacity = "0";
-                            }, 500);
+                            }, 0);
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "0";
-                            }, 1000);
+                            }, 500);
                           }
+
+                        setTimeout(() => {
+                          fadeInOverlayFlavourText.textContent = "Right...";
+                          
+                          setTimeout(() => {
+                            fadeInOverlayText.style.opacity = "1";
+                            fadeInOverlayText.style.transition = "opacity 3s";
+                          }, 1000);
+              
+                          setTimeout(() => {
+                            fadeInOverlayText.style.opacity = "0";
+                            fadeInOverlayText.style.transition = "opacity 1.5s";
+                          }, 3000);
+
+                          setTimeout(() => {
+                            fadeInOverlayText.appendChild(fadeInOverlayNameText)
+                            fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
+                            fadeInOverlayNameText.textContent = `${playerNameInput}.`
+                            fadeInOverlayFlavourText.textContent = "So your name is ";
+  
+                            
+                            setTimeout(() => {
+                              fadeInOverlayText.style.opacity = "1";
+                              fadeInOverlayText.style.transition = "opacity 3s";
+                            }, 1000);
+                
+                            setTimeout(() => {
+                              fadeInOverlayText.style.opacity = "0";
+                              fadeInOverlayText.style.transition = "opacity 1.5s";
+                            }, 3000);
+
+
+
+                            }, 4300);
+                          }, 4500);
                         }, 4300);
                       }, 4300);
                     }, 4300);
@@ -907,94 +942,8 @@ function fadeIn() {
   }, 0);
 }
 
-    
-    /* ANCHOR */
   
-  // /* Pre-Fade Overlay Text 0: Variables */
-  // setTimeout(() => {
-  // fadeInOverlayAttributionText.style.color =
-  // "rgb(174, 77, 85)";
-  // fadeInOverlayAttributionText.textContent =
-  // "PROFESSOR OAK: ";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayFlavourText.textContent =
-  // "Let's begin with ";
-
-  // fadeInOverlayNameText.textContent = "your ";
-
-  // fadeInOverlayAdditionalFlavourText.textContent =
-  // "name. What is it?";
-
-  // fadeInOverlayNameText.style.color = "rgb(0, 100, 255)";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText,
-  // fadeInOverlayNameText,
-  // fadeInOverlayAdditionalFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // /* Pre-Fade Overlay Text 0: Fade In */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Input Box: Variables */
-  // setTimeout(() => {
-  // fadeInOverlayInputBox.style.borderColor = "rgb(0, 100, 255)";
-  // fadeInOverlayInputBox.style.color = "rgb(0, 100, 255)";
-  // fadeInOverlayInputBox.style.opacity = "0";
-  // body.appendChild(fadeInOverlayInputBox);
-
-  // /* Pre-Fade Overlay Input Box 0: Fade In */
-  // setTimeout(() => {
-  // fadeInOverlayInputBox.style.opacity = "1";
-  // fadeInOverlayInputBox.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Input Box 0: Fade Out */
-  // fadeInOverlayInputBox.addEventListener(
-  // "keydown",
-  // (event) => {
-  // if (event.key === "Enter") {
-  // playerNameInput = fadeInOverlayInputBox.value;
-  // console.log(`PLAYER NAME: ${playerNameInput}`);
-  // setTimeout(() => {
-  // fadeInOverlayInputBox.style.opacity = "0";
-  // }, 1000);
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 2000);
-
-  // /* Pre-Fade Overlay Text 1: Variables */
-  // setTimeout(() => {
-  // fadeInOverlayFlavourText.textContent =
-  // "Right...";
-  // fadeInOverlayText.style.opacity = "0";
-  // fadeInOverlayText.append(
-  // fadeInOverlayNameText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // /* Pre-Fade Overlay Text 1: Fade-In */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "1";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
+  
 
   // /* Pre-Fade Overlay Text 2: Variables */
   // setTimeout(() => {
