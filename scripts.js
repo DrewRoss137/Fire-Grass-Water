@@ -886,22 +886,22 @@ function fadeIn() {
                         
                         fadeInOverlayInputBox.addEventListener("keydown", (event) => {
                           if (event.key === "Enter") {
+                            setTimeout(() => {
+                              fadeInOverlayInputBox.style.opacity = "0";
+                            }, 0);
+                            setTimeout(() => {
+                              fadeInOverlayText.style.opacity = "0";
+                            }, 500);
                             if (inputCounter === 0) {
                               playerNameInput = fadeInOverlayInputBox.value;
                               console.log(`Player Name: ${playerNameInput}`);
                               inputCounter++;
-                              setTimeout(() => {
-                                fadeInOverlayInputBox.style.opacity = "0";
-                              }, 0);
-                              setTimeout(() => {
-                                fadeInOverlayText.style.opacity = "0";
-                              }, 500);
                             } else if (inputCounter === 1) {
                               rivalNameInput = fadeInOverlayInputBox.value;
                               console.log(`Rival Name: ${rivalNameInput}`);
                             }
                           }
-                        }, 4300);
+
 
       
                         setTimeout(() => {
@@ -990,13 +990,13 @@ function fadeIn() {
                                           fadeInOverlayText.style.opacity = "0";
                                         }, 500);
                                       }
-                                    }, 4300);
-
+                                        }, 4300);
+                                      }, 4300);
                                     }, 4300);
                                   }, 4300);
                                 }, 4300);
                               }, 4300);
-                            }, 4300);
+                            }, 5000);
                           }, 4600);
                       }, 4300);
                     }, 4300);
