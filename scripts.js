@@ -704,6 +704,8 @@ Elements
 Pre-Fade
 **************/
 
+
+
 /* Pre-Fade Attribution Text */
 const fadeInOverlayAttributionText = document.createElement("span");
 fadeInOverlayAttributionText.id = "fade-in-overlay-attribution-text";
@@ -884,14 +886,20 @@ function fadeIn() {
                         
                         fadeInOverlayInputBox.addEventListener("keydown", (event) => {
                           if (event.key === "Enter") {
-                            playerNameInput = fadeInOverlayInputBox.value;
-                            console.log(`PLAYER NAME: ${playerNameInput}`);
-                            setTimeout(() => {
-                              fadeInOverlayInputBox.style.opacity = "0";
-                            }, 0);
-                            setTimeout(() => {
-                              fadeInOverlayText.style.opacity = "0";
-                            }, 500);
+                            if (inputCounter === 0) {
+                              playerNameInput = fadeInOverlayInputBox.value;
+                              console.log(`Player Name: ${playerNameInput}`);
+                              setTimeout(() => {
+                                fadeInOverlayInputBox.style.opacity = "0";
+                              }, 0);
+                              setTimeout(() => {
+                                fadeInOverlayText.style.opacity = "0";
+                              }, 500);
+                            } else if (inputCounter === 1) {
+                              rivalNameInput = fadeInOverlayInputBox.value;
+                              console.log(`Rival Name: ${rivalNameInput}`);
+                            }
+                            inputCounter++;
                           }
 
                         setTimeout(() => {
@@ -906,13 +914,14 @@ function fadeIn() {
                             fadeInOverlayText.style.opacity = "0";
                             fadeInOverlayText.style.transition = "opacity 1.5s";
                           }, 3000);
+                          fadeInOverlayInputBox.value = "";
+                          fadeInOverlayInputBox.remove();
 
                           setTimeout(() => {
-                            fadeInOverlayText.appendChild(fadeInOverlayNameText)
+                            fadeInOverlayText.appendChild(fadeInOverlayNameText);
                             fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
-                            fadeInOverlayNameText.textContent = `${playerNameInput}.`
                             fadeInOverlayFlavourText.textContent = "So your name is ";
-  
+                            fadeInOverlayNameText.textContent = `${playerNameInput}.`;
                             
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "1";
@@ -924,8 +933,66 @@ function fadeIn() {
                               fadeInOverlayText.style.transition = "opacity 1.5s";
                             }, 3000);
 
+                            setTimeout(() => {
+                              fadeInOverlayNameText.remove();
+                              fadeInOverlayFlavourText.textContent = "This is my grandchild.";
+                              
+                              setTimeout(() => {
+                                fadeInOverlayText.style.opacity = "1";
+                                fadeInOverlayText.style.transition = "opacity 3s";
+                              }, 1000);
+                  
+                              setTimeout(() => {
+                                fadeInOverlayText.style.opacity = "0";
+                                fadeInOverlayText.style.transition = "opacity 1.5s";
+                              }, 3000);
 
+                              setTimeout(() => {
+                                fadeInOverlayFlavourText.textContent = "They've been your rival since you both were babies.";
+                                
+                                setTimeout(() => {
+                                  fadeInOverlayText.style.opacity = "1";
+                                  fadeInOverlayText.style.transition = "opacity 3s";
+                                }, 1000);
+                    
+                                setTimeout(() => {
+                                  fadeInOverlayText.style.opacity = "0";
+                                  fadeInOverlayText.style.transition = "opacity 1.5s";
+                                }, 3000);
 
+                                setTimeout(() => {
+                                  fadeInOverlayFlavourText.textContent = "...Erm, what was their name now?";
+                                  
+                                  setTimeout(() => {
+                                    fadeInOverlayText.style.opacity = "1";
+                                    fadeInOverlayText.style.transition = "opacity 3s";
+                                  }, 1000);
+                                  
+                                  setTimeout(() => {
+                                    fadeInOverlayInputBox.style.borderColor = "rgb(255, 100, 0)";
+                                    fadeInOverlayInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                    fadeInOverlay.appendChild(fadeInOverlayInputBox);
+                                    
+                                    setTimeout(() => {
+                                      fadeInOverlayInputBox.style.opacity = "1";
+                                      fadeInOverlayInputBox.style.transition = "opacity 3s";
+                                    }, 1000);
+                                    
+                                    fadeInOverlayInputBox.addEventListener("keydown", (event) => {
+                                      if (event.key === "Enter") {
+                                        setTimeout(() => {
+                                          fadeInOverlayInputBox.style.opacity = "0";
+                                        }, 0);
+                                        setTimeout(() => {
+                                          fadeInOverlayText.style.opacity = "0";
+                                        }, 500);
+                                      }
+
+                                      }, 4300);
+                                    }, 4300);
+                                  }, 4300);
+                                }, 4300);
+                              }, 4300);
                             }, 4300);
                           }, 4500);
                         }, 4300);
@@ -945,87 +1012,7 @@ function fadeIn() {
   
   
 
-  // /* Pre-Fade Overlay Text 2: Variables */
-  // setTimeout(() => {
-  // fadeInOverlayFlavourText.textContent = `So your name is ${playerNameInput}.`;
-  // fadeInOverlayText.style.borderColor =
-  // "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-  // fadeInOverlayText.append(
-  // fadeInOverlayNameText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // /* Pre-Fade Overlay Text 2: Fade-In */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "1";
-  // }, 4000);
-
-  // /* Pre-Fade Overlay Text 2: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 7000);
-
-  // /* Pre-Fade Overlay Text 3: Variables */
-  // setTimeout(() => {
-  // fadeInOverlayFlavourText.textContent = `This is my grandchild.`;
-  // fadeInOverlayText.style.borderColor =
-  // "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-  // fadeInOverlayText.append(
-  // fadeInOverlayNameText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(
-  // fadeInOverlayText
-  // );
-
-  // /* Pre-Fade Overlay Text 3: Fade-In */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "1";
-  // }, 8000);
-
-  // /* Pre-Fade Overlay Text 3: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 11000);
-
-  // /* Pre-Fade Overlay Text 3: Variables */
-  // setTimeout(() => {
-  // fadeInOverlayFlavourText.textContent = `They've been your rival since you both were babies.`;
-  // fadeInOverlayText.style.borderColor =
-  // "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-  // fadeInOverlayText.append(
-  // fadeInOverlayNameText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(
-  // fadeInOverlayText
-  // );
-
-  // /* Pre-Fade Overlay Text 3: Fade-In */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "1";
-  // }, 8000);
-
-  // /* Pre-Fade Overlay Text 3: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition =
-  // "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 11000);
+  
 
   // /* Pre-Fade Overlay Text 4: Variables */
   // setTimeout(() => {
