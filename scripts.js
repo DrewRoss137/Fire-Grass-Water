@@ -889,6 +889,7 @@ function fadeIn() {
                             if (inputCounter === 0) {
                               playerNameInput = fadeInOverlayInputBox.value;
                               console.log(`Player Name: ${playerNameInput}`);
+                              inputCounter++;
                               setTimeout(() => {
                                 fadeInOverlayInputBox.style.opacity = "0";
                               }, 0);
@@ -899,9 +900,10 @@ function fadeIn() {
                               rivalNameInput = fadeInOverlayInputBox.value;
                               console.log(`Rival Name: ${rivalNameInput}`);
                             }
-                            inputCounter++;
                           }
+                        }, 4300);
 
+      
                         setTimeout(() => {
                           fadeInOverlayFlavourText.textContent = "Right...";
                           
@@ -970,6 +972,7 @@ function fadeIn() {
                                   
                                   setTimeout(() => {
                                     fadeInOverlayInputBox.style.borderColor = "rgb(255, 100, 0)";
+                                    fadeInOverlayInputBox.style.opacity = "0";
                                     fadeInOverlayInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
                                     fadeInOverlay.appendChild(fadeInOverlayInputBox);
                                     
@@ -987,15 +990,14 @@ function fadeIn() {
                                           fadeInOverlayText.style.opacity = "0";
                                         }, 500);
                                       }
+                                    }, 4300);
 
-                                      }, 4300);
                                     }, 4300);
                                   }, 4300);
                                 }, 4300);
                               }, 4300);
                             }, 4300);
-                          }, 4500);
-                        }, 4300);
+                          }, 4600);
                       }, 4300);
                     }, 4300);
                   }, 4300);
