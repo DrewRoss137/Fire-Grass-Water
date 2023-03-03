@@ -897,10 +897,12 @@ function fadeIn() {
                             playerNameInput = fadeInOverlayPlayerInputBox.value;
                             setTimeout(() => {
                               fadeInOverlayPlayerInputBox.style.opacity = "0";
-                            }, 0);
+                              fadeInOverlayPlayerInputBox.style.transition = "opacity 1.5s";
+                            }, 3000);
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "0";
-                            }, 500);
+                              fadeInOverlayPlayerInputBox.style.transition = "opacity 1.5s";
+                            }, 3000);
                           }
 
                         setTimeout(() => {
@@ -981,10 +983,12 @@ function fadeIn() {
                                         rivalNameInput = fadeInOverlayRivalInputBox.value;
                                         setTimeout(() => {
                                           fadeInOverlayRivalInputBox.style.opacity = "0";
-                                        }, 0);
+                                          fadeInOverlayRivalInputBox.style.transition = "opacity 1.5s";
+                                        }, 3000);
                                         setTimeout(() => {
                                           fadeInOverlayText.style.opacity = "0";
-                                        }, 500);
+                                          fadeInOverlayText.style.transition = "opacity 1.5s";
+                                        }, 3000);
                                       }
 
                                     setTimeout(() => {
