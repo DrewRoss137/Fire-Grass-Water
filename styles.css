@@ -172,7 +172,6 @@ Fade In
     left: 50%;
     padding: 16px;
     position: fixed;
-    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92);
     top: 65%;
     transform: translate(-50%, -50%);
     width: 600px;
