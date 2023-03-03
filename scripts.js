@@ -795,146 +795,76 @@ function fadeIn() {
           setTimeout(() => {
             fadeInOverlayText.style.opacity = "0";
             fadeInOverlayText.style.transition = "opacity 1.5s";
-          }, 3000);
+          }, 5000);
+          
+          setTimeout(() => {
+            fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
+            fadeInOverlayFlavourText.textContent = "This world is inhabited far and wide by creatures called POKéMON.";
+            
+            setTimeout(() => {
+              fadeInOverlayText.style.opacity = "1";
+              fadeInOverlayText.style.transition = "opacity 3s";
+            }, -1000);
+
+            setTimeout(() => {
+              fadeInOverlayText.style.opacity = "0";
+              fadeInOverlayText.style.transition = "opacity 1.5s";
+            }, 5000);
+
+            setTimeout(() => {
+              fadeInOverlayFlavourText.textContent = "For some people, POKéMON are pets. Others use them for battling.";
+              
+              setTimeout(() => {
+                fadeInOverlayText.style.opacity = "1";
+                fadeInOverlayText.style.transition = "opacity 3s";
+              }, 1000);
+  
+              setTimeout(() => {
+                fadeInOverlayText.style.opacity = "0";
+                fadeInOverlayText.style.transition = "opacity 1.5s";
+              }, 5000);
+
+              setTimeout(() => {
+                fadeInOverlayFlavourText.textContent = "As for myself...";
+                
+                setTimeout(() => {
+                  fadeInOverlayText.style.opacity = "1";
+                  fadeInOverlayText.style.transition = "opacity 3s";
+                }, 1000);
+    
+                setTimeout(() => {
+                  fadeInOverlayText.style.opacity = "0";
+                  fadeInOverlayText.style.transition = "opacity 1.5s";
+                }, 3000);
+
+                setTimeout(() => {
+                  fadeInOverlayFlavourText.textContent = "I study POKéMON as a profession.";
+                  
+                  setTimeout(() => {
+                    fadeInOverlayText.style.opacity = "1";
+                    fadeInOverlayText.style.transition = "opacity 3s";
+                  }, 1000);
+      
+                  setTimeout(() => {
+                    fadeInOverlayText.style.opacity = "0";
+                    fadeInOverlayText.style.transition = "opacity 1.5s";
+                  }, 3000);
 
 
 
-
-        }, 4175);
-      }, 4175);
-    }, 4175);
+                }, 4300);
+              }, 8600);
+            }, 8600);
+          }, 8600);
+        }, 4300);
+      }, 4300);
+    }, 4300);
   }, 0);
 }
 
     
     /* ANCHOR */
-    
-
-
   
-
-  // setTimeout(() => {
-  // fadeInOverlayAttributionText.textContent = "OAK: ";
-  // fadeInOverlayFlavourText.textContent =
-  // "People affectionately refer to me as the POKéMON Professor.";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition = "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
-
-  // setTimeout(() => {
-  // fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-  // fadeInOverlayFlavourText.textContent =
-  // "This world is inhabited far and wide by creatures called POKéMON.";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition = "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
-
-  // setTimeout(() => {
-  // fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-  // fadeInOverlayFlavourText.textContent =
-  // "For some people, POKéMON are pets. Others use them for battling.";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition = "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
-
-  // setTimeout(() => {
-  // fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-  // fadeInOverlayFlavourText.textContent = "As for myself...";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition = "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
-
-  // setTimeout(() => {
-  // fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-  // fadeInOverlayFlavourText.textContent =
-  // "I study POKéMON as a profession.";
-
-  // fadeInOverlayText.style.borderColor = "rgb(174, 77, 85)";
-  // fadeInOverlayText.style.opacity = "0";
-
-  // fadeInOverlayText.append(
-  // fadeInOverlayAttributionText,
-  // fadeInOverlayFlavourText
-  // );
-  // fadeInOverlay.appendChild(fadeInOverlayText);
-
-  // setTimeout(() => {
-  // fadeInOverlayText.style.opacity = "1";
-  // fadeInOverlayText.style.transition = "opacity 1s";
-  // }, 1000);
-
-  // /* Pre-Fade Overlay Text 1: Fade-Out */
-  // setTimeout(() => {
-  // fadeInOverlayText.style.transition = "opacity 2s";
-  // fadeInOverlayText.style.opacity = "0";
-  // }, 3000);
 
   // setTimeout(() => {
   // fadeInOverlayAttributionText.textContent =
