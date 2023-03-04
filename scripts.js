@@ -750,6 +750,14 @@ fadeInOverlay.append(fadeInOverlayText);
 function fadeIn() {
   body.insertBefore(fadeInOverlay, body.firstChild);
 
+  if (fadeInOverlayNameText.textContent === "PROFESSOR OAK: ") {
+    fadeInOverlayText.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+    fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
+  } else if (fadeInOverlayNameText.textContent === `${rivalNameInput}: `) {
+    fadeInOverlayText.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 111, 173), 4.5px 4.5px rgb(89, 111, 173), 5px 5px rgb(89, 111, 173)";
+    fadeInOverlayText.style.borderColor = "rgb(89, 111, 173)";
+  }
+
   setTimeout(() => {
     fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
     fadeInOverlayFlavourText.textContent = "Hello, there! Glad to meet you!";
@@ -1034,7 +1042,8 @@ function fadeIn() {
                                           fadeInOverlayText.style.opacity = "0";
                                           fadeInOverlayText.style.transition = "opacity 1.5s";
                                         }, 3000);
-                                        fadeInOverlayNameText.remove()
+                                        fadeInOverlayNameText.remove();
+                                        fadeInOverlayText.appendChild(fadeInOverlayFlavourText);
 
 
                                         setTimeout(() => {
@@ -1417,6 +1426,23 @@ function fadeIn() {
                                                                                           fadeInOverlayText.style.opacity = "0";
                                                                                           fadeInOverlayText.style.transition = "opacity 1.5s";
                                                                                         }, 3000);
+
+                                                                         setTimeout(
+  () => {
+  fadeInOverlay.style.transition =
+  "opacity 2s"; // Increase the time for the overlay to fade out
+  fadeInOverlay.style.opacity =
+  "0";
+  // Add event listener to remove overlay div when fade out is complete
+  fadeInOverlay.addEventListener(
+  "transitionend",
+  () => {
+  fadeInOverlay.remove();
+  }
+  );
+  },
+  14000
+  ); // Wait for 14 seconds before fading out the overlay
       
 
 
