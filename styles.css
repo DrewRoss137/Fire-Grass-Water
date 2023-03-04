@@ -125,7 +125,7 @@ img .pokémon,
 }
 
 /**************
-Fade In
+Pre-Fade
 **************/
 #fade-in-overlay {
     background: radial-gradient(circle, rgb(30, 30, 30) 0%, rgb(0, 0, 0) 100%);
@@ -138,44 +138,46 @@ Fade In
     max-width: 100%;
 }
 
-#fade-in-overlay-professor-oak-text {
-    color: rgb(174, 77, 85);
+#fade-in-overlay-text,
+#fade-in-overlay-player-input-box,
+#fade-in-overlay-rival-input-box {
+    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgba(0, 0, 0) 125%);
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 0px 0px 16px 8px black;
     font-size: 72px;
-    font-weight: 900;
-    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92);
+    padding: 32px;
 }
 
 #fade-in-overlay-text {
-    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgba(0, 0, 0) 125%);
-    border-color: rgb(86, 73, 92);
-    border-radius:  30px;
-    border-style: solid;
-    border-width: 3px;
-    box-shadow: 0px 0px 20px 10px black;
-    color: rgb(255, 255, 255);
-    font-size: 72px;
-    padding: 32px;
-    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92);
+    border-radius: 60px;
 }
 
 #fade-in-overlay-player-input-box,
 #fade-in-overlay-rival-input-box {
-    background: radial-gradient(circle, rgb(50, 50, 50) 0%, rgba(0, 0, 0) 125%);
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 3px;
-    box-shadow: 0px 0px 20px 10px black;
+    border-radius: 30px;
     caret-color: transparent;
-    color: #ffffff;
-    font-size: 72px;
+    color: white;
     font-family: "PokemonDSFont";
+    font-size: 72px;
     height: 100px;
     left: 50%;
-    padding: 16px;
+    padding: 8px 16px;
     position: fixed;
+    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0);
     top: 65%;
     transform: translate(-50%, -50%);
     width: 600px;
+}
+
+#fade-in-overlay-player-input-box {
+    border-color: rgb(89, 97, 173);
+    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173);    
+}
+
+#fade-in-overlay-rival-input-box {
+    border-color: rgb(176, 89, 89);
+    text-shadow: 3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89);    
 }
 
 #fade-in-overlay-player-input-box:focus,
