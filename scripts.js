@@ -721,15 +721,11 @@ fadeInOverlayNameText.id = "fade-in-overlay-name-text";
 /* Pre-Fade Player Input Box */
 const fadeInOverlayPlayerInputBox = document.createElement("input");
 fadeInOverlayPlayerInputBox.id = "fade-in-overlay-player-input-box";
-fadeInOverlayPlayerInputBox.style.borderColor = "rgb(0, 100, 255)";
-fadeInOverlayPlayerInputBox.style.opacity = "0";
-fadeInOverlayPlayerInputBox.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
 fadeInOverlayPlayerInputBox.type = "text";
 
 /* Pre-Fade Rival Input Box */
 const fadeInOverlayRivalInputBox = document.createElement("input");
 fadeInOverlayRivalInputBox.id = "fade-in-overlay-rival-input-box";
-fadeInOverlayRivalInputBox.style.opacity = "0";
 fadeInOverlayRivalInputBox.type = "text";
 
 /* Pre-Fade Text */
@@ -738,25 +734,19 @@ fadeInOverlayText.id = "fade-in-overlay-text";
 fadeInOverlayText.style.opacity = "0";
 fadeInOverlayText.append(fadeInOverlayFlavourText);
 
-/* Pre-Fade Additional Flavour Text */
-const fadeInOverlayAdditionalFlavourText = document.createElement("span");
-fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text";
-
 /* Pre-Fade Overlay */
 const fadeInOverlay = document.createElement("div");
 fadeInOverlay.id = "fade-in-overlay";
 fadeInOverlay.append(fadeInOverlayText);
 
+/*
+    professor oak color: rgb(173, 156, 89);
+    player color: rgb(89, 97, 173);
+    rival color: rgb(176, 89, 89);
+*/
+
 function fadeIn() {
   body.insertBefore(fadeInOverlay, body.firstChild);
-
-  if (fadeInOverlayNameText.textContent === "PROFESSOR OAK: ") {
-    fadeInOverlayText.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-    fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
-  } else if (fadeInOverlayNameText.textContent === `${rivalNameInput}: `) {
-    fadeInOverlayText.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 111, 173), 4.5px 4.5px rgb(89, 111, 173), 5px 5px rgb(89, 111, 173)";
-    fadeInOverlayText.style.borderColor = "rgb(89, 111, 173)";
-  }
 
   setTimeout(() => {
     fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
@@ -901,6 +891,7 @@ function fadeIn() {
                         fadeInOverlayPlayerInputBox.addEventListener("keydown", (event) => {
                           if (event.key === "Enter") {
                             playerNameInput = fadeInOverlayPlayerInputBox.value;
+                            console.log(`Player Name: ${playerNameInput}`);
                             setTimeout(() => {
                               fadeInOverlayPlayerInputBox.style.opacity = "0";
                               fadeInOverlayPlayerInputBox.style.transition = "opacity 1.5s";
@@ -926,11 +917,11 @@ function fadeIn() {
                           fadeInOverlayPlayerInputBox.remove();
 
                           setTimeout(() => {
-                            fadeInOverlayText.appendChild(fadeInOverlayNameText);
-                            fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
                             fadeInOverlayFlavourText.textContent = "So your name is ";
+                            fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
                             fadeInOverlayNameText.textContent = `${playerNameInput}.`;
-                            
+                            fadeInOverlayText.appendChild(fadeInOverlayNameText);
+
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "1";
                               fadeInOverlayText.style.transition = "opacity 3s";
@@ -940,11 +931,10 @@ function fadeIn() {
                               fadeInOverlayText.style.opacity = "0";
                               fadeInOverlayText.style.transition = "opacity 1.5s";
                             }, 3000);
+                            fadeInOverlayNameText.remove();
 
                             setTimeout(() => {
-                              fadeInOverlayNameText.remove();
                               fadeInOverlayFlavourText.textContent = "I'm sure you remember my grandchild...";
-                              
                               setTimeout(() => {
                                 fadeInOverlayText.style.opacity = "1";
                                 fadeInOverlayText.style.transition = "opacity 3s";
@@ -998,9 +988,9 @@ function fadeIn() {
                                       }
 
                                     setTimeout(() => {
+                                      fadeInOverlayFlavourText.textContent = "...Er, was it ";
                                       fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
                                       fadeInOverlayNameText.textContent = `${rivalNameInput}?`;
-                                      fadeInOverlayFlavourText.textContent = "...Er, was it ";
                                       fadeInOverlayText.appendChild(fadeInOverlayNameText);
                                       
                                       setTimeout(() => {
