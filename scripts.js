@@ -806,58 +806,58 @@ function fadeIn() {
             fadeInOverlayText.style.transition = "opacity 1.5s";
           }, 5000);
           
-          setTimeout(() => {
-            fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-            fadeInOverlayFlavourText.textContent = "This world is inhabited far and wide by creatures called POKéMON.";
+          // setTimeout(() => {
+          //   fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
+          //   fadeInOverlayFlavourText.textContent = "This world is inhabited far and wide by creatures called POKéMON.";
             
-            setTimeout(() => {
-              fadeInOverlayText.style.opacity = "1";
-              fadeInOverlayText.style.transition = "opacity 3s";
-            }, 1000);
+          //   setTimeout(() => {
+          //     fadeInOverlayText.style.opacity = "1";
+          //     fadeInOverlayText.style.transition = "opacity 3s";
+          //   }, 1000);
 
-            setTimeout(() => {
-              fadeInOverlayText.style.opacity = "0";
-              fadeInOverlayText.style.transition = "opacity 1.5s";
-            }, 5000);
+          //   setTimeout(() => {
+          //     fadeInOverlayText.style.opacity = "0";
+          //     fadeInOverlayText.style.transition = "opacity 1.5s";
+          //   }, 5000);
 
-            setTimeout(() => {
-              fadeInOverlayFlavourText.textContent = "For some people, POKéMON are pets. Others use them for battling.";
+          //   setTimeout(() => {
+          //     fadeInOverlayFlavourText.textContent = "For some people, POKéMON are pets. Others use them for battling.";
               
-              setTimeout(() => {
-                fadeInOverlayText.style.opacity = "1";
-                fadeInOverlayText.style.transition = "opacity 3s";
-              }, 1000);
+          //     setTimeout(() => {
+          //       fadeInOverlayText.style.opacity = "1";
+          //       fadeInOverlayText.style.transition = "opacity 3s";
+          //     }, 1000);
   
-              setTimeout(() => {
-                fadeInOverlayText.style.opacity = "0";
-                fadeInOverlayText.style.transition = "opacity 1.5s";
-              }, 5000);
+          //     setTimeout(() => {
+          //       fadeInOverlayText.style.opacity = "0";
+          //       fadeInOverlayText.style.transition = "opacity 1.5s";
+          //     }, 5000);
 
-              setTimeout(() => {
-                fadeInOverlayFlavourText.textContent = "As for myself...";
+          //     setTimeout(() => {
+          //       fadeInOverlayFlavourText.textContent = "As for myself...";
                 
-                setTimeout(() => {
-                  fadeInOverlayText.style.opacity = "1";
-                  fadeInOverlayText.style.transition = "opacity 3s";
-                }, 1000);
+          //       setTimeout(() => {
+          //         fadeInOverlayText.style.opacity = "1";
+          //         fadeInOverlayText.style.transition = "opacity 3s";
+          //       }, 1000);
     
-                setTimeout(() => {
-                  fadeInOverlayText.style.opacity = "0";
-                  fadeInOverlayText.style.transition = "opacity 1.5s";
-                }, 3000);
+          //       setTimeout(() => {
+          //         fadeInOverlayText.style.opacity = "0";
+          //         fadeInOverlayText.style.transition = "opacity 1.5s";
+          //       }, 3000);
 
-                setTimeout(() => {
-                  fadeInOverlayFlavourText.textContent = "I study POKéMON as a profession.";
+          //       setTimeout(() => {
+          //         fadeInOverlayFlavourText.textContent = "I study POKéMON as a profession.";
                   
-                  setTimeout(() => {
-                    fadeInOverlayText.style.opacity = "1";
-                    fadeInOverlayText.style.transition = "opacity 3s";
-                  }, 1000);
+          //         setTimeout(() => {
+          //           fadeInOverlayText.style.opacity = "1";
+          //           fadeInOverlayText.style.transition = "opacity 3s";
+          //         }, 1000);
       
-                  setTimeout(() => {
-                    fadeInOverlayText.style.opacity = "0";
-                    fadeInOverlayText.style.transition = "opacity 1.5s";
-                  }, 3000);
+          //         setTimeout(() => {
+          //           fadeInOverlayText.style.opacity = "0";
+          //           fadeInOverlayText.style.transition = "opacity 1.5s";
+          //         }, 3000);
 
                   setTimeout(() => {
                     fadeInOverlayFlavourText.textContent = "But first, tell me a little about yourself.";
@@ -903,52 +903,52 @@ function fadeIn() {
                             }, 750);
                           }
 
-                        setTimeout(() => {
-                          fadeInOverlayFlavourText.textContent = "Right...";
+                        // setTimeout(() => {
+                        //   fadeInOverlayFlavourText.textContent = "Right...";
                           
-                          setTimeout(() => {
-                            fadeInOverlayText.style.opacity = "1";
-                            fadeInOverlayText.style.transition = "opacity 3s";
-                          }, 1000);
+                        //   setTimeout(() => {
+                        //     fadeInOverlayText.style.opacity = "1";
+                        //     fadeInOverlayText.style.transition = "opacity 3s";
+                        //   }, 1000);
               
-                          setTimeout(() => {
-                            fadeInOverlayText.style.opacity = "0";
-                            fadeInOverlayText.style.transition = "opacity 1.5s";
-                          }, 3000);
+                        //   setTimeout(() => {
+                        //     fadeInOverlayText.style.opacity = "0";
+                        //     fadeInOverlayText.style.transition = "opacity 1.5s";
+                        //   }, 3000);
 
-                          setTimeout(() => {
-                            fadeInOverlayPlayerInputBox.remove();
-                            /* Player Name Text Can Disappear; */
-                            fadeInOverlayFlavourText.textContent = "So your name is ";
-                            fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
-                            fadeInOverlayNameText.textContent = `${playerNameInput}.`;
-                            fadeInOverlayText.appendChild(fadeInOverlayNameText);
+                        //   setTimeout(() => {
+                        //     fadeInOverlayPlayerInputBox.remove();
+                        //     /* Player Name Text Can Disappear; */
+                        //     fadeInOverlayFlavourText.textContent = "So your name is ";
+                        //     fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
+                        //     fadeInOverlayNameText.textContent = `${playerNameInput}.`;
+                        //     fadeInOverlayText.appendChild(fadeInOverlayNameText);
                             
-                            setTimeout(() => {
-                              fadeInOverlayText.style.opacity = "1";
-                              fadeInOverlayText.style.transition = "opacity 3s";
-                            }, 1000);
+                        //     setTimeout(() => {
+                        //       fadeInOverlayText.style.opacity = "1";
+                        //       fadeInOverlayText.style.transition = "opacity 3s";
+                        //     }, 1000);
                 
-                            setTimeout(() => {
-                              fadeInOverlayText.style.opacity = "0";
-                              fadeInOverlayText.style.transition = "opacity 1.5s";
-                            }, 3000);
+                        //     setTimeout(() => {
+                        //       fadeInOverlayText.style.opacity = "0";
+                        //       fadeInOverlayText.style.transition = "opacity 1.5s";
+                        //     }, 3000);
                             
-                            setTimeout(() => {
-                              fadeInOverlayNameText.remove()
-                              fadeInOverlayFlavourText.textContent = "I'm sure you remember my grandchild...";
-                              setTimeout(() => {
-                                fadeInOverlayText.style.opacity = "1";
-                                fadeInOverlayText.style.transition = "opacity 3s";
-                              }, 1000);
+                        //     setTimeout(() => {
+                        //       fadeInOverlayNameText.remove()
+                        //       fadeInOverlayFlavourText.textContent = "I'm sure you remember my grandchild...";
+                        //       setTimeout(() => {
+                        //         fadeInOverlayText.style.opacity = "1";
+                        //         fadeInOverlayText.style.transition = "opacity 3s";
+                        //       }, 1000);
                   
-                              setTimeout(() => {
-                                fadeInOverlayText.style.opacity = "0";
-                                fadeInOverlayText.style.transition = "opacity 1.5s";
-                              }, 3000);
+                        //       setTimeout(() => {
+                        //         fadeInOverlayText.style.opacity = "0";
+                        //         fadeInOverlayText.style.transition = "opacity 1.5s";
+                        //       }, 3000);
 
                               setTimeout(() => {
-                                fadeInOverlayFlavourText.textContent = "They've been your rival since you both were babies.";
+                                fadeInOverlayFlavourText.textContent = "And your sworn rival...";
                                 
                                 setTimeout(() => {
                                   fadeInOverlayText.style.opacity = "1";
@@ -991,150 +991,150 @@ function fadeIn() {
                                         }, 750);
                                       }
 
-                                    setTimeout(() => {
-                                      fadeInOverlayFlavourText.textContent = "...Er, was it ";
-                                      fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
-                                      fadeInOverlayNameText.textContent = `${rivalNameInput}?`;
-                                      fadeInOverlayText.appendChild(fadeInOverlayNameText);
+                                    // setTimeout(() => {
+                                    //   fadeInOverlayFlavourText.textContent = "...Er, was it ";
+                                    //   fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                    //   fadeInOverlayNameText.textContent = `${rivalNameInput}?`;
+                                    //   fadeInOverlayText.appendChild(fadeInOverlayNameText);
                                       
-                                      setTimeout(() => {
-                                        fadeInOverlayText.style.opacity = "1";
-                                        fadeInOverlayText.style.transition = "opacity 3s";
-                                      }, 1000);
+                                    //   setTimeout(() => {
+                                    //     fadeInOverlayText.style.opacity = "1";
+                                    //     fadeInOverlayText.style.transition = "opacity 3s";
+                                    //   }, 1000);
                           
-                                      setTimeout(() => {
-                                        fadeInOverlayText.style.opacity = "0";
-                                        fadeInOverlayText.style.transition = "opacity 1.5s";
-                                      }, 3000);
+                                    //   setTimeout(() => {
+                                    //     fadeInOverlayText.style.opacity = "0";
+                                    //     fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //   }, 3000);
 
 
-                                    setTimeout(() => {
-                                      fadeInOverlayNameText.textContent = `${rivalNameInput}!`
-                                      fadeInOverlayFlavourText.textContent = `That's right! I remember now! Their name is `;
+                                    // setTimeout(() => {
+                                    //   fadeInOverlayNameText.textContent = `${rivalNameInput}!`
+                                    //   fadeInOverlayFlavourText.textContent = `That's right! I remember now! Their name is `;
                                       
-                                      setTimeout(() => {
-                                        fadeInOverlayText.style.opacity = "1";
-                                        fadeInOverlayText.style.transition = "opacity 3s";
-                                      }, 1000);
+                                    //   setTimeout(() => {
+                                    //     fadeInOverlayText.style.opacity = "1";
+                                    //     fadeInOverlayText.style.transition = "opacity 3s";
+                                    //   }, 1000);
                           
-                                      setTimeout(() => {
-                                        fadeInOverlayText.style.opacity = "0";
-                                        fadeInOverlayText.style.transition = "opacity 1.5s";
-                                      }, 3000);
+                                    //   setTimeout(() => {
+                                    //     fadeInOverlayText.style.opacity = "0";
+                                    //     fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //   }, 3000);
                                       
 
-                                      setTimeout(() => {
-                                        fadeInOverlayFlavourText.remove();
-                                        fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
-                                        fadeInOverlayNameText.textContent = `${playerNameInput}!`;
+                                    //   setTimeout(() => {
+                                    //     fadeInOverlayFlavourText.remove();
+                                    //     fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
+                                    //     fadeInOverlayNameText.textContent = `${playerNameInput}!`;
                                         
-                                        setTimeout(() => {
-                                          fadeInOverlayText.style.opacity = "1";
-                                          fadeInOverlayText.style.transition = "opacity 3s";
-                                        }, 1000);
+                                    //     setTimeout(() => {
+                                    //       fadeInOverlayText.style.opacity = "1";
+                                    //       fadeInOverlayText.style.transition = "opacity 3s";
+                                    //     }, 1000);
                             
-                                        setTimeout(() => {
-                                          fadeInOverlayText.style.opacity = "0";
-                                          fadeInOverlayText.style.transition = "opacity 1.5s";
-                                        }, 3000);
+                                    //     setTimeout(() => {
+                                    //       fadeInOverlayText.style.opacity = "0";
+                                    //       fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //     }, 3000);
 
-                                        setTimeout(() => {
-                                          fadeInOverlayNameText.remove();
-                                          fadeInOverlayFlavourText.textContent = "Your very own POKéMON legend is about to unfold!";
-                                          fadeInOverlayText.appendChild(fadeInOverlayFlavourText);
+                                    //     setTimeout(() => {
+                                    //       fadeInOverlayNameText.remove();
+                                    //       fadeInOverlayFlavourText.textContent = "Your very own POKéMON legend is about to unfold!";
+                                    //       fadeInOverlayText.appendChild(fadeInOverlayFlavourText);
                                           
-                                          setTimeout(() => {
-                                            fadeInOverlayText.style.opacity = "1";
-                                            fadeInOverlayText.style.transition = "opacity 3s";
-                                          }, 1000);
+                                    //       setTimeout(() => {
+                                    //         fadeInOverlayText.style.opacity = "1";
+                                    //         fadeInOverlayText.style.transition = "opacity 3s";
+                                    //       }, 1000);
                               
-                                          setTimeout(() => {
-                                            fadeInOverlayText.style.opacity = "0";
-                                            fadeInOverlayText.style.transition = "opacity 1.5s";
-                                          }, 3000);
+                                    //       setTimeout(() => {
+                                    //         fadeInOverlayText.style.opacity = "0";
+                                    //         fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //       }, 3000);
 
 
-                                        setTimeout(() => {
-                                          fadeInOverlayFlavourText.textContent = "A world of dreams and adventures with POKéMON awaits! Let's go!";
+                                    //     setTimeout(() => {
+                                    //       fadeInOverlayFlavourText.textContent = "A world of dreams and adventures with POKéMON awaits! Let's go!";
                                           
-                                          setTimeout(() => {
-                                            fadeInOverlayText.style.opacity = "1";
-                                            fadeInOverlayText.style.transition = "opacity 3s";
-                                          }, 1000);
+                                    //       setTimeout(() => {
+                                    //         fadeInOverlayText.style.opacity = "1";
+                                    //         fadeInOverlayText.style.transition = "opacity 3s";
+                                    //       }, 1000);
                               
-                                          setTimeout(() => {
-                                            fadeInOverlayText.style.opacity = "0";
-                                            fadeInOverlayText.style.transition = "opacity 1.5s";
-                                          }, 3000);
+                                    //       setTimeout(() => {
+                                    //         fadeInOverlayText.style.opacity = "0";
+                                    //         fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //       }, 3000);
 
-                                          setTimeout(() => {
-                                            fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
-                                            fadeInOverlayAttributionText.textContent = `${rivalNameInput}: `;
-                                            fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
-                                            fadeInOverlayFlavourText.textContent = "Gramps! I'm fed up with waiting!";
-                                            fadeInOverlayText.style.borderColor = "rgb(255, 100, 0)";
+                                    //       setTimeout(() => {
+                                    //         fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                    //         fadeInOverlayAttributionText.textContent = `${rivalNameInput}: `;
+                                    //         fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                    //         fadeInOverlayFlavourText.textContent = "Gramps! I'm fed up with waiting!";
+                                    //         fadeInOverlayText.style.borderColor = "rgb(255, 100, 0)";
 
-                                            setTimeout(() => {
-                                              fadeInOverlayText.style.opacity = "1";
-                                              fadeInOverlayText.style.transition = "opacity 3s";
-                                            }, 1000);
+                                    //         setTimeout(() => {
+                                    //           fadeInOverlayText.style.opacity = "1";
+                                    //           fadeInOverlayText.style.transition = "opacity 3s";
+                                    //         }, 1000);
                                 
-                                            setTimeout(() => {
-                                              fadeInOverlayText.style.opacity = "0";
-                                              fadeInOverlayText.style.transition = "opacity 1.5s";
-                                            }, 3000);
+                                    //         setTimeout(() => {
+                                    //           fadeInOverlayText.style.opacity = "0";
+                                    //           fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //         }, 3000);
 
-                                            setTimeout(() => {
-                                              fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
-                                              fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-                                              fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
-                                              fadeInOverlayNameText.textContent = `${rivalNameInput}? `;
-                                              fadeInOverlayFlavourText.textContent = "Let me think...";
-                                              fadeInOverlayText.style.borderColor = "rgb(255, 100, 0)";
-                                              fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                    //         setTimeout(() => {
+                                    //           fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                    //           fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
+                                    //           fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(255, 100, 0), 4.5px 4.5px rgb(255, 100, 0), 5px 5px rgb(255, 100, 0)";
+                                    //           fadeInOverlayNameText.textContent = `${rivalNameInput}? `;
+                                    //           fadeInOverlayFlavourText.textContent = "Let me think...";
+                                    //           fadeInOverlayText.style.borderColor = "rgb(255, 100, 0)";
+                                    //           fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayNameText, fadeInOverlayFlavourText);
   
-                                              setTimeout(() => {
-                                                fadeInOverlayText.style.opacity = "1";
-                                                fadeInOverlayText.style.transition = "opacity 3s";
-                                              }, 1000);
+                                    //           setTimeout(() => {
+                                    //             fadeInOverlayText.style.opacity = "1";
+                                    //             fadeInOverlayText.style.transition = "opacity 3s";
+                                    //           }, 1000);
                                   
-                                              setTimeout(() => {
-                                                fadeInOverlayText.style.opacity = "0";
-                                                fadeInOverlayText.style.transition = "opacity 1.5s";
-                                              }, 3000);
-                                              fadeInOverlayNameText.remove();
+                                    //           setTimeout(() => {
+                                    //             fadeInOverlayText.style.opacity = "0";
+                                    //             fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //           }, 3000);
+                                    //           fadeInOverlayNameText.remove();
 
-                                              setTimeout(() => {
-                                                fadeInOverlayFlavourText.textContent = "Oh, that's right, I told you to come! Just wait!";
+                                    //           setTimeout(() => {
+                                    //             fadeInOverlayFlavourText.textContent = "Oh, that's right, I told you to come! Just wait!";
     
-                                                setTimeout(() => {
-                                                  fadeInOverlayText.style.opacity = "1";
-                                                  fadeInOverlayText.style.transition = "opacity 3s";
-                                                }, 1000);
+                                    //             setTimeout(() => {
+                                    //               fadeInOverlayText.style.opacity = "1";
+                                    //               fadeInOverlayText.style.transition = "opacity 3s";
+                                    //             }, 1000);
                                     
-                                                setTimeout(() => {
-                                                  fadeInOverlayText.style.opacity = "0";
-                                                  fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                }, 3000);
+                                    //             setTimeout(() => {
+                                    //               fadeInOverlayText.style.opacity = "0";
+                                    //               fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //             }, 3000);
 
-                                                setTimeout(() => {
-                                                  fadeInOverlayNameText.textContent = `${playerNameInput}`;
-                                                  fadeInOverlayText.appendChild(fadeInOverlayNameText);
-                                                  fadeInOverlayFlavourText.textContent = "Here, ";
+                                    //             setTimeout(() => {
+                                    //               fadeInOverlayNameText.textContent = `${playerNameInput}`;
+                                    //               fadeInOverlayText.appendChild(fadeInOverlayNameText);
+                                    //               fadeInOverlayFlavourText.textContent = "Here, ";
       
-                                                  setTimeout(() => {
-                                                    fadeInOverlayText.style.opacity = "1";
-                                                    fadeInOverlayText.style.transition = "opacity 3s";
-                                                  }, 1000);
+                                    //               setTimeout(() => {
+                                    //                 fadeInOverlayText.style.opacity = "1";
+                                    //                 fadeInOverlayText.style.transition = "opacity 3s";
+                                    //               }, 1000);
                                       
-                                                  setTimeout(() => {
-                                                    fadeInOverlayText.style.opacity = "0";
-                                                    fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                  }, 3000);
-                                                  fadeInOverlayNameText.remove()
+                                    //               setTimeout(() => {
+                                    //                 fadeInOverlayText.style.opacity = "0";
+                                    //                 fadeInOverlayText.style.transition = "opacity 1.5s";
+                                    //               }, 3000);
+                                    //               fadeInOverlayNameText.remove()
 
                                                   setTimeout(() => {
-                                                    fadeInOverlayFlavourText.textContent = "There are six POKéMON, three of which for you, here.";
+                                                    fadeInOverlayFlavourText.textContent = "There are six POKéMON, three of which are for you. Here!";
         
                                                     setTimeout(() => {
                                                       fadeInOverlayText.style.opacity = "1";
@@ -1146,74 +1146,74 @@ function fadeIn() {
                                                       fadeInOverlayText.style.transition = "opacity 1.5s";
                                                     }, 3000);
 
-                                                    setTimeout(() => {
-                                                      fadeInOverlayFlavourText.textContent = "Haha!";
+                                                    // setTimeout(() => {
+                                                    //   fadeInOverlayFlavourText.textContent = "Haha!";
           
-                                                      setTimeout(() => {
-                                                        fadeInOverlayText.style.opacity = "1";
-                                                        fadeInOverlayText.style.transition = "opacity 3s";
-                                                      }, 1000);
+                                                    //   setTimeout(() => {
+                                                    //     fadeInOverlayText.style.opacity = "1";
+                                                    //     fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //   }, 1000);
                                           
-                                                      setTimeout(() => {
-                                                        fadeInOverlayText.style.opacity = "0";
-                                                        fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                      }, 3000);
+                                                    //   setTimeout(() => {
+                                                    //     fadeInOverlayText.style.opacity = "0";
+                                                    //     fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //   }, 3000);
 
 
-                                                    setTimeout(() => {
-                                                      fadeInOverlayFlavourText.textContent = "The POKéMON are held inside these POKé BALLS.";
+                                                    // setTimeout(() => {
+                                                    //   fadeInOverlayFlavourText.textContent = "The POKéMON are held inside these POKé BALLS.";
           
-                                                      setTimeout(() => {
-                                                        fadeInOverlayText.style.opacity = "1";
-                                                        fadeInOverlayText.style.transition = "opacity 3s";
-                                                      }, 1000);
+                                                    //   setTimeout(() => {
+                                                    //     fadeInOverlayText.style.opacity = "1";
+                                                    //     fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //   }, 1000);
                                           
-                                                      setTimeout(() => {
-                                                        fadeInOverlayText.style.opacity = "0";
-                                                        fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                      }, 3000);
+                                                    //   setTimeout(() => {
+                                                    //     fadeInOverlayText.style.opacity = "0";
+                                                    //     fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //   }, 3000);
 
-                                                      setTimeout(() => {
-                                                        fadeInOverlayFlavourText.textContent = "When I was young, I was a serious POKéMON TRAINER.";
+                                                    //   setTimeout(() => {
+                                                    //     fadeInOverlayFlavourText.textContent = "When I was young, I was a serious POKéMON TRAINER.";
             
-                                                        setTimeout(() => {
-                                                          fadeInOverlayText.style.opacity = "1";
-                                                          fadeInOverlayText.style.transition = "opacity 3s";
-                                                        }, 1000);
+                                                    //     setTimeout(() => {
+                                                    //       fadeInOverlayText.style.opacity = "1";
+                                                    //       fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //     }, 1000);
                                             
-                                                        setTimeout(() => {
-                                                          fadeInOverlayText.style.opacity = "0";
-                                                          fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                        }, 3000);
+                                                    //     setTimeout(() => {
+                                                    //       fadeInOverlayText.style.opacity = "0";
+                                                    //       fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //     }, 3000);
 
-                                                        setTimeout(() => {
-                                                          fadeInOverlayFlavourText.textContent = "But now, in my old age, I have only these six left.";
+                                                    //     setTimeout(() => {
+                                                    //       fadeInOverlayFlavourText.textContent = "But now, in my old age, I have only these six left.";
               
-                                                          setTimeout(() => {
-                                                            fadeInOverlayText.style.opacity = "1";
-                                                            fadeInOverlayText.style.transition = "opacity 3s";
-                                                          }, 1000);
+                                                    //       setTimeout(() => {
+                                                    //         fadeInOverlayText.style.opacity = "1";
+                                                    //         fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //       }, 1000);
                                               
-                                                          setTimeout(() => {
-                                                            fadeInOverlayText.style.opacity = "0";
-                                                            fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                          }, 3000);
+                                                    //       setTimeout(() => {
+                                                    //         fadeInOverlayText.style.opacity = "0";
+                                                    //         fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //       }, 3000);
 
-                                                          setTimeout(() => {
-                                                            fadeInOverlayFlavourText.textContent = "You can have these three. Go on, choose!";
+                                                    //       setTimeout(() => {
+                                                    //         fadeInOverlayFlavourText.textContent = "You can have these three. Go on, choose!";
                 
-                                                            setTimeout(() => {
-                                                              fadeInOverlayText.style.opacity = "1";
-                                                              fadeInOverlayText.style.transition = "opacity 3s";
-                                                            }, 1000);
+                                                    //         setTimeout(() => {
+                                                    //           fadeInOverlayText.style.opacity = "1";
+                                                    //           fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //         }, 1000);
                                                 
-                                                            setTimeout(() => {
-                                                              fadeInOverlayText.style.opacity = "0";
-                                                              fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                            }, 3000);
+                                                    //         setTimeout(() => {
+                                                    //           fadeInOverlayText.style.opacity = "0";
+                                                    //           fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //         }, 3000);
 
                                                             setTimeout(() => {
-                                                              fadeInOverlayFlavourText.textContent = "Hey! Gramps! No fair! What about me?";
+                                                              fadeInOverlayFlavourText.textContent = "Hey! No fair! What about me?";
                   
                                                               setTimeout(() => {
                                                                 fadeInOverlayText.style.opacity = "1";
@@ -1238,61 +1238,61 @@ function fadeIn() {
                                                                   fadeInOverlayText.style.transition = "opacity 1.5s";
                                                                 }, 3000);
 
-                                                                setTimeout(() => {
-                                                                  fadeInOverlayFlavourText.textContent = "I see! BULBASAUR is your first choice. It's very easy to raise.";
+                                                    //             setTimeout(() => {
+                                                    //               fadeInOverlayFlavourText.textContent = "I see! BULBASAUR is your first choice. It's very easy to raise.";
                       
-                                                                  setTimeout(() => {
-                                                                    fadeInOverlayText.style.opacity = "1";
-                                                                    fadeInOverlayText.style.transition = "opacity 3s";
-                                                                  }, 1000);
+                                                    //               setTimeout(() => {
+                                                    //                 fadeInOverlayText.style.opacity = "1";
+                                                    //                 fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //               }, 1000);
                                                       
-                                                                  setTimeout(() => {
-                                                                    fadeInOverlayText.style.opacity = "0";
-                                                                    fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                  }, 3000);
+                                                    //               setTimeout(() => {
+                                                    //                 fadeInOverlayText.style.opacity = "0";
+                                                    //                 fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //               }, 3000);
 
-                                                                  setTimeout(() => {
-                                                                    fadeInOverlayFlavourText.textContent = "Hm! SQUIRTLE is your second choice. It's one worth raising.";
+                                                    //               setTimeout(() => {
+                                                    //                 fadeInOverlayFlavourText.textContent = "Hm! SQUIRTLE is your second choice. It's one worth raising.";
                         
-                                                                    setTimeout(() => {
-                                                                      fadeInOverlayText.style.opacity = "1";
-                                                                      fadeInOverlayText.style.transition = "opacity 3s";
-                                                                    }, 1000);
+                                                    //                 setTimeout(() => {
+                                                    //                   fadeInOverlayText.style.opacity = "1";
+                                                    //                   fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //                 }, 1000);
                                                         
-                                                                    setTimeout(() => {
-                                                                      fadeInOverlayText.style.opacity = "0";
-                                                                      fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                    }, 3000);
+                                                    //                 setTimeout(() => {
+                                                    //                   fadeInOverlayText.style.opacity = "0";
+                                                    //                   fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //                 }, 3000);
 
-                                                                    setTimeout(() => {
-                                                                      fadeInOverlayFlavourText.textContent = "Ah! CHARMANDER is your third and final choice. You should raise it patiently.";
+                                                    //                 setTimeout(() => {
+                                                    //                   fadeInOverlayFlavourText.textContent = "Ah! CHARMANDER is your third and final choice. You should raise it patiently.";
                           
-                                                                      setTimeout(() => {
-                                                                        fadeInOverlayText.style.opacity = "1";
-                                                                        fadeInOverlayText.style.transition = "opacity 3s";
-                                                                      }, 1000);
+                                                    //                   setTimeout(() => {
+                                                    //                     fadeInOverlayText.style.opacity = "1";
+                                                    //                     fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //                   }, 1000);
                                                           
-                                                                      setTimeout(() => {
-                                                                        fadeInOverlayText.style.opacity = "0";
-                                                                        fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                      }, 3000);
+                                                    //                   setTimeout(() => {
+                                                    //                     fadeInOverlayText.style.opacity = "0";
+                                                    //                     fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //                   }, 3000);
 
-                                                                      setTimeout(() => {
-                                                                        fadeInOverlayFlavourText.textContent = "These POKEMON are really quite energetic!";
+                                                    //                   setTimeout(() => {
+                                                    //                     fadeInOverlayFlavourText.textContent = "These POKEMON are really quite energetic!";
                             
-                                                                        setTimeout(() => {
-                                                                          fadeInOverlayText.style.opacity = "1";
-                                                                          fadeInOverlayText.style.transition = "opacity 3s";
-                                                                        }, 1000);
+                                                    //                     setTimeout(() => {
+                                                    //                       fadeInOverlayText.style.opacity = "1";
+                                                    //                       fadeInOverlayText.style.transition = "opacity 3s";
+                                                    //                     }, 1000);
                                                             
-                                                                        setTimeout(() => {
-                                                                          fadeInOverlayText.style.opacity = "0";
-                                                                          fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                        }, 3000);
+                                                    //                     setTimeout(() => {
+                                                    //                       fadeInOverlayText.style.opacity = "0";
+                                                    //                       fadeInOverlayText.style.transition = "opacity 1.5s";
+                                                    //                     }, 3000);
 
 
                                                                       setTimeout(() => {
-                                                                        fadeInOverlayFlavourText.textContent = "${playerName} received the BULBASAUR, SQUIRTLE, and CHARMANDER from PROF. OAK!";
+                                                                        fadeInOverlayFlavourText.textContent = "${playerName} received the GRASS POKeMON BULBASAUR, the WATER POKeMON SQUIRTLE, and the FIRECHARMANDER from PROF. OAK!";
                             
                                                                         setTimeout(() => {
                                                                           fadeInOverlayText.style.opacity = "1";
@@ -1318,7 +1318,7 @@ function fadeIn() {
                                                                           }, 3000);
 
                                                                           setTimeout(() => {
-                                                                            fadeInOverlayFlavourText.textContent = "${rivalName} received the BULBASAUR, SQUIRTLE, and CHARMANDER from PROF. OAK!";
+                                                                            fadeInOverlayFlavourText.textContent = "${rivalName} received the GRASS POKeMON BULBASAUR, the WATER POKeMON SQUIRTLE, and the FIRECHARMANDER from PROF. OAK!";
                                 
                                                                             setTimeout(() => {
                                                                               fadeInOverlayText.style.opacity = "1";
@@ -1358,7 +1358,7 @@ function fadeIn() {
                                                                               }, 3000);
 
                                                                               setTimeout(() => {
-                                                                                fadeInOverlayFlavourText.textContent = "If a wild POKeMON appears, your POKeMON can battle it.";
+                                                                                fadeInOverlayFlavourText.textContent = "If a TRAINER wants to pit their POKeMON against yours, your POKeMON can battle.";
                                     
                                                                                 setTimeout(() => {
                                                                                   fadeInOverlayText.style.opacity = "1";
@@ -1370,21 +1370,8 @@ function fadeIn() {
                                                                                   fadeInOverlayText.style.transition = "opacity 1.5s";
                                                                                 }, 3000);
 
-                                                                                setTimeout(() => {
-                                                                                  fadeInOverlayFlavourText.textContent = "With them at your side, you should be able to reach the next town.";
-                                      
                                                                                   setTimeout(() => {
-                                                                                    fadeInOverlayText.style.opacity = "1";
-                                                                                    fadeInOverlayText.style.transition = "opacity 3s";
-                                                                                  }, 1000);
-                                                                      
-                                                                                  setTimeout(() => {
-                                                                                    fadeInOverlayText.style.opacity = "0";
-                                                                                    fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                                  }, 3000);
-
-                                                                                  setTimeout(() => {
-                                                                                    fadeInOverlayFlavourText.textContent = "Wait, playerName! Let's check out our POKeMON!";
+                                                                                    fadeInOverlayFlavourText.textContent = "playerName! Let's check out our POKeMON!";
                                         
                                                                                     setTimeout(() => {
                                                                                       fadeInOverlayText.style.opacity = "1";
@@ -1430,58 +1417,84 @@ function fadeIn() {
                                                                                           });
                                                                                       
 
-}, 8600); 
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
-}, 4300)
+                                                                                        }, 4300)
+                                                                                        }, 4300)
+                                                                                        }, 4300)
+                                                                                      }, 4300)
+                                                                                    }, 4300)
+                                                                                  }, 4300)
+                                                                                }, 4300)
+                                                                              }, 4300)
+                                                                            }, 4300)
+                                                                          }, 4300)
+                                                                        }, 4300)
+                                                                      }, 4300)
+                                                                    }, 4300)
+                                                                  }, 4300)
+                                                                }, 4300)
+                                                              }, 4300)
                                                             }, 4300)
-                                                            }, 4300)
-                                                            }, 4300)
-                                                            }, 4300)
-                                                            }, 4300)
-                                                            }, 4300)
-                                                            }, 4300)
-                                                            }, 4300)
-                                              }, 4300)
-                                            }, 4300)
-                                          }, 4300)
+                                                          }, 4300)
+                                                        }, 4300)
+                                                      }, 4300)
+                                                    }, 4300)
                                                   }, 4300)
                                                 }, 4300)
-                                              }, 4300); 
-                                            }, 4300);
-                                          }, 4300);
-                                        }, 4300);
-                                      }, 4300);
-                                    }, 4300);
-                                  }, 4300);
-                                }, 4300);
-                              }, 4300);
-                            }, 5000);
-                          }, 4600);
-                      }, 4300);
-                    }, 4300);
-                  }, 4300);
-                }, 4300);
-              }, 6750);
-            }, 6750);
-          }, 6750);
-        }, 4300);
-      }, 4300);
-    }, 4300);
-  }, 0);
-}
+                                              }, 4300)
+                                            }, 4300)
+                                          }
+// }, 8600); 
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+// }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                                             }, 4300)
+//                                               }, 4300)
+//                                             }, 4300)
+//                                           }, 4300)
+//                                                   }, 4300)
+//                                                 }, 4300)
+//                                               }, 4300); 
+//                                             }, 4300);
+//                                           }, 4300);
+//                                         }, 4300);
+//                                       }, 4300);
+//                                     }, 4300);
+//                                   }, 4300);
+//                                 }, 4300);
+//                               }, 4300);
+//                             }, 5000);
+//                           }, 4600);
+//                       }, 4300);
+//                     }, 4300);
+//                   }, 4300);
+//                 }, 4300);
+//               }, 6750);
+//             }, 6750);
+//           }, 6750);
+//         }, 4300);
+//       }, 4300);
+//     }, 4300);
+//   }, 0);
+// }
 
 fadeIn();
 
