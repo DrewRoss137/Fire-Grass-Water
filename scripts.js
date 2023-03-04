@@ -887,7 +887,7 @@ function fadeIn() {
                           fadeInOverlayPlayerInputBox.style.opacity = "1";
                           fadeInOverlayPlayerInputBox.style.transition = "opacity 3s";
                         }, 1000);
-                        
+
                         fadeInOverlayPlayerInputBox.addEventListener("keydown", (event) => {
                           if (event.key === "Enter") {
                             playerNameInput = fadeInOverlayPlayerInputBox.value;
@@ -898,7 +898,7 @@ function fadeIn() {
                             }, 500);
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "0";
-                              fadeInOverlayPlayerInputBox.style.transition = "opacity 1.5s";
+                              fadeInOverlayText.style.transition = "opacity 1.5s";
                             }, 750);
                           }
 
@@ -921,7 +921,7 @@ function fadeIn() {
                             fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(0, 100, 255), 4.5px 4.5px rgb(0, 100, 255), 5px 5px rgb(0, 100, 255)";
                             fadeInOverlayNameText.textContent = `${playerNameInput}.`;
                             fadeInOverlayText.appendChild(fadeInOverlayNameText);
-
+                            
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "1";
                               fadeInOverlayText.style.transition = "opacity 3s";
@@ -931,7 +931,6 @@ function fadeIn() {
                               fadeInOverlayText.style.opacity = "0";
                               fadeInOverlayText.style.transition = "opacity 1.5s";
                             }, 3000);
-                            fadeInOverlayNameText.remove();
 
                             setTimeout(() => {
                               fadeInOverlayFlavourText.textContent = "I'm sure you remember my grandchild...";
