@@ -741,6 +741,7 @@ fadeInOverlayText.append(fadeInOverlayFlavourText);
 /* Pre-Fade Overlay */
 const fadeInOverlay = document.createElement("div");
 fadeInOverlay.id = "fade-in-overlay";
+fadeInOverlay.style.opacity = "1";
 fadeInOverlay.append(fadeInOverlayText);
 
 /*
@@ -1014,7 +1015,6 @@ function fadeIn() {
                                                                               fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
                                                                               fadeInOverlayText.style.borderColor = "rgb(176, 89, 89)";
                                                                               fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                                                              fadeInOverlayFlavourText.textContent = "I'll take these ones, then!";
                                                                               fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
                                   
                                                                               setTimeout(() => {
@@ -1095,18 +1095,17 @@ function fadeIn() {
                                                                                         fadeInOverlayText.style.opacity = "0";
                                                                                         fadeInOverlayText.style.transition = "opacity 1.5s";
                                                                                       }, 5000);
-                                                                                        
                                                                                       setTimeout(() => {
                                                                                         fadeInOverlay.style.opacity = "0";
                                                                                         fadeInOverlay.style.transition = "opacity 3s";
+                                                                                        
+                                                                                        // add event listener to remove the element after the fade-out effect has completed
                                                                                         fadeInOverlay.addEventListener("transitionend", () => {
-                                                                                          fadeInOverlay.remove();
+                                                                                            fadeInOverlay.remove();
                                                                                         });
-                                                                                      
-
-                                                                                    
-                                                                                        }, 6500)
-                                                                                        }, 6500)
+                                                                                  
+                                                                                          }, 15000);
+                                                                                        }, 13000)
                                                                                       }, 6500)
                                                                                     }, 6500)
                                                                                   }, 6500)
@@ -1132,6 +1131,7 @@ function fadeIn() {
                                           }
 
 fadeIn();
+
 
 function generateAttack(choice) {
   return pokémonAttacks[choice][
