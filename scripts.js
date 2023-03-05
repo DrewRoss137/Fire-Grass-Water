@@ -720,11 +720,13 @@ fadeInOverlayNameText.id = "fade-in-overlay-name-text";
 const fadeInOverlayPlayerInputBox = document.createElement("input");
 fadeInOverlayPlayerInputBox.id = "fade-in-overlay-player-input-box";
 fadeInOverlayPlayerInputBox.type = "text";
+fadeInOverlayPlayerInputBox.style.opacity = "0";
 
 /* Pre-Fade Rival Input Box */
 const fadeInOverlayRivalInputBox = document.createElement("input");
 fadeInOverlayRivalInputBox.id = "fade-in-overlay-rival-input-box";
 fadeInOverlayRivalInputBox.type = "text";
+fadeInOverlayRivalInputBox.style.opacity = "0";
 
 /* Pre-Fade Text */
 const fadeInOverlayText = document.createElement("span");
@@ -754,12 +756,12 @@ function fadeIn() {
     setTimeout(() => {
       fadeInOverlayText.style.opacity = "1";
       fadeInOverlayText.style.transition = "opacity 3s";
-    }, 1000);
+    }, 2000);
 
     setTimeout(() => {
       fadeInOverlayText.style.opacity = "0";
       fadeInOverlayText.style.transition = "opacity 1.5s";
-    }, 3000);
+    }, 4000);
 
     setTimeout(() => {
       fadeInOverlayFlavourText.textContent = "Welcome to the world of POKéMON!";
@@ -767,12 +769,12 @@ function fadeIn() {
       setTimeout(() => {
         fadeInOverlayText.style.opacity = "1";
         fadeInOverlayText.style.transition = "opacity 3s";
-      }, 1000);
+      }, 2000);
 
       setTimeout(() => {
         fadeInOverlayText.style.opacity = "0";
         fadeInOverlayText.style.transition = "opacity 1.5s";
-      }, 3000);
+      }, 4000);
       
       setTimeout(() => {
         fadeInOverlayFlavourText.textContent = "My name is OAK.";
@@ -780,15 +782,15 @@ function fadeIn() {
         setTimeout(() => {
           fadeInOverlayText.style.opacity = "1";
           fadeInOverlayText.style.transition = "opacity 3s";
-        }, 1000);
+        }, 2000);
   
         setTimeout(() => {
           fadeInOverlayText.style.opacity = "0";
           fadeInOverlayText.style.transition = "opacity 1.5s";
-        }, 3000);
+        }, 4000);
         
         setTimeout(() => {
-          fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(87, 78, 45), 5px 5px rgb(44, 39, 23)";
+          fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
           fadeInOverlayAttributionText.textContent = "OAK: ";
           fadeInOverlayFlavourText.textContent = "People affectionately refer to me as the POKéMON Professor.";
           fadeInOverlayText.append(fadeInOverlayAttributionText);
@@ -797,25 +799,26 @@ function fadeIn() {
           setTimeout(() => {
             fadeInOverlayText.style.opacity = "1";
             fadeInOverlayText.style.transition = "opacity 3s";
-          }, 1000);
+          }, 2000);
     
           setTimeout(() => {
             fadeInOverlayText.style.opacity = "0";
             fadeInOverlayText.style.transition = "opacity 1.5s";
-          }, 5000);
+          }, 4000);
           
                   setTimeout(() => {
+                    fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
                     fadeInOverlayFlavourText.textContent = "But first, tell me a little about yourself.";
                     
                     setTimeout(() => {
                       fadeInOverlayText.style.opacity = "1";
                       fadeInOverlayText.style.transition = "opacity 3s";
-                    }, 1000);
+                    }, 2000);
         
                     setTimeout(() => {
                       fadeInOverlayText.style.opacity = "0";
                       fadeInOverlayText.style.transition = "opacity 1.5s";
-                    }, 3000);
+                    }, 4000);
                     
                     setTimeout(() => {
                       fadeInOverlayFlavourText.textContent = "Let's begin with your name. What is it?";
@@ -823,16 +826,14 @@ function fadeIn() {
                       setTimeout(() => {
                         fadeInOverlayText.style.opacity = "1";
                         fadeInOverlayText.style.transition = "opacity 3s";
-                      }, 1000);
+                        fadeInOverlay.appendChild(fadeInOverlayPlayerInputBox);
+                      }, 2000);
                       
                       setTimeout(() => {
-                        /* Player Name Input Box Does Not Fade In; */
-                        fadeInOverlay.appendChild(fadeInOverlayPlayerInputBox);
-                        
                         setTimeout(() => {
                           fadeInOverlayPlayerInputBox.style.opacity = "1";
                           fadeInOverlayPlayerInputBox.style.transition = "opacity 3s";
-                        }, 1000);
+                        }, 0);
 
                         fadeInOverlayPlayerInputBox.addEventListener("keydown", (event) => {
                           if (event.key === "Enter") {
@@ -845,7 +846,7 @@ function fadeIn() {
                             setTimeout(() => {
                               fadeInOverlayText.style.opacity = "0";
                               fadeInOverlayText.style.transition = "opacity 1.5s";
-                            }, 750);
+                            }, 500);
                           }
 
                               setTimeout(() => {
@@ -854,12 +855,12 @@ function fadeIn() {
                                 setTimeout(() => {
                                   fadeInOverlayText.style.opacity = "1";
                                   fadeInOverlayText.style.transition = "opacity 3s";
-                                }, 1000);
+                                }, 2000);
                     
                                 setTimeout(() => {
                                   fadeInOverlayText.style.opacity = "0";
                                   fadeInOverlayText.style.transition = "opacity 1.5s";
-                                }, 3000);
+                                }, 4000);
 
                                 setTimeout(() => {
                                   fadeInOverlayFlavourText.textContent = "...Erm, what was their name now?";
@@ -867,17 +868,15 @@ function fadeIn() {
                                   setTimeout(() => {
                                     fadeInOverlayText.style.opacity = "1";
                                     fadeInOverlayText.style.transition = "opacity 3s";
-                                  }, 1000);
+                                    fadeInOverlay.appendChild(fadeInOverlayRivalInputBox);
+                                  }, 2000);
                                   
                                   setTimeout(() => {
-                                    /* Rival Name Input Box Does Not Fade In; */
-                                    fadeInOverlay.appendChild(fadeInOverlayRivalInputBox);
-                                    
                                     setTimeout(() => {
                                       fadeInOverlayRivalInputBox.style.opacity = "1";
                                       fadeInOverlayRivalInputBox.style.transition = "opacity 3s";
-                                    }, 1000);
-                                    
+                                    }, 0);
+            
                                     fadeInOverlayRivalInputBox.addEventListener("keydown", (event) => {
                                       if (event.key === "Enter") {
                                         rivalNameInput = fadeInOverlayRivalInputBox.value;
@@ -889,7 +888,7 @@ function fadeIn() {
                                         setTimeout(() => {
                                           fadeInOverlayText.style.opacity = "0";
                                           fadeInOverlayText.style.transition = "opacity 1.5s";
-                                        }, 750);
+                                        }, 500);
                                       }
 
                                                   setTimeout(() => {
@@ -898,12 +897,12 @@ function fadeIn() {
                                                     setTimeout(() => {
                                                       fadeInOverlayText.style.opacity = "1";
                                                       fadeInOverlayText.style.transition = "opacity 3s";
-                                                    }, 1000);
+                                                    }, 2000);
                                         
                                                     setTimeout(() => {
                                                       fadeInOverlayText.style.opacity = "0";
                                                       fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                    }, 3000);
+                                                    }, 4000);
 
                                                             setTimeout(() => {
                                                               fadeInOverlayFlavourText.textContent = "Hey! No fair! What about me?";
@@ -911,12 +910,12 @@ function fadeIn() {
                                                               setTimeout(() => {
                                                                 fadeInOverlayText.style.opacity = "1";
                                                                 fadeInOverlayText.style.transition = "opacity 3s";
-                                                              }, 1000);
+                                                              }, 2000);
                                                   
                                                               setTimeout(() => {
                                                                 fadeInOverlayText.style.opacity = "0";
                                                                 fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                              }, 3000);
+                                                              }, 4000);
 
                                                               setTimeout(() => {
                                                                 fadeInOverlayFlavourText.textContent = "Be patient, rivalName. You can have three, too! ";
@@ -924,12 +923,12 @@ function fadeIn() {
                                                                 setTimeout(() => {
                                                                   fadeInOverlayText.style.opacity = "1";
                                                                   fadeInOverlayText.style.transition = "opacity 3s";
-                                                                }, 1000);
+                                                                }, 2000);
                                                     
                                                                 setTimeout(() => {
                                                                   fadeInOverlayText.style.opacity = "0";
                                                                   fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                }, 3000);
+                                                                }, 4000);
 
                                                                       setTimeout(() => {
                                                                         fadeInOverlayFlavourText.textContent = "${playerName} received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
@@ -937,12 +936,12 @@ function fadeIn() {
                                                                         setTimeout(() => {
                                                                           fadeInOverlayText.style.opacity = "1";
                                                                           fadeInOverlayText.style.transition = "opacity 3s";
-                                                                        }, 1000);
+                                                                        }, 2000);
                                                             
                                                                         setTimeout(() => {
                                                                           fadeInOverlayText.style.opacity = "0";
                                                                           fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                        }, 3000);
+                                                                        }, 4000);
 
                                                                         setTimeout(() => {
                                                                           fadeInOverlayFlavourText.textContent = "I'll take these ones, then!";
@@ -950,12 +949,12 @@ function fadeIn() {
                                                                           setTimeout(() => {
                                                                             fadeInOverlayText.style.opacity = "1";
                                                                             fadeInOverlayText.style.transition = "opacity 3s";
-                                                                          }, 1000);
+                                                                          }, 2000);
                                                               
                                                                           setTimeout(() => {
                                                                             fadeInOverlayText.style.opacity = "0";
                                                                             fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                          }, 3000);
+                                                                          }, 4000);
 
                                                                           setTimeout(() => {
                                                                             fadeInOverlayFlavourText.textContent = "${rivalName} received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
@@ -963,12 +962,12 @@ function fadeIn() {
                                                                             setTimeout(() => {
                                                                               fadeInOverlayText.style.opacity = "1";
                                                                               fadeInOverlayText.style.transition = "opacity 3s";
-                                                                            }, 1000);
+                                                                            }, 2000);
                                                                 
                                                                             setTimeout(() => {
                                                                               fadeInOverlayText.style.opacity = "0";
                                                                               fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                            }, 3000);
+                                                                            }, 4000);
 
                                                                             setTimeout(() => {
                                                                               fadeInOverlayFlavourText.textContent = "My POKéMON look a lot tougher than yours.";
@@ -976,12 +975,12 @@ function fadeIn() {
                                                                               setTimeout(() => {
                                                                                 fadeInOverlayText.style.opacity = "1";
                                                                                 fadeInOverlayText.style.transition = "opacity 3s";
-                                                                              }, 1000);
+                                                                              }, 2000);
                                                                   
                                                                               setTimeout(() => {
                                                                                 fadeInOverlayText.style.opacity = "0";
                                                                                 fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                              }, 3000);
+                                                                              }, 4000);
 
 
                                                                             setTimeout(() => {
@@ -990,12 +989,12 @@ function fadeIn() {
                                                                               setTimeout(() => {
                                                                                 fadeInOverlayText.style.opacity = "1";
                                                                                 fadeInOverlayText.style.transition = "opacity 3s";
-                                                                              }, 1000);
+                                                                              }, 2000);
                                                                   
                                                                               setTimeout(() => {
                                                                                 fadeInOverlayText.style.opacity = "0";
                                                                                 fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                              }, 3000);
+                                                                              }, 4000);
 
                                                                               setTimeout(() => {
                                                                                 fadeInOverlayFlavourText.textContent = "If a TRAINER wants to pit their POKéMON against yours, your POKéMON can battle.";
@@ -1003,12 +1002,12 @@ function fadeIn() {
                                                                                 setTimeout(() => {
                                                                                   fadeInOverlayText.style.opacity = "1";
                                                                                   fadeInOverlayText.style.transition = "opacity 3s";
-                                                                                }, 1000);
+                                                                                }, 2000);
                                                                     
                                                                                 setTimeout(() => {
                                                                                   fadeInOverlayText.style.opacity = "0";
                                                                                   fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                                }, 3000);
+                                                                                }, 4000);
 
                                                                                   setTimeout(() => {
                                                                                     fadeInOverlayFlavourText.textContent = "playerName! Let's check out our POKéMON!";
@@ -1016,12 +1015,12 @@ function fadeIn() {
                                                                                     setTimeout(() => {
                                                                                       fadeInOverlayText.style.opacity = "1";
                                                                                       fadeInOverlayText.style.transition = "opacity 3s";
-                                                                                    }, 1000);
+                                                                                    }, 2000);
                                                                         
                                                                                     setTimeout(() => {
                                                                                       fadeInOverlayText.style.opacity = "0";
                                                                                       fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                                    }, 3000);
+                                                                                    }, 4000);
 
                                                                                     setTimeout(() => {
                                                                                       fadeInOverlayFlavourText.textContent = "Come on, I'll take you on!";
@@ -1029,12 +1028,12 @@ function fadeIn() {
                                                                                       setTimeout(() => {
                                                                                         fadeInOverlayText.style.opacity = "1";
                                                                                         fadeInOverlayText.style.transition = "opacity 3s";
-                                                                                      }, 1000);
+                                                                                      }, 2000);
                                                                           
                                                                                       setTimeout(() => {
                                                                                         fadeInOverlayText.style.opacity = "0";
                                                                                         fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                                      }, 3000);
+                                                                                      }, 4000);
 
                                                                                       setTimeout(() => {
                                                                                         fadeInOverlayFlavourText.textContent = "RIVAL rivalName would like to battle!";
@@ -1042,12 +1041,12 @@ function fadeIn() {
                                                                                         setTimeout(() => {
                                                                                           fadeInOverlayText.style.opacity = "1";
                                                                                           fadeInOverlayText.style.transition = "opacity 3s";
-                                                                                        }, 1000);
+                                                                                        }, 2000);
                                                                             
                                                                                         setTimeout(() => {
                                                                                           fadeInOverlayText.style.opacity = "0";
                                                                                           fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                                        }, 3000);
+                                                                                        }, 4000);
                                                                                         
                                                                                         setTimeout(() => {
                                                                                           fadeInOverlay.style.opacity = "0";
@@ -1057,31 +1056,31 @@ function fadeIn() {
                                                                                           });
                                                                                       
 
-                                                                                        }, 4300)
-                                                                                        }, 4300)
-                                                                                        }, 4300)
-                                                                                      }, 4300)
-                                                                                    }, 4300)
-                                                                                  }, 4300)
-                                                                                }, 4300)
-                                                                              }, 4300)
-                                                                            }, 4300)
-                                                                          }, 4300)
-                                                                        }, 4300)
-                                                                      }, 4300)
-                                                                    }, 4300)
-                                                                  }, 4300)
-                                                                }, 4300)
-                                                              }, 4300)
-                                                            }, 4300)
-                                                          }, 4300)
-                                                        }, 4300)
-                                                      }, 4300)
-                                                    }, 4300)
-                                                  }, 4300)
-                                                }, 4300)
-                                              }, 4300)
-                                            }, 4300)
+                                                                                        }, 5200)
+                                                                                        }, 5200)
+                                                                                        }, 5200)
+                                                                                      }, 5200)
+                                                                                    }, 5200)
+                                                                                  }, 5200)
+                                                                                }, 5200)
+                                                                              }, 5200)
+                                                                            }, 5200)
+                                                                          }, 5200)
+                                                                        }, 5200)
+                                                                      }, 5200)
+                                                                    }, 5200)
+                                                                  }, 5200)
+                                                                }, 5200)
+                                                              }, 5200)
+                                                            }, 5200)
+                                                          }, 5200)
+                                                        }, 5200)
+                                                      }, 5200)
+                                                    }, 6300)
+                                                  }, 5200)
+                                                }, 5200)
+                                              }, 5200)
+                                            }, 500)
                                           }
 
 fadeIn();
