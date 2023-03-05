@@ -716,6 +716,10 @@ fadeInOverlayFlavourText.id = "fade-in-overlay-flavour-text";
 const fadeInOverlayNameText = document.createElement("span");
 fadeInOverlayNameText.id = "fade-in-overlay-name-text";
 
+/* Pre-Fade Additional Flavour Text */
+const fadeInOverlayAdditionalFlavourText = document.createElement("span");
+fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text";
+
 /* Pre-Fade Player Input Box */
 const fadeInOverlayPlayerInputBox = document.createElement("input");
 fadeInOverlayPlayerInputBox.id = "fade-in-overlay-player-input-box";
@@ -905,7 +909,7 @@ function fadeIn() {
                                                     setTimeout(() => {
                                                       fadeInOverlayText.style.opacity = "0";
                                                       fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                    }, 4000);
+                                                    }, 6000);
 
                                                             setTimeout(() => {
                                                               fadeInOverlayNameText.remove();
@@ -929,8 +933,13 @@ function fadeIn() {
                                                                 fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
                                                                 fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
                                                                 fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-                                                                fadeInOverlayFlavourText.textContent = "Be patient, rivalName. You can have three, too! ";
+                                                                fadeInOverlayFlavourText.textContent = "Be patient, ";
+                                                                fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                                                fadeInOverlayNameText.textContent = `${rivalNameInput}. `;
+                                                                fadeInOverlayAdditionalFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+                                                                fadeInOverlayAdditionalFlavourText.textContent = "You can have three, too!"
                                                                 fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
+                                                                fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText, fadeInOverlayAdditionalFlavourText);
                     
                                                                 setTimeout(() => {
                                                                   fadeInOverlayText.style.opacity = "1";
@@ -943,10 +952,13 @@ function fadeIn() {
                                                                 }, 4000);
                                                                 
                                                                       setTimeout(() => {
+                                                                        fadeInOverlayAdditionalFlavourText.remove();
                                                                         fadeInOverlayAttributionText.remove();
+                                                                        fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
+                                                                        fadeInOverlayNameText.textContent = `${playerNameInput} `;
                                                                         fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
                                                                         fadeInOverlayText.style.borderColor = "rgb(86, 73, 92)";
-                                                                        fadeInOverlayFlavourText.textContent = " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
+                                                                        fadeInOverlayFlavourText.textContent = "received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
                                                                         fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
                                                                         fadeInOverlayText.style.textAlign = "center";
 
