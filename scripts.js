@@ -956,8 +956,8 @@ function fadeIn() {
                                                                         fadeInOverlayAttributionText.remove();
                                                                         fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
                                                                         fadeInOverlayNameText.textContent = `${playerNameInput} `;
-                                                                        fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
-                                                                        fadeInOverlayText.style.borderColor = "rgb(86, 73, 92)";
+                                                                        fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
+                                                                        fadeInOverlayText.style.borderColor = "rgb(89, 97, 173)";
                                                                         fadeInOverlayFlavourText.textContent = "received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
                                                                         fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
                                                                         fadeInOverlayText.style.textAlign = "center";
@@ -970,10 +970,14 @@ function fadeIn() {
                                                                         setTimeout(() => {
                                                                           fadeInOverlayText.style.opacity = "0";
                                                                           fadeInOverlayText.style.transition = "opacity 1.5s";
-                                                                        }, 5000);
+                                                                        }, 8000);
 
                                                                         setTimeout(() => {
+                                                                          fadeInOverlayText.style.borderColor = "rgb(176, 89, 89)";
+                                                                          fadeInOverlayNameText.textContent = `${rivalNameInput}: `;
+                                                                          fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
                                                                           fadeInOverlayFlavourText.textContent = "I'll take these ones, then!";
+                                                                          fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
                               
                                                                           setTimeout(() => {
                                                                             fadeInOverlayText.style.opacity = "1";
@@ -986,7 +990,10 @@ function fadeIn() {
                                                                           }, 5000);
 
                                                                           setTimeout(() => {
-                                                                            fadeInOverlayFlavourText.textContent = "${rivalName} received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
+                                                                            fadeInOverlayNameText.textContent = `${rivalNameInput} `;
+                                                                            fadeInOverlayFlavourText.textContent = "received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
+                                                                            fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                                            fadeInOverlayText.style.textAlign = "center";
                                 
                                                                             setTimeout(() => {
                                                                               fadeInOverlayText.style.opacity = "1";
@@ -1091,10 +1098,10 @@ function fadeIn() {
                                                                                       }, 6500)
                                                                                     }, 6500)
                                                                                   }, 6500)
-                                                                                }, 6500)
-                                                                              }, 6500)
-                                                                            }, 6500)
-                                                                          }, 6500)
+                                                                                }, 9500)
+                                                                              }, 9500)
+                                                                            }, 9500)
+                                                                          }, 9500)
                                                                         }, 6500)
                                                                       }, 6500)
                                                                     }, 6500)
