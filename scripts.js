@@ -41,6 +41,8 @@ preOverlayOverlay.style.opacity = "1";
 let playerName;
 let rivalName;
 
+/* preOverlay */
+
 function preOverlay() {
   preOverlayText.append(preOverlayFlavourText);
   preOverlayOverlay.append(preOverlayText);
@@ -422,6 +424,7 @@ function preOverlay() {
 
 preOverlay();
 
+
 /********************* Data Structures *********************/
 /* Choices */
 const choices = ["Fire", "Grass", "Water"];
@@ -470,6 +473,7 @@ const playerColours = {
   [rivalName]: "rgb(255, 100, 0)",
 };
 
+
 /********************* Body *********************/
 /* Body */
 const body = document.querySelector("body");
@@ -495,11 +499,12 @@ githubLogo.addEventListener("click", function openGitHubProfile() {
   window.open("https://github.com/DrewRoss137", "_blank");
 });
 
+
 /********************* Scores *********************/
 /* Player Score */
 const playerScoreNameSpan = document.createElement("span");
 playerScoreNameSpan.id = "player-score-name";
-playerScoreNameSpan.textContent = playerName;
+
 
 const playerScoreScoreSpan = document.createElement("span");
 playerScoreScoreSpan.id = "player-score-score";
@@ -511,7 +516,6 @@ playerScoreDiv.append(playerScoreNameSpan, playerScoreScoreSpan);
 /* Rival Score */
 const rivalScoreNameSpan = document.createElement("span");
 rivalScoreNameSpan.id = "rival-score-name";
-rivalScoreNameSpan.textContent = rivalName;
 
 const rivalScoreScoreSpan = document.createElement("span");
 rivalScoreScoreSpan.id = "rival-score-score";
@@ -534,7 +538,6 @@ criticalHitDiv.textContent = "A critical hit!";
 /* Player Pokémon */
 const playerPokémonPlayerNameSpan = document.createElement("span");
 playerPokémonPlayerNameSpan.id = "player-pokémon-player-name";
-playerPokémonPlayerNameSpan.textContent = `${playerName}: `;
 
 const playerPokémonGoTextSpan = document.createElement("span");
 playerPokémonGoTextSpan.id = "player-pokémon-go-text";
@@ -554,7 +557,6 @@ playerPokémonDiv.append(
 /* Rival Pokémon */
 const rivalPokémonRivalNameSpan = document.createElement("span");
 rivalPokémonRivalNameSpan.id = "rival-pokémon-rival-name";
-rivalPokémonRivalNameSpan.textContent = `${rivalName}: `;
 
 const rivalPokémonGoTextSpan = document.createElement("span");
 rivalPokémonGoTextSpan.id = "rival-pokémon-go-text";
@@ -574,7 +576,6 @@ rivalPokémonDiv.append(
 /* Player Pokémon Attack */
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
 playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
-playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `;
 
 const playerPokémonAttackPokémonNameSpan = document.createElement("span");
 playerPokémonAttackPokémonNameSpan.id = "player-pokémon-attack-pokémon";
@@ -616,7 +617,6 @@ playerPokémonAttackEffectivenessDiv.append(
 /* Rival Pokémon Attack */
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
-rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `;
 
 const rivalPokémonAttackPokémonNameSpan = document.createElement("span");
 rivalPokémonAttackPokémonNameSpan.id = "rival-pokémon-attack-pokémon";
@@ -657,7 +657,6 @@ rivalPokémonAttackEffectivenessDiv.append(
 /* Round Result */
 const roundResultPlayerNameSpan = document.createElement("span");
 roundResultPlayerNameSpan.id = "round-result-player-name";
-roundResultPlayerNameSpan.textContent = `${playerName}'s `;
 
 const roundResultPlayerPokémonSpan = document.createElement("span");
 roundResultPlayerPokémonSpan.id = "round-result-player-pokémon";
@@ -671,7 +670,6 @@ roundResultVersusTextSpan.textContent = " versus ";
 
 const roundResultRivalNameSpan = document.createElement("span");
 roundResultRivalNameSpan.id = "round-result-rival-name";
-roundResultRivalNameSpan.textContent = `${rivalName}'s `;
 
 const roundResultRivalPokémonSpan = document.createElement("span");
 roundResultRivalPokémonSpan.id = "round-result-rival-pokémon";
@@ -732,6 +730,7 @@ roundDiv.append(
   rivalPokémonAttackEffectivenessDiv,
   roundResultDiv
 );
+
 
 /********************* Post-Game *********************/
 /* Rounds Won */
@@ -992,7 +991,6 @@ statsDiv.append(
 /* Game Result */
 const gameResultPlayerNameSpan = document.createElement("span");
 gameResultPlayerNameSpan.id = "game-result-player-name";
-gameResultPlayerNameSpan.textContent = `${playerName} `;
 
 const gameResultResult = document.createElement("span");
 gameResultResult.id = "game-result-result";
@@ -1003,7 +1001,6 @@ gameResultVersusTextSpan.textContent = "versus ";
 
 const gameResultRivalNameSpan = document.createElement("span");
 gameResultRivalNameSpan.id = "game-result-rival-name";
-gameResultRivalNameSpan.textContent = `${rivalName}!`;
 
 const gameResultDiv = document.createElement("div");
 gameResultDiv.id = "game-result";
@@ -1036,6 +1033,7 @@ retryButtonDiv.appendChild(retryButtonTextSpan);
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
 postGameDiv.append(statsDiv, gameResultDiv, retryButtonDiv);
+
 
 /**************
 Variables
@@ -1079,21 +1077,29 @@ let roundsPlayed,
   totalLossPercent,
   totalDrawPercent;
 
-/* Temporary - Test Post-Game Efficiently - Remove When Game Ready */
-
 
 /********************* Functions *********************/
 function generateAttack(choice) {
   return pokémonAttacks[choice][
     Math.floor(Math.random() * pokémonAttacks[choice].length)
   ];
-}
+};
 
 function getRivalChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
-}
+};
 
 function playRound(playerChoice, rivalChoice) {
+  playerScoreNameSpan.textContent = playerName;
+  rivalScoreNameSpan.textContent = rivalName;
+  playerPokémonPlayerNameSpan.textContent = `${playerName}: `;
+  rivalPokémonRivalNameSpan.textContent = `${rivalName}: `;
+  playerPokémonAttackPlayerNameSpan.textContent = `${playerName}'s `;
+  rivalPokémonAttackRivalNameSpan.textContent = `${rivalName}'s `;
+  roundResultPlayerNameSpan.textContent = `${playerName}'s `;
+  roundResultRivalNameSpan.textContent = `${rivalName}'s `;
+  gameResultPlayerNameSpan.textContent = `${playerName} `;
+  gameResultRivalNameSpan.textContent = `${rivalName}!`;
   criticalHitDiv.remove();
   totalRoundsPlayed++;
   generateCriticalHit(roundResult);
@@ -1137,7 +1143,7 @@ function playRound(playerChoice, rivalChoice) {
     rivalScore++;
     roundResultRoundResultSpan.style.color = "rgb(32, 13, 13)";
     roundResult = roundResults[1];
-  }
+  };
 
   insertElement(scoresDiv, "buttons");
   playerScoreScoreSpan.textContent = playerScore;
@@ -1181,7 +1187,7 @@ function playRound(playerChoice, rivalChoice) {
     case roundResults[1]:
       roundResultRoundResultSpan.textContent = "lost ";
       break;
-  }
+  };
 
   if (playerScore === 5 || rivalScore === 5) {
     const expValue = Math.floor(Math.random() * 51) + 50;
@@ -1241,13 +1247,13 @@ function playRound(playerChoice, rivalChoice) {
     expDiv.remove();
     postGameDiv.remove();
   }
-}
+};
 
 function insertElement(newDiv, divID) {
   const overheadDiv = document.getElementById(divID);
   const overheadDivParent = overheadDiv.parentNode;
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling);
-}
+};
 
 function generateCriticalHit(roundResult) {
   if (roundResult === roundResults[2] || roundResult === roundResults[1]) {
@@ -1259,4 +1265,4 @@ function generateCriticalHit(roundResult) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
-}
+};
