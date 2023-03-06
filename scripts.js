@@ -1,48 +1,6 @@
-/**************
-Data Structures
-**************/
-
-/**************
-Elements
-**************/
-
-/**************
-Pre-Fade
-**************/
-let playerNameInput, rivalNameInput;
-let inputCounter = 0;
-
-/* Body */
-const body = document.querySelector("body");
-
-/* Main */
-const main = document.querySelector("main");
-
 let playerName;
 let rivalName;
-
-/* Buttons */
-const buttons = document.querySelector("#buttons");
-buttons.addEventListener("click", function getImgAlt(element) {
-  if (element.target.tagName === "IMG") {
-    playerChoice = element.target.alt;
-    playerPokémon = pokémon[playerChoice];
-    playerPokémonAttack = generateAttack(playerChoice);
-    /* Temporary - Uncomment When Game Ready
-    rivalChoice = getRivalChoice(); 
-    */
-    rivalPokémon = pokémon[rivalChoice];
-    rivalPokémonAttack = generateAttack(rivalChoice);
-    playRound(playerChoice, rivalChoice);
-  }
-});
-
-/* GitHub Logo */
-const githubLogo = document.querySelector("#github-logo");
-githubLogo.addEventListener("click", function openGitHubProfile() {
-  window.open("https://github.com/DrewRoss137", "_blank");
-});
-
+/********************* Data Structures *********************/
 /* Choices */
 const choices = ["Fire", "Grass", "Water"];
 
@@ -90,10 +48,78 @@ const playerColours = {
   [rivalName]: "rgb(255, 100, 0)",
 };
 
-/**************
-Scores
-**************/
 
+/********************* Pre-Overlay *********************/
+/* Additional Flavour Text */
+const fadeInOverlayAdditionalFlavourText = document.createElement("span");
+fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text";
+
+/* Attribution Text */
+const fadeInOverlayAttributionText = document.createElement("span");
+fadeInOverlayAttributionText.id = "fade-in-overlay-attribution-text";
+
+/* Flavour Text */
+const fadeInOverlayFlavourText = document.createElement("span");
+fadeInOverlayFlavourText.id = "fade-in-overlay-flavour-text";
+
+/* Name Text */
+const fadeInOverlayNameText = document.createElement("span");
+fadeInOverlayNameText.id = "fade-in-overlay-name-text";
+
+/* Player Input Box */
+const fadeInOverlayPlayerInputBox = document.createElement("input");
+fadeInOverlayPlayerInputBox.id = "fade-in-overlay-player-input-box";
+fadeInOverlayPlayerInputBox.style.opacity = "0";
+fadeInOverlayPlayerInputBox.type = "text";
+
+/* Rival Input Box */
+const fadeInOverlayRivalInputBox = document.createElement("input");
+fadeInOverlayRivalInputBox.id = "fade-in-overlay-rival-input-box";
+fadeInOverlayRivalInputBox.style.opacity = "0";
+fadeInOverlayRivalInputBox.type = "text";
+
+/* Text */
+const fadeInOverlayText = document.createElement("span");
+fadeInOverlayText.id = "fade-in-overlay-text";
+fadeInOverlayText.style.opacity = "0";
+
+/* Overlay */
+const fadeInOverlay = document.createElement("div");
+fadeInOverlay.id = "fade-in-overlay";
+fadeInOverlay.style.opacity = "1";
+fadeInOverlay.append(fadeInOverlayText);
+let playerNameInput, rivalNameInput;
+
+
+/********************* Body *********************/
+/* Body */
+const body = document.querySelector("body");
+/* body.insertBefore(fadeInOverlay, body.firstChild); */
+
+/* Buttons */
+const buttons = document.querySelector("#buttons");
+buttons.addEventListener("click", function getImgAlt(element) {
+  if (element.target.tagName === "IMG") {
+    playerChoice = element.target.alt;
+    playerPokémon = pokémon[playerChoice];
+    playerPokémonAttack = generateAttack(playerChoice);
+    /* Temporary - Uncomment When Game Ready
+    rivalChoice = getRivalChoice(); 
+    */
+    rivalPokémon = pokémon[rivalChoice];
+    rivalPokémonAttack = generateAttack(rivalChoice);
+    playRound(playerChoice, rivalChoice);
+  }
+});
+
+/* GitHub Logo */
+const githubLogo = document.querySelector("#github-logo");
+githubLogo.addEventListener("click", function openGitHubProfile() {
+  window.open("https://github.com/DrewRoss137", "_blank");
+});
+
+
+/********************* Scores *********************/
 /* Player Score */
 const playerScoreNameSpan = document.createElement("span");
 playerScoreNameSpan.id = "player-score-name";
@@ -123,10 +149,8 @@ const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
 scoresDiv.append(playerScoreDiv, rivalScoreDiv);
 
-/**************
-Round
-**************/
 
+/********************* Round *********************/
 /* Critical Hit */
 const criticalHitDiv = document.createElement("div");
 criticalHitDiv.id = "critical-hit";
@@ -185,27 +209,22 @@ playerPokémonAttackUsedTextSpan.id = "player-pokémon-attack-used-text";
 playerPokémonAttackUsedTextSpan.textContent = "used ";
 
 const playerPokémonAttackPokémonAttackSpan = document.createElement("span");
-playerPokémonAttackPokémonAttackSpan.id =
-  "player-pokémon-attack-pokémon-attack";
+playerPokémonAttackPokémonAttackSpan.id = "player-pokémon-attack-pokémon-attack";
 
 const playerPokémonAttackDiv = document.createElement("div");
 playerPokémonAttackDiv.id = "player-pokémon-attack";
-playerPokémonAttackDiv.append(
-  playerPokémonAttackPlayerNameSpan,
+playerPokémonAttackDiv.append(playerPokémonAttackPlayerNameSpan,
   playerPokémonAttackPokémonNameSpan,
   playerPokémonAttackUsedTextSpan,
   playerPokémonAttackPokémonAttackSpan
 );
 
 /* Player Pokémon Attack Effectiveness */
-const playerPokémonAttackEffectivenessItTextSpan =
-  document.createElement("span");
-playerPokémonAttackEffectivenessItTextSpan.id =
-  "player-pokémon-attack-effectiveness-it-text";
+const playerPokémonAttackEffectivenessItTextSpan = document.createElement("span");
+playerPokémonAttackEffectivenessItTextSpan.id = "player-pokémon-attack-effectiveness-it-text";
 
 const playerPokémonAttackEffectivenessTextSpan = document.createElement("span");
-playerPokémonAttackEffectivenessTextSpan.id =
-  "player-pokémon-attack-effectiveness-text";
+playerPokémonAttackEffectivenessTextSpan.id = "player-pokémon-attack-effectiveness-text";
 
 const playerPokémonAttackEffectivenessDiv = document.createElement("div");
 playerPokémonAttackEffectivenessDiv.id = "player-pokémon-attack-effectiveness";
@@ -334,14 +353,8 @@ roundDiv.append(
   roundResultDiv
 );
 
-/**************
-Post-Game
-**************/
 
-/**************
-Stats
-**************/
-
+/********************* Post-Game *********************/
 /* Rounds Won */
 const roundsWonWonTextSpan = document.createElement("span");
 roundsWonWonTextSpan.id = "rounds-won-won-text";
@@ -680,78 +693,23 @@ let roundResult;
 let expValue;
 
 /* Stats */
-let roundsPlayed;
-let winPercent;
-let lossPercent;
-let totalWinPercent;
-let totalLossPercent;
-let totalDrawPercent;
+let roundsPlayed,
+winPercent,
+lossPercent,
+totalWinPercent,
+totalLossPercent,
+totalDrawPercent;
 
 /* Temporary - Test Post-Game Efficiently - Remove When Game Ready */
 playerScore = 4;
 rivalScore = 4;
 roundsDrawn = 4;
 
-/**************
-Functions
-**************/
 
-/**************
-Elements
-**************/
-
-/**************
-Pre-Fade
-**************/
-
-/* Pre-Fade Attribution Text */
-const fadeInOverlayAttributionText = document.createElement("span");
-fadeInOverlayAttributionText.id = "fade-in-overlay-attribution-text";
-
-/* Pre-Fade Flavour Text */
-const fadeInOverlayFlavourText = document.createElement("span");
-fadeInOverlayFlavourText.id = "fade-in-overlay-flavour-text";
-
-/* Pre-Fade Name Text */
-const fadeInOverlayNameText = document.createElement("span");
-fadeInOverlayNameText.id = "fade-in-overlay-name-text";
-
-/* Pre-Fade Additional Flavour Text */
-const fadeInOverlayAdditionalFlavourText = document.createElement("span");
-fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text";
-
-/* Pre-Fade Player Input Box */
-const fadeInOverlayPlayerInputBox = document.createElement("input");
-fadeInOverlayPlayerInputBox.id = "fade-in-overlay-player-input-box";
-fadeInOverlayPlayerInputBox.type = "text";
-fadeInOverlayPlayerInputBox.style.opacity = "0";
-
-/* Pre-Fade Rival Input Box */
-const fadeInOverlayRivalInputBox = document.createElement("input");
-fadeInOverlayRivalInputBox.id = "fade-in-overlay-rival-input-box";
-fadeInOverlayRivalInputBox.type = "text";
-fadeInOverlayRivalInputBox.style.opacity = "0";
-
-/* Pre-Fade Text */
-const fadeInOverlayText = document.createElement("span");
-fadeInOverlayText.id = "fade-in-overlay-text";
-fadeInOverlayText.style.opacity = "0";
-fadeInOverlayText.append(fadeInOverlayFlavourText);
-
-/* Pre-Fade Overlay */
-const fadeInOverlay = document.createElement("div");
-fadeInOverlay.id = "fade-in-overlay";
-fadeInOverlay.style.opacity = "1";
-fadeInOverlay.append(fadeInOverlayText);
-
-/*
-    professor oak color: rgb(173, 156, 89);
-    player color: rgb(89, 97, 173);
-    rival color: rgb(176, 89, 89);
-*/
+/********************* Functions *********************/
 
 function fadeIn() {
-  body.insertBefore(fadeInOverlay, body.firstChild);
+  fadeInOverlayText.append(fadeInOverlayFlavourText);
 
   setTimeout(() => {
     fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
@@ -1127,9 +1085,7 @@ function fadeIn() {
                                               }, 5000)
                                             }, 0)
                                           }
-
-fadeIn();
-
+/* fadeIn(); */ 
 
 function generateAttack(choice) {
   return pokémonAttacks[choice][
