@@ -1,8 +1,7 @@
 /********************* Pre-Overlay *********************/
 /* Additional Flavour Text */
 const fadeInOverlayAdditionalFlavourText = document.createElement("span");
-fadeInOverlayAdditionalFlavourText.id =
-  "fade-in-overlay-additional-flavour-text";
+fadeInOverlayAdditionalFlavourText.id = "fade-in-overlay-additional-flavour-text";
 
 /* Attribution Text */
 const fadeInOverlayAttributionText = document.createElement("span");
@@ -37,19 +36,17 @@ fadeInOverlayText.style.opacity = "0";
 const fadeInOverlay = document.createElement("div");
 fadeInOverlay.id = "fade-in-overlay";
 fadeInOverlay.style.opacity = "1";
-fadeInOverlay.append(fadeInOverlayText);
 
+/* Names */
 let playerName;
 let rivalName;
 
-
-
 function fadeIn() {
   fadeInOverlayText.append(fadeInOverlayFlavourText);
+  fadeInOverlay.append(fadeInOverlayText);
 
   setTimeout(() => {
-    fadeInOverlayFlavourText.style.textShadow =
-      "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+    fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
     fadeInOverlayFlavourText.textContent = "Hello, there! Glad to meet you!";
     fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
 
@@ -90,13 +87,10 @@ function fadeIn() {
         }, 4000);
 
         setTimeout(() => {
-          fadeInOverlayAttributionText.style.textShadow =
-            "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-          fadeInOverlayAttributionText.textContent = "OAK: ";
-          fadeInOverlayFlavourText.textContent =
-            "People affectionately refer to me as the POKéMON Professor.";
-          fadeInOverlayText.append(fadeInOverlayAttributionText);
-          fadeInOverlayText.append(fadeInOverlayFlavourText);
+          fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+          fadeInOverlayAttributionText.textContent = "OAK:";
+          fadeInOverlayFlavourText.textContent = " People affectionately refer to me as the POKéMON Professor.";
+          fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
 
           setTimeout(() => {
             fadeInOverlayText.style.opacity = "1";
@@ -109,9 +103,8 @@ function fadeIn() {
           }, 4000);
 
           setTimeout(() => {
-            fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
-            fadeInOverlayFlavourText.textContent =
-              "But first, tell me a little about yourself.";
+            fadeInOverlayAttributionText.textContent = "PROFESSOR OAK:";
+            fadeInOverlayFlavourText.textContent = " But first, tell me a little about yourself.";
 
             setTimeout(() => {
               fadeInOverlayText.style.opacity = "1";
@@ -124,8 +117,7 @@ function fadeIn() {
             }, 4000);
 
             setTimeout(() => {
-              fadeInOverlayFlavourText.textContent =
-                "Let's begin with your name. What is it?";
+              fadeInOverlayFlavourText.textContent = "Let's begin with your name. What is it?";
 
               setTimeout(() => {
                 fadeInOverlayText.style.opacity = "1";
@@ -139,16 +131,13 @@ function fadeIn() {
                   fadeInOverlayPlayerInputBox.style.transition = "opacity 1s";
                 }, 500);
 
-                fadeInOverlayPlayerInputBox.addEventListener(
-                  "keydown",
-                  (event) => {
-                    if (event.key === "Enter") {
-                      playerName = fadeInOverlayPlayerInputBox.value;
-                      console.log(`Player Name: ${playerName}`);
-                      setTimeout(() => {
-                        fadeInOverlayPlayerInputBox.style.opacity = "0";
-                        fadeInOverlayPlayerInputBox.style.transition =
-                          "opacity 1s";
+                fadeInOverlayPlayerInputBox.addEventListener("keydown", (event) => {
+                  if (event.key === "Enter") {
+                    playerName = fadeInOverlayPlayerInputBox.value;
+                    console.log(`Player Name: ${playerName}`);
+                    setTimeout(() => {
+                      fadeInOverlayPlayerInputBox.style.opacity = "0";
+                      fadeInOverlayPlayerInputBox.style.transition = "opacity 1s";
                       }, 500);
                       setTimeout(() => {
                         fadeInOverlayText.style.opacity = "0";
@@ -157,8 +146,7 @@ function fadeIn() {
                     }
 
                     setTimeout(() => {
-                      fadeInOverlayFlavourText.textContent =
-                        "And your sworn rival...";
+                      fadeInOverlayFlavourText.textContent = "And your sworn rival...";
 
                       setTimeout(() => {
                         fadeInOverlayText.style.opacity = "1";
@@ -171,8 +159,7 @@ function fadeIn() {
                       }, 4000);
 
                       setTimeout(() => {
-                        fadeInOverlayFlavourText.textContent =
-                          "...Erm, what was their name now?";
+                        fadeInOverlayFlavourText.textContent = "...Erm, what was their name now?";
 
                         setTimeout(() => {
                           fadeInOverlayText.style.opacity = "1";
@@ -181,342 +168,230 @@ function fadeIn() {
                         }, 2000);
 
                         setTimeout(() => {
+                          
                           setTimeout(() => {
                             fadeInOverlayRivalInputBox.style.opacity = "1";
-                            fadeInOverlayRivalInputBox.style.transition =
-                              "opacity 1s";
+                            fadeInOverlayRivalInputBox.style.transition = "opacity 1s";
                           }, 500);
 
-                          fadeInOverlayRivalInputBox.addEventListener(
-                            "keydown",
-                            (event) => {
-                              if (event.key === "Enter") {
-                                rivalName =
-                                  fadeInOverlayRivalInputBox.value;
-                                console.log(`Rival Name: ${rivalName}`);
-                                setTimeout(() => {
-                                  fadeInOverlayRivalInputBox.style.opacity =
-                                    "0";
-                                  fadeInOverlayRivalInputBox.style.transition =
-                                    "opacity 1s";
-                                }, 500);
-                                setTimeout(() => {
-                                  fadeInOverlayText.style.opacity = "0";
-                                  fadeInOverlayText.style.transition =
-                                    "opacity 1s";
+                          fadeInOverlayRivalInputBox.addEventListener("keydown", (event) => {
+                            if (event.key === "Enter") {
+                              rivalName = fadeInOverlayRivalInputBox.value;
+                              console.log(`Rival Name: ${rivalName}`);
+                              setTimeout(() => {
+                                fadeInOverlayRivalInputBox.style.opacity = "0";
+                                fadeInOverlayRivalInputBox.style.transition = "opacity 1s";
+                              }, 500);
+                              setTimeout(() => {
+                                fadeInOverlayText.style.opacity = "0";
+                                fadeInOverlayText.style.transition = "opacity 1s";
                                 }, 500);
                               }
 
                               setTimeout(() => {
-                                fadeInOverlayFlavourText.textContent =
-                                  "there are three POKéMON for you. Here!";
-                                fadeInOverlayNameText.style.textShadow =
-                                  "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
-                                fadeInOverlayNameText.textContent = `${playerName}, `;
-                                fadeInOverlayText.append(
-                                  fadeInOverlayNameText,
-                                  fadeInOverlayFlavourText
-                                );
+                                fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
+                                fadeInOverlayNameText.textContent = `${playerName}`;
+                                fadeInOverlayFlavourText.textContent = ", there are three POKéMON for you. Here!";
+                                fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
 
                                 setTimeout(() => {
                                   fadeInOverlayText.style.opacity = "1";
-                                  fadeInOverlayText.style.transition =
-                                    "opacity 1s";
+                                  fadeInOverlayText.style.transition = "opacity 1s";
                                 }, 2000);
 
                                 setTimeout(() => {
                                   fadeInOverlayText.style.opacity = "0";
-                                  fadeInOverlayText.style.transition =
-                                    "opacity 1s";
+                                  fadeInOverlayText.style.transition = "opacity 1s";
                                 }, 4000);
 
                                 setTimeout(() => {
                                   fadeInOverlayNameText.remove();
-                                  fadeInOverlayAttributionText.style.textShadow =
-                                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                  fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
                                   fadeInOverlayAttributionText.textContent = `${rivalName}: `;
-                                  fadeInOverlayFlavourText.style.textShadow =
-                                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                  fadeInOverlayFlavourText.textContent =
-                                    "Hey! No fair! What about me?";
-                                  fadeInOverlayText.style.borderColor =
-                                    "rgb(176, 89, 89)";
+                                  fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                  fadeInOverlayFlavourText.textContent = "Hey! No fair! What about me?";
+                                  fadeInOverlayText.style.borderColor = "rgb(176, 89, 89)";
 
                                   setTimeout(() => {
                                     fadeInOverlayText.style.opacity = "1";
-                                    fadeInOverlayText.style.transition =
-                                      "opacity 1s";
+                                    fadeInOverlayText.style.transition = "opacity 1s";
                                   }, 2000);
 
                                   setTimeout(() => {
                                     fadeInOverlayText.style.opacity = "0";
-                                    fadeInOverlayText.style.transition =
-                                      "opacity 1s";
+                                    fadeInOverlayText.style.transition = "opacity 1s";
                                   }, 4000);
 
                                   setTimeout(() => {
-                                    fadeInOverlayAttributionText.style.textShadow =
-                                      "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-                                    fadeInOverlayAttributionText.textContent =
-                                      "PROFESSOR OAK: ";
-                                    fadeInOverlayFlavourText.style.textShadow =
-                                      "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-                                    fadeInOverlayFlavourText.textContent =
-                                      "Be patient, ";
-                                    fadeInOverlayNameText.style.textShadow =
-                                      "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                    fadeInOverlayNameText.textContent = `${rivalName}. `;
-                                    fadeInOverlayAdditionalFlavourText.style.textShadow =
-                                      "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-                                    fadeInOverlayAdditionalFlavourText.textContent =
-                                      "you can have three, too!";
-                                    fadeInOverlayText.style.borderColor =
-                                      "rgb(173, 156, 89)";
-                                    fadeInOverlayText.append(
-                                      fadeInOverlayNameText,
-                                      fadeInOverlayFlavourText,
-                                      fadeInOverlayAdditionalFlavourText
-                                    );
+                                    fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+                                    fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
+                                    fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+                                    fadeInOverlayFlavourText.textContent = ". Be patient, ";
+                                    fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                    fadeInOverlayNameText.textContent = `${rivalName}`;
+                                    fadeInOverlayAdditionalFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+                                    fadeInOverlayAdditionalFlavourText.textContent = "you can have three, too!";
+                                    fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText, fadeInOverlayAdditionalFlavourText);
+                                    fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
 
                                     setTimeout(() => {
                                       fadeInOverlayText.style.opacity = "1";
-                                      fadeInOverlayText.style.transition =
-                                        "opacity 1s";
+                                      fadeInOverlayText.style.transition = "opacity 1s";
                                     }, 2000);
 
                                     setTimeout(() => {
                                       fadeInOverlayText.style.opacity = "0";
-                                      fadeInOverlayText.style.transition =
-                                        "opacity 1s";
+                                      fadeInOverlayText.style.transition = "opacity 1s";
                                     }, 4000);
 
                                     setTimeout(() => {
                                       fadeInOverlayAdditionalFlavourText.remove();
                                       fadeInOverlayAttributionText.remove();
-                                      fadeInOverlayNameText.style.textShadow =
-                                        "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
+                                      fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
                                       fadeInOverlayNameText.textContent = `${playerName} `;
-                                      fadeInOverlayFlavourText.style.textShadow =
-                                        "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
-                                      fadeInOverlayText.style.borderColor =
-                                        "rgb(86, 73, 92)";
-                                      fadeInOverlayFlavourText.textContent =
-                                        "received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
-                                      fadeInOverlayText.append(
-                                        fadeInOverlayNameText,
-                                        fadeInOverlayFlavourText
-                                      );
-                                      fadeInOverlayText.style.textAlign =
-                                        "center";
+                                      fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
+                                      fadeInOverlayFlavourText.textContent = "received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
+                                      fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                      fadeInOverlayText.style.borderColor = "rgb(86, 73, 92)";
+                                      fadeInOverlayText.style.textAlign ="center";
 
                                       setTimeout(() => {
                                         fadeInOverlayText.style.opacity = "1";
-                                        fadeInOverlayText.style.transition =
-                                          "opacity 1s";
+                                        fadeInOverlayText.style.transition = "opacity 1s";
                                       }, 2000);
 
                                       setTimeout(() => {
                                         fadeInOverlayText.style.opacity = "0";
-                                        fadeInOverlayText.style.transition =
-                                          "opacity 1s";
+                                        fadeInOverlayText.style.transition = "opacity 1s";
                                       }, 6000);
 
                                       setTimeout(() => {
-                                        fadeInOverlayText.style.borderColor =
-                                          "rgb(176, 89, 89)";
                                         fadeInOverlayNameText.textContent = `${rivalName}: `;
-                                        fadeInOverlayNameText.style.textShadow =
-                                          "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                        fadeInOverlayFlavourText.textContent =
-                                          "I'll take these ones, then!";
-                                        fadeInOverlayFlavourText.style.textShadow =
-                                          "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                        fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                        fadeInOverlayFlavourText.textContent = "I'll take these ones, then!";
+                                        fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                        fadeInOverlayText.style.borderColor = "rgb(176, 89, 89)";
 
                                         setTimeout(() => {
                                           fadeInOverlayText.style.opacity = "1";
-                                          fadeInOverlayText.style.transition =
-                                            "opacity 1s";
+                                          fadeInOverlayText.style.transition = "opacity 1s";
                                         }, 2000);
 
                                         setTimeout(() => {
                                           fadeInOverlayText.style.opacity = "0";
-                                          fadeInOverlayText.style.transition =
-                                            "opacity 1s";
+                                          fadeInOverlayText.style.transition = "opacity 1s";
                                         }, 4000);
 
                                         setTimeout(() => {
                                           fadeInOverlayNameText.textContent = `${rivalName}`;
-                                          fadeInOverlayFlavourText.textContent =
-                                            " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
-                                          fadeInOverlayText.append(
-                                            fadeInOverlayNameText,
-                                            fadeInOverlayFlavourText
-                                          );
-                                          fadeInOverlayFlavourText.style.textShadow =
-                                            "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
-                                          fadeInOverlayText.style.borderColor =
-                                            "rgb(86, 73, 92)";
-                                          fadeInOverlayText.style.textAlign =
-                                            "center";
+                                          fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
+                                          fadeInOverlayFlavourText.textContent = " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
+                                          fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                          fadeInOverlayText.style.borderColor = "rgb(86, 73, 92)";
+                                          fadeInOverlayText.style.textAlign = "center";
 
                                           setTimeout(() => {
-                                            fadeInOverlayText.style.opacity =
-                                              "1";
-                                            fadeInOverlayText.style.transition =
-                                              "opacity 1s";
+                                            fadeInOverlayText.style.opacity = "1";
+                                            fadeInOverlayText.style.transition = "opacity 1s";
                                           }, 2000);
 
                                           setTimeout(() => {
-                                            fadeInOverlayText.style.opacity =
-                                              "0";
-                                            fadeInOverlayText.style.transition =
-                                              "opacity 1s";
+                                            fadeInOverlayText.style.opacity = "0";
+                                            fadeInOverlayText.style.transition = "opacity 1s";
                                           }, 6000);
 
                                           setTimeout(() => {
                                             fadeInOverlayNameText.remove();
+                                            fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
                                             fadeInOverlayAttributionText.textContent = `${rivalName}: `;
-                                            fadeInOverlayFlavourText.textContent =
-                                              "My POKéMON look a lot tougher than yours.";
-                                            fadeInOverlayText.append(
-                                              fadeInOverlayAttributionText,
-                                              fadeInOverlayFlavourText
-                                            );
-                                            fadeInOverlayText.style.borderColor =
-                                              "rgb(176, 89, 89)";
-                                            fadeInOverlayAttributionText.style.textShadow =
-                                              "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                            fadeInOverlayFlavourText.style.textShadow =
-                                              "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                            fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                            fadeInOverlayFlavourText.textContent = "My POKéMON look a lot tougher than yours.";
+                                            fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayFlavourText);
+                                            fadeInOverlayText.style.borderColor = "rgb(176, 89, 89)";
 
                                             setTimeout(() => {
-                                              fadeInOverlayText.style.opacity =
-                                                "1";
-                                              fadeInOverlayText.style.transition =
-                                                "opacity 1s";
+                                              fadeInOverlayText.style.opacity = "1";
+                                              fadeInOverlayText.style.transition = "opacity 1s";
                                             }, 2000);
 
                                             setTimeout(() => {
-                                              fadeInOverlayText.style.opacity =
-                                                "0";
-                                              fadeInOverlayText.style.transition =
-                                                "opacity 1s";
+                                              fadeInOverlayText.style.opacity = "0";
+                                              fadeInOverlayText.style.transition = "opacity 1s";
                                             }, 4000);
 
                                             setTimeout(() => {
-                                              fadeInOverlayAttributionText.textContent =
-                                                "PROFESSOR OAK: ";
+                                              fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+                                              fadeInOverlayAttributionText.textContent = "PROFESSOR OAK: ";
+                                              fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
                                               fadeInOverlayNameText.textContent = `${rivalName}`;
-                                              fadeInOverlayFlavourText.textContent =
-                                                ", you both have identical POKéMON...";
-                                              fadeInOverlayText.append(
-                                                fadeInOverlayAttributionText,
-                                                fadeInOverlayNameText,
-                                                fadeInOverlayFlavourText
-                                              );
-                                              fadeInOverlayAttributionText.style.textShadow =
-                                                "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-                                              fadeInOverlayNameText.style.textShadow =
-                                                "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                              fadeInOverlayFlavourText.style.textShadow =
-                                                "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
-                                              fadeInOverlayText.style.borderColor =
-                                                "rgb(173, 156, 89)";
+                                              fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+                                              fadeInOverlayFlavourText.textContent = ", you both have identical POKéMON...";
+                                              fadeInOverlayText.append(fadeInOverlayAttributionText, fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                              fadeInOverlayText.style.borderColor = "rgb(173, 156, 89)";
 
                                               setTimeout(() => {
-                                                fadeInOverlayText.style.opacity =
-                                                  "1";
-                                                fadeInOverlayText.style.transition =
-                                                  "opacity 1s";
+                                                fadeInOverlayText.style.opacity = "1";
+                                                fadeInOverlayText.style.transition = "opacity 1s";
                                               }, 2000);
 
                                               setTimeout(() => {
-                                                fadeInOverlayText.style.opacity =
-                                                  "0";
-                                                fadeInOverlayText.style.transition =
-                                                  "opacity 1s";
+                                                fadeInOverlayText.style.opacity = "0";
+                                                fadeInOverlayText.style.transition = "opacity 1s";
                                               }, 4000);
 
                                               setTimeout(() => {
                                                 fadeInOverlayNameText.remove();
-                                                fadeInOverlayFlavourText.textContent =
-                                                  "If a TRAINER wants to pit their POKéMON against yours, your POKéMON can battle.";
+                                                fadeInOverlayFlavourText.textContent = "If a TRAINER wants to pit their POKéMON against yours, your POKéMON can battle.";
 
                                                 setTimeout(() => {
-                                                  fadeInOverlayText.style.opacity =
-                                                    "1";
-                                                  fadeInOverlayText.style.transition =
-                                                    "opacity 1s";
+                                                  fadeInOverlayText.style.opacity = "1";
+                                                  fadeInOverlayText.style.transition = "opacity 1s";
                                                 }, 2000);
 
                                                 setTimeout(() => {
-                                                  fadeInOverlayText.style.opacity =
-                                                    "0";
-                                                  fadeInOverlayText.style.transition =
-                                                    "opacity 1s";
+                                                  fadeInOverlayText.style.opacity = "0";
+                                                  fadeInOverlayText.style.transition = "opacity 1s";
                                                 }, 4000);
 
                                                 setTimeout(() => {
-                                                  fadeInOverlayAttributionText.textContent = `${rivalName}: `;
-                                                  fadeInOverlayText.append(
-                                                    fadeInOverlayNameText,
-                                                    fadeInOverlayFlavourText
-                                                  );
-                                                  fadeInOverlayAttributionText.style.textShadow =
-                                                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                                  fadeInOverlayNameText.style.textShadow =
-                                                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
-                                                  fadeInOverlayFlavourText.style.textShadow =
-                                                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
-                                                  fadeInOverlayText.style.borderColor =
-                                                    "rgb(173, 89, 89)";
-                                                  fadeInOverlayFlavourText.textContent =
-                                                    "Let's check out our POKéMON!";
+                                                  fadeInOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                                  fadeInOverlayAttributionText.textContent = `${rivalName}:`;
+                                                  fadeInOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
                                                   fadeInOverlayNameText.textContent = `${playerName}! `;
+                                                  fadeInOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(176, 89, 89), 4.5px 4.5px rgb(176, 89, 89), 5px 5px rgb(176, 89, 89)";
+                                                  fadeInOverlayFlavourText.textContent = " Let's check out our POKéMON!";
+                                                  fadeInOverlayText.append(fadeInOverlayNameText, fadeInOverlayFlavourText);
+                                                  fadeInOverlayText.style.borderColor = "rgb(173, 89, 89)";
 
                                                   setTimeout(() => {
-                                                    fadeInOverlayText.style.opacity =
-                                                      "1";
-                                                    fadeInOverlayText.style.transition =
-                                                      "opacity 1s";
+                                                    fadeInOverlayText.style.opacity = "1";
+                                                    fadeInOverlayText.style.transition = "opacity 1s";
                                                   }, 2000);
 
                                                   setTimeout(() => {
-                                                    fadeInOverlayText.style.opacity =
-                                                      "0";
-                                                    fadeInOverlayText.style.transition =
-                                                      "opacity 1s";
+                                                    fadeInOverlayText.style.opacity = "0";
+                                                    fadeInOverlayText.style.transition = "opacity 1s";
                                                   }, 4000);
 
                                                   setTimeout(() => {
                                                     fadeInOverlayNameText.remove();
-                                                    fadeInOverlayFlavourText.textContent =
-                                                      "Come on, I'll take you on!";
+                                                    fadeInOverlayFlavourText.textContent = "Come on, I'll take you on!";
 
                                                     setTimeout(() => {
-                                                      fadeInOverlayText.style.opacity =
-                                                        "1";
-                                                      fadeInOverlayText.style.transition =
-                                                        "opacity 1s";
+                                                      fadeInOverlayText.style.opacity = "1";
+                                                      fadeInOverlayText.style.transition = "opacity 1s";
                                                     }, 2000);
 
                                                     setTimeout(() => {
-                                                      fadeInOverlayText.style.opacity =
-                                                        "0";
-                                                      fadeInOverlayText.style.transition =
-                                                        "opacity 1s";
+                                                      fadeInOverlayText.style.opacity = "0";
+                                                      fadeInOverlayText.style.transition = "opacity 1s";
                                                     }, 4000);
                                                     setTimeout(() => {
-                                                      fadeInOverlay.style.opacity =
-                                                        "0";
-                                                      fadeInOverlay.style.transition =
-                                                        "opacity 3s";
-                                                      fadeInOverlay.addEventListener(
-                                                        "transitionend",
-                                                        () => {
-                                                          fadeInOverlay.remove();
-                                                        }
-                                                      );
+                                                      fadeInOverlay.style.opacity = "0";
+                                                      fadeInOverlay.style.transition = "opacity 3s";
+                                                      fadeInOverlay.addEventListener("transitionend", () => {
+                                                        fadeInOverlay.remove();
+                                                      }, 0);
                                                     }, 10000);
                                                   }, 5000);
                                                 }, 5000);
@@ -529,15 +404,11 @@ function fadeIn() {
                                   }, 5000);
                                 }, 5000);
                               }, 5000);
-                            },
-                            5000
-                          );
+                            }, 5000);
                         }, 5000);
                       }, 5000);
                     }, 5000);
-                  },
-                  5000
-                );
+                  }, 5000);
               }, 5000);
             }, 5000);
           }, 5000);
