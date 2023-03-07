@@ -1,4 +1,4 @@
-/********************* Pre-Overlay *********************/
+/* Pre-Overlay */
 /* Additional Flavour Text */
 const preOverlayAdditionalFlavourText = document.createElement("span");
 preOverlayAdditionalFlavourText.id = "pre-overlay-additional-flavour-text";
@@ -37,7 +37,7 @@ const preOverlayOverlay = document.createElement("div");
 preOverlayOverlay.id = "pre-overlay";
 preOverlayOverlay.style.opacity = "1";
 
-/********************* Body *********************/
+/* Body */
 /* Body */
 const body = document.querySelector("body");
 body.insertBefore(preOverlayOverlay, body.firstChild);
@@ -63,7 +63,7 @@ githubLogo.addEventListener("click", function openGitHubProfile() {
   window.open("https://github.com/DrewRoss137", "_blank");
 });
 
-/********************* Scores *********************/
+/* Scores */
 /* Player Score */
 const playerScoreNameSpan = document.createElement("span");
 playerScoreNameSpan.id = "player-score-name";
@@ -91,7 +91,7 @@ const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
 scoresDiv.append(playerScoreDiv, rivalScoreDiv);
 
-/********************* Round *********************/
+/* Round */
 /* Critical Hit */
 const criticalHitDiv = document.createElement("div");
 criticalHitDiv.id = "critical-hit";
@@ -247,7 +247,7 @@ const roundDiv = document.createElement("div");
 roundDiv.id = "round";
 roundDiv.append(playerPokémonDiv, rivalPokémonDiv, playerPokémonAttackDiv, playerPokémonAttackEffectivenessDiv, rivalPokémonAttackDiv, rivalPokémonAttackEffectivenessDiv, roundResultDiv);
 
-/********************* Post-Game *********************/
+/* Post-Game */
 /* Rounds Won */
 const roundsWonWonTextSpan = document.createElement("span");
 roundsWonWonTextSpan.id = "rounds-won-won-text";
@@ -485,7 +485,7 @@ const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
 postGameDiv.append(statsDiv, gameResultDiv, retryButtonDiv);
 
-/********************* Variables *********************/
+/* Variables */
 /* Names */
 let playerName;
 let rivalName;
@@ -526,7 +526,7 @@ totalWinPercent,
 totalLossPercent,
 totalDrawPercent;
 
-/********************* Data Structures *********************/
+/* Data Structures */
 /* Choices */
 const choices = ["Fire", "Grass", "Water"];
 
@@ -574,7 +574,7 @@ const playerColours = {
   [rivalName]: "rgb(255, 100, 0)",
 };
 
-/********************* Functions *********************/
+/* Functions */
 /* preOverlay */
 function preOverlay() {
   preOverlayText.append(preOverlayFlavourText);
@@ -609,7 +609,10 @@ function preOverlay() {
       }, 4000);
 
       setTimeout(() => {
-        preOverlayFlavourText.textContent = "My name is OAK.";
+        preOverlayFlavourText.textContent = "My name is ";
+        preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
+        preOverlayNameText.textContent= "OAK.";
+        preOverlayText.appendChild(preOverlayNameText);
 
         setTimeout(() => {
           preOverlayText.style.opacity = "1";
@@ -624,8 +627,9 @@ function preOverlay() {
         setTimeout(() => {
           preOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(173, 156, 89), 4.5px 4.5px rgb(173, 156, 89), 5px 5px rgb(173, 156, 89)";
           preOverlayAttributionText.textContent = "OAK:";
-          preOverlayFlavourText.textContent = " People affectionately refer to me as the POKéMON Professor.";
-          preOverlayText.append(preOverlayAttributionText, preOverlayFlavourText);
+          preOverlayFlavourText.textContent = " People affectionately refer to me as the ";
+          preOverlayNameText.textContent= "POKéMON Professor.";
+          preOverlayText.append(preOverlayAttributionText, preOverlayFlavourText, preOverlayNameText);
 
           setTimeout(() => {
             preOverlayText.style.opacity = "1";
@@ -638,6 +642,7 @@ function preOverlay() {
           }, 4000);
 
           setTimeout(() => {
+            preOverlayNameText.remove();
             preOverlayAttributionText.textContent = "PROFESSOR OAK:";
             preOverlayFlavourText.textContent = " But first, tell me a little about yourself.";
 
@@ -790,7 +795,6 @@ function preOverlay() {
                                       preOverlayFlavourText.textContent = " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
                                       preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
                                       preOverlayText.style.borderColor = "rgb(86, 73, 92)";
-                                      preOverlayText.style.textAlign ="center";
 
                                       setTimeout(() => {
                                         preOverlayText.style.opacity = "1";
@@ -825,7 +829,6 @@ function preOverlay() {
                                           preOverlayFlavourText.textContent = " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
                                           preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
                                           preOverlayText.style.borderColor = "rgb(86, 73, 92)";
-                                          preOverlayText.style.textAlign = "center";
 
                                           setTimeout(() => {
                                             preOverlayText.style.opacity = "1";
