@@ -475,6 +475,9 @@ postGameDiv.id = "post-game";
 postGameDiv.append(statsDiv, gameResultDiv, retryButtonDiv);
 
 /* Variables */
+/* Enter Key Pressed */
+let enterKeyPressed;
+
 /* Names */
 let playerName;
 let rivalName;
@@ -558,6 +561,8 @@ const pokémonAttackColours = {
 
 /* Functions */
 /* preOverlay */
+preOverlay();
+
 function preOverlay() {
   preOverlayText.append(preOverlayFlavourText);
   preOverlayOverlay.append(preOverlayText);
@@ -653,37 +658,42 @@ function preOverlay() {
                   preOverlayPlayerInputBox.style.opacity = "1";
                   preOverlayPlayerInputBox.style.transition = "opacity 1s";
                 }, 500);
-
+              
                 preOverlayPlayerInputBox.addEventListener("keydown", (event) => {
                   if (event.key === "Enter") {
+                    enterKeyPressed = true;
                     playerName = preOverlayPlayerInputBox.value;
-                    console.log(`Player Name: ${playerName}`);
                     setTimeout(() => {
                       preOverlayPlayerInputBox.style.opacity = "0";
                       preOverlayPlayerInputBox.style.transition = "opacity 1s";
-                      }, 500);
-                      setTimeout(() => {
-                        preOverlayText.style.opacity = "0";
-                        preOverlayText.style.transition = "opacity 1s";
-                      }, 500);
-                    }
-
+                    }, 500);
                     setTimeout(() => {
-                      preOverlayPlayerInputBox.remove();
-                      preOverlayFlavourText.textContent = " And your sworn ";
-                      preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
-                      preOverlayNameText.textContent = "rival...";
-                      preOverlayText.appendChild(preOverlayNameText);
-
-                      setTimeout(() => {
-                        preOverlayText.style.opacity = "1";
-                        preOverlayText.style.transition = "opacity 1s";
-                      }, 2000);
-
-                      setTimeout(() => {
-                        preOverlayText.style.opacity = "0";
-                        preOverlayText.style.transition = "opacity 1s";
-                      }, 4000);
+                      preOverlayText.style.opacity = "0";
+                      preOverlayText.style.transition = "opacity 1s";
+                    }, 500);
+                  }
+       
+                preOverlayPlayerInputBox.addEventListener("blur", () => {
+                  if (!enterKeyPressed) {
+                    return;
+                  }
+                  setTimeout(() => {
+                    preOverlayPlayerInputBox.remove();
+                    preOverlayFlavourText.textContent = " And your sworn ";
+                    preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                    preOverlayNameText.textContent = "rival...";
+                    preOverlayText.appendChild(preOverlayNameText);
+              
+                    setTimeout(() => {
+                      preOverlayText.style.opacity = "1";
+                      preOverlayText.style.transition = "opacity 1s";
+                    }, 2000);
+              
+                    setTimeout(() => {
+                      preOverlayText.style.opacity = "0";
+                      preOverlayText.style.transition = "opacity 1s";
+                    }, 4000);
+                  });
 
                       setTimeout(() => {
                         preOverlayNameText.remove();
@@ -704,8 +714,8 @@ function preOverlay() {
 
                           preOverlayRivalInputBox.addEventListener("keydown", (event) => {
                             if (event.key === "Enter") {
+                              enterKeyPressed = true;
                               rivalName = preOverlayRivalInputBox.value;
-                              console.log(`Rival Name: ${rivalName}`);
                               setTimeout(() => {
                                 preOverlayRivalInputBox.style.opacity = "0";
                                 preOverlayRivalInputBox.style.transition = "opacity 1s";
@@ -713,25 +723,31 @@ function preOverlay() {
                               setTimeout(() => {
                                 preOverlayText.style.opacity = "0";
                                 preOverlayText.style.transition = "opacity 1s";
-                                }, 500);
-                              }
+                              }, 500);
+                            }
+                 
+                            preOverlayRivalInputBox.addEventListener("blur", () => {
+                            if (!enterKeyPressed) {
+                              return;
+                            }
+                            setTimeout(() => {
+                              preOverlayRivalInputBox.remove();
+                              preOverlayRivalInputBox.remove();
+                              preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(100, 100, 170), 4.5px 4.5px rgb(100, 100, 170), 5px 5px rgb(100, 100, 170)";
+                              preOverlayNameText.textContent = ` ${playerName}`;
+                              preOverlayFlavourText.textContent = ", there are three POKéMON for you. Here!";
+                              preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
 
                               setTimeout(() => {
-                                preOverlayRivalInputBox.remove();
-                                preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(100, 100, 170), 4.5px 4.5px rgb(100, 100, 170), 5px 5px rgb(100, 100, 170)";
-                                preOverlayNameText.textContent = ` ${playerName}`;
-                                preOverlayFlavourText.textContent = ", there are three POKéMON for you. Here!";
-                                preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
+                                preOverlayText.style.opacity = "1";
+                                preOverlayText.style.transition = "opacity 1s";
+                              }, 2000);
 
-                                setTimeout(() => {
-                                  preOverlayText.style.opacity = "1";
-                                  preOverlayText.style.transition = "opacity 1s";
-                                }, 2000);
-
-                                setTimeout(() => {
-                                  preOverlayText.style.opacity = "0";
-                                  preOverlayText.style.transition = "opacity 1s";
-                                }, 4000);
+                              setTimeout(() => {
+                                preOverlayText.style.opacity = "0";
+                                preOverlayText.style.transition = "opacity 1s";
+                              }, 4000);
+                            });
 
                                 setTimeout(() => {
                                   preOverlayNameText.remove();
@@ -776,10 +792,23 @@ function preOverlay() {
                                     setTimeout(() => {
                                       preOverlayAdditionalFlavourText.remove();
                                       preOverlayAttributionText.remove();
+                                      const bulbasaurSpan = document.createElement("span");
+                                      bulbasaurSpan.style.color = "rgb(128, 255, 0)";
+                                      bulbasaurSpan.style.fontWeight = "bold";
+                                      bulbasaurSpan.textContent = "BULBASAUR";
+                                      const squirtleSpan = document.createElement("span");
+                                      squirtleSpan.style.color = "rgb(0, 128, 255)";
+                                      squirtleSpan.style.fontWeight = "bold";
+                                      squirtleSpan.textContent = "SQUIRTLE";
+                                      const charmanderSpan = document.createElement("span");
+                                      charmanderSpan.style.color = "rgb(255, 128, 0)"; 
+                                      charmanderSpan.style.fontWeight = "bold";
+                                      charmanderSpan.textContent = "CHARMANDER";
                                       preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(100, 100, 170), 4.5px 4.5px rgb(100, 100, 170), 5px 5px rgb(100, 100, 170)";
                                       preOverlayNameText.textContent = `${playerName}`;
                                       preOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
-                                      preOverlayFlavourText.textContent = " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
+                                      preOverlayFlavourText.textContent = " received the GRASS POKéMON ";
+                                      preOverlayFlavourText.append(bulbasaurSpan, ", the WATER POKéMON ", squirtleSpan, ", and the FIRE POKéMON ", charmanderSpan, " from PROF. OAK!");
                                       preOverlayText.style.borderColor = "rgb(86, 73, 92)";
                                       preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
 
@@ -794,6 +823,9 @@ function preOverlay() {
                                       }, 6000);
 
                                       setTimeout(() => {
+                                        bulbasaurSpan.remove();
+                                        squirtleSpan.remove();
+                                        charmanderSpan.remove()
                                         preOverlayNameText.textContent = `${rivalName}:`;
                                         preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
                                         preOverlayFlavourText.textContent = " I'll take these ones, then!";
@@ -813,9 +845,10 @@ function preOverlay() {
                                         setTimeout(() => {
                                           preOverlayNameText.textContent = `${rivalName}`;
                                           preOverlayFlavourText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
-                                          preOverlayFlavourText.textContent = " received the GRASS POKéMON BULBASAUR, the WATER POKéMON SQUIRTLE, and the FIRE POKéMON CHARMANDER from PROF. OAK!";
-                                          preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
+                                          preOverlayFlavourText.textContent = " received the GRASS POKéMON ";
+                                          preOverlayFlavourText.append(bulbasaurSpan, ", the WATER POKéMON ", squirtleSpan, ", and the FIRE POKéMON ", charmanderSpan, " from PROF. OAK!");
                                           preOverlayText.style.borderColor = "rgb(86, 73, 92)";
+                                          preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
 
                                           setTimeout(() => {
                                             preOverlayText.style.opacity = "1";
@@ -866,21 +899,8 @@ function preOverlay() {
                                                 preOverlayText.style.transition = "opacity 1s";
                                               }, 4000);
 
-                                              setTimeout(() => {
-                                                preOverlayNameText.remove();
-                                                preOverlayFlavourText.textContent = " If a TRAINER wants to pit their POKéMON against yours, your POKéMON can battle.";
-
                                                 setTimeout(() => {
-                                                  preOverlayText.style.opacity = "1";
-                                                  preOverlayText.style.transition = "opacity 1s";
-                                                }, 2000);
-
-                                                setTimeout(() => {
-                                                  preOverlayText.style.opacity = "0";
-                                                  preOverlayText.style.transition = "opacity 1s";
-                                                }, 4000);
-
-                                                setTimeout(() => {
+                                                  preOverlayNameText.remove();
                                                   preOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
                                                   preOverlayAttributionText.textContent = `${rivalName}:`;
                                                   preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
@@ -922,7 +942,6 @@ function preOverlay() {
                                                     }, 10000);
                                                   }, 5000);
                                                 }, 5000);
-                                              }, 5000);
                                             }, 5000);
                                           }, 8000);
                                         }, 5000);
@@ -951,7 +970,6 @@ function getImgAlt(element) {
     playerPokémon = pokémon[playerChoice];
     playerPokémonAttack = generateAttack(playerChoice);
     rivalChoice = getRivalChoice();
-    console.log(rivalChoice);
     rivalPokémon = pokémon[rivalChoice];
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice);
