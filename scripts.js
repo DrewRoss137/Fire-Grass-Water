@@ -1,19 +1,3 @@
-/* colors
-  /* player rgb(100, 100, 170); */
-  /* rival rgb(170, 100, 100); */
-  /* fire rgb(255, 128, 0) */
-  /* grass rgb(128, 255, 0)*/
-  /* water rgb(0, 128, 255) */
-  /* fire attack */
-  /* grass attack */
-  /* water attack */
-  /* super-effective */
-  /* not very effective */
-  /* failed */
-  /* win rgb(0, 255, 0) */
-  /* loss rgb(255, 0, 0) */
-  /* draw rgb(0, 0, 255)*/ 
-
 /* Pre-Overlay */
 /* Additional Flavour Text */
 const preOverlayAdditionalFlavourText = document.createElement("span");
@@ -546,7 +530,6 @@ totalDrawPercent;
 /* Choices */
 const choices = ["Fire", "Grass", "Water"];
 
-/* Pokémon */
 const pokémon = {
   Fire: "CHARMANDER",
   Grass: "BULBASAUR",
@@ -572,9 +555,9 @@ const roundResults = ["Draw", "Lose", "Win"];
 
 /* Pokémon Colours */
 const pokémonColours = {
-  CHARMANDER: "rgb(255, 100, 100)",
-  BULBASAUR: "rgb(160, 255, 160)",
-  SQUIRTLE: "rgb(100, 100, 255)",
+  CHARMANDER: "rgb(255, 128, 0)",
+  BULBASAUR: "rgb(128, 255, 0)",
+  SQUIRTLE: "rgb(0, 128, 255)",
 };
 
 /* Pokémon Attack Colours */
@@ -582,12 +565,6 @@ const pokémonAttackColours = {
   CHARMANDER: "rgb(255, 115, 0)",
   BULBASAUR: "rgb(0, 255, 170)",
   SQUIRTLE: "rgb(111, 47, 175)",
-};
-
-/* Player Colours */
-const playerColours = {
-  [playerName]: "rgb(0, 100, 255)",
-  [rivalName]: "rgb(255, 100, 0)",
 };
 
 /* Functions */
@@ -701,21 +678,7 @@ function preOverlay() {
                         preOverlayText.style.transition = "opacity 1s";
                       }, 500);
                     }
-/* colors
-  /* player rgb(100, 100, 170); */
-  /* rival rgb(170, 100, 100); */
-  /* fire rgb(255, 128, 0) */
-  /* grass rgb(128, 255, 0)*/
-  /* water rgb(0, 128, 255) */
-  /* fire attack */
-  /* grass attack */
-  /* water attack */
-  /* super-effective */
-  /* not very effective */
-  /* failed */
-  /* win rgb(0, 255, 0) */
-  /* loss rgb(255, 0, 0) */
-  /* draw rgb(0, 0, 255)*/ 
+
                     setTimeout(() => {
                       preOverlayPlayerInputBox.remove();
                       preOverlayFlavourText.textContent = " And your sworn ";
@@ -1017,11 +980,12 @@ function playRound(playerChoice, rivalChoice) {
   criticalHitDiv.remove();
   totalRoundsPlayed++;
   generateCriticalHit(roundResult);
+
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(25, 25, 64)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(25, 25, 64)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 0, 255)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 0, 255)";
     playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[0]];
     roundsDrawn++;
@@ -1032,8 +996,8 @@ function playRound(playerChoice, rivalChoice) {
     (playerChoice === "Grass" && rivalChoice === "Water") ||
     (playerChoice === "Water" && rivalChoice === "Fire")
   ) {
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(25, 64, 25)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(128, 50, 50)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 255, 0)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 0, 0)";
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[2]];
@@ -1044,8 +1008,8 @@ function playRound(playerChoice, rivalChoice) {
   } else {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(128, 50, 50)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(50, 128, 50)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 0, 0)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 255, 0)";
     playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[2]];
     rivalScore++;
@@ -1096,6 +1060,11 @@ function playRound(playerChoice, rivalChoice) {
     const expValue = Math.floor(Math.random() * 51) + 50;
     insertElement(postGameDiv, "round");
     insertElement(gameResultDiv, "stats");
+
+    const playerColours = {
+      [playerName]: "rgb(100, 100, 170)",
+      [rivalName]: "rgb(170, 100, 100)",
+    };
 
     if (playerScore > rivalScore) {
       faintNameSpan.style.color = playerColours[rivalName];
