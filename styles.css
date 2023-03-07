@@ -496,7 +496,7 @@ img .pokémon,
 #game-result {
     font-size: 100px;
     margin-bottom: 48px;
-    text-shadow: 2px 2px rgb(0, 0, 0), 5px 5px rgb(86, 73, 92);
+    text-shadow: 3px 3px rgb(0, 0, 0), 6px 6px rgb(86, 73, 92);
 }
 
 #retry-button {
