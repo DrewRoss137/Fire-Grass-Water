@@ -239,6 +239,7 @@ img .pokémon,
     color: rgb(255, 128, 0);
 }
 
+#critical-hit,
 #rounds-lost-lost-text,
 #rounds-lost-colon,
 #rounds-lost-rival-score,
@@ -417,7 +418,6 @@ img .pokémon,
 #rival-pokémon-rival-name,
 #rival-pokémon-attack-rival-name,
 #round-result-rival-name,
-#critical-hit,
 #game-result-rival-name {
     color: rgb(170, 100, 100);
 }
