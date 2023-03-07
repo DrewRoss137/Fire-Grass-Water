@@ -44,18 +44,7 @@ body.insertBefore(preOverlayOverlay, body.firstChild);
 
 /* Buttons */
 const buttons = document.querySelector("#buttons");
-buttons.addEventListener("click", function getImgAlt(element) {
-  if (element.target.tagName === "IMG") {
-    playerChoice = element.target.alt;
-    playerPokémon = pokémon[playerChoice];
-    playerPokémonAttack = generateAttack(playerChoice);
-    rivalChoice = getRivalChoice();
-    console.log(rivalChoice);
-    rivalPokémon = pokémon[rivalChoice];
-    rivalPokémonAttack = generateAttack(rivalChoice);
-    playRound(playerChoice, rivalChoice);
-  }
-});
+buttons.addEventListener("click", getImgAlt);
 
 /* GitHub Logo */
 const githubLogo = document.querySelector("#github-logo");
@@ -562,9 +551,9 @@ const pokémonColours = {
 
 /* Pokémon Attack Colours */
 const pokémonAttackColours = {
-  CHARMANDER: "rgb(255, 115, 0)",
-  BULBASAUR: "rgb(0, 255, 170)",
-  SQUIRTLE: "rgb(111, 47, 175)",
+  CHARMANDER: "rgb(255, 255, 180)",
+  BULBASAUR: "rgb(180, 255, 255)",
+  SQUIRTLE: "rgb(180, 255, 180)",
 };
 
 /* Functions */
@@ -956,7 +945,18 @@ function preOverlay() {
   }, 0);
 };
 
-preOverlay();
+function getImgAlt(element) {
+  if (element.target.tagName === "IMG") {
+    playerChoice = element.target.alt;
+    playerPokémon = pokémon[playerChoice];
+    playerPokémonAttack = generateAttack(playerChoice);
+    rivalChoice = getRivalChoice();
+    console.log(rivalChoice);
+    rivalPokémon = pokémon[rivalChoice];
+    rivalPokémonAttack = generateAttack(rivalChoice);
+    playRound(playerChoice, rivalChoice);
+  }
+};
 
 function generateAttack(choice) {
   return pokémonAttacks[choice][Math.floor(Math.random() * pokémonAttacks[choice].length)]
@@ -989,7 +989,7 @@ function playRound(playerChoice, rivalChoice) {
     playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[0]];
     roundsDrawn++;
-    roundResultRoundResultSpan.style.color = "rgb(50, 50, 128)";
+    roundResultRoundResultSpan.style.color = "rgb(0, 0, 255)";
     roundResult = roundResults[0];
   } else if (
     (playerChoice === "Fire" && rivalChoice === "Grass") ||
@@ -1003,7 +1003,7 @@ function playRound(playerChoice, rivalChoice) {
     playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[2]];
     rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[1]];
     playerScore++;
-    roundResultRoundResultSpan.style.color = "rgb(40, 64, 40)";
+    roundResultRoundResultSpan.style.color = "rgb(0, 255, 0)";
     roundResult = roundResults[2];
   } else {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
@@ -1013,7 +1013,7 @@ function playRound(playerChoice, rivalChoice) {
     playerPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness = pokémonAttackEffectiveness[roundResults[2]];
     rivalScore++;
-    roundResultRoundResultSpan.style.color = "rgb(32, 13, 13)";
+    roundResultRoundResultSpan.style.color = "rgb(255, 0, 0)";
     roundResult = roundResults[1];
   };
 
@@ -1057,6 +1057,7 @@ function playRound(playerChoice, rivalChoice) {
   };
 
   if (playerScore === 5 || rivalScore === 5) {
+    buttons.removeEventListener("click", getImgAlt);
     const expValue = Math.floor(Math.random() * 51) + 50;
     insertElement(postGameDiv, "round");
     insertElement(gameResultDiv, "stats");
@@ -1114,6 +1115,9 @@ function playRound(playerChoice, rivalChoice) {
     rivalScore = 0;
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
+
+    const retryButton = document.getElementById("retry-button");
+    retryButton.addEventListener("click", resetGame);
   } else {
     faintDiv.remove();
     expDiv.remove();
@@ -1137,4 +1141,12 @@ function generateCriticalHit(roundResult) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
+};
+
+function resetGame() {
+  playerScoreScoreSpan.textContent = 0;
+  rivalScoreScoreSpan.textContent = 0;
+  roundDiv.remove();
+  postGameDiv.remove();
+  buttons.addEventListener("click", getImgAlt)
 };
