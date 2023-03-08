@@ -674,8 +674,8 @@ const pokémonColours = {
 /* Pokémon Attack Colours */
 const pokémonAttackColours = {
   CHARMANDER: "rgb(255, 255, 180)",
-  BULBASAUR: "rgb(180, 255, 255)",
-  SQUIRTLE: "rgb(180, 255, 180)",
+  BULBASAUR: "rgb(180, 255, 180)",
+  SQUIRTLE: "rgb(180, 255, 255)",
 };
 
 /* Functions */
