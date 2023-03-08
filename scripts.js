@@ -791,34 +791,45 @@ function preOverlay() {
                 preOverlayPlayerInputBox.addEventListener("keydown", (event) => {
                   if (event.key === "Enter") {
                     playerName = preOverlayPlayerInputBox.value;
-                    console.log(`Player Name: ${playerName}`);
                     setTimeout(() => {
                       preOverlayPlayerInputBox.style.opacity = "0";
                       preOverlayPlayerInputBox.style.transition = "opacity 1s";
+                
+                      setTimeout(() => {
+                        preOverlayPlayerInputBox.remove();
+                        preOverlayFlavourText.textContent = " And your sworn ";
+                        preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                        preOverlayNameText.textContent = "rival...";
+                        preOverlayText.appendChild(preOverlayNameText);
+                
+                        setTimeout(() => {
+                          preOverlayText.style.opacity = "1";
+                          preOverlayText.style.transition = "opacity 1s";
+                        }, 2000);
+                
+                        setTimeout(() => {
+                          preOverlayText.style.opacity = "0";
+                          preOverlayText.style.transition = "opacity 1s";
+                        }, 4000);
+
+                        setTimeout(() => {
+                          preOverlayNameText.remove();
+                          preOverlayFlavourText.textContent = " ...Erm, what was their name now?";
+
+                          setTimeout(() => {
+                            preOverlayText.style.opacity = "1";
+                            preOverlayText.style.transition = "opacity 1s";
+                          }, 2000);
+
+                          setTimeout(() => {
+                            preOverlayText.style.opacity = "0";
+                            preOverlayText.style.transition = "opacity 1s";
+                          }, 4000);
+                        })
                       }, 500);
-                      setTimeout(() => {
-                        preOverlayText.style.opacity = "0";
-                        preOverlayText.style.transition = "opacity 1s";
-                      }, 500);
-                    }
-
-                    setTimeout(() => {
-                      preOverlayPlayerInputBox.remove();
-                      preOverlayFlavourText.textContent = " And your sworn ";
-                      preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
-                      preOverlayNameText.textContent = "rival...";
-                      preOverlayText.appendChild(preOverlayNameText);
-
-                      setTimeout(() => {
-                        preOverlayText.style.opacity = "1";
-                        preOverlayText.style.transition = "opacity 1s";
-                      }, 2000);
-
-                      setTimeout(() => {
-                        preOverlayText.style.opacity = "0";
-                        preOverlayText.style.transition = "opacity 1s";
-                      }, 4000);
-
+                    }, 500)
+                  }
+             
                       setTimeout(() => {
                         preOverlayNameText.remove();
                         preOverlayFlavourText.textContent = " ...Erm, what was their name now?";
@@ -839,7 +850,6 @@ function preOverlay() {
                           preOverlayRivalInputBox.addEventListener("keydown", (event) => {
                             if (event.key === "Enter") {
                               rivalName = preOverlayRivalInputBox.value;
-                              console.log(`Rival Name: ${rivalName}`);
                               setTimeout(() => {
                                 preOverlayRivalInputBox.style.opacity = "0";
                                 preOverlayRivalInputBox.style.transition = "opacity 1s";
@@ -934,7 +944,7 @@ function preOverlay() {
                                         preOverlayGrassPokémonText.remove();
                                         preOverlayWaterPokémonText.remove();
                                         preOverlayFirePokémonText.remove();
-                                        preOverlayNameText.remove();
+                                        preOverlayNameText.remove()
                                         preOverlayAttributionText.textContent = `${rivalName}:`;
                                         preOverlayAttributionText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
                                         preOverlayFlavourText.textContent = " I'll take these ones, then!";
@@ -1084,8 +1094,7 @@ function preOverlay() {
           }, 5000);
         }, 5000);
       }, 5000);
-    }, 5000);
-  }, 0);
+    }, );
 };
 
 function getImgAlt(element) {
