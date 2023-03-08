@@ -825,8 +825,7 @@ function preOverlay() {
                             preOverlayText.style.opacity = "0";
                             preOverlayText.style.transition = "opacity 1s";
                           }, 4000);
-                        })
-                      }, 500);
+                        })}, 500);
                     }, 500)
                   }
              
