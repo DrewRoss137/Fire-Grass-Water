@@ -235,7 +235,8 @@ img .pokémon,
 }
 
 #fire-title,
-#fire-button-text {
+#fire-button-text,
+#pre-overlay-fire-pokémon-text {
     color: rgb(255, 128, 0);
 }
 
@@ -260,7 +261,8 @@ img .pokémon,
 }
 
 #grass-title,
-#grass-button-text {
+#grass-button-text,
+#pre-overlay-grass-pokémon-text {
     color: rgb(128, 255, 0);
 }
 
@@ -284,7 +286,8 @@ img .pokémon,
 }
 
 #water-title,
-#water-button-text {
+#water-button-text,
+#pre-overlay-water-pokémon-text {
     color: rgb(0, 128, 255);
 }
 
