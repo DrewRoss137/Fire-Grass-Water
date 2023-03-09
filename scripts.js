@@ -50,11 +50,6 @@ body.insertBefore(preOverlayOverlay, body.firstChild);
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", getImgAlt);
 
-const githubLogo = document.querySelector("#github-logo");
-githubLogo.addEventListener("click", function openGitHubProfile() {
-  window.open("https://github.com/DrewRoss137", "_blank");
-});
-
 /* Scores */
 
 const playerScoreNameSpan = document.createElement("span");
