@@ -1,74 +1,62 @@
 /* Pre-Overlay */
-/* Additional Flavour Text */
+
 const preOverlayAdditionalFlavourText = document.createElement("span");
 preOverlayAdditionalFlavourText.id = "pre-overlay-additional-flavour-text";
 
-/* Attribution Text */
 const preOverlayAttributionText = document.createElement("span");
 preOverlayAttributionText.id = "pre-overlay-attribution-text";
 
-/* Flavour Text */
 const preOverlayFlavourText = document.createElement("span");
 preOverlayFlavourText.id = "pre-overlay-flavour-text";
 
-/* Name Text */
 const preOverlayNameText = document.createElement("span");
 preOverlayNameText.id = "pre-overlay-name-text";
 
-/* Player Input Box */
 const preOverlayPlayerInputBox = document.createElement("input");
 preOverlayPlayerInputBox.id = "pre-overlay-player-input-box";
 preOverlayPlayerInputBox.style.opacity = "0";
 preOverlayPlayerInputBox.type = "text";
 
-/* Rival Input Box */
 const preOverlayRivalInputBox = document.createElement("input");
 preOverlayRivalInputBox.id = "pre-overlay-rival-input-box";
 preOverlayRivalInputBox.style.opacity = "0";
 preOverlayRivalInputBox.type = "text";
 
-/* Grass Pokémon Text */
 const preOverlayGrassPokémonText = document.createElement("span");
 preOverlayGrassPokémonText.id = "pre-overlay-grass-pokémon-text";
 preOverlayGrassPokémonText.textContent = "GRASS POKéMON BULBASAUR";
 
-/* Grass Water Text */
 const preOverlayWaterPokémonText = document.createElement("span");
 preOverlayWaterPokémonText.style.color = "rgb(0, 128, 255)";
 preOverlayWaterPokémonText.textContent = "WATER POKéMON SQUIRTLE";
 
-/* Grass Fire Text */
 const preOverlayFirePokémonText = document.createElement("span");
 preOverlayFirePokémonText.style.color = "rgb(255, 128, 0)";
 preOverlayFirePokémonText.textContent = "FIRE POKéMON CHARMANDER";
 
-/* Text */
 const preOverlayText = document.createElement("span");
 preOverlayText.id = "pre-overlay-text";
 preOverlayText.style.opacity = "0";
 
-/* Overlay */
 const preOverlayOverlay = document.createElement("div");
 preOverlayOverlay.id = "pre-overlay";
 preOverlayOverlay.style.opacity = "1";
 
 /* Body */
-/* Body */
+
 const body = document.querySelector("body");
 body.insertBefore(preOverlayOverlay, body.firstChild);
 
-/* Buttons */
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", getImgAlt);
 
-/* GitHub Logo */
 const githubLogo = document.querySelector("#github-logo");
 githubLogo.addEventListener("click", function openGitHubProfile() {
   window.open("https://github.com/DrewRoss137", "_blank");
 });
 
 /* Scores */
-/* Player Score */
+
 const playerScoreNameSpan = document.createElement("span");
 playerScoreNameSpan.id = "player-score-name";
 
@@ -79,7 +67,6 @@ const playerScoreDiv = document.createElement("div");
 playerScoreDiv.id = "player-score";
 playerScoreDiv.append(playerScoreNameSpan, playerScoreScoreSpan);
 
-/* Rival Score */
 const rivalScoreNameSpan = document.createElement("span");
 rivalScoreNameSpan.id = "rival-score-name";
 
@@ -90,18 +77,16 @@ const rivalScoreDiv = document.createElement("div");
 rivalScoreDiv.id = "rival-score";
 rivalScoreDiv.append(rivalScoreNameSpan, rivalScoreScoreSpan);
 
-/* Scores */
 const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
 scoresDiv.append(playerScoreDiv, rivalScoreDiv);
 
 /* Round */
-/* Critical Hit */
+
 const criticalHitDiv = document.createElement("div");
 criticalHitDiv.id = "critical-hit";
 criticalHitDiv.textContent = "A critical hit!";
 
-/* Player Pokémon */
 const playerPokémonPlayerNameSpan = document.createElement("span");
 playerPokémonPlayerNameSpan.id = "player-pokémon-player-name";
 
@@ -120,7 +105,6 @@ playerPokémonDiv.append(
   playerPokémonNameSpan
 );
 
-/* Rival Pokémon */
 const rivalPokémonRivalNameSpan = document.createElement("span");
 rivalPokémonRivalNameSpan.id = "rival-pokémon-rival-name";
 
@@ -139,7 +123,6 @@ rivalPokémonDiv.append(
   rivalPokémonNameSpan
 );
 
-/* Player Pokémon Attack */
 const playerPokémonAttackPlayerNameSpan = document.createElement("span");
 playerPokémonAttackPlayerNameSpan.id = "player-pokémon-attack-player-name";
 
@@ -163,7 +146,6 @@ playerPokémonAttackDiv.append(
   playerPokémonAttackPokémonAttackSpan
 );
 
-/* Player Pokémon Attack Effectiveness */
 const playerPokémonAttackEffectivenessItTextSpan =
   document.createElement("span");
 playerPokémonAttackEffectivenessItTextSpan.id =
@@ -180,7 +162,6 @@ playerPokémonAttackEffectivenessDiv.append(
   playerPokémonAttackEffectivenessTextSpan
 );
 
-/* Rival Pokémon Attack */
 const rivalPokémonAttackRivalNameSpan = document.createElement("span");
 rivalPokémonAttackRivalNameSpan.id = "rival-pokémon-attack-rival-name";
 
@@ -203,7 +184,6 @@ rivalPokémonAttackDiv.append(
   rivalPokémonAttackPokémonAttackSpan
 );
 
-/* Rival Pokémon Attack Effectiveness */
 const rivalPokémonAttackEffectivenessItTextSpan =
   document.createElement("span");
 rivalPokémonAttackEffectivenessItTextSpan.id =
@@ -220,7 +200,6 @@ rivalPokémonAttackEffectivenessDiv.append(
   rivalPokémonAttackEffectivenessTextSpan
 );
 
-/* Round Result */
 const roundResultPlayerNameSpan = document.createElement("span");
 roundResultPlayerNameSpan.id = "round-result-player-name";
 
@@ -251,7 +230,6 @@ roundResultDiv.append(
   roundResultRivalPokémonSpan
 );
 
-/* Faint */
 const faintNameSpan = document.createElement("span");
 faintNameSpan.id = "faint-name";
 
@@ -266,7 +244,6 @@ const faintDiv = document.createElement("div");
 faintDiv.id = "faint";
 faintDiv.append(faintNameSpan, faintPokémonSpan, faintFaintedTextSpan);
 
-/* Exp */
 const expNameSpan = document.createElement("span");
 expNameSpan.id = "exp-name";
 
@@ -284,7 +261,6 @@ const expDiv = document.createElement("div");
 expDiv.id = "exp";
 expDiv.append(expNameSpan, expPokémonSpan, expGainedTextSpan, expAmountSpan);
 
-/* Round */
 const roundDiv = document.createElement("div");
 roundDiv.id = "round";
 roundDiv.append(
@@ -298,7 +274,7 @@ roundDiv.append(
 );
 
 /* Post-Game */
-/* Rounds Won */
+
 const roundsWonWonTextSpan = document.createElement("span");
 roundsWonWonTextSpan.id = "rounds-won-won-text";
 roundsWonWonTextSpan.textContent = "WON";
@@ -319,7 +295,6 @@ roundsWonDiv.append(
   roundsWonPlayerScoreSpan
 );
 
-/* Rounds Lost */
 const roundsLostLostTextSpan = document.createElement("span");
 roundsLostLostTextSpan.id = "rounds-lost-lost-text";
 roundsLostLostTextSpan.textContent = "LOST";
@@ -340,7 +315,6 @@ roundsLostDiv.append(
   roundsLostRivalScoreSpan
 );
 
-/* Rounds Drawn */
 const roundsDrawnDrawnTextSpan = document.createElement("span");
 roundsDrawnDrawnTextSpan.id = "rounds-drawn-drawn-text";
 roundsDrawnDrawnTextSpan.textContent = "DRAWN";
@@ -361,7 +335,6 @@ roundsDrawnDiv.append(
   roundsDrawnRoundsDrawnSpan
 );
 
-/* Win Percent */
 const winPercentWinText = document.createElement("span");
 winPercentWinText.id = "win-percent-win-text";
 winPercentWinText.textContent = "WIN";
@@ -391,7 +364,6 @@ winPercentDiv.append(
   winPercentPostPercentSpan
 );
 
-/* Loss Percent */
 const lossPercentLossText = document.createElement("span");
 lossPercentLossText.id = "loss-percent-loss-text";
 lossPercentLossText.textContent = "LOSS";
@@ -421,7 +393,6 @@ lossPercentDiv.append(
   lossPercentSign
 );
 
-/* Total Rounds Played */
 const totalRoundsPlayedPlayedTextSpan = document.createElement("span");
 totalRoundsPlayedPlayedTextSpan.id = "total-rounds-played-played-text";
 totalRoundsPlayedPlayedTextSpan.textContent = "PLAYED";
@@ -443,7 +414,6 @@ totalRoundsPlayedDiv.append(
   totalRoundsPlayedTotalRoundsPlayedSpan
 );
 
-/* Total Win Percent */
 const totalWinPercentWinTextSpan = document.createElement("span");
 totalWinPercentWinTextSpan.id = "total-win-percent-win-text";
 totalWinPercentWinTextSpan.textContent = "WIN";
@@ -474,7 +444,6 @@ totalWinPercentDiv.append(
   totalWinPercentPostPercentSpan
 );
 
-/* Total Loss Percent */
 const totalLossPercentLossTextSpan = document.createElement("span");
 totalLossPercentLossTextSpan.id = "total-loss-percent-loss-text";
 totalLossPercentLossTextSpan.textContent = "LOSS";
@@ -506,7 +475,6 @@ totalLossPercentDiv.append(
   totalLossPercentPostPercentSpan
 );
 
-/* Total Draw Percent */
 const totalDrawPercentDrawTextSpan = document.createElement("span");
 totalDrawPercentDrawTextSpan.id = "total-draw-percent-draw-text";
 totalDrawPercentDrawTextSpan.textContent = "DRAW";
@@ -538,7 +506,6 @@ totalDrawPercentDiv.append(
   totalDrawPercentPostPercentSignSpan
 );
 
-/* Stats */
 const statsDiv = document.createElement("div");
 statsDiv.id = "stats";
 statsDiv.append(
@@ -553,7 +520,6 @@ statsDiv.append(
   totalDrawPercentDiv
 );
 
-/* Game Result */
 const gameResultPlayerNameSpan = document.createElement("span");
 gameResultPlayerNameSpan.id = "game-result-player-name";
 
@@ -576,9 +542,9 @@ gameResultDiv.append(
   gameResultRivalNameSpan
 );
 
-/* Retry Button */
 const retryButtonDiv = document.createElement("div");
 retryButtonDiv.id = "retry-button";
+retryButtonDiv.addEventListener("click", resetGame);
 
 const retryButtonGoAGSpan = document.createElement("span");
 retryButtonGoAGSpan.id = "retry-button-go-ag-text";
@@ -591,45 +557,34 @@ retryButtonAINSpan.textContent = "AIN!";
 const retryButtonTextSpan = document.createElement("span");
 retryButtonTextSpan.id = "retry-button-text";
 retryButtonTextSpan.append(retryButtonGoAGSpan, retryButtonAINSpan);
-
 retryButtonDiv.appendChild(retryButtonTextSpan);
 
-/* Post-Game */
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
 postGameDiv.append(statsDiv, gameResultDiv, retryButtonDiv);
 
 /* Variables */
-/* Names */
+
 let playerName = "PLAYER";
 let rivalName = "RIVAL";
 
-/* Choices */
-let playerChoice;
-let rivalChoice;
+let playerChoice, rivalChoice;
 
-/* Scores */
 let playerScore = 0;
 let rivalScore = 0;
 let roundsDrawn = 0;
 let totalRoundsPlayed = 0;
 
-/* Pokémon */
 let playerPokémon, rivalPokémon;
 
-/* Pokémon Attacks */
 let playerPokémonAttack, rivalPokémonAttack;
 
-/* Pokémon Attack Effectiveness */
 let playerPokémonAttackEffectiveness, rivalPokémonAttackEffectiveness;
 
-/* Round Result */
 let roundResult;
 
-/* Exp */
 let expValue;
 
-/* Stats */
 let roundsPlayed,
   winPercent,
   lossPercent,
@@ -638,7 +593,7 @@ let roundsPlayed,
   totalDrawPercent;
 
 /* Data Structures */
-/* Choices */
+
 const choices = ["Fire", "Grass", "Water"];
 
 const pokémon = {
@@ -647,31 +602,26 @@ const pokémon = {
   Water: "SQUIRTLE",
 };
 
-/* Pokémon Attacks */
 const pokémonAttacks = {
   Fire: ["EMBER", "FLAME THROWER"],
   Grass: ["RAZOR LEAF", "VINE WHIP"],
   Water: ["BUBBLE", "HYDRO PUMP", "WATER GUN"],
 };
 
-/* Pokémon Attack Effectiveness */
 const pokémonAttackEffectiveness = {
   Draw: "failed!",
   Lose: "not very effective...",
   Win: "super effective!",
 };
 
-/* Round Results */
 const roundResults = ["Draw", "Lose", "Win"];
 
-/* Pokémon Colours */
 const pokémonColours = {
   CHARMANDER: "rgb(255, 128, 0)",
   BULBASAUR: "rgb(128, 255, 0)",
   SQUIRTLE: "rgb(0, 128, 255)",
 };
 
-/* Pokémon Attack Colours */
 const pokémonAttackColours = {
   CHARMANDER: "rgb(255, 255, 180)",
   BULBASAUR: "rgb(180, 255, 180)",
@@ -679,7 +629,7 @@ const pokémonAttackColours = {
 };
 
 /* Functions */
-/* preOverlay */
+
 preOverlay();
 
 function preOverlay() {
@@ -1128,10 +1078,8 @@ function preOverlay() {
                                     "transitionend",
                                     () => {
                                       preOverlayOverlay.remove();
-                                    },
-                                    0
-                                  );
-                                }, 10000);
+                                    }, 0);
+                                }, 5000);
                               }, 5000);
                             }, 5000);
                           }, 5000);
@@ -1278,7 +1226,7 @@ function playRound(playerChoice, rivalChoice) {
     case roundResults[1]:
       roundResultRoundResultSpan.textContent = "lost ";
       break;
-  }
+  };
 
   if (playerScore === 5 || rivalScore === 5) {
     buttons.removeEventListener("click", getImgAlt);
@@ -1313,7 +1261,7 @@ function playRound(playerChoice, rivalChoice) {
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
       gameResultResult.style.color = "rgb(255, 0, 0)";
       gameResultResult.textContent = "LOST ";
-    }
+    };
 
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
     roundDiv.append(faintDiv, expDiv);
@@ -1340,20 +1288,18 @@ function playRound(playerChoice, rivalChoice) {
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
 
-    const retryButton = document.getElementById("retry-button");
-    retryButton.addEventListener("click", resetGame);
   } else {
     faintDiv.remove();
     expDiv.remove();
     postGameDiv.remove();
   }
-}
+};
 
 function insertElement(newDiv, divID) {
   const overheadDiv = document.getElementById(divID);
   const overheadDivParent = overheadDiv.parentNode;
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling);
-}
+};
 
 function generateCriticalHit(roundResult) {
   if (roundResult === roundResults[2] || roundResult === roundResults[1]) {
@@ -1365,7 +1311,7 @@ function generateCriticalHit(roundResult) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
-}
+};
 
 function resetGame() {
   playerScoreScoreSpan.textContent = 0;
@@ -1373,4 +1319,4 @@ function resetGame() {
   roundDiv.remove();
   postGameDiv.remove();
   buttons.addEventListener("click", getImgAlt);
-}
+};
