@@ -487,6 +487,7 @@ img {
     color: rgba(12, 12, 12, 1);
     gap: 12px;
     letter-spacing: -1.5px;
+    padding-bottom: 16px;
     padding-top: 58px;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.4);
 }
