@@ -191,8 +191,8 @@ img .pokémon,
 #header {
     font-size: 50px;
     gap: 32px;
-    margin-bottom: 64px;
-    margin-top: 16px;
+    margin-bottom: 114px;
+    margin-top: 48px;
 }
 
 #fire-title {
@@ -308,8 +308,8 @@ img .pokémon,
 #grass-button-text,
 #water-button-text {
     font-size: 64px;
-    margin-bottom: 16px;
-    margin-top: 16px;
+    margin-bottom: 48px;
+    margin-top: 30px;
 }
 
 img {
@@ -338,24 +338,24 @@ img {
 }
 
 #scores {
-    font-size: 80px;
+    font-size: 100px;
     gap: 100px;
-    margin-bottom: 32px;
+    margin-bottom: 70px;
 }
 
 #player-score,
 #rival-score {
-    gap: 16px;
+    gap: 24px;
 }
 
 #player-score-name,
 #player-score-score {
-    text-shadow: 0px 6px rgba(50, 50, 85, 1), 0px 12px rgba(25, 25, 43, 1), 0px 18px rgba(13, 13, 22, 1);
+    text-shadow: 0px 7px rgba(50, 50, 85, 1), 0px 14px rgba(25, 25, 43, 1), 0px 21px rgba(13, 13, 22, 1);
 }
 
 #rival-score-name,
 #rival-score-score  {
-    text-shadow: 0px 6px rgba(85, 50, 50, 1), 0px 12px rgba(43, 25, 25, 1), 0px 18px rgba(22, 13, 13, 1);
+    text-shadow: 0px 7px rgba(85, 50, 50, 1), 0px 14px rgba(43, 25, 25, 1), 0px 21px rgba(22, 13, 13, 1);
 }
 
 #player-score-name,
