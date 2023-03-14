@@ -1,3 +1,3 @@
 # Fire-Grass-Water
-A Pokémon-inspired, elemental, twist on Rock Paper Scissors.
 Created with HTML, CSS, and JavaScript.
+[Live Demo](drewross137.github.io/Fire-Grass-Water/).
