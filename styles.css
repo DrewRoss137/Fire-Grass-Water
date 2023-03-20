@@ -1,47 +1,51 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 html,
 body,
 main,
 #pre-overlay {
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-    width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 @font-face {
-    font-family: "PokemonDSFont";
-    src: url(pokemon-ds-font.ttf) format("truetype");
+  font-family: "PokemonDSFont";
+  src: url(pokemon-ds-font.ttf) format("truetype");
 }
 
 body {
-    background: radial-gradient(circle, rgba(75, 75, 75, 1) 0%, rgba(0, 0, 0, 1) 100%);
-    margin: 0;
-    padding: 0;
+  background: radial-gradient(
+    circle,
+    rgba(75, 75, 75, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  margin: 0;
+  padding: 0;
 }
 
 body,
 input {
-    color: rgba(255, 255, 255, 1);
-    font-family: "PokemonDSFont", Arial, Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 1);
+  font-family: "PokemonDSFont", Arial, Helvetica, sans-serif;
 }
 
 #body,
 #player-score,
 #rival-score,
 #round,
-#post-game ,
+#post-game,
 #stats,
 #quote {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 #pre-overlay-attribution-text,
 #pre-overlay-name-text,
-input, 
+input,
 #fire-title,
 #grass-title,
 #water-title,
@@ -105,7 +109,7 @@ input,
 #game-result-result,
 #game-result-rival-name,
 #retry-button {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #pre-overlay,
@@ -124,95 +128,107 @@ img .pokémon,
 #stats,
 #retry-button,
 #quote,
-#footer {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 #pre-overlay {
-    background: radial-gradient(circle, rgba(30, 30, 30, 1) 0%, rgba(0, 0, 0, 1) 100%);
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(30, 30, 30, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #pre-overlay,
 #quote {
-    text-align: center;
+  text-align: center;
 }
 
 #pre-overlay-text {
-    border-radius: 60px;
+  border-radius: 60px;
 }
 
 #pre-overlay-text,
 #pre-overlay-player-input-box,
 #pre-overlay-rival-input-box {
-    background: radial-gradient(circle, rgba(50, 50, 50, 1) 0%, rgba(0, 0, 0, 1) 125%);
-    border-style: solid;
-    border-width: 2px;
-    box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 1);
-    font-size: 72px;
-    padding: 32px;
+  background: radial-gradient(
+    circle,
+    rgba(50, 50, 50, 1) 0%,
+    rgba(0, 0, 0, 1) 125%
+  );
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 1);
+  font-size: 72px;
+  padding: 32px;
 }
 
 #pre-overlay-player-input-box,
 #pre-overlay-rival-input-box {
-    border-radius: 30px;
-    caret-color: transparent;
-    height: 100px;
-    left: 50%;
-    padding: 8px 16px;
-    position: fixed;
-    text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(255, 100, 0, 1), 4.5px 4.5px rgba(255, 100, 0, 1), 5px 5px rgba(255, 100, 0, 1);
-    top: 65%;
-    transform: translate(-50%, -50%);
-    width: 600px;
+  border-radius: 30px;
+  caret-color: transparent;
+  height: 100px;
+  left: 50%;
+  padding: 8px 16px;
+  position: fixed;
+  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(255, 100, 0, 1),
+    4.5px 4.5px rgba(255, 100, 0, 1), 5px 5px rgba(255, 100, 0, 1);
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 600px;
 }
 
 #pre-overlay-player-input-box {
-    border-color: rgba(100, 100, 170, 1);
-    text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(89, 97, 173, 1), 4.5px 4.5px rgba(89, 97, 173, 1), 5px 5px rgba(89, 97, 173, 1);    
+  border-color: rgba(100, 100, 170, 1);
+  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(89, 97, 173, 1),
+    4.5px 4.5px rgba(89, 97, 173, 1), 5px 5px rgba(89, 97, 173, 1);
 }
 
 #pre-overlay-rival-input-box {
-    border-color: rgba(170, 100, 100, 1);
-    text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(176, 89, 89, 1), 4.5px 4.5px rgba(176, 89, 89, 1), 5px 5px rgba(176, 89, 89, 1);    
+  border-color: rgba(170, 100, 100, 1);
+  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(176, 89, 89, 1),
+    4.5px 4.5px rgba(176, 89, 89, 1), 5px 5px rgba(176, 89, 89, 1);
 }
 
 #pre-overlay-player-input-box:focus,
 #pre-overlay-rival-input-box:focus {
-    filter: brightness(1.05);
-    outline: none;
+  filter: brightness(1.05);
+  outline: none;
 }
-  
+
 #header {
-    font-size: 50px;
-    gap: 32px;
-    margin-bottom: 114px;
-    margin-top: 48px;
+  font-size: 50px;
+  gap: 32px;
+  margin-bottom: 114px;
+  margin-top: 48px;
 }
 
 #fire-title {
-    text-shadow: 0px 8px rgba(128, 64, 0, 1), 0px 16px rgba(64, 32, 0, 1), 0px 24px rgba(32, 16, 0, 1);
+  text-shadow: 0px 8px rgba(128, 64, 0, 1), 0px 16px rgba(64, 32, 0, 1),
+    0px 24px rgba(32, 16, 0, 1);
 }
 
 #fire-title .FI {
-    letter-spacing: -5.5px;
+  letter-spacing: -5.5px;
 }
 
 #fire-title,
 #fire-button-text,
 #pre-overlay-fire-pokémon-text {
-    color: rgba(255, 128, 0, 1);
+  color: rgba(255, 128, 0, 1);
 }
 
 #fire-title,
 #grass-title,
 #water-title {
-    margin: 0px;
+  margin: 0px;
 }
 
 #fire-title,
@@ -223,41 +239,43 @@ img .pokémon,
 #water-button-text,
 #scores,
 #critical-hit {
-    letter-spacing: 0.7px;
+  letter-spacing: 0.7px;
 }
 
 #grass-title {
-    text-shadow: 0px 8px rgba(64, 128, 0, 1), 0px 16px rgba(32, 64, 0, 1), 0px 22px rgba(16, 32, 0, 1);
+  text-shadow: 0px 8px rgba(64, 128, 0, 1), 0px 16px rgba(32, 64, 0, 1),
+    0px 22px rgba(16, 32, 0, 1);
 }
 
 #grass-title,
 #grass-button-text,
 #pre-overlay-grass-pokémon-text {
-    color: rgba(128, 255, 0, 1);
+  color: rgba(128, 255, 0, 1);
 }
 
 #water-title {
-    text-shadow: 0px 8px rgba(0, 64, 128, 1), 0px 16px rgba(0, 32, 64, 1), 0px 22px rgba(0, 16, 32, 1);
+  text-shadow: 0px 8px rgba(0, 64, 128, 1), 0px 16px rgba(0, 32, 64, 1),
+    0px 22px rgba(0, 16, 32, 1);
 }
 
 #water-title,
 #water-button-text,
 #pre-overlay-water-pokémon-text {
-    color: rgba(0, 128, 255, 1);
+  color: rgba(0, 128, 255, 1);
 }
 
 #buttons {
-    gap: 128px;
+  gap: 128px;
 }
 
 #fire-button-border,
 #grass-button-border,
 #water-button-border {
-    flex-direction: row;
-    height: 400px;
-    margin: 0;
-    padding: 0;
-    width: 400px;   
+  flex-direction: row;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  width: 400px;
 }
 
 #fire-button-border,
@@ -266,25 +284,29 @@ img .pokémon,
 #round,
 #stats,
 #retry-button {
-    background: radial-gradient(circle, rgba(120, 120, 120, 1) 0%, rgba(0, 0, 0, 1) 125%);
-    border-color: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 5px;
-    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 1);
-    transition: transform 0.75s;
+  background: radial-gradient(
+    circle,
+    rgba(120, 120, 120, 1) 0%,
+    rgba(0, 0, 0, 1) 125%
+  );
+  border-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 5px;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 1);
+  transition: transform 0.75s;
 }
 
 #fire-button-border:hover {
-    box-shadow: 0px 0px 40px 5px rgba(255, 128, 0, 1);
+  box-shadow: 0px 0px 40px 5px rgba(255, 128, 0, 1);
 }
 
 #grass-button-border:hover {
-    box-shadow: 0px 0px 40px 5px rgba(128, 255, 0, 1);
+  box-shadow: 0px 0px 40px 5px rgba(128, 255, 0, 1);
 }
 
 #water-button-border:hover {
-    box-shadow: 0px 0px 40px 5px rgba(0, 128, 255, 1);
+  box-shadow: 0px 0px 40px 5px rgba(0, 128, 255, 1);
 }
 
 #fire-button-border:hover,
@@ -293,69 +315,74 @@ img .pokémon,
 #round:hover,
 #stats:hover,
 #retry-button:hover {
-    filter: brightness(1.025);
-    transform: scale(1.1);
+  filter: brightness(1.025);
+  transform: scale(1.1);
 }
 
 #fire-button-border:hover,
 #grass-button-border:hover,
 #water-button-border:hover,
 #retry-button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #fire-button-text,
 #grass-button-text,
 #water-button-text {
-    font-size: 64px;
-    margin-bottom: 48px;
-    margin-top: 30px;
+  font-size: 64px;
+  margin-bottom: 48px;
+  margin-top: 30px;
 }
 
 img {
-    cursor: pointer;
-    padding: 55px;
+  cursor: pointer;
+  padding: 55px;
 }
 
 #fire-button-text {
-    text-shadow: 0px 6px rgba(128, 64, 0, 1), 0px 12px rgba(64, 32, 0, 1), 0px 18px rgba(32, 16, 0, 1);
+  text-shadow: 0px 6px rgba(128, 64, 0, 1), 0px 12px rgba(64, 32, 0, 1),
+    0px 18px rgba(32, 16, 0, 1);
 }
 
 #grass-button-text {
-    text-shadow: 0px 6px rgba(64, 128, 0, 1), 0px 12px rgba(32, 64, 0, 1), 0px 18px rgba(16, 32, 0, 1);
+  text-shadow: 0px 6px rgba(64, 128, 0, 1), 0px 12px rgba(32, 64, 0, 1),
+    0px 18px rgba(16, 32, 0, 1);
 }
 
 #water-button-text {
-    text-shadow: 0px 6px rgba(0, 64, 128, 1), 0px 12px rgba(0, 32, 64, 1), 0px 18px rgba(0, 16, 32, 1);
+  text-shadow: 0px 6px rgba(0, 64, 128, 1), 0px 12px rgba(0, 32, 64, 1),
+    0px 18px rgba(0, 16, 32, 1);
 }
 
 #water-button-text .S {
-    letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 #water-button-text .UI {
-    letter-spacing: -2px;
+  letter-spacing: -2px;
 }
 
 #scores {
-    font-size: 100px;
-    gap: 100px;
-    margin-bottom: 70px;
+  font-size: 100px;
+  gap: 100px;
+  margin-bottom: 70px;
 }
 
 #player-score,
 #rival-score {
-    gap: 24px;
+  gap: 24px;
 }
 
 #player-score-name,
 #player-score-score {
-    text-shadow: 0px 7px rgba(50, 50, 85, 1), 0px 14px rgba(25, 25, 43, 1), 0px 21px rgba(13, 13, 22, 1);
+  text-shadow: 0px 7px rgba(50, 50, 85, 1), 0px 14px rgba(25, 25, 43, 1),
+    0px 21px rgba(13, 13, 22, 1);
 }
 
 #rival-score-name,
-#rival-score-score  {
-    text-shadow: 0px 7px rgba(85, 50, 50, 1), 0px 14px rgba(43, 25, 25, 1), 0px 21px rgba(22, 13, 13, 1);
+#rival-score-score {
+  text-shadow: 0px 7px rgba(85, 50, 50, 1), 0px 14px rgba(43, 25, 25, 1),
+    0px 21px rgba(22, 13, 13, 1);
 }
 
 #player-score-name,
@@ -364,7 +391,7 @@ img {
 #player-pokémon-attack-player-name,
 #round-result-player-name,
 #game-result-player-name {
-    color: rgba(100, 100, 170, 1);
+  color: rgba(100, 100, 170, 1);
 }
 
 #rival-score-name,
@@ -373,27 +400,29 @@ img {
 #rival-pokémon-attack-rival-name,
 #round-result-rival-name,
 #game-result-rival-name {
-    color: rgba(170, 100, 100, 1);
+  color: rgba(170, 100, 100, 1);
 }
 
 #round {
-    margin-bottom: 60px;
-    padding: 32px;
-  }
+  margin-bottom: 60px;
+  padding: 32px;
+}
 
 #round,
 #stats {
-    gap: 15px;
-    font-size: 50px;
-    text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(86, 73, 92, 1), 4.5px 4.5px rgba(86, 73, 92, 1), 5px 5px rgba(86, 73, 92, 1);
+  gap: 15px;
+  font-size: 50px;
+  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(86, 73, 92, 1),
+    4.5px 4.5px rgba(86, 73, 92, 1), 5px 5px rgba(86, 73, 92, 1);
 }
 
-#critical-hit { 
-    text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(255, 255, 0, 1), 4.5px 4.5px rgba(255, 255, 0, 1), 5px 5px rgba(255, 255, 0, 1);
+#critical-hit {
+  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(255, 255, 0, 1),
+    4.5px 4.5px rgba(255, 255, 0, 1), 5px 5px rgba(255, 255, 0, 1);
 }
 
 #exp-amount {
-    color: rgba(128, 0, 255, 1)
+  color: rgba(128, 0, 255, 1);
 }
 
 #critical-hit,
@@ -406,7 +435,7 @@ img {
 #total-loss-percent-loss-text,
 #total-loss-percent-colon,
 #total-loss-percent-total-loss-percent {
-    color: rgba(255, 0, 0, 1);
+  color: rgba(255, 0, 0, 1);
 }
 
 #rounds-won-won-text,
@@ -417,22 +446,22 @@ img {
 #win-percent-win-percent,
 #total-win-percent-win-text,
 #total-win-percent-colon,
-#total-win-percent-total-win-percent  {
-    color: rgba(0, 255, 0, 1);
+#total-win-percent-total-win-percent {
+  color: rgba(0, 255, 0, 1);
 }
 
 #win-percent-pre-percent-sign,
 #win-percent-post-percent-sign,
 #total-win-percent-pre-percent-sign,
 #total-win-percent-post-percent-sign {
-    color: rgba(0, 64, 0, 1);
+  color: rgba(0, 64, 0, 1);
 }
 
 #loss-percent-pre-percent-sign,
-#loss-percent-post-percent-sign, 
+#loss-percent-post-percent-sign,
 #total-loss-percent-pre-percent-sign,
 #total-loss-percent-post-percent-sign {
-    color: rgba(64, 0, 0, 1);
+  color: rgba(64, 0, 0, 1);
 }
 
 #rounds-drawn-drawn-text,
@@ -441,78 +470,80 @@ img {
 #total-draw-percent-draw-text,
 #total-draw-percent-colon,
 #total-draw-percent-total-draw-percent {
-    color: rgba(0, 0, 255, 1);
+  color: rgba(0, 0, 255, 1);
 }
 
 #total-draw-percent-pre-percent-sign,
 #total-draw-percent-post-percent-sign {
-    color: rgba(0, 0, 64, 1);
+  color: rgba(0, 0, 64, 1);
 }
 
-#stats {    
-    margin-bottom: 24px;
-    padding: 32px;
+#stats {
+  margin-bottom: 24px;
+  padding: 32px;
 }
 
 #game-result {
-    font-size: 100px;
-    margin-bottom: 48px;
-    text-shadow: 3px 3px rgba(0, 0, 0, 1), 6px 6px rgba(86, 73, 92, 1);
+  font-size: 100px;
+  margin-bottom: 48px;
+  text-shadow: 3px 3px rgba(0, 0, 0, 1), 6px 6px rgba(86, 73, 92, 1);
 }
 
 #retry-button {
-    height: 100px;
-    padding-bottom: 28px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 8px;
-    width: 350px;
+  height: 100px;
+  padding-bottom: 28px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  width: 350px;
 }
 
 #retry-button:hover {
-    box-shadow: 0px 0px 50px 0px rgba(255, 0, 255, 1);
+  box-shadow: 0px 0px 50px 0px rgba(255, 0, 255, 1);
 }
 
 #retry-button-text {
-    color: rgba(255, 0, 255, 1);
-    font-size: 100px;
-    text-shadow: 0px 5px rgba(128, 0, 128, 1), 0px 10px rgba(64, 0, 64, 1), 0px 15px rgba(32, 0, 32, 1), 0px 20px rgba(16, 0, 16, 1);
+  color: rgba(255, 0, 255, 1);
+  font-size: 100px;
+  text-shadow: 0px 5px rgba(128, 0, 128, 1), 0px 10px rgba(64, 0, 64, 1),
+    0px 15px rgba(32, 0, 32, 1), 0px 20px rgba(16, 0, 16, 1);
 }
 
 #retry-button-ain-text {
-    letter-spacing: -5px;
+  letter-spacing: -5px;
 }
 
 #quote {
-    color: rgba(12, 12, 12, 1);
-    gap: 12px;
-    letter-spacing: -1.5px;
-    padding-top: 58px;
-    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.4);
+  color: rgba(12, 12, 12, 1);
+  gap: 12px;
+  letter-spacing: -1.5px;
+  padding-top: 58px;
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.4);
 }
 
 #quote-quote {
-    font-size: 28px;
-    max-width: 400px;
+  font-size: 28px;
+  max-width: 400px;
 }
 
 #quote-attribution {
-    font-size: 24px;
+  font-size: 24px;
 }
 
-#footer {
-    justify-content: flex-end;
-    width: 100%;
+footer {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  justify-content: flex-end;
+  width: 100%;
 }
-  
+
 #github-logo {
-    filter: invert(3%);
-    height: 33px;
-    max-height: 33px;
-    max-width: 32px;
-    padding-bottom: 16px;
-    padding-left: 0px;
-    padding-right: 16px;
-    padding-top: 0px;
-    width: 32px;
+  filter: invert(3%);
+  height: 33px;
+  padding-bottom: 16px;
+  padding-left: 0px;
+  padding-right: 16px;
+  padding-top: 0px;
+  width: 32px;
 }
