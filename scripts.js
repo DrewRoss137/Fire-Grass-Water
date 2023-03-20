@@ -1,5 +1,3 @@
-/* Pre-Overlay */
-
 const preOverlayAdditionalFlavourText = document.createElement("span");
 preOverlayAdditionalFlavourText.id = "pre-overlay-additional-flavour-text";
 
@@ -27,11 +25,11 @@ preOverlayGrassPokémonText.id = "pre-overlay-grass-pokémon-text";
 preOverlayGrassPokémonText.textContent = "GRASS POKéMON BULBASAUR";
 
 const preOverlayWaterPokémonText = document.createElement("span");
-preOverlayWaterPokémonText.style.color = "rgb(0, 128, 255)";
+preOverlayWaterPokémonText.style.color = "rgba(0, 128, 255, 1)";
 preOverlayWaterPokémonText.textContent = "WATER POKéMON SQUIRTLE";
 
 const preOverlayFirePokémonText = document.createElement("span");
-preOverlayFirePokémonText.style.color = "rgb(255, 128, 0)";
+preOverlayFirePokémonText.style.color = "rgba(255, 128, 0, 1)";
 preOverlayFirePokémonText.textContent = "FIRE POKéMON CHARMANDER";
 
 const preOverlayText = document.createElement("span");
@@ -42,15 +40,11 @@ const preOverlayOverlay = document.createElement("div");
 preOverlayOverlay.id = "pre-overlay";
 preOverlayOverlay.style.opacity = "1";
 
-/* Body */
-
 const body = document.querySelector("body");
 body.insertBefore(preOverlayOverlay, body.firstChild);
 
 const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", getImgAlt);
-
-/* Scores */
 
 const playerScoreNameSpan = document.createElement("span");
 playerScoreNameSpan.id = "player-score-name";
@@ -75,8 +69,6 @@ rivalScoreDiv.append(rivalScoreNameSpan, rivalScoreScoreSpan);
 const scoresDiv = document.createElement("div");
 scoresDiv.id = "scores";
 scoresDiv.append(playerScoreDiv, rivalScoreDiv);
-
-/* Round */
 
 const criticalHitDiv = document.createElement("div");
 criticalHitDiv.id = "critical-hit";
@@ -267,8 +259,6 @@ roundDiv.append(
   rivalPokémonAttackEffectivenessDiv,
   roundResultDiv
 );
-
-/* Post-Game */
 
 const roundsWonWonTextSpan = document.createElement("span");
 roundsWonWonTextSpan.id = "rounds-won-won-text";
@@ -554,40 +544,36 @@ retryButtonTextSpan.id = "retry-button-text";
 retryButtonTextSpan.append(retryButtonGoAGSpan, retryButtonAINSpan);
 retryButtonDiv.appendChild(retryButtonTextSpan);
 
+const roundAndStatsDiv = document.createElement("div");
+roundAndStatsDiv.id = "round-and-stats";
+roundAndStatsDiv.append(roundDiv, statsDiv);
+
 const postGameDiv = document.createElement("div");
 postGameDiv.id = "post-game";
-postGameDiv.append(statsDiv, gameResultDiv, retryButtonDiv);
-
-/* Variables */
+postGameDiv.append(gameResultDiv, retryButtonDiv);
 
 let playerName = "PLAYER";
 let rivalName = "RIVAL";
-
-let playerChoice, rivalChoice;
-
 let playerScore = 0;
 let rivalScore = 0;
+let playerChoice;
+let rivalChoice;
 let roundsDrawn = 0;
 let totalRoundsPlayed = 0;
-
-let playerPokémon, rivalPokémon;
-
-let playerPokémonAttack, rivalPokémonAttack;
-
-let playerPokémonAttackEffectiveness, rivalPokémonAttackEffectiveness;
-
+let playerPokémon;
+let rivalPokémon;
+let playerPokémonAttack;
+let rivalPokémonAttack;
+let playerPokémonAttackEffectiveness;
+let rivalPokémonAttackEffectiveness;
 let roundResult;
-
 let expValue;
-
-let roundsPlayed,
-  winPercent,
-  lossPercent,
-  totalWinPercent,
-  totalLossPercent,
-  totalDrawPercent;
-
-/* Data Structures */
+let roundsPlayed;
+let winPercent;
+let lossPercent;
+let totalWinPercent;
+let totalLossPercent;
+let totalDrawPercent;
 
 const choices = ["Fire", "Grass", "Water"];
 
@@ -612,18 +598,16 @@ const pokémonAttackEffectiveness = {
 const roundResults = ["Draw", "Lose", "Win"];
 
 const pokémonColours = {
-  CHARMANDER: "rgb(255, 128, 0)",
-  BULBASAUR: "rgb(128, 255, 0)",
-  SQUIRTLE: "rgb(0, 128, 255)",
+  CHARMANDER: "rgba(255, 128, 0, 1)",
+  BULBASAUR: "rgba(128, 255, 0, 1)",
+  SQUIRTLE: "rgba(0, 128, 255, 1)",
 };
 
 const pokémonAttackColours = {
-  CHARMANDER: "rgb(255, 255, 180)",
-  BULBASAUR: "rgb(180, 255, 180)",
-  SQUIRTLE: "rgb(180, 255, 255)",
+  CHARMANDER: "rgba(255, 255, 180, 1)",
+  BULBASAUR: "rgba(180, 255, 180, 1)",
+  SQUIRTLE: "rgba(180, 255, 255, 1)",
 };
-
-/* Functions */
 
 preOverlay();
 
@@ -633,9 +617,9 @@ function preOverlay() {
 
   setTimeout(() => {
     preOverlayFlavourText.style.textShadow =
-      "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+      "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
     preOverlayFlavourText.textContent = "Hello, there! Glad to meet you!";
-    preOverlayText.style.borderColor = "rgb(170, 160, 90)";
+    preOverlayText.style.borderColor = "rgba(170, 160, 90, 1)";
 
     setTimeout(() => {
       preOverlayText.style.opacity = "1";
@@ -650,7 +634,7 @@ function preOverlay() {
     setTimeout(() => {
       preOverlayFlavourText.textContent = "Welcome to the world of ";
       preOverlayNameText.style.textShadow =
-        "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+        "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
       preOverlayNameText.textContent = "POKéMON!";
       preOverlayText.appendChild(preOverlayNameText);
 
@@ -680,7 +664,7 @@ function preOverlay() {
 
         setTimeout(() => {
           preOverlayAttributionText.style.textShadow =
-            "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+            "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
           preOverlayAttributionText.textContent = "OAK:";
           preOverlayFlavourText.textContent =
             " People affectionately refer to me as the ";
@@ -747,7 +731,7 @@ function preOverlay() {
           //         setTimeout(() => {
           //           preOverlayPlayerInputBox.remove();
           //           preOverlayFlavourText.textContent = " And your sworn ";
-          //           preOverlayNameText.style.textShadow = "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+          //           preOverlayNameText.style.textShadow = "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
           //           preOverlayNameText.textContent = "rival...";
           //           preOverlayText.appendChild(preOverlayNameText);
 
@@ -794,10 +778,10 @@ function preOverlay() {
           setTimeout(() => {
             preOverlayRivalInputBox.remove();
             preOverlayNameText.style.textShadow =
-              "3px 3px rgb(0, 0, 0), 4px 4px rgb(100, 100, 170), 4.5px 4.5px rgb(100, 100, 170), 5px 5px rgb(100, 100, 170)";
-            preOverlayNameText.textContent = ` ${playerName}`;
+              "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(100, 100, 170, 1), 4.5px 4.5px rgba(100, 100, 170, 1), 5px 5px rgba(100, 100, 170, 1)";
+            preOverlayNameText.textContent = ` ${playerName}, `;
             preOverlayFlavourText.textContent =
-              ", there are three POKéMON for you. Here!";
+              "there are three POKéMON for you. Here!";
             preOverlayText.append(preOverlayNameText, preOverlayFlavourText);
 
             setTimeout(() => {
@@ -813,13 +797,13 @@ function preOverlay() {
             setTimeout(() => {
               preOverlayNameText.remove();
               preOverlayAttributionText.style.textShadow =
-                "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
               preOverlayAttributionText.textContent = `${rivalName}: `;
               preOverlayFlavourText.style.textShadow =
-                "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
               preOverlayFlavourText.textContent =
                 "Hey! No fair! What about me?";
-              preOverlayText.style.borderColor = "rgb(170, 100, 100)";
+              preOverlayText.style.borderColor = "rgba(170, 100, 100, 1)";
 
               setTimeout(() => {
                 preOverlayText.style.opacity = "1";
@@ -833,16 +817,16 @@ function preOverlay() {
 
               setTimeout(() => {
                 preOverlayAttributionText.style.textShadow =
-                  "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+                  "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
                 preOverlayAttributionText.textContent = "PROFESSOR OAK:";
                 preOverlayFlavourText.style.textShadow =
-                  "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
-                preOverlayFlavourText.textContent = ". Be patient, ";
+                  "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
+                preOverlayFlavourText.textContent = "Be patient, ";
                 preOverlayNameText.style.textShadow =
-                  "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
-                preOverlayNameText.textContent = ` ${rivalName}`;
+                  "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
+                preOverlayNameText.textContent = ` ${rivalName}. `;
                 preOverlayAdditionalFlavourText.style.textShadow =
-                  "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+                  "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
                 preOverlayAdditionalFlavourText.textContent =
                   "you can have three, too!";
                 preOverlayText.append(
@@ -850,7 +834,7 @@ function preOverlay() {
                   preOverlayFlavourText,
                   preOverlayAdditionalFlavourText
                 );
-                preOverlayText.style.borderColor = "rgb(173, 156, 89)";
+                preOverlayText.style.borderColor = "rgba(173, 156, 89, 1)";
 
                 setTimeout(() => {
                   preOverlayText.style.opacity = "1";
@@ -865,10 +849,10 @@ function preOverlay() {
                 setTimeout(() => {
                   preOverlayAdditionalFlavourText.remove();
                   preOverlayAttributionText.style.textShadow =
-                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(100, 100, 170), 4.5px 4.5px rgb(100, 100, 170), 5px 5px rgb(100, 100, 170)";
+                    "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(100, 100, 170, 1), 4.5px 4.5px rgba(100, 100, 170, 1), 5px 5px rgba(100, 100, 170, 1)";
                   preOverlayAttributionText.textContent = `${playerName}`;
                   preOverlayFlavourText.style.textShadow =
-                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
+                    "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(86, 73, 92, 1), 4.5px 4.5px rgba(86, 73, 92, 1), 5px 5px rgba(86, 73, 92, 1)";
                   preOverlayFlavourText.textContent = " received the ";
                   preOverlayFlavourText.append(
                     preOverlayGrassPokémonText,
@@ -879,9 +863,9 @@ function preOverlay() {
                     " from "
                   );
                   preOverlayNameText.style.textShadow =
-                    "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+                    "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
                   preOverlayNameText.textContent = "PROF. OAK!";
-                  preOverlayText.style.borderColor = "rgb(86, 73, 92)";
+                  preOverlayText.style.borderColor = "rgba(86, 73, 92, 1)";
                   preOverlayText.append(
                     preOverlayFlavourText,
                     preOverlayNameText
@@ -901,12 +885,12 @@ function preOverlay() {
                     preOverlayNameText.remove();
                     preOverlayAttributionText.textContent = `${rivalName}:`;
                     preOverlayAttributionText.style.textShadow =
-                      "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                      "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
                     preOverlayFlavourText.textContent =
                       " I'll take these ones, then!";
                     preOverlayFlavourText.style.textShadow =
-                      "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
-                    preOverlayText.style.borderColor = "rgb(170, 100, 100)";
+                      "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
+                    preOverlayText.style.borderColor = "rgba(170, 100, 100, 1)";
                     preOverlayText.append(
                       preOverlayAttributionText,
                       preOverlayFlavourText
@@ -925,7 +909,7 @@ function preOverlay() {
                     setTimeout(() => {
                       preOverlayAttributionText.textContent = `${rivalName}`;
                       preOverlayFlavourText.style.textShadow =
-                        "3px 3px rgb(0, 0, 0), 4px 4px rgb(86, 73, 92), 4.5px 4.5px rgb(86, 73, 92), 5px 5px rgb(86, 73, 92)";
+                        "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(86, 73, 92, 1), 4.5px 4.5px rgba(86, 73, 92, 1), 5px 5px rgba(86, 73, 92, 1)";
                       preOverlayFlavourText.textContent = " received the ";
                       preOverlayFlavourText.append(
                         preOverlayGrassPokémonText,
@@ -936,9 +920,9 @@ function preOverlay() {
                         " from "
                       );
                       preOverlayNameText.style.textShadow =
-                        "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+                        "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
                       preOverlayNameText.textContent = "PROF. OAK!";
-                      preOverlayText.style.borderColor = "rgb(86, 73, 92)";
+                      preOverlayText.style.borderColor = "rgba(86, 73, 92, 1)";
                       preOverlayText.appendChild(preOverlayNameText);
 
                       setTimeout(() => {
@@ -954,17 +938,18 @@ function preOverlay() {
                       setTimeout(() => {
                         preOverlayNameText.remove();
                         preOverlayAttributionText.style.textShadow =
-                          "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                          "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
                         preOverlayAttributionText.textContent = `${rivalName}:`;
                         preOverlayFlavourText.style.textShadow =
-                          "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                          "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
                         preOverlayFlavourText.textContent =
                           " My POKéMON look a lot tougher than yours.";
                         preOverlayText.append(
                           preOverlayAttributionText,
                           preOverlayFlavourText
                         );
-                        preOverlayText.style.borderColor = "rgb(170, 100, 100)";
+                        preOverlayText.style.borderColor =
+                          "rgba(170, 100, 100, 1)";
 
                         setTimeout(() => {
                           preOverlayText.style.opacity = "1";
@@ -978,23 +963,23 @@ function preOverlay() {
 
                         setTimeout(() => {
                           preOverlayAttributionText.style.textShadow =
-                            "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+                            "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
                           preOverlayAttributionText.textContent =
                             "PROFESSOR OAK:";
                           preOverlayNameText.style.textShadow =
-                            "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
-                          preOverlayNameText.textContent = ` ${rivalName}`;
+                            "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
+                          preOverlayNameText.textContent = ` ${rivalName}, `;
                           preOverlayFlavourText.style.textShadow =
-                            "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 160, 90), 4.5px 4.5px rgb(170, 160, 90), 5px 5px rgb(170, 160, 90)";
+                            "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 160, 90, 1), 4.5px 4.5px rgba(170, 160, 90, 1), 5px 5px rgba(170, 160, 90, 1)";
                           preOverlayFlavourText.textContent =
-                            ", you both have identical POKéMON...";
+                            "you both have identical POKéMON...";
                           preOverlayText.append(
                             preOverlayAttributionText,
                             preOverlayNameText,
                             preOverlayFlavourText
                           );
                           preOverlayText.style.borderColor =
-                            "rgb(170, 160, 90)";
+                            "rgba(170, 160, 90, 1)";
 
                           setTimeout(() => {
                             preOverlayText.style.opacity = "1";
@@ -1023,13 +1008,13 @@ function preOverlay() {
 
                             setTimeout(() => {
                               preOverlayAttributionText.style.textShadow =
-                                "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                                "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
                               preOverlayAttributionText.textContent = `${rivalName}:`;
                               preOverlayNameText.style.textShadow =
-                                "3px 3px rgb(0, 0, 0), 4px 4px rgb(89, 97, 173), 4.5px 4.5px rgb(89, 97, 173), 5px 5px rgb(89, 97, 173)";
+                                "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(89, 97, 173, 1), 4.5px 4.5px rgba(89, 97, 173, 1), 5px 5px rgba(89, 97, 173, 1)";
                               preOverlayNameText.textContent = ` ${playerName}!`;
                               preOverlayFlavourText.style.textShadow =
-                                "3px 3px rgb(0, 0, 0), 4px 4px rgb(170, 100, 100), 4.5px 4.5px rgb(170, 100, 100), 5px 5px rgb(170, 100, 100)";
+                                "3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(170, 100, 100, 1), 4.5px 4.5px rgba(170, 100, 100, 1), 5px 5px rgba(170, 100, 100, 1)";
                               preOverlayFlavourText.textContent =
                                 " Let's check out our POKéMON!";
                               preOverlayText.append(
@@ -1037,7 +1022,7 @@ function preOverlay() {
                                 preOverlayFlavourText
                               );
                               preOverlayText.style.borderColor =
-                                "rgb(170, 100, 100)";
+                                "rgba(170, 100, 100, 1)";
 
                               setTimeout(() => {
                                 preOverlayText.style.opacity = "1";
@@ -1065,15 +1050,16 @@ function preOverlay() {
                                   preOverlayText.style.transition =
                                     "opacity 1s";
                                 }, 4000);
+
                                 setTimeout(() => {
                                   preOverlayOverlay.style.opacity = "0";
                                   preOverlayOverlay.style.transition =
-                                    "opacity 3s";
+                                    "opacity 1s";
                                   preOverlayOverlay.addEventListener(
                                     "transitionend",
                                     () => {
                                       preOverlayOverlay.remove();
-                                    }, 0);
+                                    }, 10000);
                                 }, 5000);
                               }, 5000);
                             }, 5000);
@@ -1110,17 +1096,17 @@ function getImgAlt(element) {
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice);
   }
-}
+};
 
 function generateAttack(choice) {
   return pokémonAttacks[choice][
     Math.floor(Math.random() * pokémonAttacks[choice].length)
   ];
-}
+};
 
 function getRivalChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
-}
+};
 
 function playRound(playerChoice, rivalChoice) {
   playerScoreNameSpan.textContent = playerName;
@@ -1140,22 +1126,22 @@ function playRound(playerChoice, rivalChoice) {
   if (playerChoice === rivalChoice) {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "But it ";
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 0, 255)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 0, 255)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgba(0, 0, 255, 1)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgba(0, 0, 255, 1)";
     playerPokémonAttackEffectiveness =
       pokémonAttackEffectiveness[roundResults[0]];
     rivalPokémonAttackEffectiveness =
       pokémonAttackEffectiveness[roundResults[0]];
     roundsDrawn++;
-    roundResultRoundResultSpan.style.color = "rgb(0, 0, 255)";
+    roundResultRoundResultSpan.style.color = "rgba(0, 0, 255, 1)";
     roundResult = roundResults[0];
   } else if (
     (playerChoice === "Fire" && rivalChoice === "Grass") ||
     (playerChoice === "Grass" && rivalChoice === "Water") ||
     (playerChoice === "Water" && rivalChoice === "Fire")
   ) {
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 255, 0)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 0, 0)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgba(0, 255, 0, 1)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgba(255, 0, 0, 1)";
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     playerPokémonAttackEffectiveness =
@@ -1163,19 +1149,19 @@ function playRound(playerChoice, rivalChoice) {
     rivalPokémonAttackEffectiveness =
       pokémonAttackEffectiveness[roundResults[1]];
     playerScore++;
-    roundResultRoundResultSpan.style.color = "rgb(0, 255, 0)";
+    roundResultRoundResultSpan.style.color = "rgba(0, 255, 0, 1)";
     roundResult = roundResults[2];
   } else {
     playerPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
     rivalPokémonAttackEffectivenessItTextSpan.textContent = "It's ";
-    playerPokémonAttackEffectivenessTextSpan.style.color = "rgb(255, 0, 0)";
-    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgb(0, 255, 0)";
+    playerPokémonAttackEffectivenessTextSpan.style.color = "rgba(255, 0, 0, 1)";
+    rivalPokémonAttackEffectivenessTextSpan.style.color = "rgba(0, 255, 0, 1)";
     playerPokémonAttackEffectiveness =
       pokémonAttackEffectiveness[roundResults[1]];
     rivalPokémonAttackEffectiveness =
       pokémonAttackEffectiveness[roundResults[2]];
     rivalScore++;
-    roundResultRoundResultSpan.style.color = "rgb(255, 0, 0)";
+    roundResultRoundResultSpan.style.color = "rgba(255, 0, 0, 1)";
     roundResult = roundResults[1];
   }
 
@@ -1221,17 +1207,18 @@ function playRound(playerChoice, rivalChoice) {
     case roundResults[1]:
       roundResultRoundResultSpan.textContent = "lost ";
       break;
-  };
+  }
 
   if (playerScore === 5 || rivalScore === 5) {
+    roundAndStatsDiv.append(roundDiv, statsDiv);
     buttons.removeEventListener("click", getImgAlt);
     const expValue = Math.floor(Math.random() * 51) + 50;
-    insertElement(postGameDiv, "round");
-    insertElement(gameResultDiv, "stats");
+    insertElement(roundAndStatsDiv, "scores");
+    insertElement(postGameDiv, "round-and-stats");
 
     const playerColours = {
-      [playerName]: "rgb(100, 100, 170)",
-      [rivalName]: "rgb(170, 100, 100)",
+      [playerName]: "rgba(100, 100, 170, 1)",
+      [rivalName]: "rgba(170, 100, 100, 1)",
     };
 
     if (playerScore > rivalScore) {
@@ -1243,8 +1230,8 @@ function playRound(playerChoice, rivalChoice) {
       faintPokémonSpan.textContent = ` ${rivalPokémon} `;
       expNameSpan.textContent = `${playerName}'s `;
       expPokémonSpan.textContent = `${playerPokémon} `;
-      gameResultResult.style.color = "rgb(0, 255, 0)";
-      gameResultResult.textContent = "WON ";
+      gameResultResult.style.color = "rgba(0, 255, 0, 1)";
+      gameResultResult.textContent = "won ";
     } else {
       faintNameSpan.style.color = playerColours[playerName];
       faintPokémonSpan.style.color = pokémonColours[playerPokémon];
@@ -1254,9 +1241,9 @@ function playRound(playerChoice, rivalChoice) {
       faintPokémonSpan.textContent = `${playerPokémon} `;
       expNameSpan.textContent = `${rivalName}'s `;
       expPokémonSpan.textContent = ` ${rivalPokémon} `;
-      gameResultResult.style.color = "rgb(255, 0, 0)";
-      gameResultResult.textContent = "LOST ";
-    };
+      gameResultResult.style.color = "rgba(255, 0, 0, 1)";
+      gameResultResult.textContent = "lost ";
+    }
 
     expAmountSpan.textContent = ` ${expValue} Exp. Points!`;
     roundDiv.append(faintDiv, expDiv);
@@ -1282,7 +1269,6 @@ function playRound(playerChoice, rivalChoice) {
     rivalScore = 0;
     totalRoundsPlayed = 0;
     roundsDrawn = 0;
-
   } else {
     faintDiv.remove();
     expDiv.remove();
