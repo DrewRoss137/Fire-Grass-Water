@@ -7,8 +7,6 @@ body,
 main,
 #pre-overlay {
   height: 100%;
-  max-height: 100%;
-  max-width: 100%;
   width: 100%;
 }
 
@@ -18,13 +16,30 @@ main,
 }
 
 body {
-  background: radial-gradient(
-    circle,
-    rgba(75, 75, 75, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  margin: 0;
   padding: 0;
+}
+
+body,
+#fire-button-border,
+#grass-button-border,
+#water-button-border,
+#round-and-stats {
+  margin: 0;
+}
+
+body,
+#pre-overlay,
+#pre-overlay-text,
+#pre-overlay-player-input-box,
+#pre-overlay-rival-input-box {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(50, 50, 50, 1),
+    rgba(0, 0, 0, 1)
+  );
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 body,
@@ -116,15 +131,16 @@ input,
 #body,
 #header,
 #buttons,
+img .pokémon,
 #fire-button-text,
 #grass-button-text,
 #water-button-text,
-img .pokémon,
 #scores,
 #player-score,
 #rival-score,
 #round,
 #post-game,
+#round-and-stats,
 #stats,
 #retry-button,
 #quote,
@@ -135,11 +151,6 @@ footer {
 }
 
 #pre-overlay {
-  background: radial-gradient(
-    circle,
-    rgba(30, 30, 30, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
   left: 50%;
   position: fixed;
   top: 50%;
@@ -147,6 +158,8 @@ footer {
 }
 
 #pre-overlay,
+#round,
+#stats,
 #quote {
   text-align: center;
 }
@@ -158,11 +171,6 @@ footer {
 #pre-overlay-text,
 #pre-overlay-player-input-box,
 #pre-overlay-rival-input-box {
-  background: radial-gradient(
-    circle,
-    rgba(50, 50, 50, 1) 0%,
-    rgba(0, 0, 0, 1) 125%
-  );
   border-style: solid;
   border-width: 2px;
   box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 1);
@@ -176,10 +184,15 @@ footer {
   caret-color: transparent;
   height: 100px;
   left: 50%;
-  padding: 8px 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
   position: fixed;
-  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(255, 100, 0, 1),
-    4.5px 4.5px rgba(255, 100, 0, 1), 5px 5px rgba(255, 100, 0, 1);
+  text-shadow: 3px 3px rgba(0, 0, 0, 1),
+  4px 4px rgba(255, 100, 0, 1),
+  4.5px 4.5px rgba(255, 100, 0, 1),
+  5px 5px rgba(255, 100, 0, 1);
   top: 65%;
   transform: translate(-50%, -50%);
   width: 600px;
@@ -187,14 +200,18 @@ footer {
 
 #pre-overlay-player-input-box {
   border-color: rgba(100, 100, 170, 1);
-  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(89, 97, 173, 1),
-    4.5px 4.5px rgba(89, 97, 173, 1), 5px 5px rgba(89, 97, 173, 1);
+  text-shadow: 3px 3px rgba(0, 0, 0, 1),
+  4px 4px rgba(89, 97, 173, 1),
+  4.5px 4.5px rgba(89, 97, 173, 1),
+  5px 5px rgba(89, 97, 173, 1);
 }
 
 #pre-overlay-rival-input-box {
   border-color: rgba(170, 100, 100, 1);
-  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(176, 89, 89, 1),
-    4.5px 4.5px rgba(176, 89, 89, 1), 5px 5px rgba(176, 89, 89, 1);
+  text-shadow: 3px 3px rgba(0, 0, 0, 1),
+  4px 4px rgba(176, 89, 89, 1),
+  4.5px 4.5px rgba(176, 89, 89, 1),
+  5px 5px rgba(176, 89, 89, 1);
 }
 
 #pre-overlay-player-input-box:focus,
@@ -205,14 +222,15 @@ footer {
 
 #header {
   font-size: 50px;
-  gap: 32px;
-  margin-bottom: 114px;
-  margin-top: 48px;
+  gap: 24px;
+  padding-bottom: 64px;
+  padding-top: 32px;
 }
 
 #fire-title {
-  text-shadow: 0px 8px rgba(128, 64, 0, 1), 0px 16px rgba(64, 32, 0, 1),
-    0px 24px rgba(32, 16, 0, 1);
+  text-shadow: 0px 8px rgba(128, 64, 0, 1),
+  0px 16px rgba(64, 32, 0, 1),
+  0px 24px rgba(32, 16, 0, 1);
 }
 
 #fire-title .FI {
@@ -243,8 +261,9 @@ footer {
 }
 
 #grass-title {
-  text-shadow: 0px 8px rgba(64, 128, 0, 1), 0px 16px rgba(32, 64, 0, 1),
-    0px 22px rgba(16, 32, 0, 1);
+  text-shadow: 0px 8px rgba(64, 128, 0, 1),
+  0px 16px rgba(32, 64, 0, 1),
+  0px 22px rgba(16, 32, 0, 1);
 }
 
 #grass-title,
@@ -254,8 +273,9 @@ footer {
 }
 
 #water-title {
-  text-shadow: 0px 8px rgba(0, 64, 128, 1), 0px 16px rgba(0, 32, 64, 1),
-    0px 22px rgba(0, 16, 32, 1);
+  text-shadow: 0px 8px rgba(0, 64, 128, 1),
+  0px 16px rgba(0, 32, 64, 1),
+  0px 22px rgba(0, 16, 32, 1);
 }
 
 #water-title,
@@ -265,17 +285,15 @@ footer {
 }
 
 #buttons {
-  gap: 128px;
+  gap: 40px;
 }
 
 #fire-button-border,
 #grass-button-border,
 #water-button-border {
   flex-direction: row;
-  height: 400px;
-  margin: 0;
-  padding: 0;
-  width: 400px;
+  height: 300px;
+  width: 300px;
 }
 
 #fire-button-border,
@@ -284,29 +302,37 @@ footer {
 #round,
 #stats,
 #retry-button {
-  background: radial-gradient(
-    circle,
-    rgba(120, 120, 120, 1) 0%,
-    rgba(0, 0, 0, 1) 125%
+  background-image: radial-gradient(
+    circle at center,
+    rgba(100, 100, 100, 1),
+    rgba(20, 20, 20, 1)
   );
-  border-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.03);
   border-radius: 15px;
   border-style: solid;
-  border-width: 5px;
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 1);
+  border-width: 3px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.75s;
 }
 
+#fire-button-border,
+#grass-button-border,
+#water-button-border,
+#round,
+#stats {
+  padding: 16px;
+}
+
 #fire-button-border:hover {
-  box-shadow: 0px 0px 40px 5px rgba(255, 128, 0, 1);
+  box-shadow: 0px 0px 40px 5px rgba(255, 0, 0, 1);
 }
 
 #grass-button-border:hover {
-  box-shadow: 0px 0px 40px 5px rgba(128, 255, 0, 1);
+  box-shadow: 0px 0px 40px 5px rgba(0, 255, 0, 1);
 }
 
 #water-button-border:hover {
-  box-shadow: 0px 0px 40px 5px rgba(0, 128, 255, 1);
+  box-shadow: 0px 0px 40px 5px rgba(0, 0, 255, 1);
 }
 
 #fire-button-border:hover,
@@ -316,42 +342,46 @@ footer {
 #stats:hover,
 #retry-button:hover {
   filter: brightness(1.025);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 #fire-button-border:hover,
 #grass-button-border:hover,
 #water-button-border:hover,
+img
 #retry-button {
   cursor: pointer;
+}
+
+.pokémon {
+  height: 90%;
+  width: 90%
 }
 
 #fire-button-text,
 #grass-button-text,
 #water-button-text {
   font-size: 64px;
-  margin-bottom: 48px;
-  margin-top: 30px;
-}
-
-img {
-  cursor: pointer;
-  padding: 55px;
+  padding-bottom: 32px;
+  padding-top: 32px;
 }
 
 #fire-button-text {
-  text-shadow: 0px 6px rgba(128, 64, 0, 1), 0px 12px rgba(64, 32, 0, 1),
-    0px 18px rgba(32, 16, 0, 1);
+  text-shadow: 0px 6px rgba(128, 64, 0, 1),
+  0px 12px rgba(64, 32, 0, 1),
+  0px 18px rgba(32, 16, 0, 1);
 }
 
 #grass-button-text {
-  text-shadow: 0px 6px rgba(64, 128, 0, 1), 0px 12px rgba(32, 64, 0, 1),
-    0px 18px rgba(16, 32, 0, 1);
+  text-shadow: 0px 6px rgba(64, 128, 0, 1),
+  0px 12px rgba(32, 64, 0, 1),
+  0px 18px rgba(16, 32, 0, 1);
 }
 
 #water-button-text {
-  text-shadow: 0px 6px rgba(0, 64, 128, 1), 0px 12px rgba(0, 32, 64, 1),
-    0px 18px rgba(0, 16, 32, 1);
+  text-shadow: 0px 6px rgba(0, 64, 128, 1),
+  0px 12px rgba(0, 32, 64, 1),
+  0px 18px rgba(0, 16, 32, 1);
 }
 
 #water-button-text .S {
@@ -363,26 +393,28 @@ img {
 }
 
 #scores {
-  font-size: 100px;
-  gap: 100px;
-  margin-bottom: 70px;
+  font-size: 50px;
+  gap: 50px;
+  padding-bottom: 32px;
 }
 
 #player-score,
 #rival-score {
-  gap: 24px;
+  gap: 16px;
 }
 
 #player-score-name,
 #player-score-score {
-  text-shadow: 0px 7px rgba(50, 50, 85, 1), 0px 14px rgba(25, 25, 43, 1),
-    0px 21px rgba(13, 13, 22, 1);
+  text-shadow: 0px 3px rgba(50, 50, 85, 1),
+  0px 6px rgba(25, 25, 43, 1),
+  0px 9px rgba(13, 13, 22, 1);
 }
 
 #rival-score-name,
 #rival-score-score {
-  text-shadow: 0px 7px rgba(85, 50, 50, 1), 0px 14px rgba(43, 25, 25, 1),
-    0px 21px rgba(22, 13, 13, 1);
+  text-shadow: 0px 3px rgba(85, 50, 50, 1),
+  0px 6px rgba(43, 25, 25, 1),
+  0px 9px rgba(22, 13, 13, 1);
 }
 
 #player-score-name,
@@ -403,22 +435,22 @@ img {
   color: rgba(170, 100, 100, 1);
 }
 
-#round {
-  margin-bottom: 60px;
-  padding: 32px;
-}
-
 #round,
 #stats {
   gap: 15px;
   font-size: 50px;
-  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(86, 73, 92, 1),
-    4.5px 4.5px rgba(86, 73, 92, 1), 5px 5px rgba(86, 73, 92, 1);
+  margin-bottom: 32px;
+  text-shadow: 3px 3px rgba(0, 0, 0, 1),
+  4px 4px rgba(86, 73, 92, 1),
+  4.5px 4.5px rgba(86, 73, 92, 1),
+  5px 5px rgba(86, 73, 92, 1);
 }
 
 #critical-hit {
-  text-shadow: 3px 3px rgba(0, 0, 0, 1), 4px 4px rgba(255, 255, 0, 1),
-    4.5px 4.5px rgba(255, 255, 0, 1), 5px 5px rgba(255, 255, 0, 1);
+  text-shadow: 3px 3px rgba(0, 0, 0, 1),
+  4px 4px rgba(255, 255, 0, 1),
+  4.5px 4.5px rgba(255, 255, 0, 1),
+  5px 5px rgba(255, 255, 0, 1);
 }
 
 #exp-amount {
@@ -478,14 +510,14 @@ img {
   color: rgba(0, 0, 64, 1);
 }
 
-#stats {
-  margin-bottom: 24px;
-  padding: 32px;
+#round-and-stats {
+  gap: 50px;
+  justify-content: space-between;
 }
 
 #game-result {
   font-size: 100px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   text-shadow: 3px 3px rgba(0, 0, 0, 1), 6px 6px rgba(86, 73, 92, 1);
 }
 
@@ -498,15 +530,13 @@ img {
   width: 350px;
 }
 
-#retry-button:hover {
-  box-shadow: 0px 0px 50px 0px rgba(255, 0, 255, 1);
-}
-
 #retry-button-text {
   color: rgba(255, 0, 255, 1);
   font-size: 100px;
-  text-shadow: 0px 5px rgba(128, 0, 128, 1), 0px 10px rgba(64, 0, 64, 1),
-    0px 15px rgba(32, 0, 32, 1), 0px 20px rgba(16, 0, 16, 1);
+  text-shadow: 0px 5px rgba(128, 0, 128, 1),
+  0px 10px rgba(64, 0, 64, 1),
+  0px 15px rgba(32, 0, 32, 1),
+  0px 20px rgba(16, 0, 16, 1);
 }
 
 #retry-button-ain-text {
@@ -517,7 +547,8 @@ img {
   color: rgba(12, 12, 12, 1);
   gap: 12px;
   letter-spacing: -1.5px;
-  padding-top: 58px;
+  padding-bottom: 32px;
+  padding-top: 32px;
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.4);
 }
 
