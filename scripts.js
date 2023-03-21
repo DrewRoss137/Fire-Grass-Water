@@ -1297,7 +1297,7 @@ function generateCriticalHit(roundResult) {
 function resetGame() {
   playerScoreScoreSpan.textContent = 0;
   rivalScoreScoreSpan.textContent = 0;
-  roundDiv.remove();
+  roundAndStatsDiv.remove();
   postGameDiv.remove();
   buttons.addEventListener("click", getImgAlt);
 };
