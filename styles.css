@@ -48,7 +48,7 @@ input {
   font-family: "PokemonDSFont", Arial, Helvetica, sans-serif;
 }
 
-#body,
+#container,
 #player-score,
 #rival-score,
 #round,
@@ -128,10 +128,10 @@ input,
 }
 
 #pre-overlay,
-#body,
+#container,
 #header,
 #buttons,
-img .pokémon,
+img .pokémon-sprites,
 #fire-button-text,
 #grass-button-text,
 #water-button-text,
@@ -353,7 +353,7 @@ img
   cursor: pointer;
 }
 
-.pokémon {
+.pokémon-sprites {
   height: 90%;
   width: 90%
 }
