@@ -1059,7 +1059,9 @@ function preOverlay() {
                                     "transitionend",
                                     () => {
                                       preOverlayOverlay.remove();
-                                    }, 10000);
+                                    },
+                                    10000
+                                  );
                                 }, 5000);
                               }, 5000);
                             }, 5000);
@@ -1096,17 +1098,17 @@ function getImgAlt(element) {
     rivalPokémonAttack = generateAttack(rivalChoice);
     playRound(playerChoice, rivalChoice);
   }
-};
+}
 
 function generateAttack(choice) {
   return pokémonAttacks[choice][
     Math.floor(Math.random() * pokémonAttacks[choice].length)
   ];
-};
+}
 
 function getRivalChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
-};
+}
 
 function playRound(playerChoice, rivalChoice) {
   playerScoreNameSpan.textContent = playerName;
@@ -1274,13 +1276,13 @@ function playRound(playerChoice, rivalChoice) {
     expDiv.remove();
     postGameDiv.remove();
   }
-};
+}
 
 function insertElement(newDiv, divID) {
   const overheadDiv = document.getElementById(divID);
   const overheadDivParent = overheadDiv.parentNode;
   return overheadDivParent.insertBefore(newDiv, overheadDiv.nextSibling);
-};
+}
 
 function generateCriticalHit(roundResult) {
   if (roundResult === roundResults[2] || roundResult === roundResults[1]) {
@@ -1292,7 +1294,7 @@ function generateCriticalHit(roundResult) {
       attackElement.insertAdjacentElement("afterend", criticalHitDiv);
     }
   }
-};
+}
 
 function resetGame() {
   playerScoreScoreSpan.textContent = 0;
@@ -1300,4 +1302,4 @@ function resetGame() {
   roundAndStatsDiv.remove();
   postGameDiv.remove();
   buttons.addEventListener("click", getImgAlt);
-};
+}
