@@ -7,6 +7,13 @@ body,
 main,
 #pre-overlay {
   height: 100%;
+}
+
+html,
+body,
+main,
+#pre-overlay,
+footer {
   width: 100%;
 }
 
@@ -147,6 +154,25 @@ img .pokémon-sprites,
 footer {
   align-items: center;
   display: flex;
+}
+
+#pre-overlay,
+#container,
+#header,
+#buttons,
+img .pokémon-sprites,
+#fire-button-text,
+#grass-button-text,
+#water-button-text,
+#scores,
+#player-score,
+#rival-score,
+#round,
+#post-game,
+#round-and-stats,
+#stats,
+#retry-button,
+#quote {
   justify-content: center;
 }
 
@@ -545,15 +571,14 @@ footer {
   left: 0;
   position: fixed;
   justify-content: flex-end;
-  width: 100%;
 }
 
 #github-logo {
   filter: invert(3%);
-  height: 1.25%;
-  padding-bottom: 3px;
+  height: 24.5px;
+  padding-bottom: 6px;
   padding-left: 0px;
-  padding-right: 3px;
+  padding-right: 6px;
   padding-top: 0px;
-  width: 1.25%;
+  width: 24px;
 }
